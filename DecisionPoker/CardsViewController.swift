@@ -9,12 +9,22 @@
 import UIKit
 import CoreData
 
+var addCardButtonTappedCounter: Int16 = 0
+
 class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate {
 
     func CardIncluded(sender: CardsCell) {
         if let indexPath  = tableView.indexPath(for: sender) {
             let commit = fetchedResultsController?.object(at: indexPath) as! Card
             commit.cardIncluded = !commit.cardIncluded
+        }
+    }
+    
+    func CardNameUpdate(sender: CardsCell, comment: String) {
+        if let indexPath  = tableView.indexPath(for: sender) {
+            print(comment)
+            let commit = fetchedResultsController?.object(at: indexPath) as! Card
+            commit.cardName = comment
         }
     }
     
@@ -31,20 +41,57 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         tableView.reloadData()
     }
     
-    func SetHeight(sender: CardsCell) {
-        
+    func SetHeightCardTable(sender: CardsCell) {
         
     }
     
     
     func CardCommentUpdate(sender: CardsCell, comment: String) {
         if let indexPath  = tableView.indexPath(for: sender) {
-            print(comment)
+            //print(comment)
             let commit = fetchedResultsController?.object(at: indexPath) as! Card
             commit.cardComment = comment
         }
     }
-            
+    
+    
+    @IBOutlet weak var addCardButton: UIBarButtonItem!
+    @IBAction func addCardButtonTapped(_ sender: UIBarButtonItem) {
+        
+        addCardButtonTappedCounter += 1
+        
+        //var cardsTotalData: [NSManagedObject] = []
+        let managedContext = container.viewContext
+        let newCard = Card(context: managedContext)
+        newCard.cardName = "New Card \(addCardButtonTappedCounter)"
+        newCard.cardComment = "Add comments here"
+        newCard.cardsTablePosition = Int16(commitDeckSelected.childCards!.count) + addCardButtonTappedCounter
+        print (newCard.cardsTablePosition)
+        //let commit = fetchedResultsController?.object(at: IndexPath(index: 0)) as! Deck
+        commitDeckSelected.addToChildCards(newCard)
+        //newCard.parentDeck(commit)
+        
+        
+     //   \(selectedDeck).addToChildCards(newCard)
+      //  cardsTotalData.append(newCard)
+
+        //newDeck.deckName = "New Deck"
+        //addDeckButtonTappedCounter += 1
+        //print (addDeckButtonTappedCounter)
+        /* if addDeckButtonTappedCounter == 1{
+         let newCard = Card(context: managedContext)
+         newCard.cardName = "New Card"
+         newCard.cardComment = "Add comments here"
+         
+         }
+         */
+        
+        //cardsTotalData.append(newCard)
+        try! managedContext.save()
+        //  newCard =
+        //print(decksTotalData)
+    }
+    
     var container: NSPersistentContainer!
     var rowTouched: Int = 0
     var expanded: Bool = false
@@ -52,7 +99,7 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
     var selectedDeck: String  = ""
     
     var rowHeight: CGFloat = 50
-    let normalCellHeight: CGFloat = 50
+    let normalCellHeight: CGFloat = 60
     let largeCellHeight: CGFloat = 200
 
     
@@ -68,9 +115,10 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         request.predicate = NSPredicate(format: "parentDeck.deckName == '\(selectedDeck)'")
 
         request.sortDescriptors = [NSSortDescriptor(
-            key: "cardName",
+            key: "cardsTablePosition",
             ascending: true,
-            selector: #selector(NSString.localizedCaseInsensitiveCompare(_:))
+            //selector: #selector(NSString.localizedCaseInsensitiveCompare(_:))
+            selector: #selector(NSNumber.compare(_:))
             )]
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: request,
@@ -163,7 +211,7 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
             cell?.nameOfCard.text = card.cardName
             cell?.cardIsIncluded.isOn = card.cardIncluded
             cell?.cardCommentText.text = card.cardComment
-            //cell?.cardInfo = card.cardInformation
+            ///cell?.cardInfo = card.cardInformation
             cell?.delegate = self
         }
         return (cell ?? nil)!

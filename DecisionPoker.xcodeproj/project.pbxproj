@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A98A35A322C876640081BA20 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A222C876640081BA20 /* ResultsTableViewController.swift */; };
+		A98A35A522C877160081BA20 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A422C877160081BA20 /* ResultsViewController.swift */; };
+		A98A35A722C87CED0081BA20 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A622C87CED0081BA20 /* ResultsCell.swift */; };
+		A98A35A922C8820C0081BA20 /* ListSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A822C8820C0081BA20 /* ListSelection.swift */; };
 		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
 		A9D58A7722C4E49F00E608B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7622C4E49F00E608B8 /* ViewController.swift */; };
 		A9D58A7A22C4E49F00E608B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7822C4E49F00E608B8 /* Main.storyboard */; };
@@ -15,17 +19,16 @@
 		A9D58A8222C4E4A000E608B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */; };
 		A9D58A8D22C4E4A000E608B8 /* DecisionPokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A8C22C4E4A000E608B8 /* DecisionPokerTests.swift */; };
 		A9D58A9822C4E4A000E608B8 /* DecisionPokerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A9722C4E4A000E608B8 /* DecisionPokerUITests.swift */; };
-		A9D58AB622C4EDE300E608B8 /* TestDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AB522C4EDE300E608B8 /* TestDecks.swift */; };
 		A9D58AB822C4FBD700E608B8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AB722C4FBD700E608B8 /* StartViewController.swift */; };
 		A9D58ABA22C4FD3C00E608B8 /* FetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AB922C4FD3C00E608B8 /* FetchedResultsTableViewController.swift */; };
 		A9D58ABC22C4FD7D00E608B8 /* DecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ABB22C4FD7D00E608B8 /* DecksViewController.swift */; };
 		A9D58ABE22C4FD9900E608B8 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ABD22C4FD9900E608B8 /* CardsViewController.swift */; };
 		A9D58AC022C50A8800E608B8 /* DecksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ABF22C50A8800E608B8 /* DecksCell.swift */; };
 		A9D58AC222C50AAE00E608B8 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AC122C50AAE00E608B8 /* CardsCell.swift */; };
-		A9D58AD922C646CD00E608B8 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AD522C646CD00E608B8 /* Deck+CoreDataClass.swift */; };
-		A9D58ADA22C646CD00E608B8 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AD622C646CD00E608B8 /* Deck+CoreDataProperties.swift */; };
-		A9D58ADB22C646CD00E608B8 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AD722C646CD00E608B8 /* Card+CoreDataClass.swift */; };
-		A9D58ADC22C646CD00E608B8 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AD822C646CD00E608B8 /* Card+CoreDataProperties.swift */; };
+		A9D58AE122C754E800E608B8 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ADD22C754E800E608B8 /* Card+CoreDataClass.swift */; };
+		A9D58AE222C754E800E608B8 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ADE22C754E800E608B8 /* Card+CoreDataProperties.swift */; };
+		A9D58AE322C754E800E608B8 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ADF22C754E800E608B8 /* Deck+CoreDataClass.swift */; };
+		A9D58AE422C754E800E608B8 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AE022C754E800E608B8 /* Deck+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A98A35A222C876640081BA20 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		A98A35A422C877160081BA20 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		A98A35A622C87CED0081BA20 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		A98A35A822C8820C0081BA20 /* ListSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelection.swift; sourceTree = "<group>"; };
 		A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D58A7622C4E49F00E608B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,17 +67,16 @@
 		A9D58A9322C4E4A000E608B8 /* DecisionPokerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecisionPokerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D58A9722C4E4A000E608B8 /* DecisionPokerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerUITests.swift; sourceTree = "<group>"; };
 		A9D58A9922C4E4A000E608B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9D58AB522C4EDE300E608B8 /* TestDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDecks.swift; sourceTree = "<group>"; };
 		A9D58AB722C4FBD700E608B8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A9D58AB922C4FD3C00E608B8 /* FetchedResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsTableViewController.swift; sourceTree = "<group>"; };
 		A9D58ABB22C4FD7D00E608B8 /* DecksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksViewController.swift; sourceTree = "<group>"; };
 		A9D58ABD22C4FD9900E608B8 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		A9D58ABF22C50A8800E608B8 /* DecksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksCell.swift; sourceTree = "<group>"; };
 		A9D58AC122C50AAE00E608B8 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
-		A9D58AD522C646CD00E608B8 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A9D58AD622C646CD00E608B8 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A9D58AD722C646CD00E608B8 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A9D58AD822C646CD00E608B8 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A9D58ADD22C754E800E608B8 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A9D58ADE22C754E800E608B8 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A9D58ADF22C754E800E608B8 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A9D58AE022C754E800E608B8 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,19 +127,22 @@
 		A9D58A7322C4E49F00E608B8 /* DecisionPoker */ = {
 			isa = PBXGroup;
 			children = (
-				A9D58AD522C646CD00E608B8 /* Deck+CoreDataClass.swift */,
-				A9D58AD622C646CD00E608B8 /* Deck+CoreDataProperties.swift */,
-				A9D58AD722C646CD00E608B8 /* Card+CoreDataClass.swift */,
-				A9D58AD822C646CD00E608B8 /* Card+CoreDataProperties.swift */,
-				A9D58AB522C4EDE300E608B8 /* TestDecks.swift */,
+				A9D58ADD22C754E800E608B8 /* Card+CoreDataClass.swift */,
+				A9D58ADE22C754E800E608B8 /* Card+CoreDataProperties.swift */,
+				A9D58ADF22C754E800E608B8 /* Deck+CoreDataClass.swift */,
+				A9D58AE022C754E800E608B8 /* Deck+CoreDataProperties.swift */,
 				A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */,
 				A9D58A7622C4E49F00E608B8 /* ViewController.swift */,
 				A9D58A7822C4E49F00E608B8 /* Main.storyboard */,
+				A98A35A622C87CED0081BA20 /* ResultsCell.swift */,
 				A9D58AB722C4FBD700E608B8 /* StartViewController.swift */,
 				A9D58ABF22C50A8800E608B8 /* DecksCell.swift */,
 				A9D58AC122C50AAE00E608B8 /* CardsCell.swift */,
 				A9D58AB922C4FD3C00E608B8 /* FetchedResultsTableViewController.swift */,
 				A9D58ABB22C4FD7D00E608B8 /* DecksViewController.swift */,
+				A98A35A222C876640081BA20 /* ResultsTableViewController.swift */,
+				A98A35A822C8820C0081BA20 /* ListSelection.swift */,
+				A98A35A422C877160081BA20 /* ResultsViewController.swift */,
 				A9D58ABD22C4FD9900E608B8 /* CardsViewController.swift */,
 				A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */,
 				A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */,
@@ -293,18 +302,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D58A7722C4E49F00E608B8 /* ViewController.swift in Sources */,
-				A9D58ADC22C646CD00E608B8 /* Card+CoreDataProperties.swift in Sources */,
-				A9D58AB622C4EDE300E608B8 /* TestDecks.swift in Sources */,
-				A9D58AD922C646CD00E608B8 /* Deck+CoreDataClass.swift in Sources */,
+				A9D58AE122C754E800E608B8 /* Card+CoreDataClass.swift in Sources */,
 				A9D58AC222C50AAE00E608B8 /* CardsCell.swift in Sources */,
+				A98A35A922C8820C0081BA20 /* ListSelection.swift in Sources */,
 				A9D58AB822C4FBD700E608B8 /* StartViewController.swift in Sources */,
+				A98A35A722C87CED0081BA20 /* ResultsCell.swift in Sources */,
 				A9D58AC022C50A8800E608B8 /* DecksCell.swift in Sources */,
 				A9D58ABA22C4FD3C00E608B8 /* FetchedResultsTableViewController.swift in Sources */,
+				A98A35A522C877160081BA20 /* ResultsViewController.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,
+				A9D58AE422C754E800E608B8 /* Deck+CoreDataProperties.swift in Sources */,
+				A98A35A322C876640081BA20 /* ResultsTableViewController.swift in Sources */,
+				A9D58AE322C754E800E608B8 /* Deck+CoreDataClass.swift in Sources */,
 				A9D58ABE22C4FD9900E608B8 /* CardsViewController.swift in Sources */,
+				A9D58AE222C754E800E608B8 /* Card+CoreDataProperties.swift in Sources */,
 				A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */,
-				A9D58ADA22C646CD00E608B8 /* Deck+CoreDataProperties.swift in Sources */,
-				A9D58ADB22C646CD00E608B8 /* Card+CoreDataClass.swift in Sources */,
 				A9D58ABC22C4FD7D00E608B8 /* DecksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
