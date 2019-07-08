@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */; };
-		1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */; };
-		1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */; };
-		1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908722D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift */; };
-		1B7F909022D34F2100812BE4 /* SavedCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908822D34F2100812BE4 /* SavedCard+CoreDataClass.swift */; };
-		1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */; };
-		1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */; };
-		1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */; };
+		1BF6CB7222D3632000497176 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB6A22D3632000497176 /* Card+CoreDataClass.swift */; };
+		1BF6CB7322D3632000497176 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB6B22D3632000497176 /* Card+CoreDataProperties.swift */; };
+		1BF6CB7422D3632000497176 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB6C22D3632000497176 /* Deck+CoreDataClass.swift */; };
+		1BF6CB7522D3632000497176 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB6D22D3632000497176 /* Deck+CoreDataProperties.swift */; };
+		1BF6CB7622D3632000497176 /* SavedCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB6E22D3632000497176 /* SavedCard+CoreDataClass.swift */; };
+		1BF6CB7722D3632000497176 /* SavedCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB6F22D3632000497176 /* SavedCard+CoreDataProperties.swift */; };
+		1BF6CB7822D3632000497176 /* SavedDeck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB7022D3632000497176 /* SavedDeck+CoreDataClass.swift */; };
+		1BF6CB7922D3632000497176 /* SavedDeck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF6CB7122D3632000497176 /* SavedDeck+CoreDataProperties.swift */; };
 		A91FE55F22CD1CB30009F95D /* DealResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */; };
 		A91FE56122CD1CC80009F95D /* DealResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */; };
 		A91FE56322CD370F0009F95D /* DealResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE56222CD370F0009F95D /* DealResultsViewController.swift */; };
@@ -52,14 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1B7F908722D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1B7F908822D34F2100812BE4 /* SavedCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BF6CB6A22D3632000497176 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1BF6CB6B22D3632000497176 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BF6CB6C22D3632000497176 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1BF6CB6D22D3632000497176 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BF6CB6E22D3632000497176 /* SavedCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1BF6CB6F22D3632000497176 /* SavedCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BF6CB7022D3632000497176 /* SavedDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1BF6CB7122D3632000497176 /* SavedDeck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsTableViewController.swift; sourceTree = "<group>"; };
 		A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsTableViewCell.swift; sourceTree = "<group>"; };
 		A91FE56222CD370F0009F95D /* DealResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsViewController.swift; sourceTree = "<group>"; };
@@ -111,14 +111,14 @@
 		1B7F907222D33F5500812BE4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */,
-				1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */,
-				1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */,
-				1B7F908722D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift */,
-				1B7F908822D34F2100812BE4 /* SavedCard+CoreDataClass.swift */,
-				1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */,
-				1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */,
-				1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */,
+				1BF6CB6A22D3632000497176 /* Card+CoreDataClass.swift */,
+				1BF6CB6B22D3632000497176 /* Card+CoreDataProperties.swift */,
+				1BF6CB6C22D3632000497176 /* Deck+CoreDataClass.swift */,
+				1BF6CB6D22D3632000497176 /* Deck+CoreDataProperties.swift */,
+				1BF6CB6E22D3632000497176 /* SavedCard+CoreDataClass.swift */,
+				1BF6CB6F22D3632000497176 /* SavedCard+CoreDataProperties.swift */,
+				1BF6CB7022D3632000497176 /* SavedDeck+CoreDataClass.swift */,
+				1BF6CB7122D3632000497176 /* SavedDeck+CoreDataProperties.swift */,
 				A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */,
 			);
 			path = "Core Data";
@@ -338,27 +338,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BF6CB7822D3632000497176 /* SavedDeck+CoreDataClass.swift in Sources */,
 				A9D58AC222C50AAE00E608B8 /* CardsCell.swift in Sources */,
-				1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */,
+				1BF6CB7722D3632000497176 /* SavedCard+CoreDataProperties.swift in Sources */,
 				A933F12F22D28FB2005DF368 /* FinalResultViewController.swift in Sources */,
-				1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */,
 				A91FE56322CD370F0009F95D /* DealResultsViewController.swift in Sources */,
 				A933F13522D322EB005DF368 /* SavedResultsController.swift in Sources */,
 				A9D58AB822C4FBD700E608B8 /* StartViewController.swift in Sources */,
 				A933F13322D322C7005DF368 /* SavedResultsCell.swift in Sources */,
-				1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */,
+				1BF6CB7222D3632000497176 /* Card+CoreDataClass.swift in Sources */,
 				A9D58AC022C50A8800E608B8 /* DecksCell.swift in Sources */,
-				1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */,
 				A9D58ABA22C4FD3C00E608B8 /* FetchedResultsTableViewController.swift in Sources */,
 				A91FE55F22CD1CB30009F95D /* DealResultsTableViewController.swift in Sources */,
+				1BF6CB7422D3632000497176 /* Deck+CoreDataClass.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,
-				1B7F909022D34F2100812BE4 /* SavedCard+CoreDataClass.swift in Sources */,
+				1BF6CB7922D3632000497176 /* SavedDeck+CoreDataProperties.swift in Sources */,
+				1BF6CB7622D3632000497176 /* SavedCard+CoreDataClass.swift in Sources */,
 				A91FE56122CD1CC80009F95D /* DealResultsTableViewCell.swift in Sources */,
 				A9D58ABE22C4FD9900E608B8 /* CardsViewController.swift in Sources */,
-				1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */,
-				1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */,
-				1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */,
+				1BF6CB7322D3632000497176 /* Card+CoreDataProperties.swift in Sources */,
 				A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */,
+				1BF6CB7522D3632000497176 /* Deck+CoreDataProperties.swift in Sources */,
 				A9D58ABC22C4FD7D00E608B8 /* DecksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

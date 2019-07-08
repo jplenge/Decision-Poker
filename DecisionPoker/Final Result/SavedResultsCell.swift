@@ -10,8 +10,11 @@ import UIKit
 
 class SavedResultsCell: UITableViewCell {
 
+    @IBOutlet var deckName: UILabel!
     
-    @IBOutlet weak var savedResultData: UITextView!
+    @IBOutlet var datum: UILabel!
+    
+    @IBOutlet var cards: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

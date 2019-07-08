@@ -41,9 +41,6 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         tableView.reloadData()
     }
     
-  /*  func SetHeightCardTable(sender: CardsCell) {
-        
-    }*/
     
     
     func CardCommentUpdate(sender: CardsCell, comment: String) {

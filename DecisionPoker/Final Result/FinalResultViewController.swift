@@ -11,6 +11,9 @@ import CoreData
 
 class FinalResultViewController: UIViewController {
     
+    
+    var container: NSPersistentContainer!
+    
     var finalDeck: Deck!
     var finalCards: String = ""
     var finalResultsData: String = ""
@@ -31,8 +34,18 @@ class FinalResultViewController: UIViewController {
         finalResultDeck.text = finalDeck.deckName
         finalResultCards.text = finalCards
         formatFinalResult()
-        
     }
+    
+    
+    
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SaveResultsSegue" {
+            saveFinalDeck()
+            print("saved")
+        }
+    }
+    
     
     
     func formatFinalResult() {
@@ -51,16 +64,28 @@ class FinalResultViewController: UIViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    
+    
+    func saveFinalDeck() {
+
+        let managedContext = container.viewContext
+        let newDeck = SavedDeck(context: managedContext)
+        newDeck.deckName = finalDeck.deckName
+        newDeck.deckComment =  finalDeck.deckComment
+        newDeck.dateSaved = NSDate()
         
-        if segue.identifier  == "SaveResultsSegue" {
-            let destinationController = segue.destination as! SavedResultsController
-            //destinationController.finalDeck = finalDeck
+        for card in (finalDeck!.childCards?.allObjects as! [Card]) {
+            let newCard = SavedCard(context: managedContext)
+            newCard.cardName = card.cardName
+            newCard.cardComment = card.cardComment
+            
+            newDeck.addToSavedChildCards(newCard)
         }
         
+        try! managedContext.save()
+    }
         
-    func saveDeck
-    
 
     
 }

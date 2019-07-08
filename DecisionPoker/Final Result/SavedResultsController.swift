@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SavedResultsController: UITableViewController {
+class SavedResultsController: FetchedResultsTableViewController {
     
 
 
@@ -88,5 +88,35 @@ class SavedResultsController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedResultsCellIdentifier") as! SavedResultsCell
+        
+        
+            if let deck = fetchedResultsController?.object(at: indexPath as IndexPath) as? SavedDeck {
+            deck.managedObjectContext?.performAndWait {
+                _ = deck.deckName
+            }
+            
+                cell.deckName.text = deck.deckName
+                cell.datum.text = date2String(date: deck.dateSaved!)
+                
+        }
+        print("cell returned")
+        return cell
+        
+    }
+    
+    
+    
+    func date2String(date: NSDate) -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return formatter.string(from: date as Date)
+    }
+    
 
 }

@@ -164,6 +164,7 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
              let destinationController = segue.destination as! FinalResultViewController
              destinationController.finalDeck = selectedDeck!
              destinationController.finalCards = finalCards
+             destinationController.container = container
         case "embeddedDealResultTableSegue":
             let destinationController = segue.destination as! DealResultsTableViewController
             destinationController.container = container

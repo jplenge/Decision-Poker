@@ -13,7 +13,7 @@ import CoreData
 
 extension Card {
 
-    @nonobjc public class func creatFetchRequest() -> NSFetchRequest<Card> {
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Card> {
         return NSFetchRequest<Card>(entityName: "Card")
     }
 
