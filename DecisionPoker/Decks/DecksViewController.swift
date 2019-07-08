@@ -181,6 +181,13 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         )
     }
     
+    @IBOutlet weak var cancelButtonDecks: UIBarButtonItem!
+    
+    @IBAction func cancelDecksTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "CancelSegue", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CardListSegue" {
             let destinationNavigationController = segue.destination as! UINavigationController
@@ -201,6 +208,11 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             destinationController.selectedDeck = selectedDeck
         }
         
+        if segue.identifier == "CancelSegue" {
+            let destinationController = segue.destination as! StartViewController
+            destinationController.container = container
+          //  destinationController.selectedDeck = selectedDeck
+        }
         
     }
     
@@ -211,6 +223,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

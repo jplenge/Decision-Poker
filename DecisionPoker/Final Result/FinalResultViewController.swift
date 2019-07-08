@@ -50,7 +50,7 @@ class FinalResultViewController: UIViewController {
         present(activityViewController, animated: true, completion: {})
     }
     
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier  == "SaveResultsSegue" {
@@ -61,6 +61,6 @@ class FinalResultViewController: UIViewController {
         
     func saveDeck
     
-
+*/
     
 }
