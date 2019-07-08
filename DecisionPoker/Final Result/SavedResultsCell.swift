@@ -12,7 +12,7 @@ class SavedResultsCell: UITableViewCell {
 
     @IBOutlet var deckName: UILabel!
     
-    @IBOutlet var datum: UILabel!
+    @IBOutlet var dateCreated: UILabel!
     
     @IBOutlet var cards: UILabel!
     

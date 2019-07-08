@@ -55,10 +55,8 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             let row = tableView.dequeueReusableCell(withIdentifier: "DecksCellIdentifier", for: indexPath) as! DecksCell
             if row.bounds.height == normalCellHeight {
                 rowHeight = largeCellHeight
-                print("no button tapped")
             } else {
                 rowHeight = normalCellHeight
-                print("button was tapped")
             }
         }
         tableView.reloadData()
@@ -109,11 +107,17 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
 // END SECTION 2 - PROTOCOL FUNCTIONS//
     
+    
+    
+    
 // SECTION 3- STORYBOARD OBJECTS//
 
     @IBOutlet weak var addDeckButton: UIBarButtonItem!
     
 // END SECTION 3- STORYBOARD OBJECTS//
+    
+    
+    
 
 // SECTION 4 - VARIABLES//
     
@@ -129,6 +133,9 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
 
     
 // END SECTION 4 - VARIABLES//
+    
+    
+    
 
 // SECTION 5- STORYBOARD ACTIONS//
     
@@ -155,10 +162,13 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         
         decksTotalData.append(newDeck)
         try! managedContext.save()
-        //  newCard =
-        //   print(decksTotalData.count)
+   
     }
+    
 // END SECTION 5- STORYBOARD ACTIONS//
+    
+    
+    
     
 // SECTION 6- ADDITIONAL FUNCTIONS//
     
@@ -192,14 +202,10 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         if segue.identifier == "CardListSegue" {
             let destinationNavigationController = segue.destination as! UINavigationController
             let cardsviewcontroller = destinationNavigationController.viewControllers.first as! CardsViewController
-            // let indexPath = tableView.indexPathForSelectedRow!
             commitDeckSelected = fetchedResultsController?.object(at: cardlistButtonIndexPath) as! Deck
-            // print("testing")
-            //    let selectedCards = commit.childCards
+        
             cardsviewcontroller.selectedDeck = commitDeckSelected.deckName!
             cardsviewcontroller.container = container
-            
-            
         }
         
         if segue.identifier == "InitialResultsSegue" {
@@ -218,53 +224,24 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
 // END SECTION 6- ADDITIONAL FUNCTIONS//
     
+    
+    
+    
 // SECTION 7- TABLE VIEW FUNCTIONS//
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         updateUI()
     }
     
-    // MARK: - Table view data source
     
-    /*  override func numberOfSections(in tableView: UITableView) -> Int {
-     // #warning Incomplete implementation, return the number of sections
-     return 0
-     }
-     
-     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     // #warning Incomplete implementation, return the number of rows
-     return 0
-     }
-     */
-    
-    // var testName = "deal2!"
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //  if indexPath == dateLabelIndexPath {
-        // isPickerHidden = !isPickerHidden
-        //  dueDateLabel.textColor = isPickerHidden ? .black : tableView.tintColor
-        //tableView.beginUpdates()
-        //tableView.endUpdates()
-        
-        //  }
-    }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DecksCellIdentifier") as? DecksCell
-        
         
         
         if let deck = fetchedResultsController?.object(at: indexPath as IndexPath) as? Deck {
@@ -281,26 +258,12 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
                 totalCardsIncludedMarker += Int(truncating: NSNumber(value: item.cardIncluded))
             }
             
-            print (totalCardsIncludedMarker)
-            
-            
-            //    let commitDeckSelectedCards = fetchedResultsController?.object(at: indexPath as IndexPath) as? Deck
-            
-            
-            
-            
-            
-            
-            //  print (deck)
-            
-            //  cell?.nameOfDeck.setTitle(deck.deckName, for: .normal) // (deck.deckName, for: UIButton) //= deck.deckName
             cell?.nameOfDeck.text = deck.deckName
             cell?.numberOfResults.text = String(deck.numberOfCardsToPick)
             cell?.resultsNumberChanged.value = Double(deck.numberOfCardsToPick)
             cell?.resultsNumberChanged.maximumValue = Double(deck.childCards!.count)
             cell?.useableCardsInDeck.text = String(totalCardsIncludedMarker)//String(deck.childCards!.count)
             cell?.deckCommentText.text = deck.deckComment
-            //cell?.dealButton.isEnabled = deck.dealButtonSelector
             cell?.delegate = self
         }
         return (cell ?? nil)!
@@ -317,7 +280,6 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
     

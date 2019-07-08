@@ -39,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         deleteAllData(entity: "Deck")
         deleteAllData(entity: "Card")
+        deleteAllData(entity: "SavedDeck")
+        deleteAllData(entity: "SavedCard")
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         

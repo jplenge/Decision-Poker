@@ -13,23 +13,22 @@ import CoreData
 class StartViewController: UIViewController {
     
     var container: NSPersistentContainer!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
-
+        //  self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
+        
     }
     
-
-
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "StartDealingSegue" {
-                let controller = segue.destination as! DecksViewController
-               // let controller = navigationContoller.viewControllers.first as! DecksViewController
-                controller.container = container
-            }
-        }
     
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StartDealingSegue" {
+            let navigationContoller = segue.destination as! UINavigationController
+            let controller = navigationContoller.viewControllers.first as! DecksViewController
+            controller.container = container
+        }
+    }
+    
+    
 }
