@@ -443,33 +443,42 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DeckName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wej-wt-PZV">
-                                            <rect key="frame" x="16" y="11" width="85" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="85" height="30.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVM-b4-AdE">
+                                            <rect key="frame" x="16" y="58.5" width="343" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVM-b4-AdE">
-                                            <rect key="frame" x="16" y="49" width="36" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcX-YS-8A0">
-                                            <rect key="frame" x="16" y="90" width="46" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RTF-xb-to9">
+                                            <rect key="frame" x="16" y="85.5" width="359" height="114"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="114" id="SaK-Vk-WAB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="RTF-xb-to9" secondAttribute="trailing" id="2Lu-kJ-Tfa"/>
+                                        <constraint firstItem="RTF-xb-to9" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leading" constant="16" id="598-kG-FUP"/>
                                         <constraint firstItem="wej-wt-PZV" firstAttribute="top" secondItem="YAR-QW-GZN" secondAttribute="topMargin" id="7fy-H0-5VT"/>
+                                        <constraint firstItem="CVM-b4-AdE" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="EHf-PW-zSb"/>
+                                        <constraint firstItem="RTF-xb-to9" firstAttribute="top" secondItem="CVM-b4-AdE" secondAttribute="bottom" constant="6" id="Rlq-1b-ufR"/>
+                                        <constraint firstItem="CVM-b4-AdE" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="XTX-b0-e7c"/>
                                         <constraint firstItem="wej-wt-PZV" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="eIy-cL-ghQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="RTF-xb-to9" secondAttribute="bottom" id="ede-Nv-HeU"/>
+                                        <constraint firstItem="CVM-b4-AdE" firstAttribute="top" secondItem="wej-wt-PZV" secondAttribute="bottom" constant="17" id="gvA-zt-deN"/>
+                                        <constraint firstItem="CVM-b4-AdE" firstAttribute="trailing" secondItem="YAR-QW-GZN" secondAttribute="trailingMargin" id="tVh-XR-CTU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cards" destination="WcX-YS-8A0" id="JSn-Zy-3lg"/>
+                                    <outlet property="cards" destination="RTF-xb-to9" id="cHA-eY-BLY"/>
                                     <outlet property="dateCreated" destination="CVM-b4-AdE" id="blY-gg-Mi7"/>
                                     <outlet property="deckName" destination="wej-wt-PZV" id="dtg-ln-M7O"/>
                                 </connections>
@@ -633,6 +642,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="eVR-bP-kE3"/>
         <segue reference="DDS-ez-aZh"/>
         <segue reference="StK-de-8LO"/>
     </inferredMetricsTieBreakers>

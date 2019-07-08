@@ -14,7 +14,8 @@ class SavedResultsCell: UITableViewCell {
     
     @IBOutlet var dateCreated: UILabel!
     
-    @IBOutlet var cards: UILabel!
+    @IBOutlet var cards: UITextView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

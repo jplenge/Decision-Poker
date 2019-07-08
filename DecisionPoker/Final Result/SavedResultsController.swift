@@ -31,8 +31,13 @@ class SavedResultsController: FetchedResultsTableViewController {
             
             cell.deckName.text = deck.deckName
             cell.dateCreated.text = date2String(date: deck.dateSaved!)
-            print(date2String(date: deck.dateSaved!))
             
+            var cardString = ""
+            for item in deck.savedChildCards?.allObjects as! [SavedCard] {
+                cardString = cardString + item.cardName! + "\r"
+            }
+            cell.cards.text = cardString
+            print(cardString)
         }
         return cell
     }
