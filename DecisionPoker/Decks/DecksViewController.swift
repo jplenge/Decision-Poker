@@ -209,8 +209,9 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         }
         
         if segue.identifier == "CancelSegue" {
-            let destinationController = segue.destination as! StartViewController
-            destinationController.container = container
+            let destinationController = segue.destination as! StartNavigationController
+            let controller = destinationController.viewControllers.first as! StartViewController
+            controller.container = container
           //  destinationController.selectedDeck = selectedDeck
         }
         
@@ -223,7 +224,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
+         //self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
