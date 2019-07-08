@@ -1,54 +1,19 @@
 //
-//  ResultsTableViewController.swift
+//  SavedResultsController.swift
 //  DecisionPoker
 //
-//  Created by Jodi Szarko on 6/30/19.
+//  Created by Jodi Szarko on 7/8/19.
 //  Copyright © 2019 Jodi Szarko. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
-class ResultsTableViewController: FetchedResultsTableViewController, ResultsCellDelegate {
+class SavedResultsController: UITableViewController {
     
-    func CheatTapped(sender: ResultsCell) {
-        
-        if let indexPath = tableView.indexPath(for: sender) {
-            selectedCards[indexPath.row] = (selectedCards[indexPath.row].parentDeck?.childCards?.allObjects as! [Card]).randomElement()!
-            
-            tableView.reloadData()
-        }
-        
-    }
-    
-    func RedrawTapped(sender: ResultsCell) {
-        
-    }
-    
-    var container: NSPersistentContainer!
-    weak var selectedDeck: Deck?
-    var selectedCards: [Card] = []
-    
-    func playGame() {
-        
-        //1. use only cards that are inlcuded
-        let fetchedCards = selectedDeck!.childCards!.allObjects as! [Card]
-        let possibleCards = fetchedCards.filter {$0.cardIncluded == true}
-        
-        //2. pick cards until you have numberOfCardsToPick
-        while selectedCards.count < selectedDeck!.numberOfCardsToPick {
-            let pick = possibleCards.randomElement()
-            if !selectedCards.contains(pick!) {
-                selectedCards.append(pick!)
-            }
-        }
-    
-        
-    }
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        playGame() 
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -61,24 +26,23 @@ class ResultsTableViewController: FetchedResultsTableViewController, ResultsCell
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return selectedCards.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsCellIdentifier", for: indexPath) as! ResultsCell
-        
-        cell.resultItem.text = selectedCards[indexPath.row].cardName
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -7,28 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A98A35A322C876640081BA20 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A222C876640081BA20 /* ResultsTableViewController.swift */; };
-		A98A35A522C877160081BA20 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A422C877160081BA20 /* ResultsViewController.swift */; };
-		A98A35A722C87CED0081BA20 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A622C87CED0081BA20 /* ResultsCell.swift */; };
-		A98A35A922C8820C0081BA20 /* ListSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A35A822C8820C0081BA20 /* ListSelection.swift */; };
+		1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */; };
+		1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */; };
+		1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */; };
+		1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908722D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift */; };
+		1B7F909022D34F2100812BE4 /* SavedCard+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908822D34F2100812BE4 /* SavedCard+CoreDataClass.swift */; };
+		1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */; };
+		1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */; };
+		1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */; };
+		A91FE55F22CD1CB30009F95D /* DealResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */; };
+		A91FE56122CD1CC80009F95D /* DealResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */; };
+		A91FE56322CD370F0009F95D /* DealResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE56222CD370F0009F95D /* DealResultsViewController.swift */; };
+		A933F12F22D28FB2005DF368 /* FinalResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F12E22D28FB2005DF368 /* FinalResultViewController.swift */; };
+		A933F13322D322C7005DF368 /* SavedResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F13222D322C7005DF368 /* SavedResultsCell.swift */; };
+		A933F13522D322EB005DF368 /* SavedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F13422D322EB005DF368 /* SavedResultsController.swift */; };
 		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
-		A9D58A7722C4E49F00E608B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7622C4E49F00E608B8 /* ViewController.swift */; };
 		A9D58A7A22C4E49F00E608B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7822C4E49F00E608B8 /* Main.storyboard */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
 		A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */; };
 		A9D58A8222C4E4A000E608B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */; };
-		A9D58A8D22C4E4A000E608B8 /* DecisionPokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A8C22C4E4A000E608B8 /* DecisionPokerTests.swift */; };
-		A9D58A9822C4E4A000E608B8 /* DecisionPokerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A9722C4E4A000E608B8 /* DecisionPokerUITests.swift */; };
 		A9D58AB822C4FBD700E608B8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AB722C4FBD700E608B8 /* StartViewController.swift */; };
 		A9D58ABA22C4FD3C00E608B8 /* FetchedResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AB922C4FD3C00E608B8 /* FetchedResultsTableViewController.swift */; };
 		A9D58ABC22C4FD7D00E608B8 /* DecksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ABB22C4FD7D00E608B8 /* DecksViewController.swift */; };
 		A9D58ABE22C4FD9900E608B8 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ABD22C4FD9900E608B8 /* CardsViewController.swift */; };
 		A9D58AC022C50A8800E608B8 /* DecksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ABF22C50A8800E608B8 /* DecksCell.swift */; };
 		A9D58AC222C50AAE00E608B8 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AC122C50AAE00E608B8 /* CardsCell.swift */; };
-		A9D58AE122C754E800E608B8 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ADD22C754E800E608B8 /* Card+CoreDataClass.swift */; };
-		A9D58AE222C754E800E608B8 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ADE22C754E800E608B8 /* Card+CoreDataProperties.swift */; };
-		A9D58AE322C754E800E608B8 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58ADF22C754E800E608B8 /* Deck+CoreDataClass.swift */; };
-		A9D58AE422C754E800E608B8 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58AE022C754E800E608B8 /* Deck+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,34 +52,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A98A35A222C876640081BA20 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
-		A98A35A422C877160081BA20 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		A98A35A622C87CED0081BA20 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
-		A98A35A822C8820C0081BA20 /* ListSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelection.swift; sourceTree = "<group>"; };
+		1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1B7F908722D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B7F908822D34F2100812BE4 /* SavedCard+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsTableViewController.swift; sourceTree = "<group>"; };
+		A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsTableViewCell.swift; sourceTree = "<group>"; };
+		A91FE56222CD370F0009F95D /* DealResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsViewController.swift; sourceTree = "<group>"; };
+		A933F12E22D28FB2005DF368 /* FinalResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultViewController.swift; sourceTree = "<group>"; };
+		A933F13222D322C7005DF368 /* SavedResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsCell.swift; sourceTree = "<group>"; };
+		A933F13422D322EB005DF368 /* SavedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsController.swift; sourceTree = "<group>"; };
 		A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A9D58A7622C4E49F00E608B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A9D58A7922C4E49F00E608B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9D58A7C22C4E49F00E608B8 /* DecisionPoker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DecisionPoker.xcdatamodel; sourceTree = "<group>"; };
 		A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D58A8122C4E4A000E608B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D58A8322C4E4A000E608B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D58A8822C4E4A000E608B8 /* DecisionPokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecisionPokerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9D58A8C22C4E4A000E608B8 /* DecisionPokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerTests.swift; sourceTree = "<group>"; };
-		A9D58A8E22C4E4A000E608B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D58A9322C4E4A000E608B8 /* DecisionPokerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecisionPokerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9D58A9722C4E4A000E608B8 /* DecisionPokerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerUITests.swift; sourceTree = "<group>"; };
-		A9D58A9922C4E4A000E608B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D58AB722C4FBD700E608B8 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A9D58AB922C4FD3C00E608B8 /* FetchedResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsTableViewController.swift; sourceTree = "<group>"; };
 		A9D58ABB22C4FD7D00E608B8 /* DecksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksViewController.swift; sourceTree = "<group>"; };
 		A9D58ABD22C4FD9900E608B8 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		A9D58ABF22C50A8800E608B8 /* DecksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksCell.swift; sourceTree = "<group>"; };
 		A9D58AC122C50AAE00E608B8 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
-		A9D58ADD22C754E800E608B8 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A9D58ADE22C754E800E608B8 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A9D58ADF22C754E800E608B8 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A9D58AE022C754E800E608B8 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +108,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B7F907222D33F5500812BE4 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */,
+				1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */,
+				1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */,
+				1B7F908722D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift */,
+				1B7F908822D34F2100812BE4 /* SavedCard+CoreDataClass.swift */,
+				1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */,
+				1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */,
+				1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */,
+				A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		1B7F907322D33FC700812BE4 /* Final Result */ = {
+			isa = PBXGroup;
+			children = (
+				A933F12E22D28FB2005DF368 /* FinalResultViewController.swift */,
+				A933F13222D322C7005DF368 /* SavedResultsCell.swift */,
+				A933F13422D322EB005DF368 /* SavedResultsController.swift */,
+			);
+			path = "Final Result";
+			sourceTree = "<group>";
+		};
+		1B7F907422D33FDC00812BE4 /* Decks */ = {
+			isa = PBXGroup;
+			children = (
+				A9D58AB922C4FD3C00E608B8 /* FetchedResultsTableViewController.swift */,
+				A9D58ABB22C4FD7D00E608B8 /* DecksViewController.swift */,
+				A9D58ABF22C50A8800E608B8 /* DecksCell.swift */,
+			);
+			path = Decks;
+			sourceTree = "<group>";
+		};
+		1B7F907522D3400200812BE4 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				A9D58AC122C50AAE00E608B8 /* CardsCell.swift */,
+				A9D58ABD22C4FD9900E608B8 /* CardsViewController.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		1B7F907622D3406400812BE4 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */,
+				A9D58A7822C4E49F00E608B8 /* Main.storyboard */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		1B7F907722D3408400812BE4 /* Deal */ = {
+			isa = PBXGroup;
+			children = (
+				A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */,
+				A91FE56222CD370F0009F95D /* DealResultsViewController.swift */,
+				A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */,
+			);
+			path = Deal;
+			sourceTree = "<group>";
+		};
 		A9D58A6822C4E49F00E608B8 = {
 			isa = PBXGroup;
 			children = (
 				A9D58A7322C4E49F00E608B8 /* DecisionPoker */,
-				A9D58A8B22C4E4A000E608B8 /* DecisionPokerTests */,
-				A9D58A9622C4E4A000E608B8 /* DecisionPokerUITests */,
 				A9D58A7222C4E49F00E608B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,47 +193,18 @@
 		A9D58A7322C4E49F00E608B8 /* DecisionPoker */ = {
 			isa = PBXGroup;
 			children = (
-				A9D58ADD22C754E800E608B8 /* Card+CoreDataClass.swift */,
-				A9D58ADE22C754E800E608B8 /* Card+CoreDataProperties.swift */,
-				A9D58ADF22C754E800E608B8 /* Deck+CoreDataClass.swift */,
-				A9D58AE022C754E800E608B8 /* Deck+CoreDataProperties.swift */,
-				A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */,
-				A9D58A7622C4E49F00E608B8 /* ViewController.swift */,
-				A9D58A7822C4E49F00E608B8 /* Main.storyboard */,
-				A98A35A622C87CED0081BA20 /* ResultsCell.swift */,
+				1B7F907222D33F5500812BE4 /* Core Data */,
 				A9D58AB722C4FBD700E608B8 /* StartViewController.swift */,
-				A9D58ABF22C50A8800E608B8 /* DecksCell.swift */,
-				A9D58AC122C50AAE00E608B8 /* CardsCell.swift */,
-				A9D58AB922C4FD3C00E608B8 /* FetchedResultsTableViewController.swift */,
-				A9D58ABB22C4FD7D00E608B8 /* DecksViewController.swift */,
-				A98A35A222C876640081BA20 /* ResultsTableViewController.swift */,
-				A98A35A822C8820C0081BA20 /* ListSelection.swift */,
-				A98A35A422C877160081BA20 /* ResultsViewController.swift */,
-				A9D58ABD22C4FD9900E608B8 /* CardsViewController.swift */,
+				1B7F907422D33FDC00812BE4 /* Decks */,
+				1B7F907522D3400200812BE4 /* Cards */,
+				1B7F907722D3408400812BE4 /* Deal */,
+				1B7F907322D33FC700812BE4 /* Final Result */,
+				1B7F907622D3406400812BE4 /* other */,
 				A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */,
 				A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */,
 				A9D58A8322C4E4A000E608B8 /* Info.plist */,
-				A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */,
 			);
 			path = DecisionPoker;
-			sourceTree = "<group>";
-		};
-		A9D58A8B22C4E4A000E608B8 /* DecisionPokerTests */ = {
-			isa = PBXGroup;
-			children = (
-				A9D58A8C22C4E4A000E608B8 /* DecisionPokerTests.swift */,
-				A9D58A8E22C4E4A000E608B8 /* Info.plist */,
-			);
-			path = DecisionPokerTests;
-			sourceTree = "<group>";
-		};
-		A9D58A9622C4E4A000E608B8 /* DecisionPokerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A9D58A9722C4E4A000E608B8 /* DecisionPokerUITests.swift */,
-				A9D58A9922C4E4A000E608B8 /* Info.plist */,
-			);
-			path = DecisionPokerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,21 +338,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D58A7722C4E49F00E608B8 /* ViewController.swift in Sources */,
-				A9D58AE122C754E800E608B8 /* Card+CoreDataClass.swift in Sources */,
 				A9D58AC222C50AAE00E608B8 /* CardsCell.swift in Sources */,
-				A98A35A922C8820C0081BA20 /* ListSelection.swift in Sources */,
+				1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */,
+				A933F12F22D28FB2005DF368 /* FinalResultViewController.swift in Sources */,
+				1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */,
+				A91FE56322CD370F0009F95D /* DealResultsViewController.swift in Sources */,
+				A933F13522D322EB005DF368 /* SavedResultsController.swift in Sources */,
 				A9D58AB822C4FBD700E608B8 /* StartViewController.swift in Sources */,
-				A98A35A722C87CED0081BA20 /* ResultsCell.swift in Sources */,
+				A933F13322D322C7005DF368 /* SavedResultsCell.swift in Sources */,
+				1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */,
 				A9D58AC022C50A8800E608B8 /* DecksCell.swift in Sources */,
+				1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */,
 				A9D58ABA22C4FD3C00E608B8 /* FetchedResultsTableViewController.swift in Sources */,
-				A98A35A522C877160081BA20 /* ResultsViewController.swift in Sources */,
+				A91FE55F22CD1CB30009F95D /* DealResultsTableViewController.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,
-				A9D58AE422C754E800E608B8 /* Deck+CoreDataProperties.swift in Sources */,
-				A98A35A322C876640081BA20 /* ResultsTableViewController.swift in Sources */,
-				A9D58AE322C754E800E608B8 /* Deck+CoreDataClass.swift in Sources */,
+				1B7F909022D34F2100812BE4 /* SavedCard+CoreDataClass.swift in Sources */,
+				A91FE56122CD1CC80009F95D /* DealResultsTableViewCell.swift in Sources */,
 				A9D58ABE22C4FD9900E608B8 /* CardsViewController.swift in Sources */,
-				A9D58AE222C754E800E608B8 /* Card+CoreDataProperties.swift in Sources */,
+				1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */,
+				1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */,
+				1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */,
 				A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */,
 				A9D58ABC22C4FD7D00E608B8 /* DecksViewController.swift in Sources */,
 			);
@@ -325,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D58A8D22C4E4A000E608B8 /* DecisionPokerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +374,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D58A9822C4E4A000E608B8 /* DecisionPokerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,13 +533,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7L346CWBDS;
+				DEVELOPMENT_TEAM = 9VSCQK9JFU;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jszarko.DecisionPoker;
+				PRODUCT_BUNDLE_IDENTIFIER = me.plenge.DecisionPoker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -511,13 +551,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7L346CWBDS;
+				DEVELOPMENT_TEAM = 9VSCQK9JFU;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jszarko.DecisionPoker;
+				PRODUCT_BUNDLE_IDENTIFIER = me.plenge.DecisionPoker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -2,7 +2,7 @@
 //  Deck+CoreDataProperties.swift
 //  DecisionPoker
 //
-//  Created by Jodi Szarko on 6/29/19.
+//  Created by Jürgen Plenge on 08.07.19.
 //  Copyright © 2019 Jodi Szarko. All rights reserved.
 //
 //
@@ -17,15 +17,14 @@ extension Deck {
         return NSFetchRequest<Deck>(entityName: "Deck")
     }
 
-    @NSManaged public var deckName: String?
-    @NSManaged public var deckComment: String?
-    @NSManaged public var numberOfCardsToPick: Int16
     @NSManaged public var dealButtonSelector: Bool
+    @NSManaged public var deckComment: String?
+    @NSManaged public var deckName: String?
     @NSManaged public var decksTablePosition: Int16
+    @NSManaged public var numberOfCardsToPick: Int16
     @NSManaged public var childCards: NSSet?
 
 }
-
 
 // MARK: Generated accessors for childCards
 extension Deck {

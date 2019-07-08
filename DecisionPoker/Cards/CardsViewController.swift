@@ -41,9 +41,9 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         tableView.reloadData()
     }
     
-    func SetHeightCardTable(sender: CardsCell) {
+  /*  func SetHeightCardTable(sender: CardsCell) {
         
-    }
+    }*/
     
     
     func CardCommentUpdate(sender: CardsCell, comment: String) {
@@ -66,7 +66,8 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         newCard.cardName = "New Card \(addCardButtonTappedCounter)"
         newCard.cardComment = "Add comments here"
         newCard.cardsTablePosition = Int16(commitDeckSelected.childCards!.count) + addCardButtonTappedCounter
-        print (newCard.cardsTablePosition)
+        newCard.cardIncluded = true
+       // print (newCard.cardsTablePosition)
         //let commit = fetchedResultsController?.object(at: IndexPath(index: 0)) as! Deck
         commitDeckSelected.addToChildCards(newCard)
         //newCard.parentDeck(commit)
@@ -211,7 +212,7 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
             cell?.nameOfCard.text = card.cardName
             cell?.cardIsIncluded.isOn = card.cardIncluded
             cell?.cardCommentText.text = card.cardComment
-            ///cell?.cardInfo = card.cardInformation
+            //cell?.cardInfo = card.cardInformation
             cell?.delegate = self
         }
         return (cell ?? nil)!
