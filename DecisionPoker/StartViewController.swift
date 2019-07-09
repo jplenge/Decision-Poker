@@ -9,8 +9,15 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, MFMailComposeViewControllerDelegate {
+    
+    @IBAction func contactUs(_ sender: Any) {
+        sendEmail()
+    }
+    
+    
     
     var container: NSPersistentContainer!
 
@@ -41,6 +48,36 @@ class StartViewController: UIViewController {
                 return
             
         }
+    }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["mail@ipomic.de"])
+            mail.setSubject("Decision Poker:")
+            //mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            // feedback to the user
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result.rawValue {
+        case MFMailComposeResult.cancelled.rawValue:
+            print("Cancelled")
+        case MFMailComposeResult.saved.rawValue:
+            print("Saved")
+        case MFMailComposeResult.sent.rawValue:
+            print("Sent")
+        case MFMailComposeResult.failed.rawValue:
+            print("Error: \(String(describing: error?.localizedDescription))")
+        default:
+            break
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
     
 
