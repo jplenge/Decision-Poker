@@ -153,7 +153,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-aa-Cc5">
                                 <rect key="frame" x="22" y="321" width="340" height="307"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">The app will display two starter "decks," but you can add a theme or deck at the bottom of this screen. If you want to add or edit the choices/cards, change the number of choices you would like the make, or edit the information of each deck, you can do so here. Once your selections are optimized, simply hit Deal! to create your randomized decision! Once the decision is made, you can fix (or "cheat") and redraw any of the choices of your result. If you are happy with the decision the app has made, you can also save your finalized solutions. </mutableString>
+                                <string key="text">The app will display two starter "decks," but you can add a theme or deck at the bottom of this screen. If you want to add or edit the choices/cards, change the number of choices you would like the make, or edit the information of each deck, you can do so here. Once your selections are optimized, simply hit Deal! to create your randomized decision! Once the decision is made, you can fix (or "cheat") and redraw any of the choices of your result. If you are happy with the decision the app has made, you can also save your finalized solutions. </string>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -493,25 +493,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tc1-me-xRA" customClass="SavedResultsCell" customModule="DecisionPoker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedResultsCellIdentifier" rowHeight="210" id="tc1-me-xRA" customClass="SavedResultsCell" customModule="DecisionPoker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="210"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tc1-me-xRA" id="YAR-QW-GZN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="209.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-lP-BwB">
-                                            <rect key="frame" x="67" y="0.0" width="240" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPo-Py-Pgk">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hc-kK-cIl">
+                                            <rect key="frame" x="16" y="40" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-lV-YyS">
+                                            <rect key="frame" x="16" y="71" width="343" height="128"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="WWT-AY-ajf"/>
+                                            </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gPo-Py-Pgk" firstAttribute="top" secondItem="YAR-QW-GZN" secondAttribute="topMargin" id="0Pk-6w-WZO"/>
+                                        <constraint firstItem="4hc-kK-cIl" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="GJU-ux-04x"/>
+                                        <constraint firstItem="lBQ-lV-YyS" firstAttribute="trailing" secondItem="YAR-QW-GZN" secondAttribute="trailingMargin" id="HGX-Ih-ncB"/>
+                                        <constraint firstItem="lBQ-lV-YyS" firstAttribute="bottom" secondItem="YAR-QW-GZN" secondAttribute="bottomMargin" id="KKf-6I-9I8"/>
+                                        <constraint firstItem="lBQ-lV-YyS" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="Tlq-Ko-AaO"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4hc-kK-cIl" secondAttribute="trailing" constant="20" symbolic="YES" id="bhH-Tn-IkS"/>
+                                        <constraint firstItem="lBQ-lV-YyS" firstAttribute="top" secondItem="4hc-kK-cIl" secondAttribute="bottom" constant="10" id="d2I-rN-bqt"/>
+                                        <constraint firstItem="4hc-kK-cIl" firstAttribute="top" secondItem="gPo-Py-Pgk" secondAttribute="bottom" constant="8" id="dZc-IL-yaI"/>
+                                        <constraint firstItem="gPo-Py-Pgk" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="nvG-8M-2bt"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gPo-Py-Pgk" secondAttribute="trailing" constant="20" symbolic="YES" id="tiq-g6-WSU"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="savedResultData" destination="9eQ-lP-BwB" id="U87-iL-WqR"/>
+                                    <outlet property="savedREsultDeckname" destination="4hc-kK-cIl" id="Gvf-hn-yIW"/>
+                                    <outlet property="savedResultCards" destination="lBQ-lV-YyS" id="4cI-YK-ihD"/>
+                                    <outlet property="savedResultDate" destination="gPo-Py-Pgk" id="Ev2-ta-nwS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
