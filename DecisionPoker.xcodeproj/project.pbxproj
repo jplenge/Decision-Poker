@@ -22,6 +22,7 @@
 		A933F13322D322C7005DF368 /* SavedResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F13222D322C7005DF368 /* SavedResultsCell.swift */; };
 		A933F13522D322EB005DF368 /* SavedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F13422D322EB005DF368 /* SavedResultsController.swift */; };
 		A933F13722D3A9E2005DF368 /* StartNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F13622D3A9E2005DF368 /* StartNavigationController.swift */; };
+		A98F9F8722D51DA900C14787 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8622D51DA900C14787 /* DirectionsViewController.swift */; };
 		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
 		A9D58A7A22C4E49F00E608B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7822C4E49F00E608B8 /* Main.storyboard */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
@@ -68,6 +69,7 @@
 		A933F13222D322C7005DF368 /* SavedResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsCell.swift; sourceTree = "<group>"; };
 		A933F13422D322EB005DF368 /* SavedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsController.swift; sourceTree = "<group>"; };
 		A933F13622D3A9E2005DF368 /* StartNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavigationController.swift; sourceTree = "<group>"; };
+		A98F9F8622D51DA900C14787 /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D58A7922C4E49F00E608B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */,
 				A9D58A7822C4E49F00E608B8 /* Main.storyboard */,
+				A98F9F8622D51DA900C14787 /* DirectionsViewController.swift */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */,
 				A933F12F22D28FB2005DF368 /* FinalResultViewController.swift in Sources */,
 				1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */,
+				A98F9F8722D51DA900C14787 /* DirectionsViewController.swift in Sources */,
 				A91FE56322CD370F0009F95D /* DealResultsViewController.swift in Sources */,
 				A933F13522D322EB005DF368 /* SavedResultsController.swift in Sources */,
 				A9D58AB822C4FBD700E608B8 /* StartViewController.swift in Sources */,

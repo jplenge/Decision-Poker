@@ -23,14 +23,25 @@ class StartViewController: UIViewController {
 
 
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "StartDealingSegue" {
-                 //let controller = segue.destination as! DecksViewController
+            switch segue.identifier {
+            
+            case "StartDealingSegue":
+            
+            //let controller = segue.destination as! DecksViewController
 
                 let navigationContoller = segue.destination as! UINavigationController
                 let controller = navigationContoller.viewControllers.first as! DecksViewController
                 controller.container = container
-            }
+            case "DirectionsSegue":
+                
+                let navigationContoller = segue.destination as! UINavigationController
+                let controller = navigationContoller.viewControllers.first as! DirectionsViewController
+                controller.container = container
+            default:
+                return
+            
         }
+    }
     
 
 
