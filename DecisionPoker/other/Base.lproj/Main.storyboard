@@ -154,7 +154,7 @@
         <scene sceneID="KGL-bi-Ow6">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="HDT-3D-Hpa" customClass="DecksViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji4-6j-DcS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji4-6j-DcS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -464,12 +464,12 @@
         <scene sceneID="ZXL-G4-VFJ">
             <objects>
                 <tableViewController id="thg-io-BiT" customClass="SavedResultsController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dfd-3f-kGT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dfd-3f-kGT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedResultsCellIdentifier" rowHeight="266" id="tc1-me-xRA" customClass="SavedResultsCell" customModule="DecisionPoker" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SavedResultsCellIdentifier" rowHeight="266" id="tc1-me-xRA" customClass="SavedResultsCell" customModule="DecisionPoker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="266"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tc1-me-xRA" id="YAR-QW-GZN">
@@ -477,37 +477,38 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTZ-M1-0fj">
-                                            <rect key="frame" x="16" y="11" width="35" height="20.5"/>
+                                            <rect key="frame" x="16" y="11" width="35" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="deckname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsA-XM-XrA">
-                                            <rect key="frame" x="16" y="47.5" width="80" height="21"/>
+                                            <rect key="frame" x="16" y="48" width="80" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tMr-mn-p2B">
-                                            <rect key="frame" x="16" y="74.5" width="343" height="191"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMr-mn-p2B">
+                                            <rect key="frame" x="16" y="75" width="343" height="191"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="191" id="sLk-PD-AHd"/>
-                                            </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="YsA-XM-XrA" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="2xN-qV-9k2"/>
-                                        <constraint firstAttribute="trailing" secondItem="tMr-mn-p2B" secondAttribute="trailing" constant="16" id="9z1-gF-JdO"/>
-                                        <constraint firstItem="YsA-XM-XrA" firstAttribute="top" secondItem="oTZ-M1-0fj" secondAttribute="bottom" constant="16" id="IcE-e2-2HR"/>
-                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leading" constant="16" id="NjQ-V7-JQA"/>
-                                        <constraint firstAttribute="bottom" secondItem="tMr-mn-p2B" secondAttribute="bottom" id="h9O-Gd-59t"/>
-                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="top" secondItem="YsA-XM-XrA" secondAttribute="bottom" constant="6" id="qie-s7-mS5"/>
-                                        <constraint firstItem="oTZ-M1-0fj" firstAttribute="top" secondItem="YAR-QW-GZN" secondAttribute="topMargin" id="tiq-J7-qOV"/>
-                                        <constraint firstItem="oTZ-M1-0fj" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="uj5-bw-x5w"/>
+                                        <constraint firstItem="YsA-XM-XrA" firstAttribute="top" secondItem="oTZ-M1-0fj" secondAttribute="bottom" constant="16" id="0jB-kf-M3o"/>
+                                        <constraint firstItem="oTZ-M1-0fj" firstAttribute="top" secondItem="YAR-QW-GZN" secondAttribute="topMargin" id="LCj-Fm-Zbg"/>
+                                        <constraint firstAttribute="bottom" secondItem="tMr-mn-p2B" secondAttribute="bottom" constant="-0.5" id="MOk-t9-lJ1"/>
+                                        <constraint firstAttribute="trailing" secondItem="tMr-mn-p2B" secondAttribute="trailing" constant="16" id="MSX-aZ-ywd"/>
+                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="trailing" secondItem="YAR-QW-GZN" secondAttribute="trailingMargin" id="Me7-Mh-dNP"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YsA-XM-XrA" secondAttribute="trailing" constant="20" symbolic="YES" id="Xj6-ci-btB"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oTZ-M1-0fj" secondAttribute="trailing" constant="20" symbolic="YES" id="ZUH-jQ-NXS"/>
+                                        <constraint firstItem="oTZ-M1-0fj" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="eL7-QO-OmB"/>
+                                        <constraint firstItem="YsA-XM-XrA" firstAttribute="top" secondItem="YAR-QW-GZN" secondAttribute="top" constant="48" id="gzY-Y6-QiG"/>
+                                        <constraint firstItem="YsA-XM-XrA" firstAttribute="leading" secondItem="oTZ-M1-0fj" secondAttribute="leading" id="ivu-zS-8BI"/>
+                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leading" constant="16" id="l5K-Dn-odd"/>
+                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="leading" secondItem="YsA-XM-XrA" secondAttribute="leading" id="mTe-Rb-uxF"/>
+                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="top" secondItem="YsA-XM-XrA" secondAttribute="bottom" constant="6" id="tDc-Y7-AwR"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tMr-mn-p2B" secondAttribute="bottom" constant="-11" id="wc2-9P-d0c"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -522,10 +523,12 @@
                             <outlet property="delegate" destination="thg-io-BiT" id="aZd-Rw-6Jc"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kht-Ya-hJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6919.1999999999998" y="537.48125937031489"/>
+            <point key="canvasLocation" x="6964" y="356"/>
         </scene>
         <!--Card List-->
         <scene sceneID="icS-nH-geQ">

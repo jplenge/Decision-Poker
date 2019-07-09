@@ -16,7 +16,11 @@ class SavedResultsController: FetchedResultsTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         updateUI()
+        
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     
@@ -61,9 +65,9 @@ class SavedResultsController: FetchedResultsTableViewController {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedDeck")
         
         request.sortDescriptors = [NSSortDescriptor(
-            key: "deckName",
-            ascending: true,
-            selector: #selector(NSString.localizedCaseInsensitiveCompare(_:))
+            key: "dateSaved",
+            ascending: true
+            //selector: #selector(NSString.localizedCaseInsensitiveCompare(_:))
             )]
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: request,
