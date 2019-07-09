@@ -10,8 +10,11 @@ import UIKit
 
 class SavedResultsCell: UITableViewCell {
 
+    @IBOutlet var savedResultDate: UILabel!
     
-    @IBOutlet weak var savedResultData: UITextView!
+    @IBOutlet var savedREsultDeckname: UILabel!
+    
+    @IBOutlet weak var savedResultCards: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

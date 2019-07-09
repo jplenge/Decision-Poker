@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ou9-Tg-Gfo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ou9-Tg-Gfo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -469,25 +469,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tc1-me-xRA" customClass="SavedResultsCell" customModule="DecisionPoker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedResultsCellIdentifier" rowHeight="266" id="tc1-me-xRA" customClass="SavedResultsCell" customModule="DecisionPoker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="266"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tc1-me-xRA" id="YAR-QW-GZN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="265.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-lP-BwB">
-                                            <rect key="frame" x="67" y="0.0" width="240" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTZ-M1-0fj">
+                                            <rect key="frame" x="16" y="11" width="35" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="deckname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsA-XM-XrA">
+                                            <rect key="frame" x="16" y="47.5" width="80" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tMr-mn-p2B">
+                                            <rect key="frame" x="16" y="74.5" width="343" height="191"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="191" id="sLk-PD-AHd"/>
+                                            </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YsA-XM-XrA" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="2xN-qV-9k2"/>
+                                        <constraint firstAttribute="trailing" secondItem="tMr-mn-p2B" secondAttribute="trailing" constant="16" id="9z1-gF-JdO"/>
+                                        <constraint firstItem="YsA-XM-XrA" firstAttribute="top" secondItem="oTZ-M1-0fj" secondAttribute="bottom" constant="16" id="IcE-e2-2HR"/>
+                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leading" constant="16" id="NjQ-V7-JQA"/>
+                                        <constraint firstAttribute="bottom" secondItem="tMr-mn-p2B" secondAttribute="bottom" id="h9O-Gd-59t"/>
+                                        <constraint firstItem="tMr-mn-p2B" firstAttribute="top" secondItem="YsA-XM-XrA" secondAttribute="bottom" constant="6" id="qie-s7-mS5"/>
+                                        <constraint firstItem="oTZ-M1-0fj" firstAttribute="top" secondItem="YAR-QW-GZN" secondAttribute="topMargin" id="tiq-J7-qOV"/>
+                                        <constraint firstItem="oTZ-M1-0fj" firstAttribute="leading" secondItem="YAR-QW-GZN" secondAttribute="leadingMargin" id="uj5-bw-x5w"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="savedResultData" destination="9eQ-lP-BwB" id="U87-iL-WqR"/>
+                                    <outlet property="savedREsultDeckname" destination="YsA-XM-XrA" id="a6c-U5-CWf"/>
+                                    <outlet property="savedResultCards" destination="tMr-mn-p2B" id="9je-8k-oe6"/>
+                                    <outlet property="savedResultDate" destination="oTZ-M1-0fj" id="gnr-Cv-bEM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

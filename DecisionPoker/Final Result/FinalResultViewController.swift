@@ -14,6 +14,11 @@ class FinalResultViewController: UIViewController {
     var finalDeck: Deck!
     var finalCards: String = ""
     var finalResultsData: String = ""
+    
+    var selectedCards: [Card]!
+    
+    var container: NSPersistentContainer!
+
 
     
     @IBOutlet weak var finalResultDeck: UILabel!
@@ -24,15 +29,25 @@ class FinalResultViewController: UIViewController {
         displayShareSheet(shareContent: finalResultsData)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         finalResultDeck.text = finalDeck.deckName
         finalResultCards.text = finalCards
         formatFinalResult()
-        
     }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SaveResultsSegue" {
+            let destinationController = segue.destination as! SavedResultsController
+            destinationController.container = container
+            saveFinalDeck()
+        }
+    }
+    
     
     
     func formatFinalResult() {
@@ -42,6 +57,7 @@ class FinalResultViewController: UIViewController {
         let dateString = formatter.string(from:now)
         
         finalResultsData = "\(dateString)\rDECK: \r\(selectedDeck.deckName!) \rCARDS: \r\(finalCards)"
+        print(finalResultsData)
     }
     
     
@@ -50,17 +66,28 @@ class FinalResultViewController: UIViewController {
         present(activityViewController, animated: true, completion: {})
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    
+    
+    
+    func saveFinalDeck() {
         
-        if segue.identifier  == "SaveResultsSegue" {
-            let destinationController = segue.destination as! SavedResultsController
-            //destinationController.finalDeck = finalDeck
+        let managedContext = container.viewContext
+        let newDeck = SavedDeck(context: managedContext)
+        newDeck.deckName = finalDeck.deckName
+        newDeck.deckComment =  finalDeck.deckComment
+        newDeck.dateSaved = NSDate()
+        
+        for card in selectedCards{
+            let newCard = SavedCard(context: managedContext)
+            newCard.cardName = card.cardName
+            newCard.cardComment = card.cardComment
+            
+            newDeck.addToSavedChildCards(newCard)
         }
         
-        
-    func saveDeck
+        try! managedContext.save()
+    }
     
-*/
     
 }
