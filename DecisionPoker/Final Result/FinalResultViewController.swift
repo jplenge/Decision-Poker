@@ -23,16 +23,20 @@ class FinalResultViewController: UIViewController {
     
     @IBOutlet weak var finalResultDeck: UILabel!
     
-    @IBOutlet weak var finalResultCards: UILabel!
+
+    @IBOutlet weak var finalResultCards: UITextView!
     
     @IBAction func finalResultsShareButton(_ sender: Any) {
         displayShareSheet(shareContent: finalResultsData)
     }
     
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        finalResultDeck.text = finalDeck.deckName
+        finalResultDeck.text = "\(finalDeck.deckName!):"
         finalResultCards.text = finalCards
         formatFinalResult()
     }
