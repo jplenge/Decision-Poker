@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ou9-Tg-Gfo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ou9-Tg-Gfo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♠️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbM-qM-dRb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♣️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbM-qM-dRb">
                                                 <rect key="frame" x="0.0" y="122" width="65" height="72"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                                 <nil key="textColor"/>
@@ -90,7 +90,7 @@
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                                         <state key="normal" title="Start dealing decisions!"/>
                                         <connections>
-                                            <segue destination="mVM-Uq-Y2x" kind="show" identifier="StartDealingSegue" id="wNM-1s-i8f"/>
+                                            <segue destination="mVM-Uq-Y2x" kind="show" identifier="StartDealingSegue" id="vZY-WB-dRp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtA-rT-MWg">
@@ -138,38 +138,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evG-B8-4hK">
-                                <rect key="frame" x="17" y="20" width="341" height="155"/>
-                                <string key="text">This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a "deck," and each choice in a deck is entered as a "card." To get started, press the following button in the start screen:</string>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-aa-Cc5">
-                                <rect key="frame" x="17" y="273.5" width="341" height="309.5"/>
-                                <mutableString key="text">The app will display two starter "decks," but you can add a theme or deck at the bottom of this screen. If you want to add or edit the choices (or "cards"), change the number of choices you would like the make, or edit the information of each deck, you can do so here. Once your selections are optimized, simply hit Deal! to create your randomized decision! Once the decision is made, you can fix (or "cheat") and redraw any of the choices of your result. If you are happy with the decision the app has made, you can also see and save your finalized solutions using the "Hold em'!" button. </mutableString>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start dealing decisions!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBI-fm-L8n">
-                                <rect key="frame" x="59.5" y="200" width="256" height="33"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evG-B8-4hK">
+                                <rect key="frame" x="17" y="20" width="342" height="504.5"/>
+                                <string key="text">This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a "deck," and each choice in a deck is entered as a "card." To get started, press the "Start dealing decisions!" button in the start screen. The app will display two starter "decks," colors and houehold chores. The # of choices/total choices is also displayed. You can add a theme/deck at the bottom of this screen. If you want to add or edit the choices (or "cards"), change the number of choices you would like the make, or edit the information of each deck, you can also do so here. Once your selections are optimized, simply hit Deal! to create your randomized decision! Once the decision is made, you can fix (or "cheat") and redraw any of the choices of your result. If you are happy with the decision the app has made, you can also see and save your finalized solutions using the "Hold em'!" button. </string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Sa4-aa-Cc5" firstAttribute="leading" secondItem="h1S-jy-wqL" secondAttribute="leading" constant="17" id="HHy-7G-tuj"/>
-                            <constraint firstItem="evG-B8-4hK" firstAttribute="top" secondItem="h1S-jy-wqL" secondAttribute="top" constant="20" id="KTi-mQ-kYd"/>
-                            <constraint firstItem="h1S-jy-wqL" firstAttribute="trailing" secondItem="evG-B8-4hK" secondAttribute="trailing" constant="17" id="Msv-GB-N9O"/>
-                            <constraint firstItem="evG-B8-4hK" firstAttribute="centerX" secondItem="8dD-ff-3iT" secondAttribute="centerX" id="cWi-KY-Swz"/>
-                            <constraint firstItem="XBI-fm-L8n" firstAttribute="top" secondItem="evG-B8-4hK" secondAttribute="bottom" constant="25" id="eIx-Fa-TQB"/>
-                            <constraint firstItem="evG-B8-4hK" firstAttribute="centerX" secondItem="8dD-ff-3iT" secondAttribute="centerX" id="h1F-6G-WsY"/>
-                            <constraint firstItem="h1S-jy-wqL" firstAttribute="trailing" secondItem="Sa4-aa-Cc5" secondAttribute="trailing" constant="17" id="lcy-1N-WDP"/>
-                            <constraint firstItem="XBI-fm-L8n" firstAttribute="centerX" secondItem="8dD-ff-3iT" secondAttribute="centerX" id="vci-WD-5NR"/>
-                            <constraint firstItem="h1S-jy-wqL" firstAttribute="bottom" secondItem="Sa4-aa-Cc5" secondAttribute="bottom" constant="20" id="vzx-bs-vax"/>
+                            <constraint firstItem="h1S-jy-wqL" firstAttribute="trailing" secondItem="evG-B8-4hK" secondAttribute="trailing" constant="16" id="I7w-R4-D3p"/>
+                            <constraint firstItem="evG-B8-4hK" firstAttribute="leading" secondItem="h1S-jy-wqL" secondAttribute="leading" constant="17" id="jqB-lW-O79"/>
+                            <constraint firstItem="evG-B8-4hK" firstAttribute="top" secondItem="h1S-jy-wqL" secondAttribute="top" constant="20" id="mqc-jC-vso"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h1S-jy-wqL"/>
                     </view>
@@ -180,6 +161,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="directionsLabel" destination="evG-B8-4hK" id="Eyi-g3-8rA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4s-kH-PET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +173,7 @@
         <scene sceneID="KGL-bi-Ow6">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="HDT-3D-Hpa" customClass="DecksViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji4-6j-DcS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji4-6j-DcS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -206,25 +190,27 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gke-oB-ZD2">
-                                            <rect key="frame" x="323" y="10" width="42" height="38"/>
+                                            <rect key="frame" x="282" y="48" width="52" height="38"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                                            <state key="normal" title="Deal!">
+                                            <state key="normal" title=" Deal! ">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="dealButtonIsTapped:" destination="t82-Zv-gyz" eventType="touchUpInside" id="OCp-Df-kgh"/>
                                             </connections>
                                         </button>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comments for the decks." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TA8-Oe-oMA">
-                                            <rect key="frame" x="6" y="85" width="353" height="44"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX5-io-ZeK">
+                                            <rect key="frame" x="337" y="14" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0014197396128944884" green="0.5" blue="0.0022028552773147303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX5-io-ZeK">
-                                            <rect key="frame" x="332" y="53" width="22" height="22"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -234,74 +220,88 @@
                                                 <action selector="deckInfoIsTapped:" destination="t82-Zv-gyz" eventType="touchUpInside" id="D6f-w7-EWf"/>
                                             </connections>
                                         </button>
-                                        <textView clipsSubviews="YES" contentMode="scaleToFill" text="Deck Label" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VmH-Ez-ALn">
-                                            <rect key="frame" x="15" y="5" width="125" height="75"/>
+                                        <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" text="Deck Label" translatesAutoresizingMaskIntoConstraints="NO" id="VmH-Ez-ALn">
+                                            <rect key="frame" x="5" y="5" width="324" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.0014197396128944884" green="0.5" blue="0.0022028552773147303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="75" id="Rh2-4U-Lms"/>
-                                                <constraint firstAttribute="width" constant="125" id="j9R-BO-Po7"/>
-                                            </constraints>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         </textView>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QB7-MM-zUB">
-                                            <rect key="frame" x="140" y="16" width="53.5" height="26"/>
+                                            <rect key="frame" x="138" y="54" width="53.5" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwr-qT-8rZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="15" height="26"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-fu-Rzy">
-                                                    <rect key="frame" x="15" y="0.0" width="12.5" height="26"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLf-XO-RJe">
-                                                    <rect key="frame" x="27.5" y="0.0" width="26" height="26"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </stackView>
-                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="LrQ-vs-AdZ" userLabel="servingsStepper">
-                                            <rect key="frame" x="219" y="16" width="94" height="29"/>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="LrQ-vs-AdZ" userLabel="servingsStepper">
+                                            <rect key="frame" x="175" y="53" width="94" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.0" green="0.50287460470000001" blue="0.0048546414079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="resultsNumberChangedTapped:" destination="t82-Zv-gyz" eventType="valueChanged" id="DS4-Pf-2Rq"/>
                                             </connections>
                                         </stepper>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGB-Oz-Hrw">
-                                            <rect key="frame" x="234" y="45" width="64" height="38"/>
-                                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                                            <state key="normal" title="Cards...">
+                                        <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGB-Oz-Hrw">
+                                            <rect key="frame" x="10" y="49" width="89" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <state key="normal" title=" Card List">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                    <integer key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="cardlistButtonIsTapped:" destination="t82-Zv-gyz" eventType="touchUpInside" id="sWX-Fz-Kjd"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLf-XO-RJe">
+                                            <rect key="frame" x="141" y="53" width="26" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-fu-Rzy">
+                                            <rect key="frame" x="129" y="53" width="12.5" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwr-qT-8rZ">
+                                            <rect key="frame" x="114" y="53" width="15" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comments for the decks." translatesAutoresizingMaskIntoConstraints="NO" id="TA8-Oe-oMA">
+                                            <rect key="frame" x="37.5" y="113" width="300" height="140"/>
+                                            <color key="backgroundColor" red="0.0014197396128944884" green="0.5" blue="0.0022028552773147303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="300" id="Feo-Wj-4Wk"/>
+                                                <constraint firstAttribute="height" constant="140" id="lw4-Bl-OI0"/>
+                                            </constraints>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0014197396128944884" green="0.5" blue="0.0022028552773147303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="LrQ-vs-AdZ" firstAttribute="top" secondItem="HUo-Ni-Nrd" secondAttribute="topMargin" constant="5" id="5Sp-2a-hZa"/>
-                                        <constraint firstAttribute="trailing" secondItem="Gke-oB-ZD2" secondAttribute="trailing" constant="10" id="C1w-6W-UTL"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="DX5-io-ZeK" secondAttribute="trailing" constant="5" id="Mve-f1-Qou"/>
-                                        <constraint firstItem="iGB-Oz-Hrw" firstAttribute="leading" secondItem="VmH-Ez-ALn" secondAttribute="trailing" constant="94" id="TkQ-xJ-Zg0"/>
-                                        <constraint firstItem="VmH-Ez-ALn" firstAttribute="leading" secondItem="HUo-Ni-Nrd" secondAttribute="leading" constant="15" id="XYT-KW-zcV"/>
-                                        <constraint firstItem="Gke-oB-ZD2" firstAttribute="leading" secondItem="LrQ-vs-AdZ" secondAttribute="trailing" constant="10" id="cgP-0l-qbb"/>
-                                        <constraint firstItem="iGB-Oz-Hrw" firstAttribute="top" secondItem="LrQ-vs-AdZ" secondAttribute="bottom" id="gg2-jk-sMd"/>
-                                        <constraint firstItem="DX5-io-ZeK" firstAttribute="top" secondItem="Gke-oB-ZD2" secondAttribute="bottom" constant="5" id="hGp-5A-aBe"/>
-                                        <constraint firstItem="DX5-io-ZeK" firstAttribute="leading" secondItem="iGB-Oz-Hrw" secondAttribute="trailing" constant="34" id="pML-qK-GhF"/>
-                                        <constraint firstItem="Gke-oB-ZD2" firstAttribute="top" secondItem="HUo-Ni-Nrd" secondAttribute="top" constant="10" id="qVT-d2-NIG"/>
-                                        <constraint firstItem="VmH-Ez-ALn" firstAttribute="top" secondItem="HUo-Ni-Nrd" secondAttribute="top" constant="5" id="qoT-wT-52b"/>
+                                        <constraint firstItem="TA8-Oe-oMA" firstAttribute="top" secondItem="Gke-oB-ZD2" secondAttribute="bottom" constant="27" id="GvZ-Jk-BVv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Gke-oB-ZD2" secondAttribute="trailing" constant="25" id="PvU-sM-0yg"/>
+                                        <constraint firstItem="TA8-Oe-oMA" firstAttribute="centerX" secondItem="HUo-Ni-Nrd" secondAttribute="centerX" id="Q0w-Sa-7ah"/>
+                                        <constraint firstItem="Gke-oB-ZD2" firstAttribute="top" secondItem="HUo-Ni-Nrd" secondAttribute="topMargin" constant="37" id="ZKY-iV-a8c"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -408,18 +408,17 @@
                         <color key="sectionIndexBackgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealResultsCell" rowHeight="46" id="eBP-Hy-Ja9" customClass="DealResultsTableViewCell" customModule="DecisionPoker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="343" height="46"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealResultsCell" rowHeight="201" id="eBP-Hy-Ja9" customClass="DealResultsTableViewCell" customModule="DecisionPoker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="343" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBP-Hy-Ja9" id="37r-Qc-ZKi">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="201"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-Iy-9OP">
-                                            <rect key="frame" x="173" y="4" width="64" height="38"/>
+                                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-Iy-9OP">
+                                            <rect key="frame" x="177" y="25" width="49" height="34"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
-                                            <state key="normal" title="Cheat...">
+                                            <state key="normal" title="Cheat">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
@@ -427,7 +426,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-2U-GTP">
-                                            <rect key="frame" x="261" y="4" width="67" height="38"/>
+                                            <rect key="frame" x="251" y="25" width="67" height="38"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
                                             <state key="normal" title="Redraw">
@@ -443,7 +442,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </pickerView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRs-yQ-jSI">
-                                            <rect key="frame" x="20" y="7" width="58" height="32.5"/>
+                                            <rect key="frame" x="25" y="25" width="58" height="32.5"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -452,13 +451,12 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="zTe-2U-GTP" firstAttribute="centerY" secondItem="37r-Qc-ZKi" secondAttribute="centerY" id="Hdk-6h-U8W"/>
-                                        <constraint firstItem="cRs-yQ-jSI" firstAttribute="leading" secondItem="37r-Qc-ZKi" secondAttribute="leading" constant="20" id="gYM-fZ-3Gf"/>
-                                        <constraint firstAttribute="trailing" secondItem="zTe-2U-GTP" secondAttribute="trailing" constant="15" id="i9L-Gc-pTt"/>
-                                        <constraint firstItem="zTe-2U-GTP" firstAttribute="leading" secondItem="EG9-Iy-9OP" secondAttribute="trailing" constant="24" id="loN-e0-f3q"/>
-                                        <constraint firstItem="EG9-Iy-9OP" firstAttribute="leading" secondItem="cRs-yQ-jSI" secondAttribute="trailing" constant="95" id="mTV-W5-1xT"/>
-                                        <constraint firstItem="EG9-Iy-9OP" firstAttribute="centerY" secondItem="37r-Qc-ZKi" secondAttribute="centerY" id="nE6-jf-jIC"/>
-                                        <constraint firstItem="cRs-yQ-jSI" firstAttribute="centerY" secondItem="37r-Qc-ZKi" secondAttribute="centerY" id="p5A-UL-bWU"/>
+                                        <constraint firstItem="EG9-Iy-9OP" firstAttribute="top" secondItem="37r-Qc-ZKi" secondAttribute="top" constant="25" id="5CG-x6-6Ur"/>
+                                        <constraint firstItem="zTe-2U-GTP" firstAttribute="top" secondItem="37r-Qc-ZKi" secondAttribute="top" constant="25" id="DpO-hb-bE2"/>
+                                        <constraint firstItem="cRs-yQ-jSI" firstAttribute="top" secondItem="37r-Qc-ZKi" secondAttribute="top" constant="25" id="UG6-RG-W9m"/>
+                                        <constraint firstItem="zTe-2U-GTP" firstAttribute="leading" secondItem="EG9-Iy-9OP" secondAttribute="trailing" constant="25" id="V96-xc-be9"/>
+                                        <constraint firstAttribute="trailing" secondItem="zTe-2U-GTP" secondAttribute="trailing" constant="25" id="ZOt-ee-ss2"/>
+                                        <constraint firstItem="cRs-yQ-jSI" firstAttribute="leading" secondItem="37r-Qc-ZKi" secondAttribute="leading" constant="25" id="i6D-oR-ppm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -648,40 +646,54 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzL-1i-vTY" userLabel="foodItemFixed">
-                                            <rect key="frame" x="248" y="13" width="49" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzL-1i-vTY" userLabel="foodItemFixed">
+                                            <rect key="frame" x="248" y="21" width="51" height="31"/>
                                             <color key="onTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cardIsIncludedTapped:" destination="oPY-nW-UqK" eventType="valueChanged" id="3no-TO-hBa"/>
                                             </connections>
                                         </switch>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uy-SP-YDo">
-                                            <rect key="frame" x="315" y="18" width="22" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uy-SP-YDo">
+                                            <rect key="frame" x="317" y="26" width="22" height="22"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="cardInfoIsTapped:" destination="oPY-nW-UqK" eventType="touchUpInside" id="1hZ-ZT-kEP"/>
                                             </connections>
                                         </button>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dij-l5-23o">
-                                            <rect key="frame" x="67" y="52" width="241" height="70"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textView clipsSubviews="YES" contentMode="scaleToFill" text="Label for cards" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-dL-tlp">
+                                            <rect key="frame" x="21" y="13" width="162" height="49"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="49" id="QxX-nX-PKr"/>
+                                                <constraint firstAttribute="width" constant="162" id="eib-eh-ujG"/>
+                                            </constraints>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        </textView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dij-l5-23o">
+                                            <rect key="frame" x="15" y="67" width="241" height="150"/>
+                                            <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="9aK-eU-QMZ"/>
+                                                <constraint firstAttribute="width" constant="241" id="GIa-Kd-YHI"/>
+                                            </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <textView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" text="Label for cards" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-dL-tlp">
-                                            <rect key="frame" x="47" y="5" width="167" height="49"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                        </textView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1Uy-SP-YDo" firstAttribute="leading" secondItem="wzL-1i-vTY" secondAttribute="trailing" constant="20" id="4YH-Vy-j52"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1Uy-SP-YDo" secondAttribute="trailing" constant="20" id="67h-9m-v5C"/>
+                                        <constraint firstItem="Dij-l5-23o" firstAttribute="leading" secondItem="qHe-ET-6Sg" secondAttribute="leading" constant="15" id="CLO-4s-xzD"/>
+                                        <constraint firstItem="Dij-l5-23o" firstAttribute="top" secondItem="wzL-1i-vTY" secondAttribute="bottom" constant="15" id="Cb2-cC-Bhi"/>
+                                        <constraint firstItem="XfJ-dL-tlp" firstAttribute="leading" secondItem="qHe-ET-6Sg" secondAttribute="leadingMargin" constant="5" id="UWr-Ut-2U8"/>
+                                        <constraint firstItem="wzL-1i-vTY" firstAttribute="top" secondItem="qHe-ET-6Sg" secondAttribute="topMargin" constant="10" id="bww-Mq-bWH"/>
+                                        <constraint firstItem="1Uy-SP-YDo" firstAttribute="top" secondItem="qHe-ET-6Sg" secondAttribute="topMargin" constant="15" id="jOG-Rg-5ZU"/>
+                                        <constraint firstItem="XfJ-dL-tlp" firstAttribute="top" secondItem="qHe-ET-6Sg" secondAttribute="topMargin" constant="2" id="yhv-GN-2OA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -830,7 +842,7 @@
         <image name="CardDeckImage" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="caP-cK-g3i"/>
-        <segue reference="DDS-ez-aZh"/>
+        <segue reference="zGy-9z-VDH"/>
+        <segue reference="vZY-WB-dRp"/>
     </inferredMetricsTieBreakers>
 </document>

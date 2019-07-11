@@ -111,6 +111,10 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
         deckCommentText?.delegate = self
         nameOfDeck?.delegate = self
         
+        cardlistButton.layer.borderColor = UIColor.white.cgColor
+        dealButton.layer.borderColor = UIColor.white.cgColor
+
+
         // Initialization code
     }
 

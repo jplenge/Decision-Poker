@@ -120,8 +120,8 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     var container: NSPersistentContainer!
     
     var rowTouched: Int = 0
-    var rowHeight: CGFloat = 90
-    let normalCellHeight: CGFloat = 80
+    var rowHeight: CGFloat = 100
+    let normalCellHeight: CGFloat = 90
     let largeCellHeight: CGFloat = 200
     
     var cardlistButtonIndexPath: IndexPath = []
@@ -290,7 +290,8 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             
             
             
-            
+            //cell?.cardlistButton.layer.borderColor = UIColor.white.cgColor
+
             
             //  print (deck)
             

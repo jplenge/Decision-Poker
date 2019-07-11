@@ -13,8 +13,12 @@ class DirectionsViewController: UIViewController {
 
     var container: NSPersistentContainer!
     
+    @IBOutlet weak var directionsLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

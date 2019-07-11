@@ -23,6 +23,7 @@
 		A933F13522D322EB005DF368 /* SavedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F13422D322EB005DF368 /* SavedResultsController.swift */; };
 		A933F13722D3A9E2005DF368 /* StartNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933F13622D3A9E2005DF368 /* StartNavigationController.swift */; };
 		A98F9F8722D51DA900C14787 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8622D51DA900C14787 /* DirectionsViewController.swift */; };
+		A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8C22D72A8A00C14787 /* FontSetup.swift */; };
 		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
 		A9D58A7A22C4E49F00E608B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7822C4E49F00E608B8 /* Main.storyboard */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
@@ -70,6 +71,7 @@
 		A933F13422D322EB005DF368 /* SavedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsController.swift; sourceTree = "<group>"; };
 		A933F13622D3A9E2005DF368 /* StartNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNavigationController.swift; sourceTree = "<group>"; };
 		A98F9F8622D51DA900C14787 /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
+		A98F9F8C22D72A8A00C14787 /* FontSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSetup.swift; sourceTree = "<group>"; };
 		A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D58A7922C4E49F00E608B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */,
 				A9D58A7822C4E49F00E608B8 /* Main.storyboard */,
+				A98F9F8C22D72A8A00C14787 /* FontSetup.swift */,
 				A98F9F8622D51DA900C14787 /* DirectionsViewController.swift */,
 			);
 			path = other;
@@ -361,6 +364,7 @@
 				A933F13722D3A9E2005DF368 /* StartNavigationController.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,
 				1B7F909022D34F2100812BE4 /* SavedCard+CoreDataClass.swift in Sources */,
+				A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */,
 				A91FE56122CD1CC80009F95D /* DealResultsTableViewCell.swift in Sources */,
 				A9D58ABE22C4FD9900E608B8 /* CardsViewController.swift in Sources */,
 				1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */,
