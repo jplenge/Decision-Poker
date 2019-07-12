@@ -120,6 +120,11 @@ class DealResultsTableViewCell: UITableViewCell,UIPickerViewDataSource, UIPicker
         listPicker.delegate  = self
         listPicker.dataSource = self
         
+        resultCheat.layer.borderColor = UIColor.white.cgColor
+        resultRedraw.layer.borderColor = UIColor.white.cgColor
+
+
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -80,8 +80,8 @@ class DealResultsTableViewController: UITableViewController  {
     weak var selectedDeck: Deck?
     
     var rowTouched: Int = -1
-    var rowHeight: CGFloat = 60
-    let normalCellHeight: CGFloat = 60
+    var rowHeight: CGFloat = 80
+    let normalCellHeight: CGFloat = 80
     //let largeCellHeight: CGFloat = 200
     
     

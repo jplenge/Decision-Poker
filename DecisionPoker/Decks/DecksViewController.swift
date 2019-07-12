@@ -121,9 +121,9 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     var container: NSPersistentContainer!
     
     var rowTouched: Int = -1
-    var rowHeight: CGFloat = 90
-    let normalCellHeight: CGFloat = 90
-    let largeCellHeight: CGFloat = 200
+    var rowHeight: CGFloat = 105
+    let normalCellHeight: CGFloat = 105
+    let largeCellHeight: CGFloat = 210
     
     var cardlistButtonIndexPath: IndexPath = []
     var decks: [Deck] = []

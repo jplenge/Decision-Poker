@@ -20,9 +20,9 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     weak var selectedDeck: Deck?
     
     //var rowTouched: Int = 0
-    var rowHeight: CGFloat = 50
-    let normalCellHeight: CGFloat = 60
-    let largeCellHeight: CGFloat = 200
+    var rowHeight: CGFloat = 80
+    let normalCellHeight: CGFloat = 80
+    let largeCellHeight: CGFloat = 220
     
     var finalCardsData: String = ""
     

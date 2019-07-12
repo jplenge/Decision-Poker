@@ -83,8 +83,8 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
     weak var delegate: DecksCellDelegate?
 
     
-    let normalCellHeight: CGFloat = 100
-    let largeCellHeight: CGFloat = 200
+    let normalCellHeight: CGFloat = 105
+    let largeCellHeight: CGFloat = 210
     
 // END SECTION 4 - VARIABLES //
     
