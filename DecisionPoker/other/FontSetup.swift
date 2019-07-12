@@ -20,7 +20,11 @@ extension UILabel {
     {
         self.font = UIFont(name: "Marker Felt", size: self.font.pointSize)
         
-        print (self.font.pointSize)
+        self.minimumScaleFactor = 0.01
+        self.adjustsFontSizeToFitWidth = true
+        self.lineBreakMode = .byClipping
+        
+        //print (self.font.pointSize)
     }
 }
 
@@ -32,12 +36,52 @@ extension UIButton {
     
     func changeFontNameButton()
     {
-        self.titleLabel?.font = UIFont(name: "Marker Felt", size: 20)
+        self.titleLabel?.font = UIFont(name: "Marker Felt", size: self.titleLabel!.font.pointSize)
+        
+        self.contentScaleFactor = 0.01
+        self.titleLabel?.adjustsFontSizeToFitWidth = true
+     //   self.lineBreakMode = .byClipping
+        self.titleLabel?.numberOfLines = 1
 
-        //print (self.font.pointSize)
     }
+    
 }
 
+//UIBarButtonItem.appearance()
+ //   .setTitleTextAttributes([NSFontAttributeName: UIFont(name: "FontName-Regular", size: 14.0)!],
+//                            for: .normal)
+
+extension UIBarButtonItem {
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        changeFontNameBarButton()
+    }
+    
+    func changeFontNameBarButton()
+    {
+        self.setTitleTextAttributes([NSAttributedString.Key.font: UIFont (name: "Marker Felt", size: 15.0)!], for: UIControl.State.normal)
+
+        
+    }
+    
+}
+
+/*
+extension UINavigationBar {
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        changeFontNameNavigationItem()
+    }
+    
+    func changeFontNameNavigationItem()
+    {
+        self.titleTextAttributes([NSFontAttributeName: UIFont(name: "Marker Felt", size: 16)!])
+        
+        
+    }
+    
+}
+*/
 extension UITextView {
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -48,8 +92,11 @@ extension UITextView {
     {
         self.font = UIFont(name: "Marker Felt", size: (self.font?.pointSize)!)
         
-        print ((self.font?.pointSize)!)
+        
+       // print ((self.font?.pointSize)!)
     }
+    
+   
 }
 
 

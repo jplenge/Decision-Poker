@@ -66,8 +66,7 @@ class SavedResultsController: FetchedResultsTableViewController {
         
         request.sortDescriptors = [NSSortDescriptor(
             key: "dateSaved",
-            ascending: true
-            //selector: #selector(NSString.localizedCaseInsensitiveCompare(_:))
+            ascending: false
             )]
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: request,

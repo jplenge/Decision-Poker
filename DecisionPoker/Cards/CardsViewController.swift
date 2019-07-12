@@ -99,7 +99,7 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
     
     var selectedDeck: String  = ""
     
-    var rowHeight: CGFloat = 50
+    var rowHeight: CGFloat = 60
     let normalCellHeight: CGFloat = 60
     let largeCellHeight: CGFloat = 200
 
@@ -218,6 +218,17 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         return (cell ?? nil)!
     }
     
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let commit = fetchedResultsController?.object(at: indexPath) as! Card
+            container.viewContext.delete(commit as NSManagedObject)
+            try! container.viewContext.save()
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
 
     
 

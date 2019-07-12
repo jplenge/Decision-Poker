@@ -13,6 +13,9 @@ import MessageUI
 
 class StartViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet var appTitle: UILabel!
+    
+    
     @IBAction func contactUs(_ sender: Any) {
         sendEmail()
     }
@@ -24,6 +27,12 @@ class StartViewController: UIViewController, MFMailComposeViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
       //  self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
+        
+       // appTitle.minimumScaleFactor = 0.01
+       // appTitle.adjustsFontSizeToFitWidth = true
+       // appTitle.lineBreakMode = .byClipping
+        appTitle.numberOfLines = 1
+
 
     }
     
