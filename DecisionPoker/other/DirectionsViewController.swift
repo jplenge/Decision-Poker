@@ -19,6 +19,15 @@ class DirectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      //  directionsLabel.minimumScaleFactor = 0.5
+        
+    //    directionsLabel.font = UIFont.systemFont(ofSize: 40.0)
+    //    directionsLabel.adjustsFontSizeToFitWidth = true
+
+        //directionsLabel.minimumScaleFactor = 0.01
+        //directionsLabel.adjustsFontSizeToFitWidth = true
+        //directionsLabel.lineBreakMode = .byClipping
+        directionsLabel.numberOfLines = 0
 
         // Do any additional setup after loading the view.
     }

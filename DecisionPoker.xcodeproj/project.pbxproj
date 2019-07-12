@@ -15,6 +15,7 @@
 		1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */; };
 		1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */; };
 		1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */; };
+		1BE03F4B22D85334005597B3 /* App Icon Decision Poker.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE03F4A22D85334005597B3 /* App Icon Decision Poker.png */; };
 		A91FE55F22CD1CB30009F95D /* DealResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */; };
 		A91FE56122CD1CC80009F95D /* DealResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */; };
 		A91FE56322CD370F0009F95D /* DealResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FE56222CD370F0009F95D /* DealResultsViewController.swift */; };
@@ -63,6 +64,7 @@
 		1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BE03F4A22D85334005597B3 /* App Icon Decision Poker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icon Decision Poker.png"; sourceTree = "<group>"; };
 		A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsTableViewController.swift; sourceTree = "<group>"; };
 		A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsTableViewCell.swift; sourceTree = "<group>"; };
 		A91FE56222CD370F0009F95D /* DealResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultsViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */,
 				A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */,
 				A9D58A8322C4E4A000E608B8 /* Info.plist */,
+				1BE03F4A22D85334005597B3 /* App Icon Decision Poker.png */,
 			);
 			path = DecisionPoker;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				A9D58A8222C4E4A000E608B8 /* LaunchScreen.storyboard in Resources */,
 				A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */,
 				A9D58A7A22C4E49F00E608B8 /* Main.storyboard in Resources */,
+				1BE03F4B22D85334005597B3 /* App Icon Decision Poker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,8 +549,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7L346CWBDS;
+				DEVELOPMENT_TEAM = 9VSCQK9JFU;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,8 +568,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7L346CWBDS;
+				DEVELOPMENT_TEAM = 9VSCQK9JFU;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

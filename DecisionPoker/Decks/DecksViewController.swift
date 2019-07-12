@@ -62,6 +62,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             }
         }
         tableView.reloadData()
+
     }
     
     func DealButtonTapped(sender: DecksCell) {
@@ -119,8 +120,8 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
     var container: NSPersistentContainer!
     
-    var rowTouched: Int = 0
-    var rowHeight: CGFloat = 100
+    var rowTouched: Int = -1
+    var rowHeight: CGFloat = 90
     let normalCellHeight: CGFloat = 90
     let largeCellHeight: CGFloat = 200
     
@@ -224,13 +225,6 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         //self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
@@ -316,6 +310,16 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         }
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let commit = fetchedResultsController?.object(at: indexPath) as! Deck
+            container.viewContext.delete(commit as NSManagedObject)
+            try! container.viewContext.save()
+        } else if editingStyle == .insert {
+        }
+    }
+    
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -326,19 +330,6 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
 // END SECTION 7- TABLE VIEW FUNCTIONS//
     
     
-    
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
     
     
     /*

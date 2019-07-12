@@ -15,7 +15,17 @@ import CoreData
 class DealResultsViewController: UIViewController, DealResultsTableViewCellDelegate {
     
     
+    var selectedCards: [Card] = []
+    var container: NSPersistentContainer!
+    weak var selectedDeck: Deck?
+    
+    //var rowTouched: Int = 0
+    var rowHeight: CGFloat = 50
+    let normalCellHeight: CGFloat = 60
+    let largeCellHeight: CGFloat = 200
+    
     var finalCardsData: String = ""
+    
     
     func PickerItemSelected(sender: DealResultsTableViewCell, item: Int) {
         print("Picker item: \(item)")
@@ -30,8 +40,10 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
                 
                 vc.selectedCards[indexPath.row] = possibleItems[item]
                 
-                
-                print (vc.selectedCards[indexPath.row])
+                if !selectedCards.contains(possibleItems[item]) {
+                    selectedCards[indexPath.row] = possibleItems[item]
+                    //selectionSuccess = true
+                }
                 
                 vc.tableView.reloadData()
             }
@@ -41,8 +53,6 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     
     
     func CheatTapped(sender: DealResultsTableViewCell) {
-        
-        print ("cheat tapped")
         
         if let indexPath  = sender.getIndexPath() {
             
@@ -60,7 +70,6 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
                 vc.tableView.beginUpdates()
                 vc.tableView.endUpdates()
             }
-         print("row touched: \(indexPath.row)")
         }
         
     }
@@ -140,14 +149,7 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     @IBOutlet weak var holdButton: UIButton!
     
     
-    var selectedCards: [Card] = []
-    var container: NSPersistentContainer!
-    weak var selectedDeck: Deck?
-    
-    //var rowTouched: Int = 0
-    var rowHeight: CGFloat = 50
-    let normalCellHeight: CGFloat = 60
-    let largeCellHeight: CGFloat = 200
+
     
     /*
      weak var tableViewCellDelegate: DealResultsTableViewCellDelegate!
