@@ -84,7 +84,7 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
 
     
     let normalCellHeight: CGFloat = 105
-    let largeCellHeight: CGFloat = 210
+    let largeCellHeight: CGFloat = 255
     
 // END SECTION 4 - VARIABLES //
     
