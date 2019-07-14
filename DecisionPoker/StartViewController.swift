@@ -53,6 +53,13 @@ class StartViewController: UIViewController, MFMailComposeViewControllerDelegate
                 let navigationContoller = segue.destination as! UINavigationController
                 let controller = navigationContoller.viewControllers.first as! DirectionsViewController
                 controller.container = container
+                
+            case "StartToSavedResults":
+                let navigationContoller = segue.destination as! UINavigationController
+                let controller = navigationContoller.viewControllers.first as! SavedResultsController
+                controller.container = container
+                controller.backButtonText = "Back"
+                
             default:
                 return
             

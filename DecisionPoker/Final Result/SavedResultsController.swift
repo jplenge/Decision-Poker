@@ -11,6 +11,9 @@ import CoreData
 
 class SavedResultsController: FetchedResultsTableViewController {
     
+    @IBOutlet var backButton: UIBarButtonItem!
+    
+    var backButtonText = "Start Over"
     
     var container: NSPersistentContainer!
 
@@ -19,8 +22,12 @@ class SavedResultsController: FetchedResultsTableViewController {
     
         updateUI()
         
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+        
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableView.automaticDimension
+        
+        backButton.title = backButtonText
     }
     
     
@@ -47,6 +54,30 @@ class SavedResultsController: FetchedResultsTableViewController {
         }
         return cell
     }
+    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let commit = fetchedResultsController?.object(at: indexPath) as! SavedDeck
+            container.viewContext.delete(commit as NSManagedObject)
+            try! container.viewContext.save()
+        } else if editingStyle == .insert {
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ReturnToDecksSegue" {
+            // let destinationController = segue.destination as! SavedResultsController
+            // destinationController.container = container
+            
+            let navigationContoller = segue.destination as! UINavigationController
+            let controller = navigationContoller.viewControllers.first as! StartViewController
+            controller.container = container
+            //saveFinalDeck()
+        }
+    }
+    
     
     
     

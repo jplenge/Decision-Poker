@@ -46,8 +46,12 @@ class FinalResultViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SaveResultsSegue" {
-            let destinationController = segue.destination as! SavedResultsController
-            destinationController.container = container
+           // let destinationController = segue.destination as! SavedResultsController
+           // destinationController.container = container
+            
+            let navigationContoller = segue.destination as! UINavigationController
+            let controller = navigationContoller.viewControllers.first as! SavedResultsController
+            controller.container = container
             saveFinalDeck()
         }
     }

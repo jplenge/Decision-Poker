@@ -51,20 +51,22 @@ extension UIButton {
  //   .setTitleTextAttributes([NSFontAttributeName: UIFont(name: "FontName-Regular", size: 14.0)!],
 //                            for: .normal)
 
-extension UIBarButtonItem {
+/*
+ extension UINavigationItem {
     override open func awakeFromNib() {
         super.awakeFromNib()
-        changeFontNameBarButton()
+        changeFontNameNavigationItem()
     }
     
-    func changeFontNameBarButton()
+    func changeFontNameNavigationItem()
     {
-        self.setTitleTextAttributes([NSAttributedString.Key.font: UIFont (name: "Marker Felt", size: 15.0)!], for: UIControl.State.normal)
+        self.set ([NSAttributedString.Key.font: UIFont (name: "Marker Felt", size: 20.0)!], for: UIControl.State.normal)
 
         
     }
     
 }
+ */
 
 /*
 extension UINavigationBar {

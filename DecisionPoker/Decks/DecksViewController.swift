@@ -31,14 +31,15 @@ var selectedDeck =  Deck()
 
 class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate {
     
-// SECTION 2- PROTOCOL FUNCTIONS//
-
+    // SECTION 2- PROTOCOL FUNCTIONS//
+    
     
     func DeckNameUpdate(sender: DecksCell, comment: String) {
         if let indexPath  = tableView.indexPath(for: sender) {
-            print(comment)
             let commit = fetchedResultsController?.object(at: indexPath) as! Deck
             commit.deckName = comment
+            let context =  container.viewContext
+            try! context.save()
         }
     }
     
@@ -46,6 +47,8 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         if let indexPath  = tableView.indexPath(for: sender) {
             let commit = fetchedResultsController?.object(at: indexPath) as! Deck
             commit.numberOfCardsToPick = Int16(Int(sender.resultsNumberChanged.value))
+            let context =  container.viewContext
+            try! context.save()
         }
     }
     
@@ -55,18 +58,16 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             let row = tableView.dequeueReusableCell(withIdentifier: "DecksCellIdentifier", for: indexPath) as! DecksCell
             if row.bounds.height == normalCellHeight {
                 rowHeight = largeCellHeight
-                print("no button tapped")
             } else {
                 rowHeight = normalCellHeight
-                print("button was tapped")
             }
         }
         tableView.reloadData()
-
+        
     }
     
     func DealButtonTapped(sender: DecksCell) {
-    
+        
         if let indexPath  = tableView.indexPath(for: sender) {
             selectedDeck = (fetchedResultsController?.object(at: indexPath) as? Deck)!
         }
@@ -74,7 +75,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         
         if ((selectedDeck.childCards!.allObjects as! [Card]).filter{$0.cardIncluded == true}).count > 1 {
             performSegue(withIdentifier: "InitialResultsSegue", sender: nil)
-
+            
         } else {
             
             let alertController = UIAlertController(title: "Selection Invalid", message: "You need more than one card to deal!", preferredStyle: UIAlertController.Style.alert)
@@ -94,11 +95,14 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         guard let indexPath = self.tableView.indexPath(for: sender) else {
             return
         }
-        
         cardlistButtonIndexPath = indexPath
+        
+        print("selected IndexPath: \(indexPath.row)")
         
         performSegue(withIdentifier: "CardListSegue", sender: nil)
     }
+    
+    
     
     func DeckCommentUpdate(sender: DecksCell, comment: String) {
         if let indexPath  = tableView.indexPath(for: sender) {
@@ -108,15 +112,15 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         }
     }
     
-// END SECTION 2 - PROTOCOL FUNCTIONS//
+    // END SECTION 2 - PROTOCOL FUNCTIONS//
     
-// SECTION 3- STORYBOARD OBJECTS//
-
+    // SECTION 3- STORYBOARD OBJECTS//
+    
     @IBOutlet weak var addDeckButton: UIBarButtonItem!
     
-// END SECTION 3- STORYBOARD OBJECTS//
-
-// SECTION 4 - VARIABLES//
+    // END SECTION 3- STORYBOARD OBJECTS//
+    
+    // SECTION 4 - VARIABLES//
     
     var container: NSPersistentContainer!
     
@@ -127,11 +131,11 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
     var cardlistButtonIndexPath: IndexPath = []
     var decks: [Deck] = []
-
     
-// END SECTION 4 - VARIABLES//
-
-// SECTION 5- STORYBOARD ACTIONS//
+    
+    // END SECTION 4 - VARIABLES//
+    
+    // SECTION 5- STORYBOARD ACTIONS//
     
     @IBAction func addDeckButtonTapped(_ sender: UIBarButtonItem) {
         
@@ -143,25 +147,15 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         newDeck.deckName = "New Deck \(addDeckButtonTappedCounter)"
         newDeck.decksTablePosition = addDeckButtonTappedCounter + 2
         newDeck.deckComment = "Add comments here."
-        print (newDeck.decksTablePosition)
-        //  print (addDeckButtonTappedCounter)
-        /* if addDeckButtonTappedCounter == 1{
-         let newCard = Card(context: managedContext)
-         newCard.cardName = "New Card"
-         newCard.cardComment = "Add comments here"
-         newDeck.addToChildCards(newCard)
-         
-         }
-         */
-        
+  
         decksTotalData.append(newDeck)
         try! managedContext.save()
-        //  newCard =
-        //   print(decksTotalData.count)
+  
     }
-// END SECTION 5- STORYBOARD ACTIONS//
     
-// SECTION 6- ADDITIONAL FUNCTIONS//
+    // END SECTION 5- STORYBOARD ACTIONS//
+    
+    // SECTION 6- ADDITIONAL FUNCTIONS//
     
     private func updateUI() {
         
@@ -197,6 +191,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             commitDeckSelected = fetchedResultsController?.object(at: cardlistButtonIndexPath) as! Deck
             // print("testing")
             //    let selectedCards = commit.childCards
+            print(commitDeckSelected.deckName!)
             cardsviewcontroller.selectedDeck = commitDeckSelected.deckName!
             cardsviewcontroller.container = container
             
@@ -213,20 +208,23 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             let destinationController = segue.destination as! StartNavigationController
             let controller = destinationController.viewControllers.first as! StartViewController
             controller.container = container
-          //  destinationController.selectedDeck = selectedDeck
+            //  destinationController.selectedDeck = selectedDeck
         }
         
     }
     
-// END SECTION 6- ADDITIONAL FUNCTIONS//
+    // END SECTION 6- ADDITIONAL FUNCTIONS//
     
-// SECTION 7- TABLE VIEW FUNCTIONS//
+    // SECTION 7- TABLE VIEW FUNCTIONS//
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //let attributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 20)!]
+        //UINavigationBar.appearance().titleTextAttributes = attributes
         
         updateUI()
     }
@@ -285,7 +283,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             
             
             //cell?.cardlistButton.layer.borderColor = UIColor.white.cgColor
-
+            
             
             //  print (deck)
             
@@ -327,7 +325,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         return true
     }
     
-// END SECTION 7- TABLE VIEW FUNCTIONS//
+    // END SECTION 7- TABLE VIEW FUNCTIONS//
     
     
     
@@ -374,7 +372,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
      }
      */
     
-  
+    
     
     /*
      let navigationContoller = segue.destination as! UINavigationController

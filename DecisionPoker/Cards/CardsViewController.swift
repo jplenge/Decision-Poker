@@ -109,7 +109,6 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
 
     
     private func updateUI() {
-        print(container)
         let context = container.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Card")
         

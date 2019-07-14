@@ -220,6 +220,8 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
         //   print("loaded")
         
         // Do any additional setup after loading the view.
+        
+        holdButton.layer.borderColor = UIColor.white.cgColor
     }
     
     

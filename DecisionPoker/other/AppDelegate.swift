@@ -13,6 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
     func deleteAllData(entity: String)
     {
@@ -33,133 +34,130 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Delete all data in \(entity) error : \(error) \(error.userInfo)")
         }
     }
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-       
-        deleteAllData(entity: "Deck")
-        deleteAllData(entity: "Card")
+    
+    
+    func firstTimeDataBaseInit() {
+        
         
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        
-    
-        // let container: NSPersistentContainer!
         let context = appDelegate?.persistentContainer.viewContext
         
         let cardRed = Card(context: context!)
         cardRed.cardName = "red"
         cardRed.cardIncluded = true
-        cardRed.cardComment = "This is one of the color choices. Feel free to add additional comments here!"
+        cardRed.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
         cardRed.cardInformation = false
         cardRed.cardsTablePosition = 0
         
         let cardOrange = Card(context: context!)
         cardOrange.cardName = "orange"
         cardOrange.cardIncluded = true
-        cardOrange.cardComment = "This is one of the color choices. Feel free to add additional comments here!"
+        cardOrange.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
         cardOrange.cardInformation = false
         cardOrange.cardsTablePosition = 1
-
+        
         
         let cardYellow = Card(context: context!)
         cardYellow.cardName = "yellow"
         cardYellow.cardIncluded = true
-        cardYellow.cardComment = "This is one of the color choices. Feel free to add additional comments here!"
+        cardYellow.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
         cardYellow.cardInformation = false
         cardYellow.cardsTablePosition = 2
-
+        
         
         let cardGreen = Card(context: context!)
         cardGreen.cardName = "green"
         cardGreen.cardIncluded = true
-        cardGreen.cardComment = "This is one of the color choices. Feel free to add additional comments here!"
+        cardGreen.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
         cardGreen.cardInformation = false
         cardGreen.cardsTablePosition = 3
-
+        
         
         let cardBlue = Card(context: context!)
         cardBlue.cardName = "blue"
         cardBlue.cardIncluded = true
-        cardBlue.cardComment = "This is one of the color choices. Feel free to add additional comments here!"
+        cardBlue.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
         cardBlue.cardInformation = false
         cardBlue.cardsTablePosition = 4
-
+        
         
         let cardIndigo = Card(context: context!)
         cardIndigo.cardName = "indigo"
         cardIndigo.cardIncluded = true
-        cardIndigo.cardComment = "This is one of the color choices. Feel free to add additional comments here!"
+        cardIndigo.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
         cardIndigo.cardInformation = false
         cardIndigo.cardsTablePosition = 5
-
+        
         
         let cardViolet = Card(context: context!)
         cardViolet.cardName = "violet"
         cardViolet.cardIncluded = true
-        cardViolet.cardComment = "This is one of the color choices. Feel free to add additional comments here!"
+        cardViolet.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
         cardViolet.cardInformation = false
         cardViolet.cardsTablePosition = 6
-
+        
         
         let cardDishes = Card(context: context!)
         cardDishes.cardName = "Do the dishes."
         cardDishes.cardIncluded = true
-        cardDishes.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments here!"
-        cardDishes.cardsTablePosition = 0
+        cardDishes.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
 
+        cardDishes.cardsTablePosition = 0
+        
         
         let cardFloor = Card(context: context!)
         cardFloor.cardName = "Clean the floor."
         cardFloor.cardIncluded = true
-        cardFloor.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments here!"
+        cardFloor.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
+
         cardFloor.cardInformation = false
         cardFloor.cardsTablePosition = 1
-
+        
         
         let cardDust = Card(context: context!)
         cardDust.cardName = "Dust the livingroom."
         cardDust.cardIncluded = true
-        cardDust.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments here!"
+        cardDust.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
+
         cardDust.cardInformation = false
         cardDust.cardsTablePosition = 2
-
+        
         
         
         let cardDesk = Card(context: context!)
         cardDesk.cardName = "Organize my desk."
         cardDesk.cardIncluded = true
-        cardDesk.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments here!"
+        cardDesk.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
+
         cardDesk.cardInformation = false
         cardDesk.cardsTablePosition = 3
-
-
+        
+        
         
         let cardLaundry = Card(context: context!)
         cardLaundry.cardName = "Do the laundry."
         cardLaundry.cardIncluded = true
-        cardLaundry.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments here!"
+        cardLaundry.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
+
         cardLaundry.cardInformation = false
         cardLaundry.cardsTablePosition = 4
-
-
+        
+        
         
         let choresDeck = Deck(context: context!)
         choresDeck.deckName = "Household Chores"
-        choresDeck.deckComment = "Here are some typical household chores you might be in charge of. Say you have fice chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! Add and delete chores as you wish. Feel free to add additional comments here!"
+        choresDeck.deckComment = "Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! In the default setup, your device will randomly choose 2 out of 5 chores. Add, delete, or deselect chores as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time."
         choresDeck.numberOfCardsToPick = 2
         choresDeck.dealButtonSelector = true
         choresDeck.decksTablePosition = 1
         
         let colorsDeck = Deck(context: context!)
         colorsDeck.deckName = "Colors"
-        colorsDeck.deckComment = "Here are all the colors of the rainbow. We chose this as an example deck to shoe how to use this app. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! Add and delete colors as you wish. Feel free to add additional comments here!"
+        colorsDeck.deckComment = "Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time."
         colorsDeck.numberOfCardsToPick = 3
         colorsDeck.dealButtonSelector = true
         colorsDeck.decksTablePosition = 0
         
-
-        
-   
         
         choresDeck.addToChildCards(cardDishes)
         choresDeck.addToChildCards(cardFloor)
@@ -175,18 +173,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         colorsDeck.addToChildCards(cardIndigo)
         colorsDeck.addToChildCards(cardViolet)
         
-       
-        
         do {
             try context!.save()
         } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
         }
         
+    }
+    
+    func isAppAlreadyLaunchedOnce()->Bool{
+        let defaults = UserDefaults.standard
+        
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("App already launched : \(isAppAlreadyLaunchedOnce)")
+            return true
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("App launched first time")
+            return false
+        }
+    }
+
+    
+    
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        
+        if !isAppAlreadyLaunchedOnce() {
+            deleteAllData(entity: "Deck")
+            deleteAllData(entity: "Card")
+            firstTimeDataBaseInit()
+
+        }
+        
+        
+        
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
         self.window?.rootViewController = mainVC
-        
         mainVC.container = persistentContainer
 
 
