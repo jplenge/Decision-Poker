@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ou9-Tg-Gfo">
-    <device id="ipad12_9rounded" orientation="landscape">
-        <adaptation id="splitview1_2"/>
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="StartViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="StartViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decision Poker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vda-xP-feB">
-                                <rect key="frame" x="16" y="23" width="646" height="156"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decision Poker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vda-xP-feB">
+                                <rect key="frame" x="20" y="0.0" width="528" height="91"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -28,7 +28,7 @@
                                 </variation>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="decisionPokerStartImage3" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-ew-rrq">
-                                <rect key="frame" x="74.5" y="200" width="529" height="386"/>
+                                <rect key="frame" x="30" y="140" width="260" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="d3t-ew-rrq" secondAttribute="height" multiplier="1.36735" id="Lft-L8-EYj"/>
                                     <constraint firstAttribute="width" secondItem="d3t-ew-rrq" secondAttribute="height" multiplier="1.36948" id="nNz-iu-Uor"/>
@@ -46,10 +46,10 @@
                                 </variation>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-dP-Sff">
-                                <rect key="frame" x="110" y="624" width="458" height="360"/>
+                                <rect key="frame" x="30" y="131" width="508" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi7-8K-ek3">
-                                        <rect key="frame" x="0.0" y="0.0" width="458" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="508" height="40"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         <state key="normal" title="Directions"/>
                                         <variation key="heightClass=regular-widthClass=regular">
@@ -60,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEp-OA-rjG">
-                                        <rect key="frame" x="0.0" y="90" width="458" height="90"/>
+                                        <rect key="frame" x="0.0" y="40" width="508" height="40"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         <state key="normal" title="Start dealing decisions!"/>
                                         <variation key="heightClass=regular-widthClass=regular">
@@ -71,7 +71,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtA-rT-MWg">
-                                        <rect key="frame" x="0.0" y="180" width="458" height="90"/>
+                                        <rect key="frame" x="0.0" y="80" width="508" height="40"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         <state key="normal" title="Saved Results"/>
                                         <variation key="heightClass=regular-widthClass=regular">
@@ -82,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vob-Fw-Qii">
-                                        <rect key="frame" x="0.0" y="270" width="458" height="90"/>
+                                        <rect key="frame" x="0.0" y="120" width="508" height="40"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         <state key="normal" title="Contact Us"/>
                                         <variation key="heightClass=regular-widthClass=regular">
@@ -157,6 +157,9 @@
                                 <exclude reference="nms-RS-hNC"/>
                                 <exclude reference="wSq-Cb-ScQ"/>
                                 <exclude reference="ZhW-8j-ArB"/>
+                                <exclude reference="1me-WM-xN7"/>
+                                <exclude reference="5RM-00-7sj"/>
+                                <exclude reference="lwH-94-nOj"/>
                                 <exclude reference="5LG-QE-SNN"/>
                                 <exclude reference="FZ1-HT-pzf"/>
                                 <exclude reference="N2p-IG-CEr"/>
@@ -165,9 +168,6 @@
                                 <exclude reference="kg4-G7-Fxx"/>
                                 <exclude reference="qjb-3Z-aKY"/>
                                 <exclude reference="vHU-oA-LRy"/>
-                                <exclude reference="1me-WM-xN7"/>
-                                <exclude reference="5RM-00-7sj"/>
-                                <exclude reference="lwH-94-nOj"/>
                                 <exclude reference="e8g-JI-JeF"/>
                             </mask>
                         </variation>
@@ -179,10 +179,10 @@
                                 <exclude reference="VAM-y6-Vl6"/>
                                 <exclude reference="cio-xU-dty"/>
                                 <include reference="ZhW-8j-ArB"/>
-                                <include reference="FZ1-HT-pzf"/>
-                                <exclude reference="kg4-G7-Fxx"/>
                                 <include reference="lwH-94-nOj"/>
                                 <exclude reference="r0r-kw-1io"/>
+                                <include reference="FZ1-HT-pzf"/>
+                                <exclude reference="kg4-G7-Fxx"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -202,16 +202,16 @@
                                 <exclude reference="bte-0F-Z69"/>
                                 <exclude reference="nms-RS-hNC"/>
                                 <include reference="wSq-Cb-ScQ"/>
+                                <include reference="1me-WM-xN7"/>
+                                <include reference="5RM-00-7sj"/>
+                                <exclude reference="j35-SD-MtS"/>
+                                <exclude reference="r0r-kw-1io"/>
                                 <include reference="N2p-IG-CEr"/>
                                 <exclude reference="Nf9-OC-9we"/>
                                 <include reference="QQz-0h-v9c"/>
                                 <exclude reference="e8S-RK-nuM"/>
                                 <exclude reference="qjb-3Z-aKY"/>
                                 <include reference="vHU-oA-LRy"/>
-                                <include reference="1me-WM-xN7"/>
-                                <include reference="5RM-00-7sj"/>
-                                <exclude reference="j35-SD-MtS"/>
-                                <exclude reference="r0r-kw-1io"/>
                                 <exclude reference="e8g-JI-JeF"/>
                             </mask>
                         </variation>
@@ -232,16 +232,16 @@
             <objects>
                 <viewController id="OfO-xk-2tV" customClass="DirectionsViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8dD-ff-3iT">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evG-B8-4hK">
-                                <rect key="frame" x="20" y="20" width="638" height="890"/>
+                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="evG-B8-4hK">
+                                <rect key="frame" x="20" y="20" width="528" height="248"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" adjustable="YES"/>
                                 </accessibility>
                                 <string key="text">This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a "deck," and each choice in a deck is entered as a "card." To get started, press the "Start dealing decisions!" button in the start screen. The app will display two starter "decks," colors and household chores, but you can add and edit your own decks and cards. Some instructions are indicated if the "info" button in each screen is pressed. Once your selections are optimized, simply hit "Deal!" to create your randomized "hand" or decision! Once the decision is made, you can fix and redraw any of the choices of your result. If you are happy with the decision the app has made, you can see, send and save your finalized solutions. Sometimes making decisions is stressful. We hope this app makes the process more fun and efficient!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -275,7 +275,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="HDT-3D-Hpa" customClass="DecksViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ji4-6j-DcS">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -284,20 +284,20 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DecksCellIdentifier" rowHeight="183" id="t82-Zv-gyz" customClass="DecksCell" customModule="DecisionPoker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="678" height="183"/>
+                                <rect key="frame" x="0.0" y="28" width="568" height="183"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t82-Zv-gyz" id="HUo-Ni-Nrd">
-                                    <rect key="frame" x="0.0" y="0.0" width="678" height="183"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="568" height="183"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-fu-Rzy">
-                                            <rect key="frame" x="281" y="72" width="11" height="24"/>
+                                            <rect key="frame" x="197" y="60" width="11" height="24"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comments for the decks." translatesAutoresizingMaskIntoConstraints="NO" id="TA8-Oe-oMA">
-                                            <rect key="frame" x="10" y="122" width="658" height="140"/>
+                                            <rect key="frame" x="10" y="102" width="548" height="140"/>
                                             <color key="backgroundColor" red="0.0014197396128944884" green="0.5" blue="0.0022028552773147303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="140" id="5ZM-s0-m5F">
@@ -310,7 +310,7 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gke-oB-ZD2">
-                                            <rect key="frame" x="596" y="64" width="52" height="40"/>
+                                            <rect key="frame" x="506" y="53" width="52" height="38"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="Apj-7U-CW6"/>
                                             </constraints>
@@ -342,19 +342,19 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwr-qT-8rZ">
-                                            <rect key="frame" x="267" y="72" width="14" height="24"/>
+                                            <rect key="frame" x="183" y="60" width="14" height="24"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="tot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLf-XO-RJe">
-                                            <rect key="frame" x="292" y="72" width="24" height="24"/>
+                                            <rect key="frame" x="208" y="60" width="24" height="24"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="LrQ-vs-AdZ" userLabel="servingsStepper">
-                                            <rect key="frame" x="326" y="69.5" width="94" height="29"/>
+                                            <rect key="frame" x="237" y="57.5" width="94" height="29"/>
                                             <color key="backgroundColor" red="0.0" green="0.50287460470000001" blue="0.0048546414079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -362,7 +362,7 @@
                                             </connections>
                                         </stepper>
                                         <button contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGB-Oz-Hrw">
-                                            <rect key="frame" x="30" y="66" width="87" height="36"/>
+                                            <rect key="frame" x="15" y="54" width="87" height="36"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title=" Card List ">
@@ -382,7 +382,7 @@
                                             </connections>
                                         </button>
                                         <textView clipsSubviews="YES" contentMode="scaleToFill" text="Deck Label" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VmH-Ez-ALn">
-                                            <rect key="frame" x="10" y="15" width="566" height="46"/>
+                                            <rect key="frame" x="6" y="6" width="512" height="39"/>
                                             <color key="backgroundColor" red="0.0014197396128944884" green="0.5" blue="0.0022028552773147303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -427,7 +427,7 @@
                                             </variation>
                                         </textView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX5-io-ZeK">
-                                            <rect key="frame" x="586" y="27" width="72" height="22"/>
+                                            <rect key="frame" x="526" y="19" width="22" height="22"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -703,6 +703,11 @@
                                             <exclude reference="xOq-5M-lRo"/>
                                             <exclude reference="z8i-Qe-hwe"/>
                                             <exclude reference="zYT-xc-gr9"/>
+                                            <exclude reference="1Vj-Cc-liL"/>
+                                            <exclude reference="7ca-6o-5U3"/>
+                                            <exclude reference="RqL-0v-GlJ"/>
+                                            <exclude reference="acr-hU-hY3"/>
+                                            <exclude reference="eP0-kX-tfh"/>
                                             <exclude reference="08Z-gA-WT4"/>
                                             <exclude reference="HSe-k2-qTz"/>
                                             <exclude reference="L0c-Y4-NSb"/>
@@ -717,11 +722,6 @@
                                             <exclude reference="vjv-12-ebR"/>
                                             <exclude reference="xkm-j1-xLo"/>
                                             <exclude reference="znR-se-zxp"/>
-                                            <exclude reference="1Vj-Cc-liL"/>
-                                            <exclude reference="7ca-6o-5U3"/>
-                                            <exclude reference="RqL-0v-GlJ"/>
-                                            <exclude reference="acr-hU-hY3"/>
-                                            <exclude reference="eP0-kX-tfh"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=compact-widthClass=compact">
@@ -806,9 +806,6 @@
                                             <exclude reference="Nwr-RE-fic"/>
                                             <include reference="xOq-5M-lRo"/>
                                             <include reference="zYT-xc-gr9"/>
-                                            <include reference="nWq-r5-cNh"/>
-                                            <exclude reference="sBU-33-9GD"/>
-                                            <exclude reference="uS2-Ly-NRU"/>
                                             <include reference="1Vj-Cc-liL"/>
                                             <include reference="7ca-6o-5U3"/>
                                             <exclude reference="aKu-qd-wIu"/>
@@ -816,6 +813,9 @@
                                             <exclude reference="eP0-kX-tfh"/>
                                             <exclude reference="xdg-ce-TfH"/>
                                             <exclude reference="ycP-um-jKj"/>
+                                            <include reference="nWq-r5-cNh"/>
+                                            <exclude reference="sBU-33-9GD"/>
+                                            <exclude reference="uS2-Ly-NRU"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=regular">
@@ -854,12 +854,12 @@
                                             <exclude reference="d3Q-vR-7iJ"/>
                                             <exclude reference="ndK-0O-GH0"/>
                                             <include reference="oTx-9S-kxy"/>
+                                            <include reference="RqL-0v-GlJ"/>
+                                            <exclude reference="xdg-ce-TfH"/>
                                             <exclude reference="HSe-k2-qTz"/>
                                             <exclude reference="L0c-Y4-NSb"/>
                                             <include reference="Prg-Fp-q31"/>
                                             <exclude reference="uS2-Ly-NRU"/>
-                                            <include reference="RqL-0v-GlJ"/>
-                                            <exclude reference="xdg-ce-TfH"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -916,11 +916,11 @@
             <objects>
                 <viewController title="First Hand" id="CJh-qM-AvY" customClass="DealResultsViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkg-EM-sQf">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZs-rX-Fxh">
-                                <rect key="frame" x="280" y="775" width="118" height="45"/>
+                                <rect key="frame" x="225" y="164" width="118" height="45"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                 <state key="normal" title=" Hold 'em! ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -939,7 +939,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yo-Sl-Zi6">
-                                <rect key="frame" x="20" y="20" width="638" height="710"/>
+                                <rect key="frame" x="6" y="6" width="556" height="148"/>
                                 <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="iPL-Ln-xdo" kind="embed" identifier="embeddedDealResultTableSegue" id="Gk3-eP-6ys"/>
@@ -1065,7 +1065,7 @@
             <objects>
                 <tableViewController title="Cards Picked" id="iPL-Ln-xdo" customClass="DealResultsTableViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iQu-76-6Ht">
-                        <rect key="frame" x="0.0" y="0.0" width="638" height="710"/>
+                        <rect key="frame" x="0.0" y="0.0" width="556" height="148"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1073,14 +1073,14 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealResultsCell" rowHeight="230" id="eBP-Hy-Ja9" customClass="DealResultsTableViewCell" customModule="DecisionPoker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="638" height="230"/>
+                                <rect key="frame" x="0.0" y="28" width="556" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBP-Hy-Ja9" id="37r-Qc-ZKi">
-                                    <rect key="frame" x="0.0" y="0.0" width="638" height="230"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="556" height="230"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-Iy-9OP">
-                                            <rect key="frame" x="207" y="51" width="62" height="36"/>
+                                            <rect key="frame" x="61.5" y="45" width="62" height="36"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title=" Cheat ">
@@ -1100,19 +1100,19 @@
                                             </connections>
                                         </button>
                                         <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPf-If-9Fx">
-                                            <rect key="frame" x="0.0" y="98" width="638" height="123"/>
+                                            <rect key="frame" x="0.0" y="98" width="556" height="123"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </pickerView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRs-yQ-jSI">
-                                            <rect key="frame" x="25" y="10" width="744" height="33"/>
+                                            <rect key="frame" x="6" y="5" width="296" height="33"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-2U-GTP">
-                                            <rect key="frame" x="597.5" y="51" width="75" height="36"/>
+                                            <rect key="frame" x="178" y="45" width="75" height="36"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title=" Redraw ">
@@ -1314,11 +1314,11 @@
             <objects>
                 <viewController title="Info" id="O1r-TN-7K2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZU-XY-4yj">
-                        <rect key="frame" x="0.0" y="0.0" width="357.5" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIP-TB-Flw">
-                                <rect key="frame" x="16" y="20" width="325.5" height="795"/>
+                                <rect key="frame" x="16" y="20" width="536" height="184"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">This page shows the first "hand" that the program "deals" for you (i.e. it shows your initial decision result). If you are happy with your result, click the "Hold em'!" button at the bottom of the screen. If you would like to change one of your results to a fixed choice, hit the "cheat" button below the desired result. A picker view will pop up. Choose the "card" you would like to substitute in and hit "cheat" again. This will change your final outcome. If you would like to randomly reselect a single  "card," hit "Redraw." This will randomly reselect and change the outcome for that result. When the result is re-optimized to your liking, hint the "Hold em'!" button to go to the next screen.</string>
                                 <color key="textColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1349,11 +1349,11 @@
             <objects>
                 <viewController title="Final Result" id="hok-N7-1Js" customClass="FinalResultViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wXF-rn-2s3">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card Hand Image" translatesAutoresizingMaskIntoConstraints="NO" id="UZN-Xr-LwH">
-                                <rect key="frame" x="11" y="10" width="656" height="400"/>
+                                <rect key="frame" x="16" y="6" width="288" height="175.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="209" id="06K-fz-Ptf"/>
                                     <constraint firstAttribute="width" constant="343" id="JWc-6Q-l0X"/>
@@ -1390,13 +1390,13 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is the result for your list of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-dt-dap">
-                                <rect key="frame" x="164.5" y="445" width="349" height="33"/>
+                                <rect key="frame" x="109.5" y="6" width="349" height="33"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWt-zx-NhR">
-                                <rect key="frame" x="293" y="493" width="92" height="52"/>
+                                <rect key="frame" x="238" y="39" width="92" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="3Cd-38-1tI"/>
                                 </constraints>
@@ -1415,7 +1415,7 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="cards" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Av0-bM-wX3">
-                                <rect key="frame" x="20" y="575" width="638" height="240"/>
+                                <rect key="frame" x="6" y="85" width="556" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="402" id="3b9-Q2-OHp"/>
                                     <constraint firstAttribute="height" constant="211" id="EBq-3t-NhA"/>
@@ -1550,6 +1550,14 @@
                                 <exclude reference="bb6-Mw-XSM"/>
                                 <exclude reference="rlk-px-QFo"/>
                                 <exclude reference="yiW-IN-yr3"/>
+                                <exclude reference="9vp-tM-Cpc"/>
+                                <exclude reference="SSG-KS-ED0"/>
+                                <exclude reference="aYg-kv-4ol"/>
+                                <exclude reference="ctm-qP-k7s"/>
+                                <exclude reference="hW5-wP-Bmf"/>
+                                <exclude reference="mQP-US-eIL"/>
+                                <exclude reference="qQQ-fB-YTn"/>
+                                <exclude reference="xZO-GU-JAT"/>
                                 <exclude reference="9My-4t-vTe"/>
                                 <exclude reference="ApR-Cw-1sb"/>
                                 <exclude reference="ImM-2N-XX9"/>
@@ -1561,14 +1569,6 @@
                                 <exclude reference="l3h-2p-3Lw"/>
                                 <exclude reference="xKN-Eb-iR7"/>
                                 <exclude reference="zGg-O4-hPr"/>
-                                <exclude reference="9vp-tM-Cpc"/>
-                                <exclude reference="SSG-KS-ED0"/>
-                                <exclude reference="aYg-kv-4ol"/>
-                                <exclude reference="ctm-qP-k7s"/>
-                                <exclude reference="hW5-wP-Bmf"/>
-                                <exclude reference="mQP-US-eIL"/>
-                                <exclude reference="qQQ-fB-YTn"/>
-                                <exclude reference="xZO-GU-JAT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -1578,14 +1578,14 @@
                             <mask key="constraints">
                                 <include reference="IFN-fF-Xyg"/>
                                 <include reference="ePH-A3-FLV"/>
-                                <include reference="ApR-Cw-1sb"/>
-                                <include reference="l3h-2p-3Lw"/>
                                 <exclude reference="NgV-Zv-Jak"/>
                                 <exclude reference="aYg-kv-4ol"/>
                                 <exclude reference="c2D-QZ-mOE"/>
                                 <exclude reference="hW5-wP-Bmf"/>
                                 <include reference="mQP-US-eIL"/>
                                 <include reference="qQQ-fB-YTn"/>
+                                <include reference="ApR-Cw-1sb"/>
+                                <include reference="l3h-2p-3Lw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -1594,14 +1594,14 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="HUO-u5-xbv"/>
+                                <include reference="SSG-KS-ED0"/>
+                                <exclude reference="c2D-QZ-mOE"/>
+                                <exclude reference="ctm-qP-k7s"/>
                                 <include reference="9My-4t-vTe"/>
                                 <exclude reference="ImM-2N-XX9"/>
                                 <include reference="aYC-wi-Bov"/>
                                 <exclude reference="i37-X4-CWy"/>
                                 <exclude reference="zGg-O4-hPr"/>
-                                <include reference="SSG-KS-ED0"/>
-                                <exclude reference="c2D-QZ-mOE"/>
-                                <exclude reference="ctm-qP-k7s"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1617,11 +1617,11 @@
                                 <exclude reference="KaU-Gt-HT9"/>
                                 <include reference="rlk-px-QFo"/>
                                 <exclude reference="yiW-IN-yr3"/>
-                                <include reference="ki7-Oo-Jr8"/>
-                                <include reference="xKN-Eb-iR7"/>
                                 <exclude reference="9vp-tM-Cpc"/>
                                 <exclude reference="c2D-QZ-mOE"/>
                                 <include reference="xZO-GU-JAT"/>
+                                <include reference="ki7-Oo-Jr8"/>
+                                <include reference="xKN-Eb-iR7"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1667,20 +1667,20 @@
             <objects>
                 <tableViewController title="Saved Results" id="thg-io-BiT" customClass="SavedResultsController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dfd-3f-kGT">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="885"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="256"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SavedResultsCellIdentifier" rowHeight="210" id="tc1-me-xRA" customClass="SavedResultsCell" customModule="DecisionPoker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="678" height="210"/>
+                                <rect key="frame" x="0.0" y="28" width="568" height="210"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tc1-me-xRA" id="YAR-QW-GZN">
-                                    <rect key="frame" x="0.0" y="0.0" width="678" height="209.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tc1-me-xRA" id="YAR-QW-GZN">
+                                    <rect key="frame" x="0.0" y="0.0" width="568" height="209.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPo-Py-Pgk">
-                                            <rect key="frame" x="20" y="16" width="39.5" height="25"/>
+                                            <rect key="frame" x="20" y="16" width="39.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Ddp-LH-qzh">
                                                     <variation key="heightClass=compact-widthClass=regular" constant="20"/>
@@ -1693,7 +1693,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hc-kK-cIl">
-                                            <rect key="frame" x="30" y="51" width="40" height="20"/>
+                                            <rect key="frame" x="30" y="45" width="40" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Gl9-cs-ulJ"/>
                                             </constraints>
@@ -1712,7 +1712,7 @@
                                             </variation>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBQ-lV-YyS">
-                                            <rect key="frame" x="50" y="81" width="608" height="120"/>
+                                            <rect key="frame" x="30" y="71" width="518" height="128"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="128" id="WWT-AY-ajf">
@@ -1856,7 +1856,7 @@
             <objects>
                 <tableViewController id="Ysb-L0-eem" customClass="CardsViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sdm-3e-UtO">
-                        <rect key="frame" x="0.0" y="0.0" width="678" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1864,14 +1864,14 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardsCellIndentifier" rowHeight="100" id="oPY-nW-UqK" customClass="CardsCell" customModule="DecisionPoker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="678" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="568" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oPY-nW-UqK" id="qHe-ET-6Sg">
-                                    <rect key="frame" x="0.0" y="0.0" width="678" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="568" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzL-1i-vTY" userLabel="foodItemFixed">
-                                            <rect key="frame" x="547" y="20.5" width="51" height="31"/>
+                                            <rect key="frame" x="458" y="21.5" width="32" height="31"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="410" id="zaf-ks-UIf">
                                                     <variation key="heightClass=compact-widthClass=compact" constant="30"/>
@@ -1893,7 +1893,7 @@
                                             </connections>
                                         </switch>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uy-SP-YDo">
-                                            <rect key="frame" x="616" y="26" width="22" height="20"/>
+                                            <rect key="frame" x="518" y="26" width="20" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="381" id="q0c-fq-1oa">
                                                     <variation key="heightClass=compact-widthClass=compact" constant="20"/>
@@ -1915,7 +1915,7 @@
                                             </connections>
                                         </button>
                                         <textView clipsSubviews="YES" contentMode="scaleToFill" text="Label for cards" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-dL-tlp">
-                                            <rect key="frame" x="26" y="13" width="491" height="46"/>
+                                            <rect key="frame" x="25" y="17" width="413" height="40"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="49" id="QxX-nX-PKr">
@@ -1949,7 +1949,7 @@
                                             </variation>
                                         </textView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dij-l5-23o">
-                                            <rect key="frame" x="15" y="66.5" width="648" height="150"/>
+                                            <rect key="frame" x="15" y="67.5" width="538" height="150"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="9aK-eU-QMZ"/>
@@ -2144,7 +2144,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gqi-Ay-zqU">
-                        <rect key="frame" x="0.0" y="24" width="678" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -2153,7 +2153,7 @@
                         </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="y58-fD-39q">
-                        <rect key="frame" x="0.0" y="909" width="678" height="50"/>
+                        <rect key="frame" x="0.0" y="256" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </toolbar>
@@ -2171,7 +2171,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="mVM-Uq-Y2x" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wjj-EM-zoh">
-                        <rect key="frame" x="0.0" y="24" width="678" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -2183,7 +2183,7 @@
                         </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ie4-n7-y6H">
-                        <rect key="frame" x="0.0" y="954" width="678" height="50"/>
+                        <rect key="frame" x="0.0" y="256" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2222,7 +2222,7 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="4be-bk-QrT">
-                        <rect key="frame" x="0.0" y="24" width="678" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -2246,7 +2246,7 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NA6-b5-ATv">
-                        <rect key="frame" x="0.0" y="24" width="678" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -2272,8 +2272,9 @@
         <image name="decisionPokerStartImage3" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nwH-BD-uS1"/>
-        <segue reference="K1D-VZ-g9g"/>
+        <segue reference="eVR-bP-kE3"/>
+        <segue reference="RHu-fD-eLz"/>
+        <segue reference="zGy-9z-VDH"/>
         <segue reference="DDS-ez-aZh"/>
     </inferredMetricsTieBreakers>
 </document>
