@@ -101,4 +101,28 @@ extension UITextView {
    
 }
 
+extension UITextField {
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        changeFontNameField()
+    }
+    
+    
+    
+    func changeFontNameField()
+    {
+        self.font = UIFont(name: "Marker Felt", size: (self.font?.pointSize)!)
+        
+        self.contentScaleFactor = 0.01
+        self.adjustsFontSizeToFitWidth = true
+    
+        
+
+    //    self.lineBreakMode = .byClipping
+        // print ((self.font?.pointSize)!)
+    }
+    
+    
+}
+
 

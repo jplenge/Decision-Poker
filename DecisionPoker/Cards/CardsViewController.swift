@@ -48,7 +48,6 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
     
     func CardCommentUpdate(sender: CardsCell, comment: String) {
         if let indexPath  = tableView.indexPath(for: sender) {
-            //print(comment)
             let commit = fetchedResultsController?.object(at: indexPath) as! Card
             commit.cardComment = comment
         }
@@ -136,7 +135,7 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         updateUI()
     }
  
@@ -214,7 +213,7 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
             //cell?.cardInfo = card.cardInformation
             cell?.delegate = self
         }
-        return (cell ?? nil)!
+        return cell!
     }
     
     
@@ -288,7 +287,6 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
     @IBOutlet weak var cardListUpdate: UIBarButtonItem!
     
     @IBAction func cardListUpdateTapped(_ sender: UIBarButtonItem) {
-        print(container)
     }
     
         

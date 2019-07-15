@@ -32,7 +32,7 @@ protocol CardsCellDelegate: class {
 // END SECTION 1 - PROTOCOL//
 
 
-class CardsCell: UITableViewCell, UITextViewDelegate {
+class CardsCell: UITableViewCell, UITextViewDelegate, UITextFieldDelegate {
 
 // SECTION 2 - TABLE VIEW FUNCTIONS//
 
@@ -40,15 +40,16 @@ class CardsCell: UITableViewCell, UITextViewDelegate {
         delegate?.CardIncluded(sender: self)
     }
     
-    func cardNameIsUpdated(_ sender: UITextView) {
-        delegate?.CardNameUpdate(sender: self, comment: nameOfCard.text)
+    
+    @IBAction func cardNameIsUpdated(_ sender: UITextField) {
+        delegate?.CardNameUpdate(sender: self, comment: nameOfCard.text!)
     }
     
+    
     @IBAction func cardInfoIsTapped(_ sender: UIButton) {
-        
         delegate?.CardInfoTapped(sender: self)
-        
     }
+    
     
     func cardCommentIsUpdated(_ sender: UITextView) {
         delegate?.CardCommentUpdate(sender: self, comment: cardCommentText.text)
@@ -58,7 +59,8 @@ class CardsCell: UITableViewCell, UITextViewDelegate {
 
 // SECTION 3 - STORYBOARD OBJECTS//
 
-    @IBOutlet weak var nameOfCard: UITextView!
+
+    @IBOutlet weak var nameOfCard: UITextField!
     @IBOutlet weak var cardIsIncluded: UISwitch!
     @IBOutlet weak var cardInfo: UIButton!
     @IBOutlet weak var cardCommentText: UITextView!
@@ -82,7 +84,6 @@ class CardsCell: UITableViewCell, UITextViewDelegate {
 
     func textViewDidEndEditing(_ textView: UITextView) {
         cardCommentIsUpdated(cardCommentText)
-        cardNameIsUpdated(nameOfCard)
     }
 
 // END SECTION 6 - ADDITIONAL FUNCTIONS//
@@ -93,13 +94,24 @@ class CardsCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
         // Initialization code
          cardCommentText?.delegate = self
-        nameOfCard?.delegate = self
+        
+         nameOfCard?.delegate = self
+         nameOfCard.returnKeyType = .done
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        cardNameIsUpdated(nameOfCard)
+        return true
     }
     
 // END SECTION 7 - CELL FUNCTIONS//

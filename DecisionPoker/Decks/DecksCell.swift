@@ -26,7 +26,6 @@ protocol DecksCellDelegate: class {
     func DeckNameUpdate(sender: DecksCell, comment: String)
     func ChangeCardNumberTapped(sender: DecksCell)
     func DeckInfoTapped(sender: DecksCell)
-   // func SetHeightDeckTable(sender: DecksCell)
     func DealButtonTapped( sender: DecksCell)
     func CardlistButtonTapped( sender: DecksCell)
     func DeckCommentUpdate(sender:DecksCell, comment:String)
@@ -34,12 +33,13 @@ protocol DecksCellDelegate: class {
 }
 // END SECTION 1 - PROTOCOL//
 
-class DecksCell: UITableViewCell, UITextViewDelegate {
+class DecksCell: UITableViewCell, UITextViewDelegate, UITextFieldDelegate {
     
 // SECTION 2 - TABLE VIEW FUNCTIONS //
-   
-    func deckNameIsUpdated(_ sender: UITextView) {
-        delegate?.DeckNameUpdate(sender: self, comment: nameOfDeck.text)
+    
+    
+    @IBAction func deckNameIsUpdated(_ sender: UITextField) {
+        delegate?.DeckNameUpdate(sender: self, comment: nameOfDeck.text!)
     }
     
     @IBAction func resultsNumberChangedTapped(_ sender: UIStepper) {
@@ -59,6 +59,8 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
         delegate?.CardlistButtonTapped(sender: self)
     }
     
+    
+    
     func deckCommentIsUpdated(_ sender: UITextView) {
         delegate?.DeckCommentUpdate(sender: self, comment: deckCommentText.text)
     }
@@ -67,7 +69,8 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
     
 // SECTION 3 - STORYBOARD OBJECTS //
     
-    @IBOutlet weak var nameOfDeck: UITextView!
+
+    @IBOutlet weak var nameOfDeck: UITextField!
     @IBOutlet weak var numberOfResults: UILabel!
     @IBOutlet weak var useableCardsInDeck: UILabel!
     @IBOutlet weak var resultsNumberChanged: UIStepper!
@@ -97,7 +100,6 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
    
     func textViewDidEndEditing(_ textView: UITextView) {
         deckCommentIsUpdated(deckCommentText)
-        deckNameIsUpdated(nameOfDeck)
     }
     
     
@@ -109,7 +111,10 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
       
         deckCommentText?.delegate = self
+        
         nameOfDeck?.delegate = self
+        nameOfDeck.returnKeyType = .done
+        
         
         cardlistButton.layer.borderColor = UIColor.white.cgColor
         dealButton.layer.borderColor = UIColor.white.cgColor
@@ -122,6 +127,13 @@ class DecksCell: UITableViewCell, UITextViewDelegate {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        deckNameIsUpdated(nameOfDeck)
+        return true
     }
 
 }
