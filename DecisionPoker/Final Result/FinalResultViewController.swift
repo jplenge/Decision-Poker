@@ -20,6 +20,7 @@ class FinalResultViewController: UIViewController {
     var container: NSPersistentContainer!
 
 
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     @IBOutlet weak var finalResultDeck: UILabel!
     
@@ -71,7 +72,14 @@ class FinalResultViewController: UIViewController {
     
     func displayShareSheet(shareContent:String) {
         let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: {})
+        
+        present(activityViewController, animated: true, completion: nil)
+        if let popOver = activityViewController.popoverPresentationController {
+            popOver.sourceView = self.view
+            //popOver.sourceRect
+            popOver.barButtonItem = shareButton
+        }
+        
     }
     
     
