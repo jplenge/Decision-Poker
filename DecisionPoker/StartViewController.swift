@@ -23,48 +23,40 @@ class StartViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     
     var container: NSPersistentContainer!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  self.view.backgroundColor = UIColor(red: 0.0, green: 1.00, blue: 0.0, alpha: 0.35)
         
-       // appTitle.minimumScaleFactor = 0.01
-       // appTitle.adjustsFontSizeToFitWidth = true
-       // appTitle.lineBreakMode = .byClipping
         appTitle.numberOfLines = 1
-
-
     }
     
-
-
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            switch segue.identifier {
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
             
-            case "StartDealingSegue":
+        case "StartDealingSegue":
+            let navigationContoller = segue.destination as! UINavigationController
+            let controller = navigationContoller.viewControllers.first as! DecksViewController
+            controller.container = container
             
-            //let controller = segue.destination as! DecksViewController
-
-                let navigationContoller = segue.destination as! UINavigationController
-                let controller = navigationContoller.viewControllers.first as! DecksViewController
-                controller.container = container
-            case "DirectionsSegue":
-                
-                let navigationContoller = segue.destination as! UINavigationController
-                let controller = navigationContoller.viewControllers.first as! DirectionsViewController
-                controller.container = container
-                
-            case "StartToSavedResults":
-                let navigationContoller = segue.destination as! UINavigationController
-                let controller = navigationContoller.viewControllers.first as! SavedResultsController
-                controller.container = container
-                controller.backButtonText = "Back"
-                
-            default:
-                return
+        case "DirectionsSegue":
+            let navigationContoller = segue.destination as! UINavigationController
+            let controller = navigationContoller.viewControllers.first as! DirectionsViewController
+            controller.container = container
+            
+        case "StartToSavedResults":
+            let navigationContoller = segue.destination as! UINavigationController
+            let controller = navigationContoller.viewControllers.first as! SavedResultsController
+            controller.container = container
+            controller.backButtonText = NSLocalizedString("Back", comment: "")
+            
+        default:
+            return
             
         }
     }
+    
     
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
@@ -96,6 +88,6 @@ class StartViewController: UIViewController, MFMailComposeViewControllerDelegate
         controller.dismiss(animated: true, completion: nil)
     }
     
-
-
+    
+    
 }

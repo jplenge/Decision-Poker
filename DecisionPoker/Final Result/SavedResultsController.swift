@@ -13,7 +13,7 @@ class SavedResultsController: FetchedResultsTableViewController {
     
     @IBOutlet var backButton: UIBarButtonItem!
     
-    var backButtonText = "Start Over"
+    var backButtonText = NSLocalizedString("Start Over", comment: "")
     
     var container: NSPersistentContainer!
 

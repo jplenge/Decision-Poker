@@ -66,7 +66,6 @@ class FinalResultViewController: UIViewController {
         let dateString = formatter.string(from:now)
         
         finalResultsData = "\(dateString)\rDECK: \r\(selectedDeck.deckName!) \rCARDS: \r\(finalCards)"
-        print(finalResultsData)
     }
     
     
@@ -81,7 +80,6 @@ class FinalResultViewController: UIViewController {
         }
         
     }
-    
     
     
     

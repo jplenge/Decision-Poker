@@ -11,67 +11,7 @@ import CoreData
 
 class DealResultsTableViewController: UITableViewController  {
     
-    /*
-     func PickerItemSelected(sender: DealResultsTableViewCell, item: Int) {
-     
-     if let indexPath = tableView.indexPath(for: sender) {
-     selectedCards[indexPath.row] = (selectedDeck?.childCards?.allObjects as! [Card])[item]
-     }
-     
-     self.tableView.reloadData()
-     }
-     
-     
-     func CheatTapped(sender: DealResultsTableViewCell) {
-     print ("cheat tapped")
-     
-     
-     if let indexPath  = tableView.indexPath(for: sender) {
-     rowTouched = indexPath.row
-     let row = tableView.dequeueReusableCell(withIdentifier: "DealResultsCell", for: indexPath) as! DealResultsTableViewCell
-     if row.bounds.height == normalCellHeight {
-     rowHeight = largeCellHeight
-     } else {
-     rowHeight = normalCellHeight
-     }
-     }
-     tableView.reloadData()
-     
-     
-     }
-     
-     func RedrawTapped(sender: DealResultsTableViewCell) {
-     print ("redraw tapped")
-     
-     
-     let indexPath = sender.getIndexPath()
-     //print(indexPath)
-     
-     var selectionSuccess = false
-     
-     repeat {
-     let newSelection = selectedCards[indexPath!.row].parentDeck?.childCards?.allObjects.randomElement() as! Card
-     //  print(newSelection.cardName)
-     
-     if !selectedCards.contains(newSelection) {
-     selectedCards[indexPath!.row] = newSelection
-     selectionSuccess = true
-     }
-     } while !selectionSuccess
-     
-     
-     /* if let vc = self.children.first(where: { $0 is DealResultsTableViewController }) as? DealResultsTableViewController {
-     vc.selectedCards = self.selectedCards
-     vc.tableView.reloadData()
-     }
- */
- 
-     
-     self.tableView.reloadData()
-     
-     }
-     */
-    
+
     weak var tableViewCellDelegate: DealResultsTableViewCellDelegate!
     weak var delegate: DealResultsViewController!
     
@@ -89,13 +29,6 @@ class DealResultsTableViewController: UITableViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //selectedCards = playGame()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source

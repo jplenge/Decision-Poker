@@ -17,7 +17,7 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     
     var selectedCards: [Card] = []
     var container: NSPersistentContainer!
-    weak var selectedDeck: Deck?
+    var selectedDeck: Deck?
     
     //var rowTouched: Int = 0
     var rowHeight: CGFloat = 80

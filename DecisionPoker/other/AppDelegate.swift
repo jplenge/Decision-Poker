@@ -43,117 +43,114 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let context = appDelegate?.persistentContainer.viewContext
         
         let cardRed = Card(context: context!)
-        cardRed.cardName = "red"
+        cardRed.cardName = NSLocalizedString("red", comment: "")
         cardRed.cardIncluded = true
-        cardRed.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
+        cardRed.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardRed.cardInformation = false
         cardRed.cardsTablePosition = 0
         
         let cardOrange = Card(context: context!)
-        cardOrange.cardName = "orange"
+        cardOrange.cardName = NSLocalizedString("orange", comment: "")
         cardOrange.cardIncluded = true
-        cardOrange.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
+        cardOrange.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardOrange.cardInformation = false
         cardOrange.cardsTablePosition = 1
         
         
         let cardYellow = Card(context: context!)
-        cardYellow.cardName = "yellow"
+        cardYellow.cardName = NSLocalizedString("yellow", comment: "")
+        
+        
         cardYellow.cardIncluded = true
-        cardYellow.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
+        cardYellow.cardComment = NSLocalizedString( "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardYellow.cardInformation = false
         cardYellow.cardsTablePosition = 2
         
         
         let cardGreen = Card(context: context!)
-        cardGreen.cardName = "green"
+        cardGreen.cardName = NSLocalizedString("green", comment: "")
         cardGreen.cardIncluded = true
-        cardGreen.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
+        cardGreen.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardGreen.cardInformation = false
         cardGreen.cardsTablePosition = 3
         
         
         let cardBlue = Card(context: context!)
-        cardBlue.cardName = "blue"
+        cardBlue.cardName = NSLocalizedString("blue", comment: "")
         cardBlue.cardIncluded = true
-        cardBlue.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
+        cardBlue.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardBlue.cardInformation = false
         cardBlue.cardsTablePosition = 4
         
         
         let cardIndigo = Card(context: context!)
-        cardIndigo.cardName = "indigo"
+        cardIndigo.cardName = NSLocalizedString("indigo", comment: "")
         cardIndigo.cardIncluded = true
-        cardIndigo.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
+        cardIndigo.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardIndigo.cardInformation = false
         cardIndigo.cardsTablePosition = 5
         
         
         let cardViolet = Card(context: context!)
-        cardViolet.cardName = "violet"
+        cardViolet.cardName = NSLocalizedString("violet", comment: "")
         cardViolet.cardIncluded = true
-        cardViolet.cardComment = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right."
+        cardViolet.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardViolet.cardInformation = false
         cardViolet.cardsTablePosition = 6
         
         
         let cardDishes = Card(context: context!)
-        cardDishes.cardName = "Do the dishes."
+        cardDishes.cardName = NSLocalizedString( "Do the dishes.", comment: "")
         cardDishes.cardIncluded = true
-        cardDishes.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
-
+        cardDishes.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardDishes.cardsTablePosition = 0
         
         
         let cardFloor = Card(context: context!)
-        cardFloor.cardName = "Clean the floor."
+        cardFloor.cardName = NSLocalizedString("Clean the floor.", comment: "")
         cardFloor.cardIncluded = true
-        cardFloor.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
-
+        cardFloor.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardFloor.cardInformation = false
         cardFloor.cardsTablePosition = 1
         
         
         let cardDust = Card(context: context!)
-        cardDust.cardName = "Dust the livingroom."
+        cardDust.cardName = NSLocalizedString("Dust the livingroom.", comment: "")
         cardDust.cardIncluded = true
-        cardDust.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
-
+        cardDust.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardDust.cardInformation = false
         cardDust.cardsTablePosition = 2
         
         
         
         let cardDesk = Card(context: context!)
-        cardDesk.cardName = "Organize my desk."
+        cardDesk.cardName = NSLocalizedString( "Organize my desk.", comment: "")
         cardDesk.cardIncluded = true
-        cardDesk.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
-
+        cardDesk.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardDesk.cardInformation = false
         cardDesk.cardsTablePosition = 3
         
         
         
         let cardLaundry = Card(context: context!)
-        cardLaundry.cardName = "Do the laundry."
+        cardLaundry.cardName = NSLocalizedString("Do the laundry.", comment: "")
         cardLaundry.cardIncluded = true
-        cardLaundry.cardComment = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right."
-
+        cardLaundry.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardLaundry.cardInformation = false
         cardLaundry.cardsTablePosition = 4
         
         
         
         let choresDeck = Deck(context: context!)
-        choresDeck.deckName = "Household Chores"
-        choresDeck.deckComment = "Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! In the default setup, your device will randomly choose 2 out of 5 chores. Add, delete, or deselect chores as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time."
+        choresDeck.deckName = NSLocalizedString("Household Chores", comment: "")
+        choresDeck.deckComment = NSLocalizedString("Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! In the default setup, your device will randomly choose 2 out of 5 chores. Add, delete, or deselect chores as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time.", comment: "")
         choresDeck.numberOfCardsToPick = 2
         choresDeck.dealButtonSelector = true
         choresDeck.decksTablePosition = 1
         
         let colorsDeck = Deck(context: context!)
-        colorsDeck.deckName = "Colors"
-        colorsDeck.deckComment = "Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time."
+        colorsDeck.deckName = NSLocalizedString("Colors", comment: "")
+        colorsDeck.deckComment = NSLocalizedString("Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time.", comment: "")
         colorsDeck.numberOfCardsToPick = 3
         colorsDeck.dealButtonSelector = true
         colorsDeck.decksTablePosition = 0
