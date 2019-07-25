@@ -1,5 +1,12 @@
+
 /* No comment provided by engineer. */
 "Add comments here." = "Füge Kommentare hinzu";
+
+/* No comment provided by engineer. */
+"Back" = "Zurück";
+
+/* No comment provided by engineer. */
+"Start Over" = "Neu beginnen";
 
 /* No comment provided by engineer. */
 "blue" = "Blau";
@@ -26,7 +33,7 @@
 "Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time." = "Dies sind die Farben des Regenbogens. Wir haben sie als Beispiel für einen Kartenstapel gewählt, um Dir die Funktionsweise der App zu zeigen. Wenn Du möchtest, kannst Du den Namen des Kartenstapels ändern. Falls Du z.B. ein Projekt hast, für das Du verschiedene Farben benötigst, und Du nicht weißt welche Du wählen sollst, kann die App Dir dabei helfen. In der Grundeinstellung für dieses Beispiel  wählt die App zufällig  drei von sieben  Farben aus. Du kannst Farben hinzufügen, entfernen oder von der Wahl ausschließen indem Du den \"Karten\" Button drückst. Die Anzahl der Karten, die Du wählen möchtest, kannst Du mit dem Stepper ändern. Du kannst diese Anleitung löschen und Deine eigenen Anmerkungen zu diesem Kartenstapel hinzufügen. Wenn Du für dieses Thema eine Entscheidung treffen möchtest, drücke den \"Austeilen\" Button. Um einen neuen Kartenstapel anzulegen, drücke den \"+\"  Button. ";
 
 /* No comment provided by engineer. */
-"Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! In the default setup, your device will randomly choose 2 out of 5 chores. Add, delete, or deselect chores as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time." = "Dies sind typische Hausarbeiten, die Du vielleicht erledigen musst. Du Kannst den Namen dieses Kartenstapels ändern. Falls Du  z. B. fünf Hausarbeiten auf Deiner Liste hast, aber zur Zeit nur Zwei erledigen kannst, dann kann die App Dir bei der Auswahl helfen. In der Grundeinstellung für diesen Kartenstapel wählt die App zufällig zwei der fünf Aufgaben aus. Du kannst Aufgaben von der Liste entfernen, hinzufügen oder von der Wahl ausschließen indem Du den \"Karten\" Button drückst. Die Anzahl der Aufgaben, die Du wählen möchtest, kannst Du mit dem Stepper ändern. Du kannst diese Anleitung löschen und Deine eigenen Anmerkungen zu diesem Kartenstapel hinzufügen. Wenn Du für dieses Thema eine Entscheidung treffen möchtest, drücke den \"Austeilen\" Button. Um einen neuen Kartenstapel anzulegen, drücke den \"+\"  Button." ;
+"Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! In the default setup, your device will randomly choose 2 out of 5 chores. Add, delete, or deselect chores as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to delete the instructions and add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time." = "Dies sind typische Hausarbeiten, die Du vielleicht erledigen musst. Du Kannst den Namen dieses Kartenstapels ändern. Falls Du  z. B. fünf Hausarbeiten auf Deiner Liste hast, aber zur Zeit nur Zwei erledigen kannst, dann kann die App Dir bei der Auswahl helfen. In der Grundeinstellung für diesen Kartenstapel wählt die App zufällig zwei der fünf Aufgaben aus. Du kannst Aufgaben von der Liste entfernen, hinzufügen oder von der Wahl ausschließen indem Du den \"Karten\" Button drückst. Die Anzahl der Aufgaben, die Du wählen möchtest, kannst Du mit dem Stepper ändern. Du kannst diese Anleitung löschen und Deine eigenen Anmerkungen zu diesem Kartenstapel hinzufügen. Wenn Du für dieses Thema eine Entscheidung treffen möchtest, drücke den \"Austeilen\" Button. Um einen neuen Kartenstapel anzulegen, drücke den \"+\"  Button.";
 
 /* No comment provided by engineer. */
 "Household Chores" = "Hausarbeit";
@@ -52,7 +59,6 @@
 /* No comment provided by engineer. */
 "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right." = "Dies ist eine der Farboptionen in diesem Kartenstapel. Du kannst diesen Kommentar löschen, ändern oder weitere Kommentare hinzufügen. Falls es einen Farbe gibt, die Du zur Zeit nicht in Deiner Entscheidung berücksichtigen möchtest, kannst Du sie mit dem Schalter auf der rechten Seite vorübergehend deaktivieren.";
 
-
 /* No comment provided by engineer. */
 "violet" = "Violett";
 
@@ -61,4 +67,3 @@
 
 /* No comment provided by engineer. */
 "You need more than one card to deal!" = "Du benötigst mehr als eine Karte!";
-
