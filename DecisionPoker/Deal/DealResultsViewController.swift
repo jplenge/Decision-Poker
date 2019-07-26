@@ -19,7 +19,6 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     var container: NSPersistentContainer!
     var selectedDeck: Deck?
     
-    //var rowTouched: Int = 0
     var rowHeight: CGFloat = 80
     let normalCellHeight: CGFloat = 80
     let largeCellHeight: CGFloat = 220
@@ -32,7 +31,7 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
         
         if let indexPath  = sender.getIndexPath() {
             
-           
+            
             
             if let vc = self.children.first(where: { $0 is DealResultsTableViewController }) as? DealResultsTableViewController {
                 
@@ -74,71 +73,47 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
         
     }
     
-    /*
-     func RedrawTapped(sender: DealResultsTableViewCell) {
-     print ("redraw tapped")
-     
-     
-     let indexPath = sender.getIndexPath()
-     //print(indexPath)
-     
-     var selectionSuccess = false
-     
-     repeat {
-     let newSelection = selectedCards[indexPath!.row].parentDeck?.childCards?.allObjects.randomElement() as! Card
-     //  print(newSelection.cardName)
-     
-     if !selectedCards.contains(newSelection) {
-     selectedCards[indexPath!.row] = newSelection
-     selectionSuccess = true
-     }
-     } while !selectionSuccess
-     
-     
-     /* if let vc = self.children.first(where: { $0 is DealResultsTableViewController }) as? DealResultsTableViewController {
-     vc.selectedCards = self.selectedCards
-     vc.tableView.reloadData()
-     }
-     */
-     
-     self.tableView.reloadData()
-     
-     
-     }
-     */
     
     func RedrawTapped(sender: DealResultsTableViewCell) {
-       // print("redraw button pressed")
-        
         let indexPath = sender.getIndexPath()
         
         var selectionSuccess = false
         
-        repeat {
-        let newSelection = ((selectedCards[indexPath!.row].parentDeck?.childCards?.allObjects as! [Card]).filter {$0.cardIncluded == true}).randomElement()
-       // print (newSelection)
+        var numberOfSelectableCards = 0
         
         
-            if !selectedCards.contains(newSelection!) {
-            selectedCards[indexPath!.row] = newSelection!
-                selectionSuccess = true
-
-                
-            }
-        print(selectedCards[indexPath!.row].cardName!)
-            
-            if let vc = self.children.first(where: { $0 is DealResultsTableViewController }) as? DealResultsTableViewController {
-         //   vc.selectedCards = self.selectedCards
-            vc.selectedCards[indexPath!.row] = newSelection!
-                
-         
-                
-            vc.tableView.reloadData()
-           // vc.tableView.beginUpdates()
-           // vc.tableView.endUpdates()
+        for item in selectedDeck!.childCards?.allObjects as! [Card] {
+            numberOfSelectableCards += Int(truncating: NSNumber(value: item.cardIncluded))
         }
-          
-        } while  !selectionSuccess
+        
+        
+        if selectedDeck!.numberOfCardsToPick < Int16(numberOfSelectableCards) {
+            
+            repeat {
+                let newSelection = ((selectedCards[indexPath!.row].parentDeck?.childCards?.allObjects as! [Card]).filter {$0.cardIncluded == true}).randomElement()
+                // print (newSelection)
+                
+                
+                if !selectedCards.contains(newSelection!) {
+                    selectedCards[indexPath!.row] = newSelection!
+                    selectionSuccess = true
+                }
+                if let vc = self.children.first(where: { $0 is DealResultsTableViewController }) as? DealResultsTableViewController {
+                    vc.selectedCards[indexPath!.row] = newSelection!
+                    vc.tableView.reloadData()
+                }
+                
+            } while  !selectionSuccess
+            
+        } else {
+            let alertController = UIAlertController(title: NSLocalizedString("Redraw Not Possible", comment: ""), message: NSLocalizedString("You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!", comment: ""), preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> Void in })
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
     }
     
     
@@ -147,26 +122,19 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     
     
     @IBOutlet weak var holdButton: UIButton!
-    
-    
 
-    
-    /*
-     weak var tableViewCellDelegate: DealResultsTableViewCellDelegate!
-     weak var delegate: DealResultsViewController!
-     */
     
     var finalCards: String = ""
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         switch segue.identifier {
         case "FinalResultsSegue":
-             let destinationController = segue.destination as! FinalResultViewController
-             destinationController.finalDeck = selectedDeck!
-             destinationController.finalCards = finalCards
-             destinationController.container = container
+            let destinationController = segue.destination as! FinalResultViewController
+            destinationController.finalDeck = selectedDeck!
+            destinationController.finalCards = finalCards
+            destinationController.container = container
             destinationController.selectedCards = selectedCards
         case "embeddedDealResultTableSegue":
             let destinationController = segue.destination as! DealResultsTableViewController
@@ -177,25 +145,11 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
             selectedCards = items
             
             destinationController.tableViewCellDelegate = self
-       default:
+        default:
             
             return
             
         }
-        /*
-        if segue.identifier == "FinalResultsSegue" {
-            let destinationController = segue.destination as! FinalResultViewController
-          
-            // let indexPath = tableView.indexPathForSelectedRow!
-           // commitDeckSelected = fetchedResultsController?.object(at: cardlistButtonIndexPath) as! Deck
-            // print("testing")
-            //    let selectedCards = commit.childCards
-            destinationController.finalDeck = selectedDeck!
-            destinationController.finalCards = finalCards
-            
-            
-        }
- */
     }
     
     @IBAction func holdButtonTapped(_ sender: UIButton) {
@@ -206,12 +160,12 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
         for item in selectedCards {
             finalCards += "\(item.cardName!)\r"
             finalCardsData += "\(item.cardName!)  "
-
-        
+            
+            
         }
         print(finalCards)
         performSegue(withIdentifier: "FinalResultsSegue", sender: nil)
-
+        
     }
     
     override func viewDidLoad() {
@@ -225,32 +179,7 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "embeddedDealResultTableSegue" {
-            let destinationController = segue.destination as! DealResultsTableViewController
-            destinationController.container = container
-            
-            let items = playGame()
-            destinationController.selectedCards = items
-            selectedCards = items
-            
-            destinationController.tableViewCellDelegate = self
-        }
-    }
- */
-    
-    
-    
+
     func playGame() -> [Card] {
         var selected: [Card] = []
         //1. use only cards that are inlcuded
@@ -270,16 +199,3 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
     
     
 }
-
-
-/*
- if let indexPath  = sender.getIndexPath() {
- if let vc = self.children.first(where: { $0 is DealResultsTableViewController }) as? DealResultsTableViewController {
- 
- vc.selectedCards[indexPath.row] =  vc.selectedCards[item]
- vc.tableView.beginUpdates()
- vc.tableView.endUpdates()
- }
- 
- }
- */

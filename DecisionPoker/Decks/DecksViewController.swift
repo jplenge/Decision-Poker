@@ -67,13 +67,29 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     }
     
     func DealButtonTapped(sender: DecksCell) {
+         var numberOfSelectableCards = 0
         
         if let indexPath  = tableView.indexPath(for: sender) {
             selectedDeck = (fetchedResultsController?.object(at: indexPath) as? Deck)!
+            
+           
+            for item in selectedDeck.childCards?.allObjects as! [Card] {
+                numberOfSelectableCards += Int(truncating: NSNumber(value: item.cardIncluded))
+            }
         }
         
         if ((selectedDeck.childCards!.allObjects as! [Card]).filter{$0.cardIncluded == true}).count > 1 {
-            performSegue(withIdentifier: "InitialResultsSegue", sender: nil)
+            
+            if selectedDeck.numberOfCardsToPick <= numberOfSelectableCards {
+                performSegue(withIdentifier: "InitialResultsSegue", sender: nil)
+            } else {
+                let alertController = UIAlertController(title: NSLocalizedString("Selection Invalid", comment: ""), message: NSLocalizedString("You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!", comment: ""), preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> Void in })
+                
+                alertController.addAction(okAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
             
         } else {
             
@@ -173,7 +189,6 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     @IBOutlet weak var cancelButtonDecks: UIBarButtonItem!
     
     @IBAction func cancelDecksTapped(_ sender: Any) {
-        
         performSegue(withIdentifier: "CancelSegue", sender: nil)
     }
     
@@ -241,8 +256,8 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
             cell?.nameOfDeck.text = deck.deckName
             cell?.numberOfResults.text = String(deck.numberOfCardsToPick)
             cell?.resultsNumberChanged.value = Double(deck.numberOfCardsToPick)
-            cell?.resultsNumberChanged.maximumValue = Double(deck.childCards!.count)
-            cell?.useableCardsInDeck.text = String(totalCardsIncludedMarker)//String(deck.childCards!.count)
+            cell?.resultsNumberChanged.maximumValue = Double(totalCardsIncludedMarker)
+            cell?.useableCardsInDeck.text = String(totalCardsIncludedMarker)
             cell?.deckCommentText.text = deck.deckComment
             cell?.delegate = self
         }

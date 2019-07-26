@@ -1,0 +1,81 @@
+
+/* No comment provided by engineer. */
+"Add comments here." = "Add comments here.";
+
+/* No comment provided by engineer. */
+"Back" = "Back";
+
+/* No comment provided by engineer. */
+"blue" = "blue";
+
+/* No comment provided by engineer. */
+"Clean the floor." = "Clean the floor.";
+
+/* No comment provided by engineer. */
+"Colors" = "Colors";
+
+/* No comment provided by engineer. */
+"Do the dishes." = "Do the dishes.";
+
+/* No comment provided by engineer. */
+"Do the laundry." = "Do the laundry.";
+
+/* No comment provided by engineer. */
+"Dust the livingroom." = "Dust the livingroom.";
+
+/* No comment provided by engineer. */
+"green" = "green";
+
+/* No comment provided by engineer. */
+"Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time." = "Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time";
+
+/* No comment provided by engineer. */
+"Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! In the default setup, your device will randomly choose 2 out of 5 chores. Add, delete, or deselect chores as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time." = "Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you would like to get done, but you can only get to two or three at the moment. Then let the app do the picking for you! In the default setup, your device will randomly choose 2 out of 5 chores. Add, delete, or deselect chores as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time.";
+
+/* No comment provided by engineer. */
+"Household Chores" = "Household Chores";
+
+/* No comment provided by engineer. */
+"indigo" = "indigo";
+
+/* No comment provided by engineer. */
+"orange" = "orange";
+
+/* No comment provided by engineer. */
+"Organize my desk." = "Organize my desk.";
+
+/* No comment provided by engineer. */
+"red" = "red";
+
+/* No comment provided by engineer. */
+"Redraw Not Possible" = "Redraw Not Possible";
+
+/* No comment provided by engineer. */
+"Selection Invalid" = "Selection Invalid";
+
+/* No comment provided by engineer. */
+"Start Over" = "Start Over";
+
+/* No comment provided by engineer. */
+"This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right." = "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.";
+
+/* No comment provided by engineer. */
+"This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right." = "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.";
+
+/* info pane text */
+"This page shows the first \"hand\" that the program \"deals\" for you (i.e. it shows your initial decision result). If you are happy with your result, click the \"Hold em'!\" button at the bottom of the screen. If you would like to change one of your results to a fixed choice, hit the \"cheat\" button below the desired result. A picker view will pop up. Choose the \"card\" you would like to substitute in and hit \"cheat\" again. This will change your final outcome. If you would like to randomly reselect a \"card\", hit \"Redraw\". This will randomly reselect and change the outcome for that result. When the result is re-optimized to your liking, hit the \"Hold em'!\" button to go to the next screen. If you do not want to save or share your result, you can also stop here if you want." = "This page shows the first \"hand\" that the program \"deals\" for you (i.e. it shows your initial decision result). If you are happy with your result, click the \"Hold em'!\" button at the bottom of the screen. If you would like to change one of your results to a fixed choice, hit the \"cheat\" button below the desired result. A picker view will pop up. Choose the \"card\" you would like to substitute in and hit \"cheat\" again. This will change your final outcome. If you would like to randomly reselect a \"card\", hit \"Redraw\". This will randomly reselect and change the outcome for that result. When the result is re-optimized to your liking, hit the \"Hold em'!\" button to go to the next screen. If you do not want to save or share your result, you can also stop here if you want.";
+
+/* No comment provided by engineer. */
+"violet" = "violet";
+
+/* No comment provided by engineer. */
+"yellow" = "yellow";
+
+/* No comment provided by engineer. */
+"You need more cards to pick from or decrease the number of cards to pick!" = "You need more cards to pick from or decrease the number of cards to pick!";
+
+/* No comment provided by engineer. */
+"You need more than one card to deal!" = "You need more than one card to deal!";
+
+/* No comment provided by engineer. */
+"You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!" = "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!";

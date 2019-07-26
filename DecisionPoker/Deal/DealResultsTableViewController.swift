@@ -22,9 +22,6 @@ class DealResultsTableViewController: UITableViewController  {
     var rowTouched: Int = -1
     var rowHeight: CGFloat = 80
     let normalCellHeight: CGFloat = 80
-    //let largeCellHeight: CGFloat = 200
-    
-    
     
     
     override func viewDidLoad() {

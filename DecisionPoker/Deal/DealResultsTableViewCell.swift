@@ -37,9 +37,7 @@ class DealResultsTableViewCell: UITableViewCell,UIPickerViewDataSource, UIPicker
 // SECTION 2- TABLE VIEW FUNCTIONS//
    
     @IBAction func cheatIsTapped(_ sender: UIButton) {
-        
         delegate?.CheatTapped(sender: self)
-        print("ct")
     }
     
     @IBAction func redrawIsTapped(_ sender: UIButton) {

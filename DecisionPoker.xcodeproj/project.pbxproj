@@ -62,6 +62,7 @@
 		1B33709222EA14D400F6BD8D /* bartyCrouch-Script.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "bartyCrouch-Script.sh"; path = "DecisionPoker/bartyCrouch-Script.sh"; sourceTree = "<group>"; };
 		1B7CCD2022EA36C700999AEA /* BartyCrouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BartyCrouch.swift; path = DecisionPoker/BartyCrouch.swift; sourceTree = "<group>"; };
 		1B7CCD2222EB06F300999AEA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		1B7CCD2522EB4A8F00999AEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -459,6 +460,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B9F59C622E8F054009B5129 /* de */,
+				1B7CCD2522EB4A8F00999AEA /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
