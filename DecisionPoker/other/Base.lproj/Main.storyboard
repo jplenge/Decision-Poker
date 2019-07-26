@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decision Poker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vda-xP-feB">
-                                <rect key="frame" x="16" y="19" width="343" height="156"/>
+                                <rect key="frame" x="16" y="28.5" width="343" height="156"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -125,7 +125,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d3t-ew-rrq" secondAttribute="trailing" constant="30" id="bte-0F-Z69">
                                 <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                             </constraint>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="vda-xP-feB" secondAttribute="top" constant="1" id="cio-xU-dty"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="vda-xP-feB" secondAttribute="top" multiplier="0.7" id="cio-xU-dty"/>
                             <constraint firstItem="0tn-dP-Sff" firstAttribute="top" secondItem="d3t-ew-rrq" secondAttribute="bottom" constant="32.5" id="e8S-RK-nuM"/>
                             <constraint firstItem="bEp-OA-rjG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e8g-JI-JeF"/>
                             <constraint firstItem="d3t-ew-rrq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="j35-SD-MtS">
@@ -973,7 +973,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-Iy-9OP">
-                                            <rect key="frame" x="63" y="35" width="62" height="36"/>
+                                            <rect key="frame" x="90.5" y="35" width="62" height="36"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title=" Cheat ">
@@ -998,14 +998,14 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </pickerView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRs-yQ-jSI">
-                                            <rect key="frame" x="5" y="5" width="298" height="33"/>
+                                            <rect key="frame" x="5" y="5" width="353" height="33"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-2U-GTP">
-                                            <rect key="frame" x="176.5" y="35" width="75" height="36"/>
+                                            <rect key="frame" x="204" y="35" width="75" height="36"/>
                                             <color key="backgroundColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title=" Redraw ">
@@ -1205,7 +1205,7 @@
         <!--Info-->
         <scene sceneID="Mf9-MM-NYO">
             <objects>
-                <viewController title="Info" id="O1r-TN-7K2" sceneMemberID="viewController">
+                <viewController title="Info" id="O1r-TN-7K2" customClass="InfoViewController" customModule="DecisionPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZU-XY-4yj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1213,7 +1213,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIP-TB-Flw">
                                 <rect key="frame" x="16" y="20" width="343" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">This page shows the first "hand" that the program "deals" for you (i.e. it shows your initial decision result). If you are happy with your result, click the "Hold em'!" button at the bottom of the screen. If you would like to change one of your results to a fixed choice, hit the "cheat" button below the desired result. A picker view will pop up. Choose the "card" you would like to substitute in and hit "cheat" again. This will change your final outcome. If you would like to randomly reselect a single  "card," hit "Redraw." This will randomly reselect and change the outcome for that result. When the result is re-optimized to your liking, hit the "Hold em'!" button to go to the next screen.</string>
+                                <mutableString key="text">This page shows the first "hand" that the program "deals" for you (i.e. it shows your initial decision result). If you are happy with your result, click the "Hold em'!" button at the bottom of the screen. If you would like to change one of your results to a fixed choice, hit the "cheat" button below the desired result. A picker view will pop up. Choose the "card" you would like to substitute in and hit "cheat" again. This will change your final outcome. If you would like to randomly reselect a single  "card," hit "Redraw." This will randomly reselect and change the outcome for that result. When the result is re-optimized to your liking, hit the "Hold em'!" button to go to the next screen.</mutableString>
                                 <color key="textColor" red="0.0014197396130000001" green="0.5" blue="0.0022028552769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1232,6 +1232,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="fyH-IT-9Z2"/>
                     </navigationItem>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="localizedTextView" destination="VIP-TB-Flw" id="RXC-BP-9Ms"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1k-i2-Y87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1437,12 +1440,12 @@
                                 <exclude reference="dhS-0N-L5u"/>
                                 <exclude reference="do9-dN-94u"/>
                                 <exclude reference="ePH-A3-FLV"/>
-                                <exclude reference="bb6-Mw-XSM"/>
-                                <exclude reference="rlk-px-QFo"/>
-                                <exclude reference="yiW-IN-yr3"/>
                                 <exclude reference="EjZ-Vh-Eto"/>
                                 <exclude reference="NJZ-pY-ODz"/>
                                 <exclude reference="ZgN-m3-ZYc"/>
+                                <exclude reference="bb6-Mw-XSM"/>
+                                <exclude reference="rlk-px-QFo"/>
+                                <exclude reference="yiW-IN-yr3"/>
                                 <exclude reference="9vp-tM-Cpc"/>
                                 <exclude reference="SSG-KS-ED0"/>
                                 <exclude reference="aYg-kv-4ol"/>
@@ -1503,12 +1506,12 @@
                                 <include reference="Jd5-0P-nQa"/>
                                 <include reference="do9-dN-94u"/>
                                 <exclude reference="mMf-zL-ILN"/>
-                                <exclude reference="KaU-Gt-HT9"/>
-                                <include reference="rlk-px-QFo"/>
-                                <exclude reference="yiW-IN-yr3"/>
                                 <exclude reference="9a0-od-SbW"/>
                                 <include reference="NJZ-pY-ODz"/>
                                 <include reference="ZgN-m3-ZYc"/>
+                                <exclude reference="KaU-Gt-HT9"/>
+                                <include reference="rlk-px-QFo"/>
+                                <exclude reference="yiW-IN-yr3"/>
                                 <exclude reference="9vp-tM-Cpc"/>
                                 <exclude reference="c2D-QZ-mOE"/>
                                 <include reference="xZO-GU-JAT"/>
@@ -1522,10 +1525,10 @@
                                 <include reference="Zml-lg-WfV"/>
                                 <include reference="dhS-0N-L5u"/>
                                 <exclude reference="mMf-zL-ILN"/>
-                                <exclude reference="KaU-Gt-HT9"/>
-                                <include reference="bb6-Mw-XSM"/>
                                 <exclude reference="9a0-od-SbW"/>
                                 <include reference="EjZ-Vh-Eto"/>
+                                <exclude reference="KaU-Gt-HT9"/>
+                                <include reference="bb6-Mw-XSM"/>
                                 <include reference="JrE-k7-nV7"/>
                                 <include reference="NuF-mW-bMX"/>
                             </mask>
@@ -2212,8 +2215,8 @@
         <image name="decisionPokerStartImage3" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nwH-BD-uS1"/>
-        <segue reference="zGy-9z-VDH"/>
-        <segue reference="DDS-ez-aZh"/>
+        <segue reference="RHu-fD-eLz"/>
+        <segue reference="caP-cK-g3i"/>
+        <segue reference="vZY-WB-dRp"/>
     </inferredMetricsTieBreakers>
 </document>

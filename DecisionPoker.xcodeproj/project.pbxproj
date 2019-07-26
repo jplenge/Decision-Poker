@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7CCD2122EA36C700999AEA /* BartyCrouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CCD2022EA36C700999AEA /* BartyCrouch.swift */; };
+		1B7CCD2322EB06F300999AEA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CCD2222EB06F300999AEA /* InfoViewController.swift */; };
 		1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */; };
 		1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */; };
 		1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */; };
@@ -57,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B33709222EA14D400F6BD8D /* bartyCrouch-Script.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "bartyCrouch-Script.sh"; path = "DecisionPoker/bartyCrouch-Script.sh"; sourceTree = "<group>"; };
+		1B7CCD2022EA36C700999AEA /* BartyCrouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BartyCrouch.swift; path = DecisionPoker/BartyCrouch.swift; sourceTree = "<group>"; };
+		1B7CCD2222EB06F300999AEA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 				A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */,
 				A91FE56222CD370F0009F95D /* DealResultsViewController.swift */,
 				A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */,
+				1B7CCD2222EB06F300999AEA /* InfoViewController.swift */,
 			);
 			path = Deal;
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 		A9D58A6822C4E49F00E608B8 = {
 			isa = PBXGroup;
 			children = (
+				1B7CCD2022EA36C700999AEA /* BartyCrouch.swift */,
+				1B33709222EA14D400F6BD8D /* bartyCrouch-Script.sh */,
 				A9D58A7322C4E49F00E608B8 /* DecisionPoker */,
 				A9D58A7222C4E49F00E608B8 /* Products */,
 			);
@@ -231,6 +239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9D58A9C22C4E4A000E608B8 /* Build configuration list for PBXNativeTarget "DecisionPoker" */;
 			buildPhases = (
+				1B33709422EA163300F6BD8D /* ShellScript */,
 				A9D58A6D22C4E49F00E608B8 /* Sources */,
 				A9D58A6E22C4E49F00E608B8 /* Frameworks */,
 				A9D58A6F22C4E49F00E608B8 /* Resources */,
@@ -287,7 +296,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Jodi Szarko";
 				TargetAttributes = {
 					A9D58A7022C4E49F00E608B8 = {
@@ -353,6 +362,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B33709422EA163300F6BD8D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which bartycrouch > /dev/null; then\nbartycrouch update -x\nelse\necho \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9D58A6D22C4E49F00E608B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -362,6 +391,7 @@
 				1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */,
 				A933F12F22D28FB2005DF368 /* FinalResultViewController.swift in Sources */,
 				1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */,
+				1B7CCD2122EA36C700999AEA /* BartyCrouch.swift in Sources */,
 				A98F9F8722D51DA900C14787 /* DirectionsViewController.swift in Sources */,
 				A91FE56322CD370F0009F95D /* DealResultsViewController.swift in Sources */,
 				A933F13522D322EB005DF368 /* SavedResultsController.swift in Sources */,
@@ -370,6 +400,7 @@
 				1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */,
 				A9D58AC022C50A8800E608B8 /* DecksCell.swift in Sources */,
 				1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */,
+				1B7CCD2322EB06F300999AEA /* InfoViewController.swift in Sources */,
 				A9D58ABA22C4FD3C00E608B8 /* FetchedResultsTableViewController.swift in Sources */,
 				A91FE55F22CD1CB30009F95D /* DealResultsTableViewController.swift in Sources */,
 				A933F13722D3A9E2005DF368 /* StartNavigationController.swift in Sources */,
