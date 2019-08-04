@@ -72,10 +72,10 @@
 "yellow" = "Gelb";
 
 /* No comment provided by engineer. */
+"You need more cards to pick from or decrease the number of cards to pick!" = "Du benötigst mehr Karten zum Ziehen oder Du musst die Anzahl der zu ziehenden Karten verringern.";
+
+/* No comment provided by engineer. */
 "You need more than one card to deal!" = "Du benötigst mehr als eine Karte!";
 
 /* No comment provided by engineer. */
 "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!" = "Du musst entweder die Anzahl der Karten in Deinem Kartenstapel erhöhen oder die Anzahl der zu ziehenden Karten veringern!";
-
-/* No comment provided by engineer. */
-"You need more cards to pick from or decrease the number of cards to pick!" = "";

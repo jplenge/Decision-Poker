@@ -33,7 +33,7 @@
 "EG9-Iy-9OP.normalTitle" = " Mogeln ";
 
 /* Class = "UILabel"; text = "This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a \"deck,\" and each choice in a deck is entered as a \"card.\" To get started, press the \"Start dealing decisions!\" button in the start screen. The app will display two starter \"decks,\" colors and household chores, but you can add and edit your own decks and cards. Some instructions and clarifications are indicated if the \"info\" or \"?\" button in each screen is pressed. Once your selections are optimized, simply hit \"Deal!\" to create your randomized \"hand\" or decision! Once the decision is made, you can fix and redraw any of the choices of your result. If you are happy with the decision the app has made, you can see, send and save your finalized solutions. Sometimes making decisions is stressful. We hope this app makes the process more fun and efficient!"; ObjectID = "evG-B8-4hK"; */
-"evG-B8-4hK.text" = "Diese Entscheidungsfindung App hilft Dir eine oder mehrere Dinge aus einer Liste von Möglichkeiten auszuwählen.  Die App vergleicht den Entscheidungsfindungsprozess mit einem Pokerspiel. Ein Thema wird durch einen Kartenstapel repräsentiert und jede Karte entspricht einer Wahlmöglichkeit. Drücke den \"Entscheidungen treffen\" Button um zu starten. Die App beinhaltet zwei Beispiele: Farben und Hausarbeit. Du kannst neue Kartenstapel hinzufügen oder die bestehenden verändern. Weitere Informationen findest Du unter dem \"Info\" Button. Wenn Du mit den Einstellungen fertig bist, drücke einfach den \"Entscheidungen treffen\" Button, damit die App Entscheidungen für dich trifft. Du kann die Entscheidungen der App weiter anpassen und speichern. Manchmal ist es anstrengend Entscheidungen zu treffen. Wir hoffen, dass diese App diesen Prozess für Dich angenehmer macht. ";
+"evG-B8-4hK.text" = "Diese Entscheidungsfindungs App hilft Dir ein oder mehrere Dinge aus einer Liste von Möglichkeiten auszuwählen.  Die App vergleicht den Entscheidungsfindungsprozess mit einem Pokerspiel. Ein Thema wird durch einen Kartenstapel repräsentiert und jede Karte entspricht einer Wahlmöglichkeit. Drücke den \"Entscheidungen treffen\" Button um zu starten. Die App beinhaltet zwei Beispiele: Farben und Hausarbeit. Du kannst neue Kartenstapel hinzufügen oder die bestehenden verändern. Weitere Informationen findest Du unter dem \"Info\" Button. Wenn Du mit den Einstellungen fertig bist, drücke einfach den \"Entscheidungen treffen\" Button, damit die App Entscheidungen für Dich trifft. Du kann die Entscheidungen der App weiter anpassen und speichern. Manchmal ist es anstrengend Entscheidungen zu treffen. Wir hoffen, dass diese App diesen Prozess für Dich angenehmer macht. ";
 
 /* Class = "UILabel"; text = "/"; ObjectID = "FvV-fu-Rzy"; */
 "FvV-fu-Rzy.text" = "/";
@@ -92,6 +92,9 @@
 /* Class = "UILabel"; text = "Decision Poker"; ObjectID = "vda-xP-feB"; */
 "vda-xP-feB.text" = "Entscheidungspoker";
 
+/* Class = "UITextView"; text = "This page shows the first \"hand\" that the program \"deals\" for you (i.e. it shows your initial decision result). If you are happy with your result, click the \"Hold em'!\" button at the bottom of the screen. If you would like to change one of your results to a fixed choice, hit the \"cheat\" button below the desired result. A picker view will pop up. Choose the \"card\" you would like to substitute in and hit \"cheat\" again. This will change your final outcome. If you would like to randomly reselect a \"card,\" hit \"Redraw.\" This will randomly reselect and change the outcome for that result. When the result is re-optimized to your liking, hit the \"Hold em'!\" button to go to the next screen. If you do not want to save or share your result, you can also stop here if you want."; ObjectID = "VIP-TB-Flw"; */
+"VIP-TB-Flw.text" = "noch zu ersetzen ..";
+
 /* Class = "UIButton"; normalTitle = "Contact Us"; ObjectID = "vob-Fw-Qii"; */
 "vob-Fw-Qii.normalTitle" = "Kontakt";
 
@@ -112,6 +115,3 @@
 
 /* Class = "UIButton"; normalTitle = " Redraw "; ObjectID = "zTe-2U-GTP"; */
 "zTe-2U-GTP.normalTitle" = " Neue Karte ";
-
-/* Class = "UITextView"; text = "This page shows the first \"hand\" that the program \"deals\" for you (i.e. it shows your initial decision result). If you are happy with your result, click the \"Hold em'!\" button at the bottom of the screen. If you would like to change one of your results to a fixed choice, hit the \"cheat\" button below the desired result. A picker view will pop up. Choose the \"card\" you would like to substitute in and hit \"cheat\" again. This will change your final outcome. If you would like to randomly reselect a \"card,\" hit \"Redraw.\" This will randomly reselect and change the outcome for that result. When the result is re-optimized to your liking, hit the \"Hold em'!\" button to go to the next screen. If you do not want to save or share your result, you can also stop here if you want."; ObjectID = "VIP-TB-Flw"; */
-"VIP-TB-Flw.text" = "noch zu ersetzen ..";
