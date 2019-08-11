@@ -213,6 +213,7 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
     @IBOutlet weak var cardListUpdate: UIBarButtonItem!
     
     @IBAction func cardListUpdateTapped(_ sender: UIBarButtonItem) {
+        updateUI()
     }
     
     
