@@ -186,8 +186,8 @@
 		1B7F907722D3408400812BE4 /* Deal */ = {
 			isa = PBXGroup;
 			children = (
-				A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */,
 				A91FE56222CD370F0009F95D /* DealResultsViewController.swift */,
+				A91FE55E22CD1CB30009F95D /* DealResultsTableViewController.swift */,
 				A91FE56022CD1CC80009F95D /* DealResultsTableViewCell.swift */,
 				1B7CCD2222EB06F300999AEA /* InfoViewController.swift */,
 			);
@@ -613,11 +613,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -632,11 +633,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

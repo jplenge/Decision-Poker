@@ -22,7 +22,6 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
     
     func CardNameUpdate(sender: CardsCell, comment: String) {
         if let indexPath  = tableView.indexPath(for: sender) {
-            print(comment)
             let commit = fetchedResultsController?.object(at: indexPath) as! Card
             commit.cardName = comment
         }
@@ -63,7 +62,12 @@ class CardsViewController: FetchedResultsTableViewController, CardsCellDelegate 
         newCard.cardIncluded = true
         commitDeckSelected.addToChildCards(newCard)
         
-        try! managedContext.save()
+        do {
+            try managedContext.save()
+        } catch {
+            print("can not remove from data base")
+        }
+        
     }
     
     var container: NSPersistentContainer!

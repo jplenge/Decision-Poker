@@ -71,7 +71,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
         
         if let indexPath  = tableView.indexPath(for: sender) {
             selectedDeck = (fetchedResultsController?.object(at: indexPath) as? Deck)!
-            
+        
            
             for item in selectedDeck.childCards?.allObjects as! [Card] {
                 numberOfSelectableCards += Int(truncating: NSNumber(value: item.cardIncluded))
@@ -293,7 +293,7 @@ class DecksViewController: FetchedResultsTableViewController, DecksCellDelegate 
     
     /*
      // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     override func tableView(_ tableView: UITfableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
      
      }
      */

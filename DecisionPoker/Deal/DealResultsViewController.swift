@@ -140,7 +140,9 @@ class DealResultsViewController: UIViewController, DealResultsTableViewCellDeleg
             let destinationController = segue.destination as! DealResultsTableViewController
             destinationController.container = container
             
+            //
             let items = playGame()
+            
             destinationController.selectedCards = items
             selectedCards = items
             
