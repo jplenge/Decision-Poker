@@ -2,8 +2,8 @@
 //  SavedDeck+CoreDataProperties.swift
 //  DecisionPoker
 //
-//  Created by Jürgen Plenge on 08.07.19.
-//  Copyright © 2019 Jodi Szarko. All rights reserved.
+//  Created by Jürgen Plenge on 24.06.20.
+//  Copyright © 2020 Jodi Szarko. All rights reserved.
 //
 //
 
@@ -13,13 +13,14 @@ import CoreData
 
 extension SavedDeck {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<SavedDeck> {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<SavedDeck> {
         return NSFetchRequest<SavedDeck>(entityName: "SavedDeck")
     }
 
-    @NSManaged public var deckName: String?
-    @NSManaged public var dateSaved: NSDate?
+    @NSManaged public var dateSaved: Date?
     @NSManaged public var deckComment: String?
+    @NSManaged public var deckName: String?
+    @NSManaged public var id: UUID?
     @NSManaged public var savedChildCards: NSSet?
 
 }

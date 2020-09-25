@@ -43,7 +43,7 @@ class SavedResultsController: FetchedResultsTableViewController {
             }
             
             cell.savedREsultDeckname.text = deck.deckName
-            cell.savedResultDate.text = date2String(date: deck.dateSaved!)
+            cell.savedResultDate.text = date2String(date: deck.dateSaved! as NSDate)
             
             var cardString = ""
             for item in deck.savedChildCards?.allObjects as! [SavedCard] {

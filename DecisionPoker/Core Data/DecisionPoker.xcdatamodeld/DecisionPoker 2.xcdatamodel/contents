@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Card" representedClassName=".Card" syncable="YES">
+        <attribute name="cardComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardIncluded" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cardInformation" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardsTablePosition" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="parentDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="childCards" inverseEntity="Deck" syncable="YES"/>
+    </entity>
+    <entity name="Deck" representedClassName=".Deck" syncable="YES">
+        <attribute name="dealButtonSelector" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="deckComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deckName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="decksTablePosition" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numberOfCardsToPick" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="childCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="parentDeck" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <entity name="SavedCard" representedClassName="SavedCard" syncable="YES">
+        <attribute name="cardComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="savedParentDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SavedDeck" inverseName="savedChildCards" inverseEntity="SavedDeck" syncable="YES"/>
+    </entity>
+    <entity name="SavedDeck" representedClassName="SavedDeck" syncable="YES">
+        <attribute name="dateSaved" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="deckComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deckName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="savedChildCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SavedCard" inverseName="savedParentDeck" inverseEntity="SavedCard" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="-45" positionY="-9" width="128" height="135"/>
+        <element name="Deck" positionX="183.41015625" positionY="-9.02734375" width="128" height="135"/>
+        <element name="SavedDeck" positionX="193.73046875" positionY="189.7734375" width="128" height="103"/>
+        <element name="SavedCard" positionX="-45.02734375" positionY="204.828125" width="128" height="88"/>
+    </elements>
+</model>

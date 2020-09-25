@@ -10,6 +10,7 @@
 import UIKit
 import CoreData
 import MessageUI
+import SwiftUI
 
 class StartViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
@@ -57,6 +58,16 @@ class StartViewController: UIViewController, MFMailComposeViewControllerDelegate
         }
     }
     
+    @IBSegueAction func showSavedResults(_ coder: NSCoder) -> UIViewController? {
+        let rootView = SavedResultsSwiftUIView()
+        let context = container.viewContext
+        
+        let _ =  UIHostingController(rootView: rootView.environment(\.managedObjectContext, context))
+        
+        return UIHostingController(coder: coder, rootView: rootView)
+    }
+    
+
     
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {

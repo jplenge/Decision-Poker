@@ -90,7 +90,7 @@ class FinalResultViewController: UIViewController {
         let newDeck = SavedDeck(context: managedContext)
         newDeck.deckName = finalDeck.deckName
         newDeck.deckComment =  finalDeck.deckComment
-        newDeck.dateSaved = NSDate()
+        newDeck.dateSaved = Date()
         
         for card in selectedCards{
             let newCard = SavedCard(context: managedContext)
