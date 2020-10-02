@@ -26,3 +26,7 @@ extension Card {
     @NSManaged public var parentDeck: Deck?
 
 }
+
+
+extension Card: Identifiable { }
+

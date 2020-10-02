@@ -8,7 +8,12 @@
 
 import SwiftUI
 
-
+// classic backgroundcolor
 let backgroundcolorGreen = Color(red: 35/255, green: 138/255, blue: 0/255)
-    
+let backgroundcolorGreenUI = UIColor(red: 35/255, green: 138/255, blue: 0/255, alpha: 1)
 
+
+
+let currentFont = "Marker Felt"
+let textColor = Color.white
+let textColorUI = UIColor.white

@@ -15,8 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
 
-    func deleteAllData(entity: String)
-    {
+    func deleteAllData(entity: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
@@ -48,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardRed.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardRed.cardInformation = false
         cardRed.cardsTablePosition = 0
+        cardRed.id = UUID()
         
         let cardOrange = Card(context: context!)
         cardOrange.cardName = NSLocalizedString("orange", comment: "")
@@ -55,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardOrange.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardOrange.cardInformation = false
         cardOrange.cardsTablePosition = 1
+        cardOrange.id = UUID()
         
         
         let cardYellow = Card(context: context!)
@@ -65,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardYellow.cardComment = NSLocalizedString( "This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardYellow.cardInformation = false
         cardYellow.cardsTablePosition = 2
+        cardYellow.id = UUID()
         
         
         let cardGreen = Card(context: context!)
@@ -73,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardGreen.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardGreen.cardInformation = false
         cardGreen.cardsTablePosition = 3
+        cardGreen.id = UUID()
         
         
         let cardBlue = Card(context: context!)
@@ -81,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardBlue.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardBlue.cardInformation = false
         cardBlue.cardsTablePosition = 4
+        cardBlue.id = UUID()
         
         
         let cardIndigo = Card(context: context!)
@@ -89,6 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardIndigo.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardIndigo.cardInformation = false
         cardIndigo.cardsTablePosition = 5
+        cardIndigo.id = UUID()
         
         
         let cardViolet = Card(context: context!)
@@ -97,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardViolet.cardComment = NSLocalizedString("This is one of the color choices. Feel free to edit, delete  and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the slider to the right.", comment: "")
         cardViolet.cardInformation = false
         cardViolet.cardsTablePosition = 6
+        cardViolet.id = UUID()
         
         
         let cardDishes = Card(context: context!)
@@ -104,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardDishes.cardIncluded = true
         cardDishes.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardDishes.cardsTablePosition = 0
+        cardDishes.id = UUID()
         
         
         let cardFloor = Card(context: context!)
@@ -112,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardFloor.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardFloor.cardInformation = false
         cardFloor.cardsTablePosition = 1
-        
+        cardFloor.id = UUID()
         
         let cardDust = Card(context: context!)
         cardDust.cardName = NSLocalizedString("Dust the livingroom.", comment: "")
@@ -120,6 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardDust.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardDust.cardInformation = false
         cardDust.cardsTablePosition = 2
+        cardDust.id = UUID()
         
         
         
@@ -129,6 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardDesk.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardDesk.cardInformation = false
         cardDesk.cardsTablePosition = 3
+        cardDesk.id = UUID()
         
         
         
@@ -138,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardLaundry.cardComment = NSLocalizedString("This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right.", comment: "")
         cardLaundry.cardInformation = false
         cardLaundry.cardsTablePosition = 4
-        
+        cardLaundry.id = UUID()
         
         
         let choresDeck = Deck(context: context!)
@@ -147,6 +156,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         choresDeck.numberOfCardsToPick = 2
         choresDeck.dealButtonSelector = true
         choresDeck.decksTablePosition = 1
+        choresDeck.id = UUID()
+        
         
         let colorsDeck = Deck(context: context!)
         colorsDeck.deckName = NSLocalizedString("Colors", comment: "")
@@ -154,6 +165,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         colorsDeck.numberOfCardsToPick = 3
         colorsDeck.dealButtonSelector = true
         colorsDeck.decksTablePosition = 0
+        colorsDeck.id = UUID()
         
         
         choresDeck.addToChildCards(cardDishes)
@@ -190,31 +202,101 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
     }
-
-    
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        
-        if !isAppAlreadyLaunchedOnce() {
-            deleteAllData(entity: "Deck")
-            deleteAllData(entity: "Card")
-            firstTimeDataBaseInit()
+         // Override point for customization after application launch.
+         
+         
+         if !isAppAlreadyLaunchedOnce() {
+             deleteAllData(entity: "Deck")
+             deleteAllData(entity: "Card")
+             firstTimeDataBaseInit()
 
+         }
+         
+        /*
+         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+         let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
+         self.window?.rootViewController = mainVC
+         mainVC.container = persistentContainer
+         */
+
+         return true
+     }
+
+    
+    ////
+    
+        // MARK: UISceneSession Lifecycle
+
+        func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+            // Called when a new scene session is being created.
+            // Use this method to select a configuration to create the new scene with.
+            return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
         }
-        
-        
-        
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
-        self.window?.rootViewController = mainVC
-        mainVC.container = persistentContainer
 
+    
+        func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+            // Called when the user discards a scene session.
+            // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+            // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        }
 
-        return true
+        // MARK: - Core Data stack
+
+        lazy var persistentContainer: NSPersistentContainer = {
+            /*
+             The persistent container for the application. This implementation
+             creates and returns a container, having loaded the store for the
+             application to it. This property is optional since there are legitimate
+             error conditions that could cause the creation of the store to fail.
+            */
+            let container = NSPersistentContainer(name: "DecisionPoker")
+            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                if let error = error as NSError? {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                     
+                    /*
+                     Typical reasons for an error here include:
+                     * The parent directory does not exist, cannot be created, or disallows writing.
+                     * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                     * The device is out of space.
+                     * The store could not be migrated to the current model version.
+                     Check the error message to determine what the actual problem was.
+                     */
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+            return container
+        }()
+    
+    
+    
+
+        // MARK: - Core Data Saving support
+
+        func saveContext () {
+            let context = persistentContainer.viewContext
+            if context.hasChanges {
+                do {
+                    try context.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
+            }
+        }
+
     }
+    
+    
+    
+    
+    ////
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -237,12 +319,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        //self.saveContext()
     }
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -284,6 +366,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    
+    
 
-}
+
 

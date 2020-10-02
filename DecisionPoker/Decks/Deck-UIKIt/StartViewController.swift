@@ -58,14 +58,14 @@ class StartViewController: UIViewController, MFMailComposeViewControllerDelegate
         }
     }
     
-    @IBSegueAction func showSavedResults(_ coder: NSCoder) -> UIViewController? {
-        let rootView = SavedResultsSwiftUIView()
-        let context = container.viewContext
-        
-        let _ =  UIHostingController(rootView: rootView.environment(\.managedObjectContext, context))
-        
-        return UIHostingController(coder: coder, rootView: rootView)
-    }
+//    @IBSegueAction func showSavedResults(_ coder: NSCoder) -> UIViewController? {
+//        let rootView = SavedResultsController()
+//        let context = container.viewContext
+//        
+//        let _ =  UIHostingController(rootView: rootView.environment(\.managedObjectContext, context))
+//        
+//        return UIHostingController(coder: coder, rootView: rootView)
+//    }
     
 
     

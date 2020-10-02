@@ -13,10 +13,6 @@ import CoreData
 
 extension Deck {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Deck> {
-        return NSFetchRequest<Deck>(entityName: "Deck")
-    }
-
     @NSManaged public var dealButtonSelector: Bool
     @NSManaged public var deckComment: String?
     @NSManaged public var deckName: String?
@@ -24,8 +20,14 @@ extension Deck {
     @NSManaged public var numberOfCardsToPick: Int16
     @NSManaged public var id: UUID?
     @NSManaged public var childCards: NSSet?
+    
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Deck> {
+        return NSFetchRequest<Deck>(entityName: "Deck")
+    }
 
 }
+
+
 
 // MARK: Generated accessors for childCards
 extension Deck {
@@ -43,3 +45,4 @@ extension Deck {
     @NSManaged public func removeFromChildCards(_ values: NSSet)
 
 }
+

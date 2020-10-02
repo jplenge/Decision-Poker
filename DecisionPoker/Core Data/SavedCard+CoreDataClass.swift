@@ -12,5 +12,16 @@ import CoreData
 
 @objc(SavedCard)
 public class SavedCard: NSManagedObject {
+    
+    
+    public var wrappedCardName: String {
+          cardName ?? ""
+      }
+    
+    public var wrappedCardComment: String {
+          cardComment ?? ""
+      }
+    
+    
 
 }

@@ -12,5 +12,13 @@ import CoreData
 
 
 public class Card: NSManagedObject {
+    
+    public var wrappedCardName: String {
+            cardName ?? "Unknown Deck"
+        }
+    
+    public var wrappedCardcomment: String {
+        cardComment ?? ""
+    }
 
 }

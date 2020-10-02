@@ -1,4 +1,3 @@
-
 /* No comment provided by engineer. */
 "Add comments here." = "Füge Kommentare hinzu";
 
@@ -79,3 +78,7 @@
 
 /* No comment provided by engineer. */
 "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!" = "Du musst entweder die Anzahl der Karten in Deinem Kartenstapel erhöhen oder die Anzahl der zu ziehenden Karten veringern!";
+
+"Deal" = "Austeilen";
+
+"Cards" = "Karten";
