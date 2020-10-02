@@ -1,3 +1,44 @@
+/* Startscreen */
+
+"Decision Poker" = "Entscheidungspoker";
+"Directions" = "Anleitung";
+"Start Dealing Decisions!" = "Entscheidungen treffen";
+"Saved Decisions" = "Ergebnisse";
+"Contact Us" = "Kontakt";
+
+/* Directions */
+
+"This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a \"deck\", and each choice in a deck is entered as a \"card\". To get started, press the \"Start dealing decisions!\" button in the start screen. The app will display two starter \"decks\", colors and household chores, but you can add and edit your own decks and cards. Some instructions and clarifications are indicated if the \"info\" or \"?\" button in each screen is pressed. Once your selections are optimized, simply hit \"Deal!\" to create your randomized \"hand\" or decision! Once the decision is made, you can fix and redraw any of the choices of your result. If you are happy with the decision the app has made, you can see, send and save your finalized solutions. Sometimes making decisions is stressful. We hope this app makes the process more fun and efficient!" = "Diese Entscheidungsfindungs App hilft Dir ein oder mehrere Dinge aus einer Liste von Möglichkeiten auszuwählen.  Die App vergleicht den Entscheidungsfindungsprozess mit einem Pokerspiel. Ein Thema wird durch einen Kartenstapel repräsentiert und jede Karte entspricht einer Wahlmöglichkeit. Drücke den \"Entscheidungen treffen\" Button um zu starten. Die App beinhaltet zwei Beispiele: Farben und Hausarbeit. Du kannst neue Kartenstapel hinzufügen oder die bestehenden verändern. Weitere Informationen findest Du unter dem \"Info\" Button. Wenn Du mit den Einstellungen fertig bist, drücke einfach den \"Entscheidungen treffen\" Button, damit die App Entscheidungen für Dich trifft. Du kann die Entscheidungen der App weiter anpassen und speichern. Manchmal ist es anstrengend Entscheidungen zu treffen. Wir hoffen, dass diese App diesen Prozess für Dich angenehmer macht.";
+
+
+/* Decks View*/
+
+"Decks" = "Kartenstapel";
+"Total: %lld cards" = "Gesamt: %lld Karten";
+"Active: %lld cards" = "Aktiv: %lld Karten";
+"Select: %d cards" = "Auswählen: %d Karten";
+
+
+/* Deck Details View */
+"Deck Details" = "Stapel Details";
+
+/* First Hand */
+"Cheat" = "Mogeln";
+"Redraw" = "Neue Karte";
+"Hold 'em!" = "Hold 'em!";
+"First Hand" = "Erstes Blatt";
+
+/* Cheat Picker View */
+"Replace card with" = "Karte ersetzen durch";
+"Pick Card" = "Karte auswählen";
+
+
+/* Result view */
+"Here is your Result for" = "Hier ist das Ergebnis für Deine Liste";
+"Save" = "Sichern";
+"Start over" = "Neu beginnen";
+"created: %@" = "Erstellt: %@";
+
 /* No comment provided by engineer. */
 "Add comments here." = "Füge Kommentare hinzu";
 
@@ -51,9 +92,6 @@
 
 /* No comment provided by engineer. */
 "Selection Invalid" = "Auswahl ungültig";
-
-/* No comment provided by engineer. */
-"Start Over" = "Neu beginnen";
 
 /* No comment provided by engineer. */
 "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing. Feel free to add additional comments regarding this item here! If there is a chore that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect it using the slider to the right." = "Dies ist eine der Hausarbeiten in Deiner To-Do-Liste. Es ist hoffentlich eine, die Dir nichts ausmacht. Falls es eine Aufgabe gibt, die Dir zur Zeit nicht gefällt, kannst Du sie vorübergehend mit dem Schalter auf der rechten Seite deaktivieren. Wenn Du möchtest, kannst hier zusätzliche Kommentare hinzuzufügen. ";

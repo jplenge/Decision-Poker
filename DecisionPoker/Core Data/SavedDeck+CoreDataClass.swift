@@ -30,8 +30,10 @@ public class SavedDeck: NSManagedObject {
     }
     
     public var creationDateFormatted: String  {
+        
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
         
         return formatter.string(from: dateSaved ?? Date())
     }

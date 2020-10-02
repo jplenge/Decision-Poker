@@ -40,7 +40,7 @@ struct DeckCell: View {
                         self.isShowingComment.toggle()
                     }) {
                         Image(systemName: "info.circle")
-                            .font(.title)
+                            .font(.custom(currentFont, size: 28))
                             .foregroundColor(.white)
                             .padding()
                     }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
@@ -88,7 +88,7 @@ struct DeckCell: View {
                     
                     Spacer()
                     
-                    Text("Select: \(deck.numberOfCardsToPick) cards")
+                    Text(LocalizedStringKey("Select: \(deck.numberOfCardsToPick) cards"))
                         .scaledFont(name: currentFont, size: 16)
                         .foregroundColor(textColor)
                     
