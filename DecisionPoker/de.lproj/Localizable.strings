@@ -5,6 +5,7 @@
 "Start Dealing Decisions!" = "Entscheidungen treffen";
 "Saved Decisions" = "Ergebnisse";
 "Contact Us" = "Kontakt";
+"Create Deck" = "Deck anlegen";
 
 /* Directions */
 
@@ -22,6 +23,13 @@
 /* Deck Details View */
 "Deck Details" = "Stapel Details";
 
+
+/* Add card*/
+
+"Cardname" = "Kartenname";
+"New cardname" = "Neuer Kartenname";
+"Add Card" = "Karte hinzufügen";
+
 /* First Hand */
 "Cheat" = "Mogeln";
 "Redraw" = "Neue Karte";
@@ -29,7 +37,8 @@
 "First Hand" = "Erstes Blatt";
 
 /* Cheat Picker View */
-"Replace card with" = "Karte ersetzen durch";
+"Replace card" = "Karte ersetzen
+";
 "Pick Card" = "Karte auswählen";
 
 
@@ -38,6 +47,13 @@
 "Save" = "Sichern";
 "Start over" = "Neu beginnen";
 "created: %@" = "Erstellt: %@";
+
+
+"Add Deck" = "Kartenstapel hinzufügen";
+"New Deck Name" = "Neuer Stapel Name";
+"Deckname" = "Stapelname";
+"Enter comment here" = "Füge Kommentar hinzu";
+"Comment" = "Kommentar";
 
 /* No comment provided by engineer. */
 "Add comments here." = "Füge Kommentare hinzu";

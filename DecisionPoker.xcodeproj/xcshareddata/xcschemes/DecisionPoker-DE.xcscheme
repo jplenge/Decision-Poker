@@ -27,42 +27,14 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9D58A7022C4E49F00E608B8"
-            BuildableName = "DecisionPoker.app"
-            BlueprintName = "DecisionPoker"
-            ReferencedContainer = "container:DecisionPoker.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9D58A8722C4E4A000E608B8"
-               BuildableName = "DecisionPokerTests.xctest"
-               BlueprintName = "DecisionPokerTests"
-               ReferencedContainer = "container:DecisionPoker.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9D58A9222C4E4A000E608B8"
-               BuildableName = "DecisionPokerUITests.xctest"
-               BlueprintName = "DecisionPokerUITests"
-               ReferencedContainer = "container:DecisionPoker.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "de"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

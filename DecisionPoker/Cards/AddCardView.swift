@@ -9,43 +9,63 @@
 import SwiftUI
 
 struct AddCardView: View {
-        
-    @State var newCardName = "New Card"
-    @State var newCardComment = "Enter comment here"
+    
+    @State var newCardName = ""
+    @State var newCardComment = ""
     
     let onComplete: (String, String) -> Void
-
+    
     @State var finished = false
     
     var body: some View {
         
         NavigationView {
             
-            Form {
-                Section(header: Text("Cardname")) {
-                    TextField("Enter cardname", text: $newCardName)
-                        .padding(10)
-                        .font(Font.system(size: 15, weight: .medium, design: .rounded))
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
-                }
+            ZStack {
                 
-                Section(header: Text("Comment")) {
-//                    TextView(text: $newCardComment, didFinishEditing: Binding<Bool>) {
-//                        $0.isEditable = true
-//                        $0.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-//                    }
-//                    .frame(height: 50)
-//                    .padding(10)
-//                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                Form {
+                    Section(header: Text("Cardname").scaledFont(name: currentFont, size: 10).foregroundColor(textColor).background(backgroundcolorGreen)) {
+                        TextField("New cardname", text: $newCardName)
+                            .multilineTextAlignment(.center)
+                            .scaledFont(name: currentFont, size: 18)
+                            .foregroundColor(backgroundcolorGreen)
+                    }
+                    
+                    
+                    
+                    Section(header: Text("Comment").scaledFont(name: currentFont, size: 10).foregroundColor(textColor).background(backgroundcolorGreen)) {
+                        TextView(text: $newCardComment) {
+                            $0.isEditable = true
+                            $0.backgroundColor = textColorUI
+                            $0.font = UIFont(name: currentFont, size: 13)
+                            $0.textColor = backgroundcolorGreenUI
+                        }
+                        .frame(height: 150)
+                        .onAppear() {
+                            /* TODO: add grey comment: Add comment here*/
+                            //newDeckComment = commentString
+                        }
+                    }
+                    .background(textColor)
+                    
                 }
-                Section {
+                .navigationBarTitle(Text("New Card"), displayMode: .inline)
+                .background(backgroundcolorGreen)
+                
+                
+                VStack {
+                    
+                    Spacer()
+                    
                     Button(action: createCard) {
                         Text("Add Card")
-                    }
+                            .scaledFont(name: currentFont, size: 18)
+                            .font(.headline)
+                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                    .padding()
                 }
+                
             }
-            .navigationBarTitle(Text("Add Card"), displayMode: .inline)
-            
         }
     }
     
@@ -54,13 +74,13 @@ struct AddCardView: View {
             newCardName,
             newCardComment
         )
-
+        
     }
-
+    
 }
-    
-            
-    
+
+
+
 
 
 //struct AddDeckView_Previews: PreviewProvider {

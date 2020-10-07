@@ -14,6 +14,7 @@ struct CardsSwiftUIView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @State var isPresented: Bool = false
+    @State var isShowingDeckComment: Bool = false
     @State var editableText: String = ""
     @State var editableTextField: String = ""
     
@@ -35,27 +36,40 @@ struct CardsSwiftUIView: View {
                             editableTextField = deck.wrappedDeckName
                         })
                     
+                    Button(action: {
+                        self.isShowingDeckComment.toggle()
+                    }) {
+                        Image(systemName: "info.circle")
+                            .frame(width: 22, height: 22)
+                            .foregroundColor(textColor)
+                            .padding()
+                    }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
+                    
                     Spacer()
+                    
                 }
                 
-                TextView(text: $editableText) {
-                    $0.isEditable = true
-                    $0.backgroundColor = backgroundcolorGreenUI
-                    $0.font = UIFont(name: currentFont, size: 13)
-                    $0.textColor = textColorUI
+                
+                if isShowingDeckComment {
+                    TextView(text: $editableText) {
+                        $0.isEditable = true
+                        $0.backgroundColor = backgroundcolorGreenUI
+                        $0.font = UIFont(name: currentFont, size: 13)
+                        $0.textColor = textColorUI
+                    }
+                    .frame(height: 150)
+                    .onAppear(){
+                        self.editableText = deck.wrappedDeckComment
+                    }
+                    .onDisappear(perform: {
+                        deck.deckComment = self.editableText
+                    })
                 }
-                .frame(height: 150)
-                .onAppear(){
-                    self.editableText = deck.wrappedDeckComment
-                }
-                .onDisappear(perform: {
-                    deck.deckComment = self.editableText
-                })
                 
                 Spacer()
             }
             .listRowBackground(backgroundcolorGreen)
-
+            
             
             ForEach(deck.childCardsArray, id: \.id) { card in
                 CardCell(card: card)
@@ -84,7 +98,7 @@ struct CardsSwiftUIView: View {
         .background((backgroundcolorGreen))
         
     }
-   
+    
     
     func deleteCard(at offsets: IndexSet) {
         offsets.forEach { index in

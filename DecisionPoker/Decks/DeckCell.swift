@@ -40,7 +40,7 @@ struct DeckCell: View {
                         self.isShowingComment.toggle()
                     }) {
                         Image(systemName: "info.circle")
-                            .font(.custom(currentFont, size: 28))
+                            .frame(width: 40, height: 40)
                             .foregroundColor(.white)
                             .padding()
                     }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped

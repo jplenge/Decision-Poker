@@ -23,16 +23,18 @@ struct CheatPickerView: View {
         
         let data = deck.childCardsArray
         
-        let view = ZStack {
+        NavigationView {
+        
+        ZStack {
             
             VStack(alignment: .leading, spacing: 20) {
                 
-                HStack {
-                    Spacer()
-                    Text("Replace card with").scaledFont(name: currentFont, size: 26).multilineTextAlignment(.center).padding(.top).foregroundColor(textColor)
-                    Spacer()
-                }
-                                
+                //                HStack {
+                //                    Spacer()
+                //                    Text("Replace card with").scaledFont(name: currentFont, size: 26).multilineTextAlignment(.center).padding(.top).foregroundColor(textColor)
+                //                    Spacer()
+                //                }
+                
                 List {
                     ForEach(data.indices, id: \.self) { index  in
                         
@@ -44,7 +46,7 @@ struct CheatPickerView: View {
                                 Text(data[index].wrappedCardName.capitalized)
                                     .scaledFont(name: currentFont, size: 26)
                                     .foregroundColor(textColor)
-                                    
+                                
                                 Spacer()
                                 ZStack{
                                     Circle().fill(self.selected == index ? textColor : Color.black.opacity(0.3)).frame(width: 18, height: 18)
@@ -69,24 +71,27 @@ struct CheatPickerView: View {
                     Spacer()
                     
                     Button(action: {
-                                   self.pickCard()
-                               }) {
-                                   Text("Pick Card").scaledFont(name: currentFont, size: 26)
-                    
+                        self.pickCard()
+                    }) {
+                        Text("Pick Card").scaledFont(name: currentFont, size: 26)
+                        
                     }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
-                               
-                               
+                    
+                    
                     
                     Spacer()
                 }
             }.padding()
             
-
+            
             
         }
         .background(backgroundcolorGreen)
+        .navigationBarTitle(Text("Replace card"), displayMode: .inline)
         
-        return view
+        //return view
+    }
+        
     }
     
     
