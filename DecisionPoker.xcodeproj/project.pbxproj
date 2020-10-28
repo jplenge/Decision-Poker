@@ -17,6 +17,7 @@
 		1B1902D524ACDC4600F1E94B /* CheatPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D424ACDC4600F1E94B /* CheatPickerView.swift */; };
 		1B1902D824ADC8A400F1E94B /* FinalResultSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */; };
 		1B21A06724A73C3D00A56F34 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B21A06624A73C3D00A56F34 /* Binding.swift */; };
+		1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFD8254A14A100406090 /* ActivityViewController.swift */; };
 		1B2BA1FA251CE10A00CCABE9 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2BA1F9251CE10A00CCABE9 /* CustomToggle.swift */; };
 		1B31DDC724BCC30E0014F318 /* DynamicTypeCustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */; };
 		1B31DDC924BCDB270014F318 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31DDC824BCDB270014F318 /* ButtonStyle.swift */; };
@@ -56,6 +57,7 @@
 		1B1902D424ACDC4600F1E94B /* CheatPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatPickerView.swift; sourceTree = "<group>"; };
 		1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultSwiftUIView.swift; sourceTree = "<group>"; };
 		1B21A06624A73C3D00A56F34 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		1B29CFD8254A14A100406090 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		1B2BA1F9251CE10A00CCABE9 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypeCustomFont.swift; sourceTree = "<group>"; };
 		1B31DDC824BCDB270014F318 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */,
 				1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */,
+				1B29CFD8254A14A100406090 /* ActivityViewController.swift */,
 			);
 			path = "Final Result";
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				1B51FB4724A4934000F4E80F /* ColorSetup.swift in Sources */,
 				1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */,
 				1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */,
+				1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */,
 				A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

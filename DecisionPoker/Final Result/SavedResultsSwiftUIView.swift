@@ -93,7 +93,6 @@ struct  SavedResultsSwiftUIView: View {
             .onAppear(perform: {
                 UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
-                print(savedDecks)
             })
             
             .background(backgroundcolorGreen)
@@ -128,7 +127,6 @@ struct  SavedResultsSwiftUIView: View {
     // function: delete deck from core data
     func deleteDeck(at offsets: IndexSet) {
         for index in offsets {
-            print("delete at \(index)")
             let savedDeck = self.savedDecks[index]
             self.managedObjectContext.delete(savedDeck)
         }

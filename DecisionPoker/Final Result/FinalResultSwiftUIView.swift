@@ -9,12 +9,14 @@
 import SwiftUI
 import CoreData
 
+
 struct FinalResultSwiftUIView: View {
     
     var selectedDeck: Deck
     var results: [Card]
     
     @State var isShowingSavedResults: Bool = false
+    @State private var showActionSheet: Bool = false
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -95,9 +97,9 @@ struct FinalResultSwiftUIView: View {
                     Spacer()
                     
                     Group {
-                        NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results), isActive: $isShowingSavedResults) { EmptyView() }
+                        //NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results), isActive: $isShowingSavedResults) { EmptyView() }
                         Button(action: {
-                            self.isShowingSavedResults = true
+                            self.showActionSheet = true
                         }){
                             Image(systemName: "square.and.arrow.up")
                                 .imageScale(.large)
@@ -108,15 +110,32 @@ struct FinalResultSwiftUIView: View {
                 Spacer()
                 
             }
-            
         }
+        .sheet(isPresented: $showActionSheet, onDismiss: {
+            print("Dismiss")
+        }, content: {
+            ActivityViewController(activityItems: [generateShareString(deck: self.selectedDeck, cards: self.results)])
+        })
+       
         
         return view
-        
-        
     }
     
     
+    func generateShareString(deck: Deck, cards: [Card]) -> String {
+        var resultString: String
+        
+        resultString = "Deck: \(String(deck.deckName ?? ""))\r"
+        
+        resultString += "\r Selected cards:\r"
+        
+        for item in cards {
+            resultString += "- \(String(item.cardName ?? ""))\r"
+        }
+        
+        return resultString
+        
+    }
     
     
     func saveResults(deck: Deck, cards: [Card]) {
@@ -144,6 +163,13 @@ struct FinalResultSwiftUIView: View {
             print(error)
         }
     }
+    
+    
+    
+    
+    
+    
+    
     
 }
 
