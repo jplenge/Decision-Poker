@@ -11,6 +11,7 @@ import SwiftUI
 struct StartSwiftUIView: View {
     
     @EnvironmentObject var appState: AppState
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @State private var navBarHidden = false
     

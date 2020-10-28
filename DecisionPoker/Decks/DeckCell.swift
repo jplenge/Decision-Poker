@@ -112,12 +112,10 @@ struct DeckCell: View {
                         } else if self.deck.numberOfCardsToPick > self.deck.activeCards {
                             self.deck.numberOfCardsToPick = Int16(self.deck.activeCards)
                         }
-                        
                     }
                     .frame(width: 80)
                     .background(textColor)
                     .cornerRadius(10)
-                    .foregroundColor(.blue)
                     
                     Spacer()
                 }

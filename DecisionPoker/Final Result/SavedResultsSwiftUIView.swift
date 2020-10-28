@@ -44,13 +44,13 @@ struct  SavedResultsSwiftUIView: View {
         let view =  ZStack {
             List {
                 
-                ForEach(savedDecks.indices) { index in
+                ForEach(savedDecks, id:\.deckName) { deck in
                     
                     VStack {
                         
                         HStack {
                             Spacer()
-                            Text(self.savedDecks[index].wrappedDeckName)
+                            Text(deck.wrappedDeckName)
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
                                 .scaledFont(name: currentFont, size: 22)
@@ -63,7 +63,7 @@ struct  SavedResultsSwiftUIView: View {
                         Spacer()
                         
                         VStack(alignment: .leading) {
-                            ForEach(self.savedDecks[index].savedCardsArray,  id: \.self) { card in
+                            ForEach(deck.savedCardsArray,  id: \.self) { card in
                                 Text("• \(card.wrappedCardName)")
                                     .multilineTextAlignment(.leading)
                                     .scaledFont(name: currentFont, size: 16)
@@ -74,7 +74,7 @@ struct  SavedResultsSwiftUIView: View {
                         Spacer()
                         
                         HStack {
-                            Text("created: \(self.savedDecks[index].creationDateFormatted)")
+                            Text("created: \(deck.creationDateFormatted)")
                                 .multilineTextAlignment(.leading)
                                 .scaledFont(name: currentFont, size: 8)
                                 .foregroundColor(textColor)
@@ -93,11 +93,11 @@ struct  SavedResultsSwiftUIView: View {
             .onAppear(perform: {
                 UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
+                print(savedDecks)
             })
+            
             .background(backgroundcolorGreen)
-            
-            
-            
+           
             if showBackButton {
                 HStack {
                     
@@ -127,7 +127,7 @@ struct  SavedResultsSwiftUIView: View {
     
     // function: delete deck from core data
     func deleteDeck(at offsets: IndexSet) {
-        if let index = offsets.first {
+        for index in offsets {
             print("delete at \(index)")
             let savedDeck = self.savedDecks[index]
             self.managedObjectContext.delete(savedDeck)

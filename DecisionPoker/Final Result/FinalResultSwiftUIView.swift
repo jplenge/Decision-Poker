@@ -55,6 +55,9 @@ struct FinalResultSwiftUIView: View {
                     }
                     .listRowBackground(backgroundcolorGreen)
                 }
+                .onAppear() {
+                    self.isShowingSavedResults = false
+                }
                 .listRowBackground(backgroundcolorGreen)
             }
             .background(backgroundcolorGreen)

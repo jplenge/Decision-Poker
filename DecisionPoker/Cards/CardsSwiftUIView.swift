@@ -131,7 +131,7 @@ struct CardsSwiftUIView: View {
         deck.addToChildCards(newCard)
         
         do {
-            try managedObjectContext.save()
+            try self.managedObjectContext.save()
         } catch {
             print(error)
         }

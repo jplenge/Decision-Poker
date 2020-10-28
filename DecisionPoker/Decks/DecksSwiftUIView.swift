@@ -59,6 +59,8 @@ struct DecksSwiftUIView: View {
             .onAppear(perform: {
                 UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
+                self.isPresented = false
+                print(decks)
             })
             .background(backgroundcolorGreen)
             .navigationBarItems(trailing: Button(action: {
@@ -70,7 +72,7 @@ struct DecksSwiftUIView: View {
                 }
                 
                 
-                self.isPresented.toggle()
+            self.isPresented.toggle()
             }, label: {
                 Image(systemName: "plus")
                     .imageScale(.large)
@@ -90,14 +92,14 @@ struct DecksSwiftUIView: View {
         do {
             try self.managedObjectContext.save()
         } catch {
-            print("error when deletin deck: \(error)")
+            print("error when deleting deck: \(error)")
         }
         
         
     }
     
     func createDeck(newDeckName: String, newDeckComment: String) {
-        let newDeck = Deck(context: managedObjectContext)
+        let newDeck = Deck(context: self.managedObjectContext)
         
         newDeck.deckName = newDeckName
         newDeck.deckComment = newDeckComment
@@ -106,7 +108,7 @@ struct DecksSwiftUIView: View {
         newDeck.numberOfCardsToPick = 0
         
         do {
-            try managedObjectContext.save()
+            try self.managedObjectContext.save()
         } catch {
             print(error)
         }
