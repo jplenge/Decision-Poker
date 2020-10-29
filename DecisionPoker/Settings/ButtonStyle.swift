@@ -29,3 +29,23 @@ struct StartViewButtonStyle: ButtonStyle {
             //.scaleEffect(configuration.isPressed ? 0.8 : 1.0)
     }
 }
+
+
+struct StartViewButtonStyleCircle: ButtonStyle {
+    var backcolor: Color = .green
+    var forecolor: Color = .white
+    
+    public func makeBody(configuration: StartViewButtonStyle.Configuration) -> some View {
+        
+        configuration.label
+            .foregroundColor(forecolor)
+            .padding(10)
+            .background(backcolor)
+            .compositingGroup()
+            .clipShape(Circle())
+            //.background(RoundedRectangle(cornerRadius: 10).fill(backcolor))
+            //.shadow(color: .black, radius: 3)
+            //.opacity(configuration.isPressed ? 0.5 : 1.0)
+            //.scaleEffect(configuration.isPressed ? 0.8 : 1.0)
+    }
+}

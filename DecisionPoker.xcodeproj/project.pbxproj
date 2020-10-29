@@ -141,9 +141,9 @@
 		1B7F907322D33FC700812BE4 /* Final Result */ = {
 			isa = PBXGroup;
 			children = (
+				1B29CFD8254A14A100406090 /* ActivityViewController.swift */,
 				1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */,
 				1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */,
-				1B29CFD8254A14A100406090 /* ActivityViewController.swift */,
 			);
 			path = "Final Result";
 			sourceTree = "<group>";

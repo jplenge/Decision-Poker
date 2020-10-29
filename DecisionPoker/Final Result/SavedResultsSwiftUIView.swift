@@ -13,10 +13,12 @@ struct  SavedResultsSwiftUIView: View {
     
     @Binding var showBackButton: Bool
     
-    
     // required for going home to first screen
     @EnvironmentObject var appState: AppState
     
+    @State private var showActionSheet: Bool = false
+    
+    @State private var sharedString: String = ""
     
     init(showBackButton: Binding<Bool>) {
         
@@ -29,7 +31,9 @@ struct  SavedResultsSwiftUIView: View {
         UITableViewCell.appearance().selectionStyle = .none
     }
     
+    
     @Environment(\.managedObjectContext) var managedObjectContext
+    
     
     // fetch hstory from core data
     @FetchRequest(entity: SavedDeck.entity(), sortDescriptors: [NSSortDescriptor(
@@ -38,52 +42,81 @@ struct  SavedResultsSwiftUIView: View {
     )]) var savedDecks: FetchedResults<SavedDeck>
     
     
+    
     var body: some View {
         
-        
         let view =  ZStack {
+            
             List {
-                
                 ForEach(savedDecks, id:\.deckName) { deck in
-                    
-                    VStack {
-                        
-                        HStack {
-                            Spacer()
-                            Text(deck.wrappedDeckName)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.center)
-                                .scaledFont(name: currentFont, size: 22)
-                                .foregroundColor(textColor)
-                                .padding()
-                            
-                            Spacer()
-                        }
-                        
-                        Spacer()
-                        
-                        VStack(alignment: .leading) {
-                            ForEach(deck.savedCardsArray,  id: \.self) { card in
-                                Text("• \(card.wrappedCardName)")
-                                    .multilineTextAlignment(.leading)
-                                    .scaledFont(name: currentFont, size: 16)
+                    ZStack {
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Text(deck.wrappedDeckName)
+                                    .fontWeight(.bold)
+                                    .multilineTextAlignment(.center)
+                                    .scaledFont(name: currentFont, size: 22)
                                     .foregroundColor(textColor)
-                            }.listRowBackground(backgroundcolorGreen)
-                        }
-                        
-                        Spacer()
-                        
-                        HStack {
-                            Text("created: \(deck.creationDateFormatted)")
-                                .multilineTextAlignment(.leading)
-                                .scaledFont(name: currentFont, size: 8)
-                                .foregroundColor(textColor)
+                                    .padding()
+                                
+                                Spacer()
+                            }
                             
                             Spacer()
                             
+                            VStack(alignment: .leading) {
+                                ForEach(deck.savedCardsArray,  id: \.self) { card in
+                                    Text("• \(card.wrappedCardName)")
+                                        .multilineTextAlignment(.leading)
+                                        .scaledFont(name: currentFont, size: 16)
+                                        .foregroundColor(textColor)
+                                }.listRowBackground(backgroundcolorGreen)
+                            }
+                            
+                            Spacer()
+                            
+                            HStack {
+                                Text("created: \(deck.creationDateFormatted)")
+                                    .multilineTextAlignment(.leading)
+                                    .scaledFont(name: currentFont, size: 8)
+                                    .foregroundColor(textColor)
+                                
+                                Spacer()
+                                
+                            }
+                            
                         }
+                        
+                        
+                        HStack {
+                            
+                            Spacer()
+                            
+                            VStack {
+                                
+                                Spacer()
+                                
+                                Group {
+                                    //NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results), isActive: $isShowingSavedResults) { EmptyView() }
+                                    Button(action: {
+                                        self.sharedString  = generateShareString(deck: deck)
+                                        self.showActionSheet = true
+                                    }){
+                                        Image(systemName: "square.and.arrow.up")
+                                            .imageScale(.small)
+                                    }.buttonStyle(StartViewButtonStyleCircle(backcolor: .white, forecolor: backgroundcolorGreen))
+                                }
+                                
+                            }
+                        }
+                        
                         
                     }
+                    
+                    
+                    
+                    
                 }
                 .onDelete(perform: deleteDeck)
                 .listRowBackground(backgroundcolorGreen)
@@ -93,10 +126,11 @@ struct  SavedResultsSwiftUIView: View {
             .onAppear(perform: {
                 UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
+                self.showActionSheet = false
             })
             
             .background(backgroundcolorGreen)
-           
+            
             if showBackButton {
                 HStack {
                     
@@ -116,7 +150,14 @@ struct  SavedResultsSwiftUIView: View {
                     }
                 }
             }
+            
         }
+        .sheet(isPresented: $showActionSheet, onDismiss: {
+            print("Dismiss")
+        }, content: {
+            ActivityViewController(activityItems: [sharedString])
+        })
+     
         
         return view
     }
@@ -138,6 +179,24 @@ struct  SavedResultsSwiftUIView: View {
             print("error when deleting deck: \(error)")
         }
     }
+    
+    
+    func generateShareString(deck: SavedDeck) -> String {
+        var resultString: String
+        
+        resultString = "Deck: \(String(deck.deckName ?? ""))\r"
+        
+        resultString += "\r Selected cards:\r"
+        
+        for item in deck.savedCardsArray {
+            resultString += "- \(String(item.cardName ?? ""))\r"
+        }
+        
+        return resultString
+        
+    }
+    
+    
     
 }
 

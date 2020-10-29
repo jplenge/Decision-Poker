@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreData
+import UIKit
 
 
 struct FinalResultSwiftUIView: View {
@@ -63,9 +64,7 @@ struct FinalResultSwiftUIView: View {
                 .listRowBackground(backgroundcolorGreen)
             }
             .background(backgroundcolorGreen)
-            
-            
-            
+
             HStack {
                 
                 Spacer()
@@ -88,8 +87,6 @@ struct FinalResultSwiftUIView: View {
                     }.padding()
                 }
             }
-            
-            
             HStack {
                 
                 VStack {
@@ -103,7 +100,7 @@ struct FinalResultSwiftUIView: View {
                         }){
                             Image(systemName: "square.and.arrow.up")
                                 .imageScale(.large)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                        }.buttonStyle(StartViewButtonStyleCircle(backcolor: .white, forecolor: backgroundcolorGreen))
                     }.padding()
                 }
                 
