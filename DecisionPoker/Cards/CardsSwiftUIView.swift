@@ -29,9 +29,9 @@ struct CardsSwiftUIView: View {
                     
                     TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveDeckTitle)
                         .multilineTextAlignment(.center)
-                        .scaledFont(name: currentFont, size: 28)
+                        .scaledFont(name: Theme.currentFont, size: 28)
                         .padding()
-                        .foregroundColor(textColor)
+                        .foregroundColor(Theme.currentTextColor)
                         .onAppear(perform: {
                             editableTextField = deck.wrappedDeckName
                         })
@@ -41,7 +41,7 @@ struct CardsSwiftUIView: View {
                     }) {
                         Image(systemName: "info.circle")
                             .frame(width: 22, height: 22)
-                            .foregroundColor(textColor)
+                            .foregroundColor(Theme.currentButtonBackgroundColor)
                             .padding()
                     }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                     
@@ -53,9 +53,9 @@ struct CardsSwiftUIView: View {
                 if isShowingDeckComment {
                     TextView(text: $editableText) {
                         $0.isEditable = true
-                        $0.backgroundColor = backgroundcolorGreenUI
-                        $0.font = UIFont(name: currentFont, size: 13)
-                        $0.textColor = textColorUI
+                        $0.backgroundColor = Theme.currentBackgroundColorUI
+                        $0.font = UIFont(name: Theme.currentFont, size: 13)
+                        $0.textColor = Theme.currentTextColorUI
                     }
                     .frame(height: 150)
                     .onAppear(){
@@ -68,14 +68,14 @@ struct CardsSwiftUIView: View {
                 
                 Spacer()
             }
-            .listRowBackground(backgroundcolorGreen)
+            .listRowBackground(Theme.currentBackgroundColor)
             
             
             ForEach(deck.childCardsArray, id: \.id) { card in
                 CardCell(card: card)
                 
             }.onDelete(perform: deleteCard)
-            .listRowBackground(backgroundcolorGreen)
+            .listRowBackground(Theme.currentBackgroundColor)
             
         }
         .sheet(isPresented: $isPresented) {
@@ -95,7 +95,7 @@ struct CardsSwiftUIView: View {
             UITableView.appearance().backgroundColor = .clear // tableview background
             UITableViewCell.appearance().backgroundColor = .clear // cell background
         })
-        .background((backgroundcolorGreen))
+        .background(Theme.currentBackgroundColor)
         
     }
     

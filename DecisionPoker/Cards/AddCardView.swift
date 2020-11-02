@@ -24,21 +24,21 @@ struct AddCardView: View {
             ZStack {
                 
                 Form {
-                    Section(header: Text("Cardname").scaledFont(name: currentFont, size: 10).foregroundColor(textColor).background(backgroundcolorGreen)) {
+                    Section(header: Text("Cardname").scaledFont(name: Theme.currentFont, size: 10).foregroundColor(Theme.currentTextColor).background(Theme.currentBackgroundColor)) {
                         TextField("New cardname", text: $newCardName)
                             .multilineTextAlignment(.center)
-                            .scaledFont(name: currentFont, size: 18)
-                            .foregroundColor(backgroundcolorGreen)
+                            .scaledFont(name: Theme.currentFont, size: 18)
+                            .foregroundColor(Theme.currentBackgroundColor)
                     }
                     
                     
                     
-                    Section(header: Text("Comment").scaledFont(name: currentFont, size: 10).foregroundColor(textColor).background(backgroundcolorGreen)) {
+                    Section(header: Text("Comment").scaledFont(name: Theme.currentFont, size: 10).foregroundColor(Theme.currentTextColor).background(Theme.currentBackgroundColor)) {
                         TextView(text: $newCardComment) {
                             $0.isEditable = true
-                            $0.backgroundColor = textColorUI
-                            $0.font = UIFont(name: currentFont, size: 13)
-                            $0.textColor = backgroundcolorGreenUI
+                            $0.backgroundColor = Theme.currentTextColorUI
+                            $0.font = UIFont(name: Theme.currentFont, size: 13)
+                            $0.textColor = Theme.currentBackgroundColorUI
                         }
                         .frame(height: 150)
                         .onAppear() {
@@ -46,11 +46,11 @@ struct AddCardView: View {
                             //newDeckComment = commentString
                         }
                     }
-                    .background(textColor)
+                    .background(Theme.currentTextColor)
                     
                 }
                 .navigationBarTitle(Text("New Card"), displayMode: .inline)
-                .background(backgroundcolorGreen)
+                .background(Theme.currentBackgroundColor)
                 
                 
                 VStack {
@@ -59,9 +59,9 @@ struct AddCardView: View {
                     
                     Button(action: createCard) {
                         Text("Add Card")
-                            .scaledFont(name: currentFont, size: 18)
+                            .scaledFont(name: Theme.currentFont, size: 18)
                             .font(.headline)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                    }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     .padding()
                 }
                 

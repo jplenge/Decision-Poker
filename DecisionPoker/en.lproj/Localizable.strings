@@ -125,3 +125,16 @@
 /* No comment provided by engineer. */
 "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!" = "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!";
 
+
+/* Settings */*/
+"Classic" = "Classic";
+"Modern" = "Modern";
+"Dark" = "Dark";
+
+"Plain Text" ="Plain Text";
+"Json" = "JSON";
+
+"Theme" = "Theme";
+"Sharing" = "Sharing";
+
+"Appearance" = "Appearance";

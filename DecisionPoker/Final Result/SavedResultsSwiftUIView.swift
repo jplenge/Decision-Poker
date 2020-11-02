@@ -23,10 +23,7 @@ struct  SavedResultsSwiftUIView: View {
     init(showBackButton: Binding<Bool>) {
         
         self._showBackButton = showBackButton
-        
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: currentFont, size: 20)!, .foregroundColor: backgroundcolorGreenUI]
-        UINavigationBar.appearance().tintColor = backgroundcolorGreenUI
-        
+
         UITableView.appearance().allowsSelection = true
         UITableViewCell.appearance().selectionStyle = .none
     }
@@ -56,8 +53,8 @@ struct  SavedResultsSwiftUIView: View {
                                 Text(deck.wrappedDeckName)
                                     .fontWeight(.bold)
                                     .multilineTextAlignment(.center)
-                                    .scaledFont(name: currentFont, size: 22)
-                                    .foregroundColor(textColor)
+                                    .scaledFont(name: Theme.currentFont, size: 22)
+                                    .foregroundColor(Theme.currentTextColor)
                                     .padding()
                                 
                                 Spacer()
@@ -69,9 +66,9 @@ struct  SavedResultsSwiftUIView: View {
                                 ForEach(deck.savedCardsArray,  id: \.self) { card in
                                     Text("• \(card.wrappedCardName)")
                                         .multilineTextAlignment(.leading)
-                                        .scaledFont(name: currentFont, size: 16)
-                                        .foregroundColor(textColor)
-                                }.listRowBackground(backgroundcolorGreen)
+                                        .scaledFont(name: Theme.currentFont, size: 16)
+                                        .foregroundColor(Theme.currentTextColor)
+                                }.listRowBackground(Theme.currentBackgroundColor)
                             }
                             
                             Spacer()
@@ -79,8 +76,8 @@ struct  SavedResultsSwiftUIView: View {
                             HStack {
                                 Text("created: \(deck.creationDateFormatted)")
                                     .multilineTextAlignment(.leading)
-                                    .scaledFont(name: currentFont, size: 8)
-                                    .foregroundColor(textColor)
+                                    .scaledFont(name: Theme.currentFont, size: 8)
+                                    .foregroundColor(Theme.currentTextColor)
                                 
                                 Spacer()
                                 
@@ -88,7 +85,7 @@ struct  SavedResultsSwiftUIView: View {
                             
                         }
                         
-                        
+            
                         HStack {
                             
                             Spacer()
@@ -105,7 +102,7 @@ struct  SavedResultsSwiftUIView: View {
                                     }){
                                         Image(systemName: "square.and.arrow.up")
                                             .imageScale(.small)
-                                    }.buttonStyle(StartViewButtonStyleCircle(backcolor: .white, forecolor: backgroundcolorGreen))
+                                    }.buttonStyle(StartViewButtonStyleCircle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                                 }
                                 
                             }
@@ -113,14 +110,11 @@ struct  SavedResultsSwiftUIView: View {
                         
                         
                     }
-                    
-                    
-                    
-                    
+               
                 }
                 .onDelete(perform: deleteDeck)
-                .listRowBackground(backgroundcolorGreen)
-            }.listRowBackground(backgroundcolorGreen)
+                .listRowBackground(Theme.currentBackgroundColor)
+            }.listRowBackground(Theme.currentBackgroundColor)
             .navigationBarTitle("Saved Decisions", displayMode: .inline)
             .navigationBarHidden(false)
             .onAppear(perform: {
@@ -129,7 +123,7 @@ struct  SavedResultsSwiftUIView: View {
                 self.showActionSheet = false
             })
             
-            .background(backgroundcolorGreen)
+            .background(Theme.currentBackgroundColor)
             
             if showBackButton {
                 HStack {
@@ -144,8 +138,8 @@ struct  SavedResultsSwiftUIView: View {
                             Button(action: {
                                 self.appState.moveToRoot = true
                             }){
-                                Text("Start over").scaledFont(name: currentFont, size: 26)
-                            }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                                Text("Start over").scaledFont(name: Theme.currentFont, size: 26)
+                            }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                         }.padding()
                     }
                 }

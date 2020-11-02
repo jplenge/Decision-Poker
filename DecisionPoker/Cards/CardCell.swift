@@ -23,9 +23,9 @@ struct CardCell: View {
             HStack {
                 TextField(card.wrappedCardName.capitalized, text: $editableTextField, onCommit: saveCardTitle)
                     .multilineTextAlignment(.leading)
-                    .scaledFont(name: currentFont, size: 20)
+                    .scaledFont(name: Theme.currentFont, size: 20)
                     .padding()
-                    .foregroundColor(textColor)
+                    .foregroundColor(Theme.currentTextColor)
                     .onAppear(perform: {
                         editableTextField = card.wrappedCardName
                     })
@@ -37,15 +37,15 @@ struct CardCell: View {
                 }) {
                     Image(systemName: "info.circle")
                         .frame(width: 22, height: 22)
-                        .foregroundColor(textColor)
+                        .foregroundColor(Theme.currentButtonBackgroundColor)
                         .padding()
                 }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                 
                 Toggle(isOn: $card.cardIncluded) {
-                    Text("xx")
+                   EmptyView()
                 }
                 .toggleStyle(CheckboxToggleStyle())
-                .foregroundColor(textColor)
+                .foregroundColor(Theme.currentButtonBackgroundColor)
                 .labelsHidden()
                 
             }
@@ -54,9 +54,9 @@ struct CardCell: View {
                 
                 TextView(text: $editableText) {
                     $0.isEditable = true
-                    $0.backgroundColor = backgroundcolorGreenUI
-                    $0.font = UIFont(name: currentFont, size: 13)
-                    $0.textColor = textColorUI
+                    $0.backgroundColor = Theme.currentBackgroundColorUI
+                    $0.font = UIFont(name: Theme.currentFont, size: 13)
+                    $0.textColor = Theme.currentTextColorUI
                 }
                 .frame(height: 80)
                 .onAppear(){

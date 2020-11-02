@@ -28,9 +28,9 @@ struct DeckCell: View {
                 HStack {
                     TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveTitle)
                         .multilineTextAlignment(.center)
-                        .scaledFont(name: currentFont, size: 28)
+                        .scaledFont(name: Theme.currentFont, size: 28)
                         .padding()
-                        .foregroundColor(textColor)
+                        .foregroundColor(Theme.currentTextColor)
                         .onAppear(perform: {
                             editableTextField = deck.wrappedDeckName
                         })
@@ -41,7 +41,7 @@ struct DeckCell: View {
                     }) {
                         Image(systemName: "info.circle")
                             .frame(width: 40, height: 40)
-                            .foregroundColor(.white)
+                            .foregroundColor(Theme.currentButtonBackgroundColor)
                             .padding()
                     }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                 }
@@ -51,9 +51,9 @@ struct DeckCell: View {
                     
                     TextView(text: $editableText) {
                         $0.isEditable = true
-                        $0.backgroundColor = backgroundcolorGreenUI
-                        $0.font = UIFont(name: currentFont, size: 13)
-                        $0.textColor = textColorUI       
+                        $0.backgroundColor = Theme.currentBackgroundColorUI
+                        $0.font = UIFont(name: Theme.currentFont, size: 13)
+                        $0.textColor = Theme.currentTextColorUI       
                     }
                     .frame(height: 150)
                     .onAppear(){
@@ -69,14 +69,14 @@ struct DeckCell: View {
                     Spacer()
                     
                     Text("Total: \(deck.childCardsCount) cards")
-                        .scaledFont(name: currentFont, size: 16)
-                        .foregroundColor(textColor)
+                        .scaledFont(name: Theme.currentFont, size: 16)
+                        .foregroundColor(Theme.currentTextColor)
                     
                     Spacer()
                     
                     Text("Active: \(deck.activeCards) cards")
-                        .scaledFont(name: currentFont, size: 16)
-                        .foregroundColor(textColor)
+                        .scaledFont(name: Theme.currentFont, size: 16)
+                        .foregroundColor(Theme.currentTextColor)
                     
                     
                     Spacer()
@@ -89,8 +89,8 @@ struct DeckCell: View {
                     Spacer()
                     
                     Text(LocalizedStringKey("Select: \(deck.numberOfCardsToPick) cards"))
-                        .scaledFont(name: currentFont, size: 16)
-                        .foregroundColor(textColor)
+                        .scaledFont(name: Theme.currentFont, size: 16)
+                        .foregroundColor(Theme.currentTextColor)
                     
                     Spacer()
                         .frame(width: 10)
@@ -114,7 +114,7 @@ struct DeckCell: View {
                         }
                     }
                     .frame(width: 80)
-                    .background(textColor)
+                    .background(Theme.currentTextColor)
                     .cornerRadius(10)
                     
                     Spacer()
@@ -133,9 +133,9 @@ struct DeckCell: View {
                         self.isShowingResultView = true
                     }){
                         Text("Deal")
-                            .scaledFont(name: currentFont, size: 20)
+                            .scaledFont(name: Theme.currentFont, size: 20)
                             .padding(.horizontal)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                    }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     
                 }
                 

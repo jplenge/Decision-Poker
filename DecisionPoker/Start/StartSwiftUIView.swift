@@ -18,104 +18,145 @@ struct StartSwiftUIView: View {
     @State var isShowingDirectionsView: Bool = false
     @State var isShowingDealingView: Bool = false
     @State var isShowingSavedResultsView: Bool = false
+    @State var isShowingSettingsView: Bool = false
+    
+    init() {
+        Theme.currentBackgroundColor = Theme.colorChoices[UserDefaults.standard.integer(forKey: "SelectedTheme")]
+        Theme.currentBackgroundColorUI = Theme.colorChoicesUI[UserDefaults.standard.integer(forKey: "SelectedTheme")]
+    }
     
     
     var body: some View {
         
+        
         NavigationView {
-            VStack   {
-                                
-                Text("Decision Poker")
-                    .fontWeight(.bold)
-                    .scaledFont(name: currentFont, size: 40)
-                    .foregroundColor(textColor)
-                    .padding(.top)
+            
+            ZStack {
                 
-                Image("decisionPokerStartImage3")
-                    .resizable()
-                    .scaledToFit()
-                    .padding()
-                
-                
-                
-                VStack {
-                    NavigationLink(destination: DirectionsSwiftUIView(), isActive: $isShowingDirectionsView) { EmptyView() }
+                VStack   {
                     
-                    Button(action: {
-                        self.isShowingDirectionsView = true
-                    }){
-                        Text("Directions")
-                            .scaledFont(name: currentFont, size: 18)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
-                }
-                
-                
-                Spacer()
-                
-                
-                VStack {
-                    NavigationLink(destination: DecksSwiftUIView(), isActive: $isShowingDealingView) { EmptyView() }
+                    Group {
+                        
+                        Text("Decision Poker")
+                            .fontWeight(.bold)
+                            .scaledFont(name: Theme.currentFont, size: 40)
+                            .foregroundColor(Theme.currentTextColor)
+                            .padding(.top)
+                        
+                        Image("decisionPokerStartImage3")
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
+                    }
                     
-                    Button(action: {
-                        self.isShowingDealingView = true
-                    }){
-                        Text("Start Dealing Decisions!")
-                             .scaledFont(name: currentFont, size: 18)
-                             .font(.headline)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
-                }
-                
-                
-                
-                Spacer()
-                
-                
-                
-                VStack {
-                    NavigationLink(destination: SavedResultsSwiftUIView(showBackButton: .constant(false)) , isActive: $isShowingSavedResultsView) { EmptyView() }
+                    Spacer()
                     
-                    Button(action: {
-                        self.isShowingSavedResultsView = true
-                    }){
-                        Text("Saved Decisions")
-                             .scaledFont(name: currentFont, size: 18)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
-                }
-                
-                
-                Spacer()
-                
-                
-                VStack {
+                    VStack {
+                        NavigationLink(destination: DirectionsSwiftUIView(), isActive: $isShowingDirectionsView) { EmptyView() }
+                        
+                        Button(action: {
+                            self.isShowingDirectionsView = true
+                        }){
+                            Text("Directions")
+                                .scaledFont(name: Theme.currentFont, size: 18)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    }
                     
-                    Button(action: {
-                    }){
-                        Text("Contact Us")
-                             .scaledFont(name: currentFont, size: 18)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
-                }
-                
-                Spacer()
-               
-                
-            }.navigationBarTitle("")
+                    Spacer()
+                    
+                    VStack {
+                        NavigationLink(destination: DecksSwiftUIView(), isActive: $isShowingDealingView) { EmptyView() }
+                        
+                        Button(action: {
+                            self.isShowingDealingView = true
+                        }){
+                            Text("Start Dealing Decisions!")
+                                .scaledFont(name: Theme.currentFont, size: 18)
+                                .font(.headline)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    }
+                    
+                    Spacer()
+                    
+                    VStack {
+                        NavigationLink(destination: SavedResultsSwiftUIView(showBackButton: .constant(false)) , isActive: $isShowingSavedResultsView) { EmptyView() }
+                        
+                        Button(action: {
+                            self.isShowingSavedResultsView = true
+                        }){
+                            Text("Saved Decisions")
+                                .scaledFont(name: Theme.currentFont, size: 18)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    }
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        Button(action: {
+                        }){
+                            Text("Contact Us")
+                                .scaledFont(name: Theme.currentFont, size: 18)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    }
+                    
+                    Spacer()
+                    
+                }.navigationViewStyle(StackNavigationViewStyle())
+                .navigationBarTitle("")
                 .navigationBarHidden(self.navBarHidden)
+                .background(NavigationConfigurator { nc in
+                    nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
+                    nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+                    nc.navigationBar.tintColor = Theme.currentTextColorUI
+                })
                 .onAppear(perform: {
                     self.navBarHidden = true
                 })
                 .onDisappear(perform: {
                     self.navBarHidden = false
                 })
-            .onReceive(self.appState.$moveToRoot, perform: {moveToRoot in
-                if moveToRoot {
-                    self.isShowingDealingView = false
-                    self.appState.moveToRoot = false
+                .onReceive(self.appState.$moveToRoot, perform: {moveToRoot in
+                    if moveToRoot {
+                        self.isShowingDealingView = false
+                        self.isShowingSettingsView = false
+                        self.appState.moveToRoot = false
+                        
+                    }
+                })
+                .background(Theme.currentBackgroundColor)
+                
+                VStack {
+                    
+                    Spacer()
+                    
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Group {
+                            
+                        NavigationLink(destination: SettingsUIView(), isActive: $isShowingSettingsView) { EmptyView() }
+                        
+                        Button(action: {
+                            self.isShowingSettingsView = true
+                        }){
+                            Image(systemName: "gear")
+                                .imageScale(.large)
+                        }.buttonStyle(StartViewButtonStyleCircle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                        .padding()
+                            
+                        }
+                        
+                    }
+                    
                 }
-            })
-            .background(backgroundcolorGreen)
+            }
+            .background(Theme.currentBackgroundColor)
         }
     }
 }
+
 
 
 struct StartSwiftUIView_Previews: PreviewProvider {

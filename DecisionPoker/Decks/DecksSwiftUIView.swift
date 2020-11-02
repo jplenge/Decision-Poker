@@ -14,8 +14,8 @@ struct DecksSwiftUIView: View {
     init() {
         
         //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: currentFont, size: 20)!, .foregroundColor: backgroundcolorGreenUI]
-        UINavigationBar.appearance().tintColor = backgroundcolorGreenUI
+        //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: currentFont, size: 20)!, .foregroundColor: currentBackgroundColorUI]
+        //UINavigationBar.appearance().tintColor = currentBackgroundColorUI
         
         UITableView.appearance().allowsSelection = true
         UITableViewCell.appearance().selectionStyle = .none
@@ -44,7 +44,7 @@ struct DecksSwiftUIView: View {
                             DeckCell(deck: deck)
                         }
                     }.onDelete(perform: deleteDeck)
-                    .listRowBackground(backgroundcolorGreen)
+                    .listRowBackground(Theme.currentBackgroundColor)
                     
                 }
             }
@@ -60,9 +60,8 @@ struct DecksSwiftUIView: View {
                 UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
                 self.isPresented = false
-                print(decks)
             })
-            .background(backgroundcolorGreen)
+            .background(Theme.currentBackgroundColor)
             .navigationBarItems(trailing: Button(action: {
                 
                 do {
@@ -70,8 +69,7 @@ struct DecksSwiftUIView: View {
                 } catch {
                     print(error)
                 }
-                
-                
+          
             self.isPresented.toggle()
             }, label: {
                 Image(systemName: "plus")

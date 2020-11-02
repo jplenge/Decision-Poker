@@ -210,7 +210,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              deleteAllData(entity: "Deck")
              deleteAllData(entity: "Card")
              firstTimeDataBaseInit()
-
+            
+            UserDefaults.standard.set(0, forKey: "SelectedTheme")
          }
          
         /*

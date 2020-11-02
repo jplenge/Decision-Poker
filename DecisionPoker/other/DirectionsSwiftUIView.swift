@@ -19,14 +19,14 @@ struct DirectionsSwiftUIView: View {
         Group {
             Text(directions)
                 .padding()
-                .scaledFont(name: currentFont, size: 18)
-                .foregroundColor(textColor)
+                .scaledFont(name: Theme.currentFont, size: 18)
+                .foregroundColor(Theme.currentTextColor)
             
             Spacer()
             
         }.navigationBarTitle("Directions", displayMode: .inline)
         .navigationBarHidden(false)
-        .background(backgroundcolorGreen)
+        .background(Theme.currentBackgroundColor)
         
     }
     

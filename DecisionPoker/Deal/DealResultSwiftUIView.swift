@@ -27,13 +27,13 @@ struct DealResultSwiftUIView: View {
                 ForEach(results.indices, id: \.self) {index  in
                     resultViewCell(card: self.results[index], index: index, selectedDeck: self.selectedDeck, results: self.$results)
                 }
-                .listRowBackground(backgroundcolorGreen)
+                .listRowBackground(Theme.currentBackgroundColor)
             }.navigationBarTitle("First Hand", displayMode: .inline)
             .onAppear(perform: {
               UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
             })
-            .listRowBackground(backgroundcolorGreen)
+            .listRowBackground(Theme.currentBackgroundColor)
             
             VStack {
                 
@@ -47,14 +47,14 @@ struct DealResultSwiftUIView: View {
                             self.isShowingFinalResultView = true
                         }){
                             Text("Hold 'em!")
-                                .scaledFont(name: currentFont, size: 26)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                                .scaledFont(name: Theme.currentFont, size: 26)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     .padding()
                     }
                 
             }
         }
-        .background(backgroundcolorGreen)
+        .background(Theme.currentBackgroundColor)
         
     }
     
@@ -81,9 +81,9 @@ struct DealResultSwiftUIView: View {
             VStack {
                 Text(card.wrappedCardName)
                 .multilineTextAlignment(.center)
-                .scaledFont(name: currentFont, size: 28)
+                    .scaledFont(name: Theme.currentFont, size: 28)
                 .padding()
-                .foregroundColor(textColor)
+                    .foregroundColor(Theme.currentTextColor)
                 
                 
                 HStack {
@@ -92,8 +92,8 @@ struct DealResultSwiftUIView: View {
                         self.cheatPickerIsPresented = true
                     }){
                         Text("Cheat")
-                           .scaledFont(name: currentFont, size: 18)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                            .scaledFont(name: Theme.currentFont, size: 18)
+                    }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     
                     Spacer()
                     
@@ -101,8 +101,8 @@ struct DealResultSwiftUIView: View {
                         self.results[self.index] = self.selectedDeck.repickCard()
                     }){
                         Text("Redraw")
-                            .scaledFont(name: currentFont, size: 18)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                            .scaledFont(name: Theme.currentFont, size: 18)
+                    }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                 }
             }.sheet(isPresented: $cheatPickerIsPresented) {
                 CheatPickerView(deck: self.selectedDeck, pickedCard: self.results[self.index]) {pickedCard in

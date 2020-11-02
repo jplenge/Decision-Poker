@@ -34,12 +34,12 @@ struct FinalResultSwiftUIView: View {
                 
                 VStack {
                     Text("Here is your Result for")
-                        .scaledFont(name: currentFont, size: 18)
-                        .foregroundColor(textColor)
+                        .scaledFont(name: Theme.currentFont, size: 18)
+                        .foregroundColor(Theme.currentTextColor)
                     
                     Text(selectedDeck.wrappedDeckName)
-                        .scaledFont(name: currentFont, size: 22)
-                        .foregroundColor(textColor)
+                        .scaledFont(name: Theme.currentFont, size: 22)
+                        .foregroundColor(Theme.currentTextColor)
                         .padding()
                 }
                 
@@ -50,20 +50,20 @@ struct FinalResultSwiftUIView: View {
                             Spacer()
                         Text(self.results[index].wrappedCardName)
                             .multilineTextAlignment(.center)
-                            .scaledFont(name: currentFont, size: 18)
-                            .foregroundColor(textColor)
+                            .scaledFont(name: Theme.currentFont, size: 18)
+                            .foregroundColor(Theme.currentTextColor)
                             
                             Spacer()
                         }
                     }
-                    .listRowBackground(backgroundcolorGreen)
+                    .listRowBackground(Theme.currentBackgroundColor)
                 }
                 .onAppear() {
                     self.isShowingSavedResults = false
                 }
-                .listRowBackground(backgroundcolorGreen)
+                .listRowBackground(Theme.currentBackgroundColor)
             }
-            .background(backgroundcolorGreen)
+            .background(Theme.currentBackgroundColor)
 
             HStack {
                 
@@ -80,9 +80,9 @@ struct FinalResultSwiftUIView: View {
                             self.saveResults(deck: self.selectedDeck, cards: self.results)
                             self.isShowingSavedResults = true
                         }){
-                            Text("Save").scaledFont(name: currentFont, size: 26)
+                            Text("Save").scaledFont(name: Theme.currentFont, size: 26)
                             
-                        }.buttonStyle(StartViewButtonStyle(backcolor: .white, forecolor: backgroundcolorGreen))
+                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                         
                     }.padding()
                 }
@@ -100,7 +100,7 @@ struct FinalResultSwiftUIView: View {
                         }){
                             Image(systemName: "square.and.arrow.up")
                                 .imageScale(.large)
-                        }.buttonStyle(StartViewButtonStyleCircle(backcolor: .white, forecolor: backgroundcolorGreen))
+                        }.buttonStyle(StartViewButtonStyleCircle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     }.padding()
                 }
                 

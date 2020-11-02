@@ -136,3 +136,14 @@
 "Deal" = "Austeilen";
 
 "Cards" = "Karten";
+
+/* Settings */*/
+"Classic" = "Klassisch";
+"Modern" = "Modern";
+"Dark" = "Dark";
+
+"Plain Text" ="Klartext";
+"Json" = "JSON";
+
+"Theme" = "Theme";
+"Sharing" = "Teilen";

@@ -18,6 +18,10 @@
 		1B1902D824ADC8A400F1E94B /* FinalResultSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */; };
 		1B21A06724A73C3D00A56F34 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B21A06624A73C3D00A56F34 /* Binding.swift */; };
 		1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFD8254A14A100406090 /* ActivityViewController.swift */; };
+		1B29CFEC254B5F8100406090 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFEB254B5F8100406090 /* SettingsUIView.swift */; };
+		1B29CFF3254DA64600406090 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFF2254DA64600406090 /* NavigationConfigurator.swift */; };
+		1B29CFF8254F586E00406090 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B29CFF7254F586E00406090 /* Colors.xcassets */; };
+		1B29CFFB254F5B4800406090 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFFA254F5B4800406090 /* ColorManager.swift */; };
 		1B2BA1FA251CE10A00CCABE9 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2BA1F9251CE10A00CCABE9 /* CustomToggle.swift */; };
 		1B31DDC724BCC30E0014F318 /* DynamicTypeCustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */; };
 		1B31DDC924BCDB270014F318 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31DDC824BCDB270014F318 /* ButtonStyle.swift */; };
@@ -25,7 +29,7 @@
 		1B51FB3F24A3E5DA00F4E80F /* StartSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */; };
 		1B51FB4124A3EC5600F4E80F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4024A3EC5600F4E80F /* SceneDelegate.swift */; };
 		1B51FB4324A3F9CB00F4E80F /* DecksSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */; };
-		1B51FB4724A4934000F4E80F /* ColorSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4624A4934000F4E80F /* ColorSetup.swift */; };
+		1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4624A4934000F4E80F /* ThemeManager.swift */; };
 		1B68D03F24A64D86004B02F2 /* CardsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */; };
 		1B6C710C251E36DC00BDFD61 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C710B251E36DC00BDFD61 /* AppState.swift */; };
 		1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */; };
@@ -43,7 +47,6 @@
 		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
 		A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */; };
-		A9D58A8222C4E4A000E608B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,10 @@
 		1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultSwiftUIView.swift; sourceTree = "<group>"; };
 		1B21A06624A73C3D00A56F34 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		1B29CFD8254A14A100406090 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		1B29CFEB254B5F8100406090 /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
+		1B29CFF2254DA64600406090 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		1B29CFF7254F586E00406090 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1B29CFFA254F5B4800406090 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		1B2BA1F9251CE10A00CCABE9 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypeCustomFont.swift; sourceTree = "<group>"; };
 		1B31DDC824BCDB270014F318 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -66,7 +73,7 @@
 		1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSwiftUIView.swift; sourceTree = "<group>"; };
 		1B51FB4024A3EC5600F4E80F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksSwiftUIView.swift; sourceTree = "<group>"; };
-		1B51FB4624A4934000F4E80F /* ColorSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSetup.swift; sourceTree = "<group>"; };
+		1B51FB4624A4934000F4E80F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSwiftUIView.swift; sourceTree = "<group>"; };
 		1B6C710B251E36DC00BDFD61 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		1B7CCD2522EB4A8F00999AEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -78,7 +85,6 @@
 		1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1B8D1FAB22E7841900DF4829 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboardExtension.swift; sourceTree = "<group>"; };
 		1B9F59C322E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B9F59C622E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -87,7 +93,6 @@
 		A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D58A7C22C4E49F00E608B8 /* DecisionPoker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DecisionPoker.xcdatamodel; sourceTree = "<group>"; };
 		A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A9D58A8122C4E4A000E608B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D58A8322C4E4A000E608B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,8 +110,10 @@
 		1B31DDCA24BCDF710014F318 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				1B21A06624A73C3D00A56F34 /* Binding.swift */,
 				1B31DDC824BCDB270014F318 /* ButtonStyle.swift */,
-				1B51FB4624A4934000F4E80F /* ColorSetup.swift */,
+				1B51FB4624A4934000F4E80F /* ThemeManager.swift */,
+				1B29CFFA254F5B4800406090 /* ColorManager.swift */,
 				1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */,
 				1B6C710B251E36DC00BDFD61 /* AppState.swift */,
 			);
@@ -117,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */,
+				1B29CFEB254B5F8100406090 /* SettingsUIView.swift */,
+				1B29CFF2254DA64600406090 /* NavigationConfigurator.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -133,7 +142,6 @@
 				A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */,
 				1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */,
 				1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */,
-				1B21A06624A73C3D00A56F34 /* Binding.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -219,7 +227,7 @@
 				1B7F907322D33FC700812BE4 /* Final Result */,
 				1B7F907622D3406400812BE4 /* other */,
 				A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */,
-				A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */,
+				1B29CFF7254F586E00406090 /* Colors.xcassets */,
 				A9D58A8322C4E4A000E608B8 /* Info.plist */,
 				1B9F59C522E8F054009B5129 /* Localizable.strings */,
 				1B9F59C222E8F054009B5129 /* InfoPlist.strings */,
@@ -292,8 +300,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B29CFF8254F586E00406090 /* Colors.xcassets in Resources */,
 				1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */,
-				A9D58A8222C4E4A000E608B8 /* LaunchScreen.storyboard in Resources */,
 				A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */,
 				1B9F59C422E8F054009B5129 /* InfoPlist.strings in Resources */,
 			);
@@ -341,11 +349,13 @@
 				1B1902C524AA523D00F1E94B /* TextView.swift in Sources */,
 				1B96E50C251A9081007420F2 /* dismissKeyboardExtension.swift in Sources */,
 				1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */,
+				1B29CFFB254F5B4800406090 /* ColorManager.swift in Sources */,
 				1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */,
 				1B31DDC724BCC30E0014F318 /* DynamicTypeCustomFont.swift in Sources */,
 				1B1902D824ADC8A400F1E94B /* FinalResultSwiftUIView.swift in Sources */,
 				1B6C710C251E36DC00BDFD61 /* AppState.swift in Sources */,
 				1B68D03F24A64D86004B02F2 /* CardsSwiftUIView.swift in Sources */,
+				1B29CFEC254B5F8100406090 /* SettingsUIView.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,
 				1B21A06724A73C3D00A56F34 /* Binding.swift in Sources */,
 				1B7F909022D34F2100812BE4 /* SavedCard+CoreDataClass.swift in Sources */,
@@ -354,10 +364,11 @@
 				1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */,
 				1B1902D324AC988200F1E94B /* DealResultSwiftUIView.swift in Sources */,
 				1B1902D124AC866100F1E94B /* AddCardView.swift in Sources */,
-				1B51FB4724A4934000F4E80F /* ColorSetup.swift in Sources */,
+				1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */,
 				1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */,
 				1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */,
 				1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */,
+				1B29CFF3254DA64600406090 /* NavigationConfigurator.swift in Sources */,
 				A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,15 +391,6 @@
 				1B7CCD2522EB4A8F00999AEA /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		A9D58A8022C4E4A000E608B8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9D58A8122C4E4A000E608B8 /* Base */,
-				1B8D1FAB22E7841900DF4829 /* de */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -522,7 +524,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,7 +545,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
