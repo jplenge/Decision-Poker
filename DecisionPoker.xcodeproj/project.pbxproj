@@ -43,6 +43,7 @@
 		1B96E50C251A9081007420F2 /* dismissKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */; };
 		1B9F59C422E8F054009B5129 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C222E8F054009B5129 /* InfoPlist.strings */; };
 		1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
+		1BF3D14325698309003A9246 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF3D14225698309003A9246 /* MailView.swift */; };
 		A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8C22D72A8A00C14787 /* FontSetup.swift */; };
 		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
@@ -88,6 +89,7 @@
 		1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboardExtension.swift; sourceTree = "<group>"; };
 		1B9F59C322E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B9F59C622E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1BF3D14225698309003A9246 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A98F9F8C22D72A8A00C14787 /* FontSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSetup.swift; sourceTree = "<group>"; };
 		A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */,
 				1B29CFEB254B5F8100406090 /* SettingsUIView.swift */,
 				1B29CFF2254DA64600406090 /* NavigationConfigurator.swift */,
+				1BF3D14225698309003A9246 /* MailView.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */,
 				1B2BA1FA251CE10A00CCABE9 /* CustomToggle.swift in Sources */,
+				1BF3D14325698309003A9246 /* MailView.swift in Sources */,
 				1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */,
 				1B51FB4124A3EC5600F4E80F /* SceneDelegate.swift in Sources */,
 				1B1902C724AA906900F1E94B /* DirectionsSwiftUIView.swift in Sources */,
@@ -524,7 +528,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,7 +549,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct StartSwiftUIView: View {
     
@@ -19,6 +20,9 @@ struct StartSwiftUIView: View {
     @State var isShowingDealingView: Bool = false
     @State var isShowingSavedResultsView: Bool = false
     @State var isShowingSettingsView: Bool = false
+    
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView: Bool = false
     
     init() {
         Theme.currentBackgroundColor = Theme.colorChoices[UserDefaults.standard.integer(forKey: "SelectedTheme")]
@@ -94,10 +98,17 @@ struct StartSwiftUIView: View {
                     VStack {
                         
                         Button(action: {
+                            self.isShowingMailView.toggle()
+                            print("tapped")
                         }){
                             Text("Contact Us")
                                 .scaledFont(name: Theme.currentFont, size: 18)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                        }
+                        .disabled(!MFMailComposeViewController.canSendMail())
+                        .sheet(isPresented: $isShowingMailView) {
+                            MailView(result: self.$result) 
+                        }
+                        .buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     }
                     
                     Spacer()
