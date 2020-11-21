@@ -81,9 +81,12 @@ struct CheatPickerView: View {
             
         }
         .background(Theme.currentBackgroundColor)
-        .navigationBarTitle(Text("Replace card"), displayMode: .inline)
-        
-        //return view
+        .background(NavigationConfigurator { nc in
+            nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
+            nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+            nc.navigationBar.tintColor = Theme.currentTextColorUI
+        })
+        .navigationBarTitle("Replace Card", displayMode: .inline)
     }
         
     }

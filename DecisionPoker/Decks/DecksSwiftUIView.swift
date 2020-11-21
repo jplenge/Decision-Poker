@@ -13,10 +13,6 @@ struct DecksSwiftUIView: View {
     
     init() {
         
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: currentFont, size: 20)!, .foregroundColor: currentBackgroundColorUI]
-        //UINavigationBar.appearance().tintColor = currentBackgroundColorUI
-        
         UITableView.appearance().allowsSelection = true
         UITableViewCell.appearance().selectionStyle = .none
     }
@@ -59,6 +55,8 @@ struct DecksSwiftUIView: View {
             .onAppear(perform: {
                 UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
+                
+              
                 self.isPresented = false
             })
             .background(Theme.currentBackgroundColor)

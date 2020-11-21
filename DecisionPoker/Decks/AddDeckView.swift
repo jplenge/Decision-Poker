@@ -51,6 +51,11 @@ struct AddDeckView: View {
                 }
                 .navigationBarTitle(Text("Add Deck"), displayMode: .inline)
                 .background(Theme.currentBackgroundColor)
+                .background(NavigationConfigurator { nc in
+                    nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
+                    nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+                    nc.navigationBar.tintColor = Theme.currentTextColorUI
+                })
                 
                 
                 VStack {

@@ -15,8 +15,7 @@ struct DeckCell: View {
     @State var isShowingComment = false
     @State var editableText = ""
     @State var editableTextField = ""
-    
-    
+        
     
     var body: some View {
         
@@ -105,7 +104,10 @@ struct DeckCell: View {
                             self.deck.numberOfCardsToPick -= 1
                         }
                     })
+                    .accentColor(Color.red)
+                    .foregroundColor(Color.red)
                     .onAppear(){
+                
                         if self.deck.activeCards == 0 {
                             self.deck.numberOfCardsToPick = 0
                             

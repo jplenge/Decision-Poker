@@ -17,19 +17,6 @@ struct SettingsUIView: View {
     // required for going home to first screen
     @EnvironmentObject var appState: AppState
     
-    
-    private var themes = ["Classic", "Modern", "Dark"]
-    
-    
-    init() {
-        
-        UITableView.appearance().allowsSelection = true
-        UITableViewCell.appearance().selectionStyle = .none
-        
-        //UITableViewHeaderFooterView.appearance().tintColor = UIColor.clear
-        
-    }
-    
     var body: some View {
         
         VStack(alignment: .center) {
@@ -49,9 +36,9 @@ struct SettingsUIView: View {
                                 bottom: 0,
                                 trailing: 0))
                 ){
-                    ForEach(themes.indices, id: \.self) { index in
+                    ForEach(Theme.themes.indices, id: \.self) { index in
                         HStack {
-                            Text(themes[index])
+                            Text(Theme.themes[index])
                                 .scaledFont(name: Theme.currentFont, size: 18)
                                 .foregroundColor(Theme.currentTextColor)
                             
@@ -63,13 +50,9 @@ struct SettingsUIView: View {
                                 Theme.currentBackgroundColorUI = Theme.colorChoicesUI[index]
                                 Theme.currentFont = Theme.fontChoices[index]
                                 Theme.unselectedRadioButtonBackgroundColor = Theme.radioButtonBackgroundColorChoices[index]
-                                
                                 Theme.sectionHeaderColor = Theme.sectionHeaderColorChoices[index]
-                                
                                 UserDefaults.standard.set(index, forKey: "SelectedTheme")
-                                
                                 self.appState.moveToRoot = true
-                                
                             }){
                                 
                                 ZStack {
@@ -85,42 +68,10 @@ struct SettingsUIView: View {
                     }
                     .listRowBackground(Theme.currentBackgroundColor)
                 }
-                
-                
-//                Section(header: HStack {
-//                    Text("Sharing")
-//                        .scaledFont(name: currentFont, size: 16)
-//                        .foregroundColor(sectionHeaderColor)
-//                        .padding()
-//
-//                    Spacer()
-//                }
-//                .background(Color.white)
-//                .listRowInsets(EdgeInsets(
-//                                top: 0,
-//                                leading: 0,
-//                                bottom: 0,
-//                                trailing: 0))
-//                ){
-//
-//                    ForEach(["Plain Text", "Json"], id: \.self) { themeName in
-//                        HStack {
-//                            Text(themeName)
-//                                .scaledFont(name: currentFont, size: 18)
-//                                .foregroundColor(currentTextColor)
-//
-//                            Spacer()
-//
-//                            Button(action: {
-//                                print(themeName)
-//                            }){
-//                                Circle().fill(false ? currentButtonBackgroundColor : unselectedRadioButtonBackgroundColor).frame(width: 18, height: 18)
-//                                    .padding()
-//                            }
-//                        }
-//                    }
-//                }
-//                .listRowBackground(ThemeManager.currentBackgroundColor)
+            }
+            .onAppear(){
+                UITableView.appearance().backgroundColor = .clear
+                UITableViewCell.appearance().backgroundColor = .clear
             }
             .navigationBarTitle("Settings", displayMode: .inline)
             .listStyle(GroupedListStyle())
@@ -129,15 +80,13 @@ struct SettingsUIView: View {
                 nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
                 nc.navigationBar.tintColor = Theme.currentTextColorUI
             })
-            .background(Theme.currentBackgroundColor)
+            
+            Spacer()
+            
         }
         .background(Theme.currentBackgroundColor)
     }
 }
-
-
-
-
 
 
 struct SettingsUIView_Previews: PreviewProvider {

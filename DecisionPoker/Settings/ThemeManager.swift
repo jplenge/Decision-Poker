@@ -12,6 +12,8 @@ import Combine
 
 class ThemeManager {
     
+    let themes = ["Classic", "Modern", "Dark"]
+    
     // current color settings
     var currentBackgroundColor = ColorManager.ClassicGreen
     var currentBackgroundColorUI = ColorManager.ClassicGreenUI
