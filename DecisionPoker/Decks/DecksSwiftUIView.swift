@@ -15,6 +15,27 @@ struct DecksSwiftUIView: View {
         
         UITableView.appearance().allowsSelection = true
         UITableViewCell.appearance().selectionStyle = .none
+        
+        // syle navigation bar
+        let navigationbarAppearance = UINavigationBarAppearance()
+        navigationbarAppearance.configureWithOpaqueBackground()
+        
+        navigationbarAppearance.shadowColor = .clear
+        navigationbarAppearance.backgroundColor = Theme.currentBackgroundColorUI
+        //navigationbarAppearance.largeTitleTextAttributes = [.font: UIFont(name: Theme.currentFont, size: 28)!, .foregroundColor: Theme.currentTextColorUI]
+        navigationbarAppearance.titleTextAttributes =  [.font: UIFont(name: Theme.currentFont, size: 20)!, .foregroundColor: Theme.currentTextColorUI]
+               
+        let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
+        buttonAppearance.normal.titleTextAttributes = [.font: UIFont(name: Theme.currentFont, size: 20)!, .foregroundColor: Theme.currentTextColorUI]
+        navigationbarAppearance.buttonAppearance = buttonAppearance
+
+        UINavigationBar.appearance().standardAppearance = navigationbarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationbarAppearance
+        
+        UIStepper.appearance().setIncrementImage(UIImage(systemName: "plus"), for: .normal)
+        UIStepper.appearance().setDecrementImage(UIImage(systemName: "minus"), for: .normal)
+        UIStepper.appearance().tintColor = Theme.currentBackgroundColorUI
+
     }
     
     
@@ -54,9 +75,7 @@ struct DecksSwiftUIView: View {
             .navigationBarHidden(false)  //
             .onAppear(perform: {
                 UITableView.appearance().backgroundColor = .clear // tableview background
-                UITableViewCell.appearance().backgroundColor = .clear // cell background
-                
-              
+                UITableViewCell.appearance().backgroundColor = .clear // cell background         
                 self.isPresented = false
             })
             .background(Theme.currentBackgroundColor)

@@ -16,7 +16,7 @@ struct DealResultSwiftUIView: View {
     @State var isShowingFinalResultView: Bool = false
     
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    
     
     
     var body: some View {
@@ -30,7 +30,7 @@ struct DealResultSwiftUIView: View {
                 .listRowBackground(Theme.currentBackgroundColor)
             }.navigationBarTitle("First Hand", displayMode: .inline)
             .onAppear(perform: {
-              UITableView.appearance().backgroundColor = .clear // tableview background
+                UITableView.appearance().backgroundColor = .clear // tableview background
                 UITableViewCell.appearance().backgroundColor = .clear // cell background
             })
             .listRowBackground(Theme.currentBackgroundColor)
@@ -38,19 +38,19 @@ struct DealResultSwiftUIView: View {
             VStack {
                 
                 Spacer()
- 
+                
                 VStack {
-              
-                        NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results), isActive: $isShowingFinalResultView) { EmptyView() }
-                        
-                        Button(action: {
-                            self.isShowingFinalResultView = true
-                        }){
-                            Text("Hold 'em!")
-                                .scaledFont(name: Theme.currentFont, size: 26)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    
+                    NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results), isActive: $isShowingFinalResultView) { EmptyView() }
+                    
+                    Button(action: {
+                        self.isShowingFinalResultView = true
+                    }){
+                        Text("Hold 'em!")
+                            .scaledFont(name: Theme.currentFont, size: 26)
+                    }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     .padding()
-                    }
+                }
                 
             }
         }
@@ -58,7 +58,7 @@ struct DealResultSwiftUIView: View {
         
     }
     
-
+    
     
     //struct DealResultSwiftUIView_Previews: PreviewProvider {
     //    static var previews: some View {
@@ -80,9 +80,9 @@ struct DealResultSwiftUIView: View {
             
             VStack {
                 Text(card.wrappedCardName)
-                .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.center)
                     .scaledFont(name: Theme.currentFont, size: 28)
-                .padding()
+                    .padding()
                     .foregroundColor(Theme.currentTextColor)
                 
                 
@@ -92,7 +92,7 @@ struct DealResultSwiftUIView: View {
                         self.cheatPickerIsPresented = true
                     }){
                         Text("Cheat")
-                            .scaledFont(name: Theme.currentFont, size: 18)
+                            .scaledFont(name: Theme.currentFont, size: 14)
                     }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     
                     Spacer()
@@ -101,11 +101,11 @@ struct DealResultSwiftUIView: View {
                         self.results[self.index] = self.selectedDeck.repickCard()
                     }){
                         Text("Redraw")
-                            .scaledFont(name: Theme.currentFont, size: 18)
+                            .scaledFont(name: Theme.currentFont, size: 14)
                     }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                 }
             }.sheet(isPresented: $cheatPickerIsPresented) {
-                CheatPickerView(deck: self.selectedDeck, pickedCard: self.results[self.index]) {pickedCard in
+                CheatPickerView(deck: self.selectedDeck, pickedCard: self.results[self.index], selected: self.index) {pickedCard in
                     self.results[self.index]  = pickedCard
                     self.cheatPickerIsPresented = false
                 }

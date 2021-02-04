@@ -138,7 +138,7 @@ struct  SavedResultsSwiftUIView: View {
                             Button(action: {
                                 self.appState.moveToRoot = true
                             }){
-                                Text("Start over").scaledFont(name: Theme.currentFont, size: 26)
+                                Text("Done").scaledFont(name: Theme.currentFont, size: 26)
                             }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                         }.padding()
                     }

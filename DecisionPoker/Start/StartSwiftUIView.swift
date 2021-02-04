@@ -47,7 +47,7 @@ struct StartSwiftUIView: View {
                             .foregroundColor(Theme.currentTextColor)
                             .padding(.top)
                         
-                        Image("decisionPokerStartImage3")
+                        Image(Theme.startImage)
                             .resizable()
                             .scaledToFit()
                             .padding()
@@ -116,11 +116,11 @@ struct StartSwiftUIView: View {
                 }.navigationViewStyle(StackNavigationViewStyle())
                 .navigationBarTitle("")
                 .navigationBarHidden(self.navBarHidden)
-                .background(NavigationConfigurator { nc in
-                    nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
-                    nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
-                    nc.navigationBar.tintColor = Theme.currentTextColorUI
-                })
+//                .background(NavigationConfigurator { nc in
+//                    nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
+//                    nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+//                    nc.navigationBar.tintColor = Theme.currentTextColorUI
+//                })
                 .onAppear(perform: {
                     self.navBarHidden = true
                 })

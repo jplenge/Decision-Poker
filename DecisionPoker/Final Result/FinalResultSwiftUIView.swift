@@ -21,6 +21,9 @@ struct FinalResultSwiftUIView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
+    // required for going home to first screen
+    @EnvironmentObject var appState: AppState
+    
     
     var body: some View {
         
@@ -31,9 +34,8 @@ struct FinalResultSwiftUIView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                
                 VStack {
-                    Text("Here is your Result for")
+                    Text("Here is your result for")
                         .scaledFont(name: Theme.currentFont, size: 18)
                         .foregroundColor(Theme.currentTextColor)
                     
@@ -43,15 +45,14 @@ struct FinalResultSwiftUIView: View {
                         .padding()
                 }
                 
-                
                 List {
                     ForEach(self.results.indices) { index in
                         HStack {
                             Spacer()
-                        Text(self.results[index].wrappedCardName)
-                            .multilineTextAlignment(.center)
-                            .scaledFont(name: Theme.currentFont, size: 18)
-                            .foregroundColor(Theme.currentTextColor)
+                            Text(self.results[index].wrappedCardName)
+                                .multilineTextAlignment(.center)
+                                .scaledFont(name: Theme.currentFont, size: 18)
+                                .foregroundColor(Theme.currentTextColor)
                             
                             Spacer()
                         }
@@ -64,11 +65,12 @@ struct FinalResultSwiftUIView: View {
                 .listRowBackground(Theme.currentBackgroundColor)
             }
             .background(Theme.currentBackgroundColor)
-
+            
+            
+            
+            
             HStack {
-                
                 Spacer()
-                
                 VStack {
                     
                     Spacer()
@@ -81,20 +83,31 @@ struct FinalResultSwiftUIView: View {
                             self.isShowingSavedResults = true
                         }){
                             Text("Save").scaledFont(name: Theme.currentFont, size: 26)
-                            
                         }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
-                        
-                    }.padding()
+                    }.padding(.bottom, 5)
+                    .padding(.horizontal)
+                    
+                    
+                    Group {
+                        Button(action: {
+                            self.appState.moveToRoot = true
+                        }){
+                            Text("Done").scaledFont(name: Theme.currentFont, size: 26)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    }.padding(.top, 5)
+                    .padding([.horizontal, .bottom])
+                    
                 }
             }
-            HStack {
+            
+            
+            HStack{
                 
                 VStack {
                     
                     Spacer()
                     
                     Group {
-                        //NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results), isActive: $isShowingSavedResults) { EmptyView() }
                         Button(action: {
                             self.showActionSheet = true
                         }){
@@ -102,18 +115,21 @@ struct FinalResultSwiftUIView: View {
                                 .imageScale(.large)
                         }.buttonStyle(StartViewButtonStyleCircle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                     }.padding()
+                    
                 }
                 
                 Spacer()
                 
             }
+            
+            
         }
         .sheet(isPresented: $showActionSheet, onDismiss: {
             print("Dismiss")
         }, content: {
             ActivityViewController(activityItems: [generateShareString(deck: self.selectedDeck, cards: self.results)])
         })
-       
+        
         
         return view
     }
@@ -160,14 +176,6 @@ struct FinalResultSwiftUIView: View {
             print(error)
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 

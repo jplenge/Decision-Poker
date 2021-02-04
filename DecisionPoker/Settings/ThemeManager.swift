@@ -30,6 +30,10 @@ class ThemeManager {
     // section header
     var sectionHeaderColor = ColorManager.ClassicGreen
     
+    // Start image
+    
+    var startImage = "StartImage-black"
+    
     // color options
     var colorChoices = [ColorManager.ClassicGreen, ColorManager.ModernBlue, Color.black]
     var colorChoicesUI = [ColorManager.ClassicGreenUI, ColorManager.ModernBlueUI, UIColor.black]
@@ -38,9 +42,10 @@ class ThemeManager {
     var radioButtonBackgroundColorChoices = [Color.black.opacity(0.3), Color.black.opacity(0.3), Color.white.opacity(0.3)]
     var sectionHeaderColorChoices = [ColorManager.ClassicGreen, ColorManager.ModernBlue, Color.black]
 
-    
     // font options
     var fontChoices = ["Marker Felt", "Helvetica Neue", "Helvetica Neue"]
+    
+    var startImageChoices = ["StartImage-black", "StartImage-black", "StartImage-white"]
 }
 
 

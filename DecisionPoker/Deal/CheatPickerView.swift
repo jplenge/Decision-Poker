@@ -68,11 +68,7 @@ struct CheatPickerView: View {
                         self.pickCard()
                     }) {
                         Text("Pick Card").scaledFont(name: Theme.currentFont, size: 26)
-                        
                     }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
-                    
-                    
-                    
                     Spacer()
                 }
             }.padding()
@@ -81,11 +77,11 @@ struct CheatPickerView: View {
             
         }
         .background(Theme.currentBackgroundColor)
-        .background(NavigationConfigurator { nc in
-            nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
-            nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
-            nc.navigationBar.tintColor = Theme.currentTextColorUI
-        })
+//        .background(NavigationConfigurator { nc in
+//            nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
+//            nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+//            nc.navigationBar.tintColor = Theme.currentTextColorUI
+//        })
         .navigationBarTitle("Replace Card", displayMode: .inline)
     }
         

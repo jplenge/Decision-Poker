@@ -17,6 +17,12 @@ struct SettingsUIView: View {
     // required for going home to first screen
     @EnvironmentObject var appState: AppState
     
+    init() {
+            UINavigationBar.appearance().barTintColor = Theme.currentBackgroundColorUI
+            UINavigationBar.appearance().tintColor = Theme.currentTextColorUI
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+        }
+    
     var body: some View {
         
         VStack(alignment: .center) {
@@ -51,6 +57,7 @@ struct SettingsUIView: View {
                                 Theme.currentFont = Theme.fontChoices[index]
                                 Theme.unselectedRadioButtonBackgroundColor = Theme.radioButtonBackgroundColorChoices[index]
                                 Theme.sectionHeaderColor = Theme.sectionHeaderColorChoices[index]
+                                Theme.startImage = Theme.startImageChoices[index]
                                 UserDefaults.standard.set(index, forKey: "SelectedTheme")
                                 self.appState.moveToRoot = true
                             }){
@@ -75,12 +82,11 @@ struct SettingsUIView: View {
             }
             .navigationBarTitle("Settings", displayMode: .inline)
             .listStyle(GroupedListStyle())
-            .background(NavigationConfigurator { nc in
-                nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
-                nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
-                nc.navigationBar.tintColor = Theme.currentTextColorUI
-            })
-            
+//            .background(NavigationConfigurator { nc in
+//                nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
+//                nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+//                nc.navigationBar.tintColor = Theme.currentTextColorUI
+//            })
             Spacer()
             
         }

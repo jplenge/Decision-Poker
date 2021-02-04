@@ -104,8 +104,6 @@ struct DeckCell: View {
                             self.deck.numberOfCardsToPick -= 1
                         }
                     })
-                    .accentColor(Color.red)
-                    .foregroundColor(Color.red)
                     .onAppear(){
                 
                         if self.deck.activeCards == 0 {

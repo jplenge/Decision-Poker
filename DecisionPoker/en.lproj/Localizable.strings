@@ -48,8 +48,9 @@
 "Pick Card" = "Pick Card";
 
 /* Final Rwsult View */
-"Here is your Result for" = "Here is your Result for";
+"Here is your result for" = "Here is your result for";
 "Save" = "Save";
+"Done" = "Done";
 
 
 /* Result/History  view */
