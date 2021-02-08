@@ -18,7 +18,6 @@ struct CheatPickerView: View {
     let onComplete: (Card) -> Void
     
     
-    
     var body: some View {
         
         let data = deck.childCardsArray

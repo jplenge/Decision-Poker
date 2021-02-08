@@ -100,12 +100,11 @@ struct DeckCell: View {
                         }
                        
                     }, onDecrement: {
-                        if  self.deck.numberOfCardsToPick  > 0 {
+                        if  self.deck.numberOfCardsToPick  > 1  {
                             self.deck.numberOfCardsToPick -= 1
                         }
                     })
-                    .onAppear(){
-                
+                    .onAppear(){	
                         if self.deck.activeCards == 0 {
                             self.deck.numberOfCardsToPick = 0
                             

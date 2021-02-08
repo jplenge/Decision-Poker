@@ -37,9 +37,13 @@ struct StartSwiftUIView: View {
             
             ZStack {
                 
-                VStack   {
+                
+                VStack {
+                    
                     
                     Group {
+                        
+                        Spacer()
                         
                         Text("Decision Poker")
                             .fontWeight(.bold)
@@ -114,13 +118,8 @@ struct StartSwiftUIView: View {
                     Spacer()
                     
                 }.navigationViewStyle(StackNavigationViewStyle())
-                .navigationBarTitle("")
+                .navigationBarTitle("", displayMode: .inline)
                 .navigationBarHidden(self.navBarHidden)
-//                .background(NavigationConfigurator { nc in
-//                    nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
-//                    nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
-//                    nc.navigationBar.tintColor = Theme.currentTextColorUI
-//                })
                 .onAppear(perform: {
                     self.navBarHidden = true
                 })
@@ -156,14 +155,12 @@ struct StartSwiftUIView: View {
                                 .imageScale(.large)
                         }.buttonStyle(StartViewButtonStyleCircle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                         .padding()
-                            
                         }
-                        
                     }
-                    
                 }
             }
             .background(Theme.currentBackgroundColor)
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

@@ -98,7 +98,7 @@ struct DealResultSwiftUIView: View {
                     Spacer()
                     
                     Button(action: {
-                        self.results[self.index] = self.selectedDeck.repickCard()
+                        self.results[self.index] = self.selectedDeck.repickCard(selectedCards: self.results, current: self.results[self.index])
                     }){
                         Text("Redraw")
                             .scaledFont(name: Theme.currentFont, size: 14)

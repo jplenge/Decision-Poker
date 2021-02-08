@@ -17,6 +17,7 @@ struct DecksSwiftUIView: View {
         UITableViewCell.appearance().selectionStyle = .none
         
         // syle navigation bar
+        
         let navigationbarAppearance = UINavigationBarAppearance()
         navigationbarAppearance.configureWithOpaqueBackground()
         

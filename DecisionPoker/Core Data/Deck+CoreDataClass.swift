@@ -46,7 +46,6 @@ public class Deck: NSManagedObject {
         
         let possibleCards =  childCards?.filtered(using: NSPredicate(format: "cardIncluded == true"))
         
-        
         // TODO: remove optionals
         while selected.count < numberOfCardsToPick {
             let pick = possibleCards?.randomElement() as! Card
@@ -60,10 +59,23 @@ public class Deck: NSManagedObject {
         
     }
     
-    public func repickCard() -> Card {
+    public func repickCard(selectedCards: [Card], current: Card) -> Card {
         let possibleCards =  childCards?.filtered(using: NSPredicate(format: "cardIncluded == true"))
         
-        return possibleCards?.randomElement() as! Card
+        var repick: Card
+        
+        repick = possibleCards?.randomElement() as! Card
+    
+        // pick new card or if number active cards = number of cards to select then return current card
+        if self.activeCards > self.numberOfCardsToPick {
+            while selectedCards.contains(repick) {
+                repick = possibleCards?.randomElement() as! Card
+            }
+        } else {
+            repick = current
+        }
+    
+        return repick
     }
     
     

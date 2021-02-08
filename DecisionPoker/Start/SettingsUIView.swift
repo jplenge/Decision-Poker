@@ -82,11 +82,6 @@ struct SettingsUIView: View {
             }
             .navigationBarTitle("Settings", displayMode: .inline)
             .listStyle(GroupedListStyle())
-//            .background(NavigationConfigurator { nc in
-//                nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
-//                nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
-//                nc.navigationBar.tintColor = Theme.currentTextColorUI
-//            })
             Spacer()
             
         }
