@@ -28,7 +28,7 @@ struct SettingsUIView: View {
         VStack(alignment: .center) {
             List {
                 Section(header:  HStack {
-                    Text("Appearance")
+                    Text("Theme")
                         .scaledFont(name: Theme.currentFont, size: 16)
                         .foregroundColor(Theme.sectionHeaderColor)
                         .padding()

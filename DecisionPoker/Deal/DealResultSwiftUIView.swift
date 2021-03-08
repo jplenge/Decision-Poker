@@ -11,6 +11,7 @@ import SwiftUI
 struct DealResultSwiftUIView: View {
     
     var selectedDeck: Deck
+    
     @State var results: [Card]
     
     @State var isShowingFinalResultView: Bool = false
@@ -19,9 +20,7 @@ struct DealResultSwiftUIView: View {
     
     
     
-    var body: some View {
-        
-        
+    var body: some View {   
         ZStack {
             List {
                 ForEach(results.indices, id: \.self) {index  in
@@ -59,17 +58,10 @@ struct DealResultSwiftUIView: View {
     }
     
     
-    
-    //struct DealResultSwiftUIView_Previews: PreviewProvider {
-    //    static var previews: some View {
-    //        DealResultSwiftUIView()
-    //    }
-    //}
-    
+
     struct resultViewCell: View {
-        var card: Card
-        var index: Int
-        
+        @State var card: Card
+        @State var index: Int
         var selectedDeck: Deck
         
         @Binding var results: [Card]
@@ -99,20 +91,39 @@ struct DealResultSwiftUIView: View {
                     
                     Button(action: {
                         self.results[self.index] = self.selectedDeck.repickCard(selectedCards: self.results, current: self.results[self.index])
+                        self.card =  self.results[self.index]
+                        print(self.results[self.index])
                     }){
                         Text("Redraw")
                             .scaledFont(name: Theme.currentFont, size: 14)
                     }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
                 }
             }.sheet(isPresented: $cheatPickerIsPresented) {
-                CheatPickerView(deck: self.selectedDeck, pickedCard: self.results[self.index], selected: self.index) {pickedCard in
+                let possibleCards = updateSelection(possibleCards: selectedDeck.childCardsActiveArray, selectedCards: results, currentCard: self.results[self.index])
+                let firstIndex = possibleCards.firstIndex(of: self.results[self.index])
+                
+                CheatPickerView(pickedCard: self.results[self.index], selectedIndex: firstIndex ?? 0, possibleCards: possibleCards, onComplete:  {pickedCard in
                     self.results[self.index]  = pickedCard
+                    self.card =  self.results[self.index]
                     self.cheatPickerIsPresented = false
-                }
+                })
             }
         }
         
     }
+}
+
+private func updateSelection(possibleCards: [Card], selectedCards: [Card], currentCard: Card) -> [Card] {
+    
+    var filtered: [Card] = []
+    
+    for index in 0..<possibleCards.count {
+        if (!selectedCards.contains(possibleCards[index]) || (possibleCards[index] == currentCard)) {
+            filtered.append(possibleCards[index])
+        }
+    }
+    
+    return filtered
 }
 
 

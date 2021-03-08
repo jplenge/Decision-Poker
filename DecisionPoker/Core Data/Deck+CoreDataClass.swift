@@ -29,6 +29,13 @@ public class Deck: NSManagedObject {
         }
     }
     
+    public var childCardsActiveArray: [Card] {
+        let set = childCards?.filtered(using: NSPredicate(format: "cardIncluded == true")) as? Set<Card> ?? []
+        return set.sorted {
+            $0.wrappedCardName < $1.wrappedCardName
+        }
+    }
+    
     public var childCardsCount: Int {
         let set = childCards as? Set<Card> ?? []
         
