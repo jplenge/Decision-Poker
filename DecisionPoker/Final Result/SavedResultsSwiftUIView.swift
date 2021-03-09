@@ -45,7 +45,7 @@ struct  SavedResultsSwiftUIView: View {
         let view =  ZStack {
             
             List {
-                ForEach(savedDecks, id:\.deckName) { deck in
+                ForEach(savedDecks, id:\.self) { deck in
                     ZStack {
                         VStack {
                             HStack {

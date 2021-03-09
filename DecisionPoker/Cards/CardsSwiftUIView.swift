@@ -140,16 +140,4 @@ struct CardsSwiftUIView: View {
     func saveDeckTitle() {
         deck.deckName = editableTextField
     }
-    
-    
-}
-
-
-
-
-
-struct CardsSwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
 }

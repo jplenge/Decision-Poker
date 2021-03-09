@@ -15,14 +15,17 @@ struct DeckCell: View {
     @State var isShowingComment = false
     @State var editableText = ""
     @State var editableTextField = ""
-        
+    @State var stepperValue = 0
+    @State var low = 1
+    
+    @State var gameResult: [Card] = []
+
     
     var body: some View {
         
         let view = ZStack {
             
             VStack {
-                
                 
                 HStack {
                     TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveTitle)
@@ -94,23 +97,28 @@ struct DeckCell: View {
                     Spacer()
                         .frame(width: 10)
                     
-                    Stepper("", onIncrement: {
-                        if  self.deck.numberOfCardsToPick  < self.deck.activeCards {
-                            self.deck.numberOfCardsToPick += 1
-                        }
-                       
-                    }, onDecrement: {
-                        if  self.deck.numberOfCardsToPick  > 1  {
-                            self.deck.numberOfCardsToPick -= 1
-                        }
+//                   Stepper("", onIncrement: {
+//                        if  self.deck.numberOfCardsToPick  < Int16(self.deck.activeCards) {
+//                            self.deck.numberOfCardsToPick += 1
+//                        }
+//
+//                    }, onDecrement: {
+//                        if  self.deck.numberOfCardsToPick  > 1  {
+//                            self.deck.numberOfCardsToPick -= 1
+//                        }
+//                    })
+                    Stepper("", value: $stepperValue, in: low...self.deck.activeCards, step: 1, onEditingChanged: {didChange in
+                        self.deck.numberOfCardsToPick = Int16(self.stepperValue)
                     })
-                    .onAppear(){	
+                    .onAppear(){
+                        
                         if self.deck.activeCards == 0 {
                             self.deck.numberOfCardsToPick = 0
-                            
+                            self.low = 0
                         } else if self.deck.numberOfCardsToPick > self.deck.activeCards {
                             self.deck.numberOfCardsToPick = Int16(self.deck.activeCards)
                         }
+                        self.stepperValue = Int(self.deck.numberOfCardsToPick)
                     }
                     .frame(width: 80)
                     .background(Theme.currentTextColor)
@@ -125,24 +133,22 @@ struct DeckCell: View {
                     
                     
                     List {
-                        NavigationLink(destination: DealResultSwiftUIView(selectedDeck: deck, results: deck.playGame()), isActive: $isShowingResultView) { EmptyView()}
+                        NavigationLink(destination: DealResultSwiftUIView(selectedDeck: deck, results: gameResult), isActive: $isShowingResultView) { EmptyView()}
                     }.frame(height: 0)
                     
                     Button(action: {
+                        gameResult = deck.playGame()
                         self.isShowingResultView = true
                     }){
                         Text("Deal")
                             .scaledFont(name: Theme.currentFont, size: 20)
                             .padding(.horizontal)
                     }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
-                    
                 }
                 
                 Spacer()
-                
             }
         }
-        
         return view
     }
     
@@ -158,27 +164,3 @@ struct DeckCell: View {
     
 }
 
-
-
-//struct DeckCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//        let deck = Deck(context: context)
-//
-//        deck.deckName = "Choirs"
-//        deck.deckComment = "urna id volutpat lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean et tortor at risus viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam."
-//
-//        return DeckCell(deck: deck, finishedEditing: <#Binding<Bool>#>)
-//
-//    }
-//}
-
-
-
-struct DeckCell_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}
