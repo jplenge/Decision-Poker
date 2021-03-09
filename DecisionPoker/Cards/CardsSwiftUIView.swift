@@ -18,6 +18,8 @@ struct CardsSwiftUIView: View {
     @State var editableText: String = ""
     @State var editableTextField: String = ""
     
+//    @State private var showingAlert = false
+    
     
     var body: some View {
         
@@ -76,7 +78,9 @@ struct CardsSwiftUIView: View {
                 
             }.onDelete(perform: deleteCard)
             .listRowBackground(Theme.currentBackgroundColor)
-            
+//            .onChange(of: deck.activeCards, perform: { value in
+//                if deck.activeCards == 0 {showingAlert.toggle()}
+//            })
         }
         .sheet(isPresented: $isPresented) {
             AddCardView {newCardName, newCardComment in
@@ -84,6 +88,9 @@ struct CardsSwiftUIView: View {
                 self.isPresented = false
             }
         }
+//        .alert(isPresented: $showingAlert) {
+//                   Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
+//        }
         .navigationBarTitle("Deck Details", displayMode: .inline)
         .navigationBarItems(trailing: Button(action: {
             self.isPresented.toggle()

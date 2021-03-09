@@ -45,10 +45,6 @@
 	<dict>
 		<key>UIColorName</key>
 		<string>ClassicGreen</string>
-		<key>UIImageName</key>
-		<string>LaunchScreenText</string>
-		<key>UIImageRespectsSafeAreaInsets</key>
-		<true/>
 	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

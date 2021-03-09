@@ -97,21 +97,10 @@ struct DeckCell: View {
                     Spacer()
                         .frame(width: 10)
                     
-//                   Stepper("", onIncrement: {
-//                        if  self.deck.numberOfCardsToPick  < Int16(self.deck.activeCards) {
-//                            self.deck.numberOfCardsToPick += 1
-//                        }
-//
-//                    }, onDecrement: {
-//                        if  self.deck.numberOfCardsToPick  > 1  {
-//                            self.deck.numberOfCardsToPick -= 1
-//                        }
-//                    })
-                    Stepper("", value: $stepperValue, in: low...self.deck.activeCards, step: 1, onEditingChanged: {didChange in
+                    Stepper("", value: $stepperValue, in: 0...self.deck.activeCards, step: 1, onEditingChanged: {didChange in
                         self.deck.numberOfCardsToPick = Int16(self.stepperValue)
                     })
                     .onAppear(){
-                        
                         if self.deck.activeCards == 0 {
                             self.deck.numberOfCardsToPick = 0
                             self.low = 0
