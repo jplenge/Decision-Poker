@@ -32,15 +32,9 @@ struct StartSwiftUIView: View {
     
     var body: some View {
         
-        
         NavigationView {
-            
             ZStack {
-                
-                
                 VStack {
-                    
-                    
                     Group {
                         
                         Spacer()
@@ -116,9 +110,8 @@ struct StartSwiftUIView: View {
                     }
                     
                     Spacer()
-                    
-                }.navigationViewStyle(StackNavigationViewStyle())
-                .navigationBarTitle("", displayMode: .inline)
+                        .navigationBarTitle("", displayMode: .inline)
+                }
                 .navigationBarHidden(self.navBarHidden)
                 .onAppear(perform: {
                     self.navBarHidden = true
@@ -159,16 +152,10 @@ struct StartSwiftUIView: View {
                     }
                 }
             }
+            
             .background(Theme.currentBackgroundColor)
             .edgesIgnoringSafeArea(.all)
         }
-    }
-}
-
-
-
-struct StartSwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartSwiftUIView()
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
