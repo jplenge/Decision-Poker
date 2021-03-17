@@ -17,12 +17,12 @@ class ThemeManager {
     // current color settings
     var currentBackgroundColor = ColorManager.ClassicGreen
     var currentBackgroundColorUI = ColorManager.ClassicGreenUI
-    var currentButtonBackgroundColor =  Color.white
+    var currentButtonBackgroundColor = ColorManager.TextColorLight
     
     // current font settings
     var currentFont = "Marker Felt"
-    var currentTextColor = Color.white
-    var currentTextColorUI = UIColor.white
+    var currentTextColor = ColorManager.TextColorLight
+    var currentTextColorUI = ColorManager.TextColorLightUI
     
     // radio button: unselected background color
     var unselectedRadioButtonBackgroundColor = Color.black.opacity(0.3)
@@ -37,8 +37,8 @@ class ThemeManager {
     // color options
     var colorChoices = [ColorManager.ClassicGreen, ColorManager.ModernBlue, Color.black]
     var colorChoicesUI = [ColorManager.ClassicGreenUI, ColorManager.ModernBlueUI, UIColor.black]
-    var textColorChoices = [Color.white, Color.white, Color.white]
-    var textColorChoicesUI = [UIColor.white, UIColor.white, UIColor.white]
+    var textColorChoices = [ColorManager.TextColorLight, ColorManager.TextColorLight, ColorManager.TextColorLight]
+    var textColorChoicesUI = [ColorManager.TextColorLightUI, ColorManager.TextColorLightUI, ColorManager.TextColorLightUI]
     var radioButtonBackgroundColorChoices = [Color.black.opacity(0.3), Color.black.opacity(0.3), Color.white.opacity(0.3)]
     var sectionHeaderColorChoices = [ColorManager.ClassicGreen, ColorManager.ModernBlue, Color.black]
 

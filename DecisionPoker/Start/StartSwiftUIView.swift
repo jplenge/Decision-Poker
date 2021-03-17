@@ -41,7 +41,7 @@ struct StartSwiftUIView: View {
                         
                         Text("Decision Poker")
                             .fontWeight(.bold)
-                            .scaledFont(name: Theme.currentFont, size: 40)
+                            .scaledFont(name: Theme.currentFont, size: 38)
                             .foregroundColor(Theme.currentTextColor)
                             .padding(.top)
                         

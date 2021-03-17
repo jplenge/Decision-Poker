@@ -15,4 +15,6 @@ struct ColorManager {
     static let ClassicGreenUI = UIColor(named: "ClassicGreen")
     static let ModernBlue = Color("ModernBlue")
     static let ModernBlueUI = UIColor(named: "ModernBlue")
+    static let TextColorLight = Color("TextColorLight")
+    static let TextColorLightUI = UIColor(named: "TextColorLight")
 }

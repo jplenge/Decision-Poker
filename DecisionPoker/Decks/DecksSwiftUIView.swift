@@ -24,10 +24,10 @@ struct DecksSwiftUIView: View {
         navigationbarAppearance.shadowColor = .clear
         navigationbarAppearance.backgroundColor = Theme.currentBackgroundColorUI
         //navigationbarAppearance.largeTitleTextAttributes = [.font: UIFont(name: Theme.currentFont, size: 28)!, .foregroundColor: Theme.currentTextColorUI]
-        navigationbarAppearance.titleTextAttributes =  [.font: UIFont(name: Theme.currentFont, size: 20)!, .foregroundColor: Theme.currentTextColorUI]
+        navigationbarAppearance.titleTextAttributes =  [.font: UIFont(name: Theme.currentFont, size: 20)!, .foregroundColor: Theme.currentTextColorUI ?? UIColor.white]
                
         let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
-        buttonAppearance.normal.titleTextAttributes = [.font: UIFont(name: Theme.currentFont, size: 20)!, .foregroundColor: Theme.currentTextColorUI]
+        buttonAppearance.normal.titleTextAttributes = [.font: UIFont(name: Theme.currentFont, size: 20)!, .foregroundColor: Theme.currentTextColorUI ?? UIColor.white]
         navigationbarAppearance.buttonAppearance = buttonAppearance
 
         UINavigationBar.appearance().standardAppearance = navigationbarAppearance

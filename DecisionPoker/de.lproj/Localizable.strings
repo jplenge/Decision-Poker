@@ -34,6 +34,7 @@
 "Cardname" = "Kartenname";
 "New cardname" = "Neuer Kartenname";
 "Add Card" = "Karte hinzufügen";
+"New Card" = "Neue Karte";
 
 /* First Hand */
 "Cheat" = "Mogeln";
@@ -48,10 +49,11 @@
 
 
 /* Result view */
-"Here is your Result for" = "Hier ist das Ergebnis für Deine Liste";
+"Here is your result for" = "Hier ist das Ergebnis für Deine Liste";
 "Save" = "Sichern";
 "Start over" = "Neu beginnen";
 "created: %@" = "Erstellt: %@";
+"Done" = "Fertig";
 
 
 "Add Deck" = "Kartenstapel hinzufügen";

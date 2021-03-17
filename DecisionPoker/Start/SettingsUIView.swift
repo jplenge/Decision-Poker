@@ -20,7 +20,7 @@ struct SettingsUIView: View {
     init() {
             UINavigationBar.appearance().barTintColor = Theme.currentBackgroundColorUI
             UINavigationBar.appearance().tintColor = Theme.currentTextColorUI
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI ?? UIColor.white, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
         }
     
     var body: some View {
