@@ -9,9 +9,7 @@
 import UIKit
 import SwiftUI
 
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -29,7 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = StartSwiftUIView().environment(\.managedObjectContext, managedObjectContext)
         let appState = AppState()
         
-        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -40,8 +37,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
-        
-       
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -75,8 +70,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         
     }
-    
-    
 }
-
-

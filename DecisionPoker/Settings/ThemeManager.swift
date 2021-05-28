@@ -48,5 +48,4 @@ class ThemeManager {
     var startImageChoices = ["StartImage-black", "StartImage-black", "StartImage-white"]
 }
 
-
-var Theme = ThemeManager()
+var theme = ThemeManager()

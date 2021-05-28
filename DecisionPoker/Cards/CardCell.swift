@@ -15,17 +15,15 @@ struct CardCell: View {
     @State var isShowingComment = false
     @State var editableTextField: String = ""
     
-    
-    
     var body: some View {
         
         VStack {
             HStack {
                 TextField(card.wrappedCardName.capitalized, text: $editableTextField, onCommit: saveCardTitle)
                     .multilineTextAlignment(.leading)
-                    .scaledFont(name: Theme.currentFont, size: 20)
+                    .scaledFont(name: theme.currentFont, size: 20)
                     .padding()
-                    .foregroundColor(Theme.currentTextColor)
+                    .foregroundColor(theme.currentTextColor)
                     .onAppear(perform: {
                         editableTextField = card.wrappedCardName
                     })
@@ -37,15 +35,16 @@ struct CardCell: View {
                 }) {
                     Image(systemName: "info.circle")
                         .frame(width: 22, height: 22)
-                        .foregroundColor(Theme.currentButtonBackgroundColor)
+                        .foregroundColor(theme.currentButtonBackgroundColor)
                         .padding()
-                }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
+                }
+                .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                 
                 Toggle(isOn: $card.cardIncluded) {
                    EmptyView()
                 }
                 .toggleStyle(CheckboxToggleStyle())
-                .foregroundColor(Theme.currentButtonBackgroundColor)
+                .foregroundColor(theme.currentButtonBackgroundColor)
                 .labelsHidden()
                 
             }
@@ -54,12 +53,12 @@ struct CardCell: View {
                 
                 TextView(text: $editableText) {
                     $0.isEditable = true
-                    $0.backgroundColor = Theme.currentBackgroundColorUI
-                    $0.font = UIFont(name: Theme.currentFont, size: 13)
-                    $0.textColor = Theme.currentTextColorUI
+                    $0.backgroundColor = theme.currentBackgroundColorUI
+                    $0.font = UIFont(name: theme.currentFont, size: 13)
+                    $0.textColor = theme.currentTextColorUI
                 }
                 .frame(height: 80)
-                .onAppear(){
+                .onAppear {
                     self.editableText = card.wrappedCardcomment
                 }
                 .onDisappear(perform: {
@@ -69,30 +68,7 @@ struct CardCell: View {
         }
     }
     
-    
-    
     func saveCardTitle() {
         card.cardName = editableTextField
     }
 }
-
-
-
-struct CardCell_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let card = Card(context: context)
-        card.cardName = "Clean bike"
-        card.cardComment = "urna id volutpat lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis aenean et tortor at risus viverra adipiscing at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam"
-        card.cardsTablePosition = 99
-        card.id = UUID()
-        card.parentDeck = nil
-        
-        
-        
-        return CardCell(card: card)
-    }
-}
-

@@ -29,28 +29,29 @@ struct CheatPickerView: View {
                                 self.selectedIndex = index
                                 self.pickedCard = possibleCards[index]
                             }) {
-                                HStack{
+                                HStack {
                                     Text(possibleCards[index].wrappedCardName)
-                                        .scaledFont(name: Theme.currentFont, size: 26)
-                                        .foregroundColor(Theme.currentTextColor)
+                                        .scaledFont(name: theme.currentFont, size: 26)
+                                        .foregroundColor(theme.currentTextColor)
                                     
                                     Spacer()
                                     
-                                    ZStack{
-                                        Circle().fill(self.selectedIndex == index ? Theme.currentButtonBackgroundColor : Theme.unselectedRadioButtonBackgroundColor).frame(width: 18, height: 18)
+                                    ZStack {
+                                        Circle()
+                                            .fill(self.selectedIndex == index ? theme.currentButtonBackgroundColor : theme.unselectedRadioButtonBackgroundColor)
+                                            .frame(width: 18, height: 18)
                                         
                                         if self.selectedIndex == index {
-                                            Circle().stroke(Theme.currentButtonBackgroundColor, lineWidth: 4).frame(width: 25, height: 25)
+                                            Circle().stroke(theme.currentButtonBackgroundColor, lineWidth: 4).frame(width: 25, height: 25)
                                         }
                                     }
                                 }.foregroundColor(.black)
                             }.padding(.top)
                         }
-                        .listRowBackground(Theme.currentBackgroundColor)
+                        .listRowBackground(theme.currentBackgroundColor)
                     }
-                    .listRowBackground(Theme.currentBackgroundColor)
+                    .listRowBackground(theme.currentBackgroundColor)
                 }
-                
                 
                 VStack {
                     Spacer()
@@ -61,27 +62,23 @@ struct CheatPickerView: View {
                         Button(action: {
                             self.pickCard()
                         }) {
-                            Text("Pick Card").scaledFont(name: Theme.currentFont, size: 26)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                            Text("Pick Card")
+                                .scaledFont(name: theme.currentFont, size: 26)
+                        }
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                         Spacer()
                     }
+                    
                 }.padding()
-                
-                
-                
             }
-            .background(Theme.currentBackgroundColor)
+            .background(theme.currentBackgroundColor)
             .navigationBarTitle("Replace Card", displayMode: .inline)
         }
-        
     }
     
-    
     private func pickCard() {
-        onComplete (
+        onComplete(
             pickedCard
         )
     }
-    
 }
-

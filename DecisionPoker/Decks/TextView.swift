@@ -13,8 +13,7 @@ import UIKit
 struct TextView: UIViewRepresentable {
     @Binding var text: String
     
-    var configuration = { (view: UITextView) in }
-    
+    var configuration = { (_: UITextView) in }
     
     func makeUIView(context: UIViewRepresentableContext<Self>) -> UITextView {
         let view = UITextView()
@@ -27,12 +26,10 @@ struct TextView: UIViewRepresentable {
         view.inputAccessoryView = toolBar
         
         return view
-        
     }
     
     func updateUIView(_ uiView: UIViewType, context: UIViewRepresentableContext<Self>) {
         uiView.text = text
-        
         configuration(uiView)
     }
     
@@ -40,18 +37,12 @@ struct TextView: UIViewRepresentable {
         Coordinator(self)
     }
     
-    
     class Coordinator: NSObject, UITextViewDelegate {
-        //var text: Binding<String>
         var parent: TextView
         
-        
         init(_ parent: TextView) {
-            //self.text = text
             self.parent = parent
         }
-        
-        
         
         func textViewDidChange(_ textView: UITextView) {
             parent.text = textView.text
@@ -59,12 +50,8 @@ struct TextView: UIViewRepresentable {
     }
 }
 
-extension  UITextView{
-    @objc func doneButtonTapped(button:UIBarButtonItem) -> Void {
+extension  UITextView {
+    @objc func doneButtonTapped(button:UIBarButtonItem) {
         self.resignFirstResponder()
     }
-    
 }
-
-
-

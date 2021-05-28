@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension SavedDeck {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SavedDeck> {

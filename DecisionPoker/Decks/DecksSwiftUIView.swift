@@ -22,12 +22,13 @@ struct DecksSwiftUIView: View {
         navigationbarAppearance.configureWithOpaqueBackground()
         
         navigationbarAppearance.shadowColor = .clear
-        navigationbarAppearance.backgroundColor = Theme.currentBackgroundColorUI
-        //navigationbarAppearance.largeTitleTextAttributes = [.font: UIFont(name: Theme.currentFont, size: 28)!, .foregroundColor: Theme.currentTextColorUI]
-        navigationbarAppearance.titleTextAttributes =  [.font: UIFont(name: Theme.currentFont, size: 24)!, .foregroundColor: Theme.currentTextColorUI ?? UIColor.white]
+        navigationbarAppearance.backgroundColor = theme.currentBackgroundColorUI
+        navigationbarAppearance.titleTextAttributes =  [.font: UIFont(name: theme.currentFont, size: 24)!,
+                                                        .foregroundColor: theme.currentTextColorUI ?? UIColor.white]
                
         let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
-        buttonAppearance.normal.titleTextAttributes = [.font: UIFont(name: Theme.currentFont, size: 24)!, .foregroundColor: Theme.currentTextColorUI ?? UIColor.white]
+        buttonAppearance.normal.titleTextAttributes = [.font: UIFont(name: theme.currentFont, size: 24)!,
+                                                       .foregroundColor: theme.currentTextColorUI ?? UIColor.white]
         navigationbarAppearance.buttonAppearance = buttonAppearance
 
         UINavigationBar.appearance().standardAppearance = navigationbarAppearance
@@ -35,10 +36,8 @@ struct DecksSwiftUIView: View {
         
         UIStepper.appearance().setIncrementImage(UIImage(systemName: "plus"), for: .normal)
         UIStepper.appearance().setDecrementImage(UIImage(systemName: "minus"), for: .normal)
-        UIStepper.appearance().tintColor = Theme.currentBackgroundColorUI
-
+        UIStepper.appearance().tintColor = theme.currentBackgroundColorUI
     }
-    
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -51,18 +50,17 @@ struct DecksSwiftUIView: View {
     
     @State var isPresented = false
     
-    
     var body: some View {
         
         VStack(alignment: .center) {
             List {
                 if !decks.isEmpty {
-                    ForEach (decks, id:\.deckName) { deck in
+                    ForEach(decks, id:\.deckName) { deck in
                         NavigationLink(destination: CardsSwiftUIView(deck: deck)) {
                             DeckCell(deck: deck)
                         }
                     }.onDelete(perform: deleteDeck)
-                    .listRowBackground(Theme.currentBackgroundColor)
+                    .listRowBackground(theme.currentBackgroundColor)
                     
                 }
             }
@@ -79,7 +77,7 @@ struct DecksSwiftUIView: View {
                 UITableViewCell.appearance().backgroundColor = .clear // cell background         
                 self.isPresented = false
             })
-            .background(Theme.currentBackgroundColor)
+            .background(theme.currentBackgroundColor)
             .navigationBarItems(trailing: Button(action: {
                 
                 do {
@@ -96,8 +94,6 @@ struct DecksSwiftUIView: View {
         }
     }
     
-    
-    
     // function: delete deck from core data
     func deleteDeck(at offsets: IndexSet) {
         offsets.forEach { index in
@@ -110,8 +106,6 @@ struct DecksSwiftUIView: View {
         } catch {
             print("error when deleting deck: \(error)")
         }
-        
-        
     }
     
     func createDeck(newDeckName: String, newDeckComment: String) {
@@ -128,6 +122,5 @@ struct DecksSwiftUIView: View {
         } catch {
             print(error)
         }
-    }
-    
+    }    
 }

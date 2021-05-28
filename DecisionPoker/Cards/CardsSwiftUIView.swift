@@ -18,9 +18,7 @@ struct CardsSwiftUIView: View {
     @State var editableText: String = ""
     @State var editableTextField: String = ""
     
-//    @State private var showingAlert = false
-    
-    
+
     var body: some View {
         
         List {
@@ -31,9 +29,9 @@ struct CardsSwiftUIView: View {
                     
                     TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveDeckTitle)
                         .multilineTextAlignment(.center)
-                        .scaledFont(name: Theme.currentFont, size: 28)
+                        .scaledFont(name: theme.currentFont, size: 28)
                         .padding()
-                        .foregroundColor(Theme.currentTextColor)
+                        .foregroundColor(theme.currentTextColor)
                         .onAppear(perform: {
                             editableTextField = deck.wrappedDeckName
                         })
@@ -43,24 +41,23 @@ struct CardsSwiftUIView: View {
                     }) {
                         Image(systemName: "info.circle")
                             .frame(width: 22, height: 22)
-                            .foregroundColor(Theme.currentButtonBackgroundColor)
+                            .foregroundColor(theme.currentButtonBackgroundColor)
                             .padding()
-                    }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
+                    }
+                    .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                     
                     Spacer()
-                    
                 }
-                
                 
                 if isShowingDeckComment {
                     TextView(text: $editableText) {
                         $0.isEditable = true
-                        $0.backgroundColor = Theme.currentBackgroundColorUI
-                        $0.font = UIFont(name: Theme.currentFont, size: 13)
-                        $0.textColor = Theme.currentTextColorUI
+                        $0.backgroundColor = theme.currentBackgroundColorUI
+                        $0.font = UIFont(name: theme.currentFont, size: 13)
+                        $0.textColor = theme.currentTextColorUI
                     }
                     .frame(height: 150)
-                    .onAppear(){
+                    .onAppear {
                         self.editableText = deck.wrappedDeckComment
                     }
                     .onDisappear(perform: {
@@ -70,17 +67,16 @@ struct CardsSwiftUIView: View {
                 
                 Spacer()
             }
-            .listRowBackground(Theme.currentBackgroundColor)
-            
-            
+            .listRowBackground(theme.currentBackgroundColor)
+                        
             ForEach(deck.childCardsArray, id: \.id) { card in
                 CardCell(card: card)
                 
             }.onDelete(perform: deleteCard)
-            .listRowBackground(Theme.currentBackgroundColor)
-//            .onChange(of: deck.activeCards, perform: { value in
-//                if deck.activeCards == 0 {showingAlert.toggle()}
-//            })
+            .listRowBackground(theme.currentBackgroundColor)
+            //            .onChange(of: deck.activeCards, perform: { value in
+            //                if deck.activeCards == 0 {showingAlert.toggle()}
+            //            })
         }
         .sheet(isPresented: $isPresented) {
             AddCardView {newCardName, newCardComment in
@@ -88,9 +84,9 @@ struct CardsSwiftUIView: View {
                 self.isPresented = false
             }
         }
-//        .alert(isPresented: $showingAlert) {
-//                   Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
-//        }
+        //        .alert(isPresented: $showingAlert) {
+        //                   Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
+        //        }
         .navigationBarTitle("Deck Details", displayMode: .inline)
         .navigationBarItems(trailing: Button(action: {
             self.isPresented.toggle()
@@ -102,18 +98,14 @@ struct CardsSwiftUIView: View {
             UITableView.appearance().backgroundColor = .clear // tableview background
             UITableViewCell.appearance().backgroundColor = .clear // cell background
         })
-        .background(Theme.currentBackgroundColor)
+        .background(theme.currentBackgroundColor)
         
     }
-    
     
     func deleteCard(at offsets: IndexSet) {
         offsets.forEach { index in
             let card = self.deck.childCardsArray[index]
-            
             self.managedObjectContext.delete(card)
-            
-            //saveContext()
             
             do {
                 try managedObjectContext.save()
@@ -123,10 +115,7 @@ struct CardsSwiftUIView: View {
         }
     }
     
-    
-    
     func addCard(newCardName: String, newCardComment: String) {
-        
         let newCard = Card(context: managedObjectContext)
         
         newCard.cardName = newCardName
@@ -134,7 +123,6 @@ struct CardsSwiftUIView: View {
         newCard.cardIncluded = true
         newCard.id = UUID()
         newCard.cardsTablePosition = 99
-        
         deck.addToChildCards(newCard)
         
         do {

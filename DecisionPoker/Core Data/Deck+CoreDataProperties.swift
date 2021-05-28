@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Deck {
 
     @NSManaged public var dealButtonSelector: Bool
@@ -26,8 +25,6 @@ extension Deck {
     }
 
 }
-
-
 
 // MARK: Generated accessors for childCards
 extension Deck {
@@ -45,4 +42,3 @@ extension Deck {
     @NSManaged public func removeFromChildCards(_ values: NSSet)
 
 }
-

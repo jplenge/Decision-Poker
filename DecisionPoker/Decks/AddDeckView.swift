@@ -19,80 +19,57 @@ struct AddDeckView: View {
     
     let commentString: LocalizedStringKey = "Enter comment here"
     
-    
-    
     var body: some View {
-      
+        
         NavigationView {
             
             ZStack {
                 Form {
-                    Section(header: Text("Deckname").scaledFont(name: Theme.currentFont, size: 10).foregroundColor(Theme.currentTextColor).background(Theme.currentBackgroundColor)) {
+                    Section(header: Text("Deckname")
+                                .scaledFont(name: theme.currentFont, size: 10)
+                                .foregroundColor(theme.currentTextColor)
+                                .background(theme.currentBackgroundColor)) {
                         TextField("New Deck Name", text: $newDeckName)
                             .multilineTextAlignment(.center)
-                            .scaledFont(name: Theme.currentFont, size: 18)
-                            .foregroundColor(Theme.currentBackgroundColor)
+                            .scaledFont(name: theme.currentFont, size: 18)
+                            .foregroundColor(theme.currentBackgroundColor)
                     }
                     
-                    Section(header: Text("Comment").scaledFont(name: Theme.currentFont, size: 10).foregroundColor(Theme.currentTextColor).background(Theme.currentBackgroundColor)) {
+                    Section(header: Text("Comment")
+                                .scaledFont(name: theme.currentFont, size: 10)
+                                .foregroundColor(theme.currentTextColor)
+                                .background(theme.currentBackgroundColor)) {
                         TextView(text: $newDeckComment) {
                             $0.isEditable = true
-                            $0.backgroundColor = Theme.currentTextColorUI
-                            $0.font = UIFont(name: Theme.currentFont, size: 13)
-                            $0.textColor = Theme.currentBackgroundColorUI
+                            $0.backgroundColor = theme.currentTextColorUI
+                            $0.font = UIFont(name: theme.currentFont, size: 13)
+                            $0.textColor = theme.currentBackgroundColorUI
                         }
                         .frame(height: 150)
-                        .onAppear() {
-                            /* TODO: add grey comment: Add comment here*/
-                            //newDeckComment = commentString
-                        }
                     }
-                    .background(Theme.currentTextColor)
+                    .background(theme.currentTextColor)
                 }
                 .navigationBarTitle(Text("Add Deck"), displayMode: .inline)
-                .background(Theme.currentBackgroundColor)
-//                .background(NavigationConfigurator { nc in
-//                    nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
-//                    nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
-//                    nc.navigationBar.tintColor = Theme.currentTextColorUI
-//                })
-                
+                .background(theme.currentBackgroundColor)
                 
                 VStack {
-                    
                     Spacer()
-                    
                     Button(action: createDeck) {
                         Text("Create Deck")
-                            .scaledFont(name: Theme.currentFont, size: 18)
+                            .scaledFont(name: theme.currentFont, size: 18)
                             .font(.headline)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     .padding()
                 }
-            }.background(Theme.currentBackgroundColor)
+            }.background(theme.currentBackgroundColor)
         }
-        .background(Theme.currentBackgroundColor)
+        .background(theme.currentBackgroundColor)
     }
     
-    
     private func createDeck() {
-        onComplete (
+        onComplete(
             newDeckName,
             newDeckComment
         )
-    }
-    
-}
-
-
-//struct AddDeckView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddDeckView()
-//    }
-//}
-
-struct AddDeckView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

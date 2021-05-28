@@ -9,7 +9,6 @@
 import SwiftUI
 import UIKit
 
-
 struct ColorManager {
     static let ClassicGreen = Color("ClassicGreen")
     static let ClassicGreenUI = UIColor(named: "ClassicGreen")

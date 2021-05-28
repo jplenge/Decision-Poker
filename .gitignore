@@ -6,6 +6,8 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 .DS_Store
+.swiftlint.yml
+.bartycrouch.toml
 
 ## Build generated
 build/
@@ -70,7 +72,9 @@ fastlane/test_output
 ## Various settings
  
 ## Other
- 
+*.App\ Store\ Screen\ Shots/*
+*/App\ Store\ Screen\ Shots\  Version 2/* 
+
 ### Xcode Patch ###
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj

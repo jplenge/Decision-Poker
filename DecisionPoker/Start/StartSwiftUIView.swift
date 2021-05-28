@@ -21,17 +21,15 @@ struct StartSwiftUIView: View {
     @State var isShowingSavedResultsView: Bool = false
     @State var isShowingSettingsView: Bool = false
     
-    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var result: Result<MFMailComposeResult, Error>?
     @State var isShowingMailView: Bool = false
     
     init() {
-        Theme.currentBackgroundColor = Theme.colorChoices[UserDefaults.standard.integer(forKey: "SelectedTheme")]
-        Theme.currentBackgroundColorUI = Theme.colorChoicesUI[UserDefaults.standard.integer(forKey: "SelectedTheme")]
+        theme.currentBackgroundColor = theme.colorChoices[UserDefaults.standard.integer(forKey: "SelectedTheme")]
+        theme.currentBackgroundColorUI = theme.colorChoicesUI[UserDefaults.standard.integer(forKey: "SelectedTheme")]
     }
     
-    
     var body: some View {
-        
         NavigationView {
             ZStack {
                 VStack {
@@ -41,11 +39,11 @@ struct StartSwiftUIView: View {
                         
                         Text("Decision Poker")
                             .fontWeight(.bold)
-                            .scaledFont(name: Theme.currentFont, size: 38)
-                            .foregroundColor(Theme.currentTextColor)
+                            .scaledFont(name: theme.currentFont, size: 38)
+                            .foregroundColor(theme.currentTextColor)
                             .padding(.top)
                         
-                        Image(Theme.startImage)
+                        Image(theme.startImage)
                             .resizable()
                             .scaledToFit()
                             .padding()
@@ -58,10 +56,10 @@ struct StartSwiftUIView: View {
                         
                         Button(action: {
                             self.isShowingDirectionsView = true
-                        }){
+                        }) {
                             Text("Directions")
-                                .scaledFont(name: Theme.currentFont, size: 18)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                                .scaledFont(name: theme.currentFont, size: 18)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
                     
                     Spacer()
@@ -71,24 +69,25 @@ struct StartSwiftUIView: View {
                         
                         Button(action: {
                             self.isShowingDealingView = true
-                        }){
+                        }) {
                             Text("Start Dealing Decisions!")
-                                .scaledFont(name: Theme.currentFont, size: 18)
+                                .scaledFont(name: theme.currentFont, size: 18)
                                 .font(.headline)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                        }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
                     
                     Spacer()
                     
                     VStack {
-                        NavigationLink(destination: SavedResultsSwiftUIView(showBackButton: .constant(false)) , isActive: $isShowingSavedResultsView) { EmptyView() }
+                        NavigationLink(destination: SavedResultsSwiftUIView(showBackButton: .constant(false)),
+                                       isActive: $isShowingSavedResultsView) { EmptyView() }
                         
                         Button(action: {
                             self.isShowingSavedResultsView = true
-                        }){
+                        }) {
                             Text("Saved Decisions")
-                                .scaledFont(name: Theme.currentFont, size: 18)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                                .scaledFont(name: theme.currentFont, size: 18)
+                        }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
                     
                     Spacer()
@@ -98,15 +97,15 @@ struct StartSwiftUIView: View {
                         Button(action: {
                             self.isShowingMailView.toggle()
                             print("tapped")
-                        }){
+                        }) {
                             Text("Contact Us")
-                                .scaledFont(name: Theme.currentFont, size: 18)
+                                .scaledFont(name: theme.currentFont, size: 18)
                         }
                         .disabled(!MFMailComposeViewController.canSendMail())
                         .sheet(isPresented: $isShowingMailView) {
                             MailView(result: self.$result) 
                         }
-                        .buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
                     
                     Spacer()
@@ -127,7 +126,7 @@ struct StartSwiftUIView: View {
                         
                     }
                 })
-                .background(Theme.currentBackgroundColor)
+                .background(theme.currentBackgroundColor)
                 
                 VStack {
                     
@@ -143,17 +142,16 @@ struct StartSwiftUIView: View {
                         
                         Button(action: {
                             self.isShowingSettingsView = true
-                        }){
+                        }) {
                             Image(systemName: "gear")
                                 .imageScale(.large)
-                        }.buttonStyle(StartViewButtonStyleCircle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                        }.buttonStyle(StartViewButtonStyleCircle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                         .padding()
                         }
                     }
                 }
             }
-            
-            .background(Theme.currentBackgroundColor)
+            .background(theme.currentBackgroundColor)
             .edgesIgnoringSafeArea(.all)
         }
         .navigationViewStyle(StackNavigationViewStyle())

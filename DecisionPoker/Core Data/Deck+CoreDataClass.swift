@@ -21,7 +21,6 @@ public class Deck: NSManagedObject {
         deckComment ?? ""
     }
     
-    
     public var childCardsArray: [Card] {
         let set = childCards as? Set<Card> ?? []
         return set.sorted {
@@ -47,7 +46,6 @@ public class Deck: NSManagedObject {
         return filtered?.count ?? 0
     }
     
-    
     public func playGame() -> [Card] {
         var selected: [Card] = []
         
@@ -55,11 +53,11 @@ public class Deck: NSManagedObject {
         
         // TODO: remove optionals
         while selected.count < numberOfCardsToPick {
-            let pick = possibleCards?.randomElement() as! Card
-            if !selected.contains(pick) {
-                selected.append(pick)
+            if let pick = possibleCards?.randomElement() as? Card {
+                if !selected.contains(pick) {
+                    selected.append(pick)
+                }
             }
-            
         }
         
         return selected
@@ -69,24 +67,27 @@ public class Deck: NSManagedObject {
     public func repickCard(selectedCards: [Card], current: Card) -> Card {
         let possibleCards =  childCards?.filtered(using: NSPredicate(format: "cardIncluded == true"))
         
-        var repick: Card
+        var repick: Card?
         
-        repick = possibleCards?.randomElement() as! Card
-    
-        // pick new card or if number active cards = number of cards to select then return current card
-        if self.activeCards > self.numberOfCardsToPick {
-            while selectedCards.contains(repick) {
-                repick = possibleCards?.randomElement() as! Card
+        // initial pick
+        if let element = possibleCards?.randomElement() as? Card {
+            repick = element
+        
+            // pick new card or if number active cards = number of cards to select then return current card
+            if self.activeCards > self.numberOfCardsToPick {
+                while selectedCards.contains(repick!) {
+                    if let element = possibleCards?.randomElement() as? Card {
+                        repick = element
+                    }
+                }
+            } else {
+                repick = current
             }
-        } else {
-            repick = current
         }
     
-        return repick
+        return repick!
     }
-    
     
 }
 
 extension Deck: Identifiable { }
-

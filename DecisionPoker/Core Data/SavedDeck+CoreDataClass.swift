@@ -20,8 +20,7 @@ public class SavedDeck: NSManagedObject {
     public var wrappedDeckComment: String {
         deckComment ?? ""
     }
-    
-    
+        
     public var savedCardsArray: [SavedCard] {
         let set = savedChildCards as? Set<SavedCard> ?? []
         return set.sorted {
@@ -29,7 +28,7 @@ public class SavedDeck: NSManagedObject {
         }
     }
     
-    public var creationDateFormatted: String  {
+    public var creationDateFormatted: String {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

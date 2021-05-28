@@ -18,9 +18,15 @@ struct SettingsUIView: View {
     @EnvironmentObject var appState: AppState
     
     init() {
-            UINavigationBar.appearance().barTintColor = Theme.currentBackgroundColorUI
-            UINavigationBar.appearance().tintColor = Theme.currentTextColorUI
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI ?? UIColor.white, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
+        UINavigationBar
+            .appearance()
+            .barTintColor = theme.currentBackgroundColorUI
+        UINavigationBar
+            .appearance()
+            .tintColor = theme.currentTextColorUI
+        UINavigationBar
+            .appearance()
+            .titleTextAttributes = [.foregroundColor : theme.currentTextColorUI ?? UIColor.white, .font : UIFont(name: theme.currentFont, size: 20) as Any]
         }
     
     var body: some View {
@@ -29,8 +35,8 @@ struct SettingsUIView: View {
             List {
                 Section(header:  HStack {
                     Text("Theme")
-                        .scaledFont(name: Theme.currentFont, size: 16)
-                        .foregroundColor(Theme.sectionHeaderColor)
+                        .scaledFont(name: theme.currentFont, size: 16)
+                        .foregroundColor(theme.sectionHeaderColor)
                         .padding()
                     
                     Spacer()
@@ -41,57 +47,52 @@ struct SettingsUIView: View {
                                 leading: 0,
                                 bottom: 0,
                                 trailing: 0))
-                ){
-                    ForEach(Theme.themes.indices, id: \.self) { index in
+                ) {
+                    ForEach(theme.themes.indices, id: \.self) { index in
                         HStack {
-                            Text(Theme.themes[index])
-                                .scaledFont(name: Theme.currentFont, size: 18)
-                                .foregroundColor(Theme.currentTextColor)
+                            Text(theme.themes[index])
+                                .scaledFont(name: theme.currentFont, size: 18)
+                                .foregroundColor(theme.currentTextColor)
                             
                             Spacer()
                             
                             Button(action: {
                                 selectedTheme = index
-                                Theme.currentBackgroundColor = Theme.colorChoices[index]
-                                Theme.currentBackgroundColorUI = Theme.colorChoicesUI[index]
-                                Theme.currentFont = Theme.fontChoices[index]
-                                Theme.unselectedRadioButtonBackgroundColor = Theme.radioButtonBackgroundColorChoices[index]
-                                Theme.sectionHeaderColor = Theme.sectionHeaderColorChoices[index]
-                                Theme.startImage = Theme.startImageChoices[index]
+                                theme.currentBackgroundColor = theme.colorChoices[index]
+                                theme.currentBackgroundColorUI = theme.colorChoicesUI[index]
+                                theme.currentFont = theme.fontChoices[index]
+                                theme.unselectedRadioButtonBackgroundColor = theme.radioButtonBackgroundColorChoices[index]
+                                theme.sectionHeaderColor = theme.sectionHeaderColorChoices[index]
+                                theme.startImage = theme.startImageChoices[index]
                                 UserDefaults.standard.set(index, forKey: "SelectedTheme")
                                 self.appState.moveToRoot = true
-                            }){
+                            }) {
                                 
                                 ZStack {
-                                    Circle().fill(index == selectedTheme ? Theme.currentButtonBackgroundColor : Theme.unselectedRadioButtonBackgroundColor).frame(width: 18, height: 18)
+                                    Circle()
+                                        .fill(index == selectedTheme ? theme.currentButtonBackgroundColor : theme.unselectedRadioButtonBackgroundColor)
+                                        .frame(width: 18, height: 18)
                                         .padding()
                                     
-                                    if self.selectedTheme == index{
-                                        Circle().stroke(Theme.currentButtonBackgroundColor, lineWidth: 4).frame(width: 25, height: 25)
+                                    if self.selectedTheme == index {
+                                        Circle().stroke(theme.currentButtonBackgroundColor, lineWidth: 4).frame(width: 25, height: 25)
                                     }
                                 }
                             }
                         }
                     }
-                    .listRowBackground(Theme.currentBackgroundColor)
+                    .listRowBackground(theme.currentBackgroundColor)
                 }
             }
-            .onAppear(){
+            .onAppear {
                 UITableView.appearance().backgroundColor = .clear
                 UITableViewCell.appearance().backgroundColor = .clear
             }
             .navigationBarTitle("Settings", displayMode: .inline)
             .listStyle(GroupedListStyle())
-            Spacer()
             
+            Spacer()
         }
-        .background(Theme.currentBackgroundColor)
-    }
-}
-
-
-struct SettingsUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsUIView()
+        .background(theme.currentBackgroundColor)
     }
 }

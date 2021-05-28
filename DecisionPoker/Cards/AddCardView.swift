@@ -24,39 +24,35 @@ struct AddCardView: View {
             ZStack {
                 
                 Form {
-                    Section(header: Text("Cardname").scaledFont(name: Theme.currentFont, size: 10).foregroundColor(Theme.currentTextColor).background(Theme.currentBackgroundColor)) {
+                    Section(header: Text("Cardname")
+                                .scaledFont(name: theme.currentFont, size: 10)
+                                .foregroundColor(theme.currentTextColor)
+                                .background(theme.currentBackgroundColor)) {
                         TextField("New cardname", text: $newCardName)
                             .multilineTextAlignment(.center)
-                            .scaledFont(name: Theme.currentFont, size: 18)
-                            .foregroundColor(Theme.currentBackgroundColor)
+                            .scaledFont(name: theme.currentFont, size: 18)
+                            .foregroundColor(theme.currentBackgroundColor)
                     }
                     
-                    
-                    
-                    Section(header: Text("Comment").scaledFont(name: Theme.currentFont, size: 10).foregroundColor(Theme.currentTextColor).background(Theme.currentBackgroundColor)) {
+                    Section(header: Text("Comment")
+                                .scaledFont(name: theme.currentFont, size: 10)
+                                .foregroundColor(theme.currentTextColor)
+                                .background(theme.currentBackgroundColor)) {
                         TextView(text: $newCardComment) {
                             $0.isEditable = true
-                            $0.backgroundColor = Theme.currentTextColorUI
-                            $0.font = UIFont(name: Theme.currentFont, size: 13)
-                            $0.textColor = Theme.currentBackgroundColorUI
+                            $0.backgroundColor = theme.currentTextColorUI
+                            $0.font = UIFont(name: theme.currentFont, size: 13)
+                            $0.textColor = theme.currentBackgroundColorUI
                         }
                         .frame(height: 150)
-                        .onAppear() {
-                            /* TODO: add grey comment: Add comment here*/
-                            //newDeckComment = commentString
+                        .onAppear {
                         }
                     }
-                    .background(Theme.currentTextColor)
+                    .background(theme.currentTextColor)
                     
                 }
                 .navigationBarTitle(Text("New Card"), displayMode: .inline)
-                .background(Theme.currentBackgroundColor)
-//                .background(NavigationConfigurator { nc in
-//                    nc.navigationBar.barTintColor = Theme.currentBackgroundColorUI
-//                    nc.navigationBar.titleTextAttributes = [.foregroundColor : Theme.currentTextColorUI, .font : UIFont(name: Theme.currentFont, size: 20) as Any]
-//                    nc.navigationBar.tintColor = Theme.currentTextColorUI
-//                })
-                
+                .background(theme.currentBackgroundColor)
                 
                 VStack {
                     
@@ -64,9 +60,9 @@ struct AddCardView: View {
                     
                     Button(action: createCard) {
                         Text("Add Card")
-                            .scaledFont(name: Theme.currentFont, size: 18)
+                            .scaledFont(name: theme.currentFont, size: 18)
                             .font(.headline)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                    }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     .padding()
                 }
                 
@@ -75,22 +71,10 @@ struct AddCardView: View {
     }
     
     private func createCard() {
-        onComplete (
+        onComplete(
             newCardName,
             newCardComment
         )
         
     }
-    
 }
-
-
-
-
-
-//struct AddDeckView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddDeckView()
-//    }
-//}
-

@@ -13,5 +13,4 @@ class AppState: ObservableObject {
     @Published var moveToRoot: Bool = false
 }
 
-
 // Solution from: https://thinkdiff.net/ios/swiftui-how-to-pop-to-root-view/

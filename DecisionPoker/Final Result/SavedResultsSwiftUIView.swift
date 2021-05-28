@@ -23,14 +23,12 @@ struct  SavedResultsSwiftUIView: View {
     init(showBackButton: Binding<Bool>) {
         
         self._showBackButton = showBackButton
-
+        
         UITableView.appearance().allowsSelection = true
         UITableViewCell.appearance().selectionStyle = .none
     }
     
-    
     @Environment(\.managedObjectContext) var managedObjectContext
-    
     
     // fetch hstory from core data
     @FetchRequest(entity: SavedDeck.entity(), sortDescriptors: [NSSortDescriptor(
@@ -38,10 +36,7 @@ struct  SavedResultsSwiftUIView: View {
         ascending: false
     )]) var savedDecks: FetchedResults<SavedDeck>
     
-    
-    
     var body: some View {
-        
         let view =  ZStack {
             
             List {
@@ -53,8 +48,8 @@ struct  SavedResultsSwiftUIView: View {
                                 Text(deck.wrappedDeckName)
                                     .fontWeight(.bold)
                                     .multilineTextAlignment(.center)
-                                    .scaledFont(name: Theme.currentFont, size: 22)
-                                    .foregroundColor(Theme.currentTextColor)
+                                    .scaledFont(name: theme.currentFont, size: 22)
+                                    .foregroundColor(theme.currentTextColor)
                                     .padding()
                                 
                                 Spacer()
@@ -63,12 +58,12 @@ struct  SavedResultsSwiftUIView: View {
                             Spacer()
                             
                             VStack(alignment: .leading) {
-                                ForEach(deck.savedCardsArray,  id: \.self) { card in
+                                ForEach(deck.savedCardsArray, id: \.self) { card in
                                     Text("• \(card.wrappedCardName)")
                                         .multilineTextAlignment(.leading)
-                                        .scaledFont(name: Theme.currentFont, size: 16)
-                                        .foregroundColor(Theme.currentTextColor)
-                                }.listRowBackground(Theme.currentBackgroundColor)
+                                        .scaledFont(name: theme.currentFont, size: 16)
+                                        .foregroundColor(theme.currentTextColor)
+                                }.listRowBackground(theme.currentBackgroundColor)
                             }
                             
                             Spacer()
@@ -76,8 +71,8 @@ struct  SavedResultsSwiftUIView: View {
                             HStack {
                                 Text("created: \(deck.creationDateFormatted)")
                                     .multilineTextAlignment(.leading)
-                                    .scaledFont(name: Theme.currentFont, size: 8)
-                                    .foregroundColor(Theme.currentTextColor)
+                                    .scaledFont(name: theme.currentFont, size: 8)
+                                    .foregroundColor(theme.currentTextColor)
                                 
                                 Spacer()
                                 
@@ -85,36 +80,29 @@ struct  SavedResultsSwiftUIView: View {
                             
                         }
                         
-            
                         HStack {
-                            
                             Spacer()
-                            
                             VStack {
-                                
                                 Spacer()
-                                
                                 Group {
-                                    //NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results), isActive: $isShowingSavedResults) { EmptyView() }
+                                    
                                     Button(action: {
                                         self.sharedString  = generateShareString(deck: deck)
                                         self.showActionSheet = true
-                                    }){
+                                    }) {
                                         Image(systemName: "square.and.arrow.up")
                                             .imageScale(.small)
-                                    }.buttonStyle(StartViewButtonStyleCircle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                                    }.buttonStyle(StartViewButtonStyleCircle(backcolor: theme.currentButtonBackgroundColor,
+                                                                             forecolor: theme.currentBackgroundColor))
                                 }
-                                
                             }
                         }
-                        
-                        
                     }
-               
                 }
                 .onDelete(perform: deleteDeck)
-                .listRowBackground(Theme.currentBackgroundColor)
-            }.listRowBackground(Theme.currentBackgroundColor)
+                .listRowBackground(theme.currentBackgroundColor)
+            }
+            .listRowBackground(theme.currentBackgroundColor)
             .navigationBarTitle("Saved Decisions", displayMode: .inline)
             .navigationBarHidden(false)
             .onAppear(perform: {
@@ -123,7 +111,7 @@ struct  SavedResultsSwiftUIView: View {
                 self.showActionSheet = false
             })
             
-            .background(Theme.currentBackgroundColor)
+            .background(theme.currentBackgroundColor)
             
             if showBackButton {
                 HStack {
@@ -137,27 +125,21 @@ struct  SavedResultsSwiftUIView: View {
                         Group {
                             Button(action: {
                                 self.appState.moveToRoot = true
-                            }){
-                                Text("Done").scaledFont(name: Theme.currentFont, size: 26)
-                            }.buttonStyle(StartViewButtonStyle(backcolor: Theme.currentButtonBackgroundColor, forecolor: Theme.currentBackgroundColor))
+                            }) {
+                                Text("Done").scaledFont(name: theme.currentFont, size: 26)
+                            }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                         }.padding()
                     }
                 }
             }
-            
         }
         .sheet(isPresented: $showActionSheet, onDismiss: {
             print("Dismiss")
         }, content: {
             ActivityViewController(activityItems: [sharedString])
         })
-     
-        
         return view
     }
-    
-    
-    
     
     // function: delete deck from core data
     func deleteDeck(at offsets: IndexSet) {
@@ -166,14 +148,12 @@ struct  SavedResultsSwiftUIView: View {
             self.managedObjectContext.delete(savedDeck)
         }
         
-        
         do {
             try self.managedObjectContext.save()
         } catch {
             print("error when deleting deck: \(error)")
         }
     }
-    
     
     func generateShareString(deck: SavedDeck) -> String {
         var resultString: String
@@ -190,22 +170,4 @@ struct  SavedResultsSwiftUIView: View {
         
     }
     
-    
-    
 }
-
-
-
-
-struct SavedResultsSwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        return SavedResultsSwiftUIView(showBackButton: .constant(true)).environment(\.managedObjectContext, context)
-    }
-}
-
-
-
-
