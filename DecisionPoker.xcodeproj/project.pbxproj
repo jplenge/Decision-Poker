@@ -16,6 +16,9 @@
 		1B1902D324AC988200F1E94B /* DealResultSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D224AC988200F1E94B /* DealResultSwiftUIView.swift */; };
 		1B1902D524ACDC4600F1E94B /* CheatPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D424ACDC4600F1E94B /* CheatPickerView.swift */; };
 		1B1902D824ADC8A400F1E94B /* FinalResultSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */; };
+		1B206EC826B86D7F00B19F46 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFFA254F5B4800406090 /* ColorManager.swift */; };
+		1B206EC926B86DF300B19F46 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B29CFF7254F586E00406090 /* Colors.xcassets */; };
+		1B206ECA26B86E2C00B19F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */; };
 		1B21A06724A73C3D00A56F34 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B21A06624A73C3D00A56F34 /* Binding.swift */; };
 		1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFD8254A14A100406090 /* ActivityViewController.swift */; };
 		1B29CFEC254B5F8100406090 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFEB254B5F8100406090 /* SettingsUIView.swift */; };
@@ -43,12 +46,47 @@
 		1B96E50C251A9081007420F2 /* dismissKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */; };
 		1B9F59C422E8F054009B5129 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C222E8F054009B5129 /* InfoPlist.strings */; };
 		1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
+		1BD5E39526CD40B30051D76A /* saveJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5E39426CD40B30051D76A /* saveJSON.swift */; };
+		1BD5E39726CD4A1C0051D76A /* decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63BD266AA8A500C5CA01 /* decision.swift */; };
+		1BDC638F2666C97300C5CA01 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDC638E2666C97300C5CA01 /* WidgetKit.framework */; };
+		1BDC63912666C97300C5CA01 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDC63902666C97300C5CA01 /* SwiftUI.framework */; };
+		1BDC63942666C97300C5CA01 /* DecisionPokerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63932666C97300C5CA01 /* DecisionPokerWidget.swift */; };
+		1BDC63972666C97600C5CA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC63962666C97600C5CA01 /* Assets.xcassets */; };
+		1BDC63992666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */; };
+		1BDC639A2666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */; };
+		1BDC639D2666C97600C5CA01 /* DecisionPokerWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1BDC638C2666C97300C5CA01 /* DecisionPokerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1BDC63AE266977D000C5CA01 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
+		1BDC63BE266AA8A500C5CA01 /* decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63BD266AA8A500C5CA01 /* decision.swift */; };
 		1BF3D14325698309003A9246 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF3D14225698309003A9246 /* MailView.swift */; };
 		A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8C22D72A8A00C14787 /* FontSetup.swift */; };
 		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
 		A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BDC639B2666C97600C5CA01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9D58A6922C4E49F00E608B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BDC638B2666C97300C5CA01;
+			remoteInfo = DecisionPokerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1BDC639E2666C97600C5CA01 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1BDC639D2666C97600C5CA01 /* DecisionPokerWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1B1902C024AA397D00F1E94B /* DeckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCell.swift; sourceTree = "<group>"; };
@@ -89,6 +127,17 @@
 		1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboardExtension.swift; sourceTree = "<group>"; };
 		1B9F59C322E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B9F59C622E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1BD5E39426CD40B30051D76A /* saveJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveJSON.swift; sourceTree = "<group>"; };
+		1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DecisionPoker.entitlements; sourceTree = "<group>"; };
+		1BD5E39A26CDAE2A0051D76A /* DecisionPokerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DecisionPokerWidgetExtension.entitlements; sourceTree = "<group>"; };
+		1BDC638C2666C97300C5CA01 /* DecisionPokerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DecisionPokerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDC638E2666C97300C5CA01 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1BDC63902666C97300C5CA01 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1BDC63932666C97300C5CA01 /* DecisionPokerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerWidget.swift; sourceTree = "<group>"; };
+		1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DecisionPokerWidget.intentdefinition; sourceTree = "<group>"; };
+		1BDC63962666C97600C5CA01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BDC63982666C97600C5CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDC63BD266AA8A500C5CA01 /* decision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decision.swift; sourceTree = "<group>"; };
 		1BF3D14225698309003A9246 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A98F9F8C22D72A8A00C14787 /* FontSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSetup.swift; sourceTree = "<group>"; };
 		A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +148,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1BDC63892666C97300C5CA01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDC63912666C97300C5CA01 /* SwiftUI.framework in Frameworks */,
+				1BDC638F2666C97300C5CA01 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9D58A6E22C4E49F00E608B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +210,8 @@
 		1B7F907322D33FC700812BE4 /* Final Result */ = {
 			isa = PBXGroup;
 			children = (
+				1BDC63BD266AA8A500C5CA01 /* decision.swift */,
+				1BD5E39426CD40B30051D76A /* saveJSON.swift */,
 				1B29CFD8254A14A100406090 /* ActivityViewController.swift */,
 				1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */,
 				1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */,
@@ -202,10 +262,33 @@
 			path = Deal;
 			sourceTree = "<group>";
 		};
+		1BDC638D2666C97300C5CA01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BDC638E2666C97300C5CA01 /* WidgetKit.framework */,
+				1BDC63902666C97300C5CA01 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BDC63922666C97300C5CA01 /* DecisionPokerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1BDC63932666C97300C5CA01 /* DecisionPokerWidget.swift */,
+				1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */,
+				1BDC63962666C97600C5CA01 /* Assets.xcassets */,
+				1BDC63982666C97600C5CA01 /* Info.plist */,
+			);
+			path = DecisionPokerWidget;
+			sourceTree = "<group>";
+		};
 		A9D58A6822C4E49F00E608B8 = {
 			isa = PBXGroup;
 			children = (
+				1BD5E39A26CDAE2A0051D76A /* DecisionPokerWidgetExtension.entitlements */,
 				A9D58A7322C4E49F00E608B8 /* DecisionPoker */,
+				1BDC63922666C97300C5CA01 /* DecisionPokerWidget */,
+				1BDC638D2666C97300C5CA01 /* Frameworks */,
 				A9D58A7222C4E49F00E608B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -214,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */,
+				1BDC638C2666C97300C5CA01 /* DecisionPokerWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +305,7 @@
 		A9D58A7322C4E49F00E608B8 /* DecisionPoker */ = {
 			isa = PBXGroup;
 			children = (
+				1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */,
 				1B7F907222D33F5500812BE4 /* Core Data */,
 				1B31DDCA24BCDF710014F318 /* Settings */,
 				1B51FB3B24A3D74700F4E80F /* Start */,
@@ -241,6 +326,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1BDC638B2666C97300C5CA01 /* DecisionPokerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDC63A12666C97600C5CA01 /* Build configuration list for PBXNativeTarget "DecisionPokerWidgetExtension" */;
+			buildPhases = (
+				1BDC63882666C97300C5CA01 /* Sources */,
+				1BDC63892666C97300C5CA01 /* Frameworks */,
+				1BDC638A2666C97300C5CA01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DecisionPokerWidgetExtension;
+			productName = DecisionPokerWidgetExtension;
+			productReference = 1BDC638C2666C97300C5CA01 /* DecisionPokerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A9D58A7022C4E49F00E608B8 /* DecisionPoker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9D58A9C22C4E4A000E608B8 /* Build configuration list for PBXNativeTarget "DecisionPoker" */;
@@ -249,10 +351,12 @@
 				A9D58A6D22C4E49F00E608B8 /* Sources */,
 				A9D58A6E22C4E49F00E608B8 /* Frameworks */,
 				A9D58A6F22C4E49F00E608B8 /* Resources */,
+				1BDC639E2666C97600C5CA01 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1BDC639C2666C97600C5CA01 /* PBXTargetDependency */,
 			);
 			name = DecisionPoker;
 			packageProductDependencies = (
@@ -267,10 +371,13 @@
 		A9D58A6922C4E49F00E608B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Jodi Szarko";
 				TargetAttributes = {
+					1BDC638B2666C97300C5CA01 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					A9D58A7022C4E49F00E608B8 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1150;
@@ -294,11 +401,22 @@
 			projectRoot = "";
 			targets = (
 				A9D58A7022C4E49F00E608B8 /* DecisionPoker */,
+				1BDC638B2666C97300C5CA01 /* DecisionPokerWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1BDC638A2666C97300C5CA01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDC63972666C97600C5CA01 /* Assets.xcassets in Resources */,
+				1B206ECA26B86E2C00B19F46 /* Assets.xcassets in Resources */,
+				1B206EC926B86DF300B19F46 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9D58A6F22C4E49F00E608B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,19 +451,34 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1BDC63882666C97300C5CA01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDC63992666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */,
+				1B206EC826B86D7F00B19F46 /* ColorManager.swift in Sources */,
+				1BD5E39726CD4A1C0051D76A /* decision.swift in Sources */,
+				1BDC63AE266977D000C5CA01 /* DecisionPoker.xcdatamodeld in Sources */,
+				1BDC63942666C97300C5CA01 /* DecisionPokerWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9D58A6D22C4E49F00E608B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */,
 				1B2BA1FA251CE10A00CCABE9 /* CustomToggle.swift in Sources */,
+				1BD5E39526CD40B30051D76A /* saveJSON.swift in Sources */,
 				1BF3D14325698309003A9246 /* MailView.swift in Sources */,
 				1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */,
 				1B51FB4124A3EC5600F4E80F /* SceneDelegate.swift in Sources */,
 				1B1902C724AA906900F1E94B /* DirectionsSwiftUIView.swift in Sources */,
 				1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */,
 				1B51FB4324A3F9CB00F4E80F /* DecksSwiftUIView.swift in Sources */,
+				1BDC639A2666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */,
 				1B1902D524ACDC4600F1E94B /* CheatPickerView.swift in Sources */,
+				1BDC63BE266AA8A500C5CA01 /* decision.swift in Sources */,
 				1B1902CD24AC7D9300F1E94B /* CardCell.swift in Sources */,
 				1B51FB3F24A3E5DA00F4E80F /* StartSwiftUIView.swift in Sources */,
 				1B1902C324AA46B000F1E94B /* AddDeckView.swift in Sources */,
@@ -379,6 +512,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1BDC639C2666C97600C5CA01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BDC638B2666C97300C5CA01 /* DecisionPokerWidgetExtension */;
+			targetProxy = 1BDC639B2666C97600C5CA01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		1B9F59C222E8F054009B5129 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -400,6 +541,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1BDC639F2666C97600C5CA01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7H3T6272BD;
+				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker.DecisionPokerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1BDC63A02666C97600C5CA01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtensionRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7H3T6272BD;
+				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker.DecisionPokerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A9D58A9A22C4E4A000E608B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -453,7 +642,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -510,7 +699,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -523,18 +712,20 @@
 		A9D58A9D22C4E4A000E608B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPoker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -546,18 +737,20 @@
 		A9D58A9E22C4E4A000E608B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPokerRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -569,6 +762,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1BDC63A12666C97600C5CA01 /* Build configuration list for PBXNativeTarget "DecisionPokerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDC639F2666C97600C5CA01 /* Debug */,
+				1BDC63A02666C97600C5CA01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A9D58A6C22C4E49F00E608B8 /* Build configuration list for PBXProject "DecisionPoker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

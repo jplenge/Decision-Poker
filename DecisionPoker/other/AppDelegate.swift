@@ -248,18 +248,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(0, forKey: "SelectedTheme")
         } else {
             
-            if UserDefaults.standard.object(forKey: "SelectedTHeme") == nil {
+            if UserDefaults.standard.object(forKey: "SelectedTheme") == nil {
                 UserDefaults.standard.set(0, forKey: "SelectedTheme")
             }
             
         }
         
-        /*
-         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-         let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController
-         self.window?.rootViewController = mainVC
-         mainVC.container = persistentContainer
-         */
+        // check if lastDecision json file exists
+        if let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.de.ipomic.DecisionPoker")?.appendingPathComponent("lastDecision") {
+        
+            if !FileManager.default.fileExists(atPath: fileURL.path) {
+                let status = "No decision made"
+                let lastDecision = Decision(deckname: status, date: Date(), selectedCards: [])
+                saveJSON(named: "lastDecision", object: lastDecision)
+            }
+        } else {
+            print("Error: can not create json file on startup")
+        }
         
         return true
     }

@@ -9,6 +9,7 @@
 import SwiftUI
 import CoreData
 import UIKit
+import WidgetKit
 
 struct FinalResultSwiftUIView: View {
     var selectedDeck: Deck
@@ -21,6 +22,8 @@ struct FinalResultSwiftUIView: View {
     
     // required for going home to first screen
     @EnvironmentObject var appState: AppState
+    
+
     
     var body: some View {
         let view = ZStack {
@@ -74,6 +77,12 @@ struct FinalResultSwiftUIView: View {
                         
                         Button(action: {
                                 self.saveResults(deck: self.selectedDeck, cards: self.results)
+                                self.saveLastDecision(deck: self.selectedDeck, cards: self.results)
+                            if #available(iOS 14.0, *) {
+                                WidgetCenter.shared.reloadAllTimelines()
+                            } else {
+                                // Fallback on earlier versions
+                            }
                                 self.isShowingSavedResults = true
                         }) {
                             Text("Save").scaledFont(name: theme.currentFont, size: 26)
@@ -133,11 +142,25 @@ struct FinalResultSwiftUIView: View {
         resultString += "\r Selected cards:\r"
         
         for item in cards {
-            resultString += "- \(String(item.cardName ?? ""))\r"
+            resultString += "- \(String(item.cardName ?? ""))\r" 
         }
         
         return resultString
     }
+    
+    
+    func saveLastDecision(deck: Deck, cards: [Card]) {
+        var selectedCards: [String] = []
+        
+        for card in cards {
+            selectedCards.append(card.wrappedCardName)
+        }
+        
+        let lastDecision = Decision(deckname: deck.wrappedDeckName, date: Date(), selectedCards: selectedCards)
+        
+        saveJSON(named: "lastDecision", object: lastDecision)
+    }
+    
     
     func saveResults(deck: Deck, cards: [Card]) {
         let savedDeck = SavedDeck(context: managedObjectContext)
@@ -145,7 +168,7 @@ struct FinalResultSwiftUIView: View {
         savedDeck.deckComment =  deck.deckComment
         savedDeck.id = UUID()
         savedDeck.dateSaved = Date()
-        
+                
         for card in cards {
             let newSavedCard = SavedCard(context: managedObjectContext)
             newSavedCard.cardName = card.cardName

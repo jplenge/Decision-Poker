@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreData
+import WidgetKit
 
 struct  SavedResultsSwiftUIView: View {
     
@@ -153,6 +154,29 @@ struct  SavedResultsSwiftUIView: View {
         } catch {
             print("error when deleting deck: \(error)")
         }
+        
+        // TODO
+        // load most recent decision
+        if savedDecks.first != nil {
+            saveLastDecision(deck: savedDecks.first!, cards: savedDecks.first!.savedCardsArray)
+            if #available(iOS 14.0, *) {
+                WidgetCenter.shared.reloadAllTimelines()
+            } else {
+                // Fallback on earlier versions
+            }
+        } else {
+            // do something if history is empty
+            let status = "No decision made"
+            let lastDecision = Decision(deckname: status, date: Date(), selectedCards: [])
+            saveJSON(named: "lastDecision", object: lastDecision)
+            
+            if #available(iOS 14.0, *) {
+                WidgetCenter.shared.reloadAllTimelines()
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        
     }
     
     func generateShareString(deck: SavedDeck) -> String {
@@ -167,7 +191,17 @@ struct  SavedResultsSwiftUIView: View {
         }
         
         return resultString
-        
     }
     
+    func saveLastDecision(deck: SavedDeck, cards: [SavedCard]) {
+        var selectedCards: [String] = []
+        
+        for card in cards {
+            selectedCards.append(card.wrappedCardName)
+        }
+        
+        let lastDecision = Decision(deckname: deck.wrappedDeckName, date: Date(), selectedCards: selectedCards)
+        
+        saveJSON(named: "lastDecision", object: lastDecision)
+    }
 }
