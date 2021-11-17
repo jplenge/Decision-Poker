@@ -13,9 +13,8 @@
 
 /* Directions View */
 
-"directions view text" = "This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a \"deck\", and each choice in a deck is entered as a \"card\". To get started, press the \"Start dealing decisions!\" button in the start screen. The app will display two starter \"decks\", colors and household chores, but you can add and edit your own decks and cards. Some instructions and clarifications are indicated if the \"info\" or \"?\" button in each screen is pressed. Once your selections are optimized, simply hit \"Deal!\" to create your randomized \"hand\" or decision! Once the decision is made, you can fix and redraw any of the choices of your result. If you are happy with the decision the app has made, you can see, send and save your finalized solutions. Sometimes making decisions is stressful. We hope this app makes the process more fun and efficient!";
-
-
+"directions view text" = "This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a \"deck\", and each choice in a deck is entered as a \"card\". To get started, press the \"Start dealing decisions!\" button in the start screen. The app will display two starter \"decks\", colors and household chores, but you can add and edit your own decks and cards. Once your selections are optimized, simply hit \"Deal!\" to create your randomized \"hand\" or decision! Once the decision is made, you can fix and redraw any of the choices of your result. If you are happy with the decision the app has made, you can see, send and save your finalized solutions. Sometimes making decisions is stressful. We hope this app makes the process more fun and efficient!";
+/* removed from directions view: Some instructions and clarifications are indicated if the \"info\" or \"?\" button in each screen is pressed.*/
 
 
 /* Decks View*/

@@ -549,6 +549,7 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -574,6 +575,7 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -719,7 +721,7 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPoker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -744,7 +746,7 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPokerRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;

@@ -61,7 +61,6 @@ struct DecksSwiftUIView: View {
                         }
                     }.onDelete(perform: deleteDeck)
                     .listRowBackground(theme.currentBackgroundColor)
-                    
                 }
             }
             .sheet(isPresented: $isPresented) {
@@ -79,7 +78,6 @@ struct DecksSwiftUIView: View {
             })
             .background(theme.currentBackgroundColor)
             .navigationBarItems(trailing: Button(action: {
-                
                 do {
                     try managedObjectContext.save()
                 } catch {
