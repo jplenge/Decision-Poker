@@ -56,23 +56,18 @@ struct FinalResultSwiftUIView: View {
                     }
                     .listRowBackground(theme.currentBackgroundColor)
                 }
+                .scrollContentBackground(.hidden)
                 .onAppear {
                     self.isShowingSavedResults = false
                 }
-                .listRowBackground(theme.currentBackgroundColor)
             }
             .background(theme.currentBackgroundColor)
             
             HStack {
                 Spacer()
                 VStack {
-                    
                     Spacer()
-                    
                     Group {
-                        NavigationLink(destination: SavedResultsSwiftUIView(showBackButton: .constant(true)), isActive: $isShowingSavedResults) { EmptyView() }
-                            .isDetailLink(false)
-                        
                         Button(action: {
                                 self.saveResults(deck: self.selectedDeck, cards: self.results)
                                 self.saveLastDecision(deck: self.selectedDeck, cards: self.results)
@@ -87,13 +82,12 @@ struct FinalResultSwiftUIView: View {
                         })
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor,
                                                           forecolor: theme.currentBackgroundColor))
-                    
                     }
+                    .navigationDestination(isPresented: $isShowingSavedResults, destination: { SavedResultsSwiftUIView(showBackButton: .constant(true))})
                     .padding(.bottom, 5)
                     .padding(.horizontal)
                     
                     Group {
-                        
                         Button(action: {
                             self.appState.moveToRoot = true
                         }, label: {
@@ -111,14 +105,12 @@ struct FinalResultSwiftUIView: View {
                 VStack {
                     Spacer()
                     Group {
-                        
                         Button(action: {
                             self.showActionSheet = true
                         }, label: {
                             Image(systemName: "square.and.arrow.up").imageScale(.large)
                         })
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
-                        
                     }.padding()
                 }
                 Spacer()

@@ -28,7 +28,7 @@ struct AddCardView: View {
                                 .scaledFont(name: theme.currentFont, size: 10)
                                 .foregroundColor(theme.currentTextColor)
                                 .background(theme.currentBackgroundColor)) {
-                        TextField("New cardname", text: $newCardName)
+                        TextField("New Cardname", text: $newCardName)
                             .multilineTextAlignment(.center)
                             .scaledFont(name: theme.currentFont, size: 18)
                             .foregroundColor(theme.currentBackgroundColor)
@@ -48,16 +48,14 @@ struct AddCardView: View {
                         .onAppear {
                         }
                     }
-                    .background(theme.currentTextColor)
-                    
                 }
-                .navigationBarTitle(Text("New Card"), displayMode: .inline)
+                .navigationTitle("New Card")
+                .navigationBarTitleDisplayMode(.inline)
                 .background(theme.currentBackgroundColor)
+                .scrollContentBackground(.hidden)
                 
                 VStack {
-                    
                     Spacer()
-                    
                     Button(action: createCard) {
                         Text("Add Card")
                             .scaledFont(name: theme.currentFont, size: 18)

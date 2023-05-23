@@ -47,11 +47,11 @@ struct AddDeckView: View {
                         }
                         .frame(height: 150)
                     }
-                    .background(theme.currentTextColor)
                 }
-                .navigationBarTitle(Text("Add Deck"), displayMode: .inline)
+                .navigationTitle("Add Deck")
+                .navigationBarTitleDisplayMode(.inline)
                 .background(theme.currentBackgroundColor)
-                
+                .scrollContentBackground(.hidden)
                 VStack {
                     Spacer()
                     Button(action: createDeck) {
@@ -61,7 +61,8 @@ struct AddDeckView: View {
                     }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     .padding()
                 }
-            }.background(theme.currentBackgroundColor)
+            }
+            .background(theme.currentBackgroundColor)
         }
         .background(theme.currentBackgroundColor)
     }

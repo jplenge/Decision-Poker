@@ -26,7 +26,7 @@ struct DeckCell: View {
                 HStack {
                     TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveTitle)
                         .multilineTextAlignment(.center)
-                        .scaledFont(name: theme.currentFont, size: 28)
+                        .scaledFont(name: theme.currentFont, size: 22)
                         .padding()
                         .foregroundColor(theme.currentTextColor)
                         .onAppear(perform: {
@@ -111,12 +111,6 @@ struct DeckCell: View {
                 Spacer()
                 
                 VStack {
-                    
-                    List {
-                        NavigationLink(destination: DealResultSwiftUIView(selectedDeck: deck, results: gameResult),
-                                       isActive: $isShowingResultView) { EmptyView()}
-                    }.frame(height: 0)
-                    
                     Button(action: {
                         gameResult = deck.playGame()
                         self.isShowingResultView = true
@@ -127,18 +121,19 @@ struct DeckCell: View {
                     })
                     .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                 }
-                
                 Spacer()
             }
         }
+        .navigationDestination(isPresented:  $isShowingResultView,
+                               destination: { DealResultSwiftUIView(selectedDeck: deck, results: gameResult) })
         return view
     }
     
-    func updateDeckComment() {
+    private func updateDeckComment() {
         deck.deckComment = editableText
     }
     
-    func saveTitle() {
+    private func saveTitle() {
         deck.deckName = editableTextField
     }
 }

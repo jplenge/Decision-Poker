@@ -44,7 +44,6 @@ struct CardsSwiftUIView: View {
                             .padding()
                     })
                     .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
-                    
                     Spacer()
                 }
                 
@@ -88,19 +87,14 @@ struct CardsSwiftUIView: View {
         //        .alert(isPresented: $showingAlert) {
         //                   Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
         //        }
-        .navigationBarTitle("Deck Details", displayMode: .inline)
+        .navigationTitle("Deck Details")
         .navigationBarItems(trailing: Button(action: {
             self.isPresented.toggle()
         }, label: {
             Image(systemName: "plus")
                 .imageScale(.large)
         }))
-        .onAppear(perform: {
-            UITableView.appearance().backgroundColor = .clear // tableview background
-            UITableViewCell.appearance().backgroundColor = .clear // cell background
-        })
         .background(theme.currentBackgroundColor)
-        
     }
     
     func deleteCard(at offsets: IndexSet) {
@@ -118,7 +112,6 @@ struct CardsSwiftUIView: View {
     
     func addCard(newCardName: String, newCardComment: String) {
         let newCard = Card(context: managedObjectContext)
-        
         newCard.cardName = newCardName
         newCard.cardComment = newCardComment
         newCard.cardIncluded = true

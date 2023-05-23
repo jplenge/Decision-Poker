@@ -25,18 +25,15 @@ struct DealResultSwiftUIView: View {
                     ResultViewCell(card: self.results[index], index: index, selectedDeck: self.selectedDeck, results: self.$results)
                 }
                 .listRowBackground(theme.currentBackgroundColor)
-            }.navigationBarTitle("First Hand", displayMode: .inline)
-            .onAppear(perform: {
-                UITableView.appearance().backgroundColor = .clear // tableview background
-                UITableViewCell.appearance().backgroundColor = .clear // cell background
-            })
-            .listRowBackground(theme.currentBackgroundColor)
+            }
+            .navigationTitle("First Hand")
+            .navigationBarTitleDisplayMode(.inline)
+            .background(theme.currentBackgroundColor)
+            .scrollContentBackground(.hidden)
             
             VStack {
                 Spacer()
                 VStack {
-                    NavigationLink(destination: FinalResultSwiftUIView(selectedDeck: selectedDeck, results: results),
-                                   isActive: $isShowingFinalResultView) { EmptyView() }
                     Button(action: {
                         self.isShowingFinalResultView = true
                     }, label: {
@@ -48,8 +45,9 @@ struct DealResultSwiftUIView: View {
                 
             }
         }
-        .background(theme.currentBackgroundColor)
-        
+        .navigationDestination(isPresented: $isShowingFinalResultView,
+                               destination: {  FinalResultSwiftUIView(selectedDeck: selectedDeck,
+                                                                      results: results) })
     }
     
     struct ResultViewCell: View {

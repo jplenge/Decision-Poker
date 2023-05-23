@@ -18,15 +18,11 @@ struct  SavedResultsSwiftUIView: View {
     @EnvironmentObject var appState: AppState
     
     @State private var showActionSheet: Bool = false
-    
     @State private var sharedString: String = ""
     
     init(showBackButton: Binding<Bool>) {
-        
         self._showBackButton = showBackButton
-        
         UITableView.appearance().allowsSelection = true
-        UITableViewCell.appearance().selectionStyle = .none
     }
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -36,7 +32,7 @@ struct  SavedResultsSwiftUIView: View {
         key: "dateSaved",
         ascending: false
     )]) var savedDecks: FetchedResults<SavedDeck>
-    
+
     var body: some View {
         let view =  ZStack {
             List {
@@ -85,7 +81,7 @@ struct  SavedResultsSwiftUIView: View {
                                             .imageScale(.small)
                                     })
                                     .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor,
-                                                                            forecolor: theme.currentBackgroundColor))
+                                                                      forecolor: theme.currentBackgroundColor))
                                 }
                             }
                         }
@@ -94,13 +90,23 @@ struct  SavedResultsSwiftUIView: View {
                 .onDelete(perform: deleteDeck)
                 .listRowBackground(theme.currentBackgroundColor)
             }
+            .background(theme.currentBackgroundColor)
+            .scrollContentBackground(.hidden)
+            .navigationBarBackButtonHidden(showBackButton)
             .listRowBackground(theme.currentBackgroundColor)
-            .navigationBarTitle("Saved Decisions", displayMode: .inline)
-            .navigationBarHidden(false)
+            .navigationTitle("Saved Decisions")
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear(perform: {
                 self.showActionSheet = false
             })
-
+            .overlay(Group {
+                if savedDecks.isEmpty {
+                    ZStack {
+                        theme.currentBackgroundColor.ignoresSafeArea()
+                    }
+                }
+            })
+            
             if showBackButton {
                 HStack {
                     Spacer()
@@ -118,6 +124,7 @@ struct  SavedResultsSwiftUIView: View {
                 }
             }
         }
+            .scrollContentBackground(.hidden)
             .sheet(isPresented: $showActionSheet, onDismiss: {
                 print("Dismiss")
             }, content: {
@@ -143,22 +150,13 @@ struct  SavedResultsSwiftUIView: View {
         // load most recent decision
         if savedDecks.first != nil {
             saveLastDecision(deck: savedDecks.first!, cards: savedDecks.first!.savedCardsArray)
-            if #available(iOS 14.0, *) {
-                WidgetCenter.shared.reloadAllTimelines()
-            } else {
-                // Fallback on earlier versions
-            }
+            WidgetCenter.shared.reloadAllTimelines()
         } else {
             // do something if history is empty
             let status = "No decision made"
             let lastDecision = Decision(deckname: status, date: Date(), selectedCards: [])
             saveJSON(named: "lastDecision", object: lastDecision)
-            
-            if #available(iOS 14.0, *) {
                 WidgetCenter.shared.reloadAllTimelines()
-            } else {
-                // Fallback on earlier versions
-            }
         }
         
     }
@@ -167,9 +165,7 @@ struct  SavedResultsSwiftUIView: View {
         var resultString: String
         
         resultString = "Deck: \(String(deck.deckName ?? ""))\r"
-        
         resultString += "\r Selected cards:\r"
-        
         for item in deck.savedCardsArray {
             resultString += "- \(String(item.cardName ?? ""))\r"
         }
@@ -185,7 +181,6 @@ struct  SavedResultsSwiftUIView: View {
         }
         
         let lastDecision = Decision(deckname: deck.wrappedDeckName, date: Date(), selectedCards: selectedCards)
-        
         saveJSON(named: "lastDecision", object: lastDecision)
     }
 }

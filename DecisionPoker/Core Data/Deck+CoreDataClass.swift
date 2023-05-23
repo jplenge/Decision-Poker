@@ -59,6 +59,8 @@ public class Deck: NSManagedObject {
             }
         }
         
+        print("Played game")
+        
         return selected
         
     }

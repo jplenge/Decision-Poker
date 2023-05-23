@@ -30,13 +30,12 @@ struct StartSwiftUIView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 VStack {
                     Group {
-                        
                         Spacer()
-                        
+
                         Text("Decision Poker")
                             .fontWeight(.bold)
                             .scaledFont(name: theme.currentFont, size: 38)
@@ -52,8 +51,6 @@ struct StartSwiftUIView: View {
                     Spacer()
                     
                     VStack {
-                        NavigationLink(destination: DirectionsSwiftUIView(), isActive: $isShowingDirectionsView) { EmptyView() }
-                        
                         Button(action: {
                             self.isShowingDirectionsView = true
                         }, label: {
@@ -66,8 +63,6 @@ struct StartSwiftUIView: View {
                     Spacer()
                     
                     VStack {
-                        NavigationLink(destination: DecksSwiftUIView(), isActive: $isShowingDealingView) { EmptyView() }
-                        
                         Button(action: {
                             self.isShowingDealingView = true
                         }, label: {
@@ -81,9 +76,6 @@ struct StartSwiftUIView: View {
                     Spacer()
                     
                     VStack {
-                        NavigationLink(destination: SavedResultsSwiftUIView(showBackButton: .constant(false)),
-                                       isActive: $isShowingSavedResultsView) { EmptyView() }
-                        
                         Button(action: {
                             self.isShowingSavedResultsView = true
                         }, label: {
@@ -106,13 +98,12 @@ struct StartSwiftUIView: View {
                         })
                         .disabled(!MFMailComposeViewController.canSendMail())
                         .sheet(isPresented: $isShowingMailView) {
-                            MailView(result: self.$result) 
+                            MailView(result: self.$result)
                         }
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
-                    
+                    .navigationBarTitle("", displayMode: .inline)
                     Spacer()
-                        .navigationBarTitle("", displayMode: .inline)
                 }
                 .navigationBarHidden(self.navBarHidden)
                 .onAppear(perform: {
@@ -131,33 +122,30 @@ struct StartSwiftUIView: View {
                 })
                 
                 VStack {
-                    
                     Spacer()
-                    
                     HStack {
-                        
                         Spacer()
-                        
                         Group {
-                            
-                        NavigationLink(destination: SettingsUIView(), isActive: $isShowingSettingsView) { EmptyView() }
-                        
-                        Button(action: {
-                            self.isShowingSettingsView = true
-                        }, label: {
-                            Image(systemName: "gear")
-                                .imageScale(.large)
-                        })
-                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
-                        .padding()
+                            Button(action: {
+                                self.isShowingSettingsView = true
+                            }, label: {
+                                Image(systemName: "gear")
+                                    .imageScale(.large)
+                            })
+                            .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                            .padding()
                         }
                     }
                 }
             }
+            .navigationDestination(isPresented: $isShowingDirectionsView, destination: {DirectionsSwiftUIView() })
+            .navigationDestination(isPresented: $isShowingDealingView, destination: {DecksSwiftUIView() })
+            .navigationDestination(isPresented: $isShowingSavedResultsView, destination: {SavedResultsSwiftUIView(showBackButton: .constant(false)) })
+            .navigationDestination(isPresented: $isShowingSettingsView, destination: { SettingsUIView() })
             .background(theme.currentBackgroundColor)
             .edgesIgnoringSafeArea(.all)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .tint(theme.currentTextColor)
     }
 }
 

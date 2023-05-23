@@ -25,7 +25,6 @@ struct DirectionsSwiftUIView: View {
                 Spacer()
             }
         }
-        .navigationBarTitle("Directions", displayMode: .inline)
-        .navigationBarHidden(false)
+        .navigationTitle("Directions")
     }
 }

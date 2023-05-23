@@ -47,41 +47,42 @@ struct DecksSwiftUIView: View {
     @State var isPresented = false
     
     var body: some View {
-            VStack(alignment: .leading) {
-                List {
-                    if !decks.isEmpty {
-                        ForEach(decks, id:\.deckName) { deck in
-                            NavigationLink(destination: CardsSwiftUIView(deck: deck)) {
-                                DeckCell(deck: deck)
-                            }
+        VStack(alignment: .leading) {
+            List {
+                if !decks.isEmpty {
+                    ForEach(decks, id:\.deckName) { deck in
+                        NavigationLink(destination: CardsSwiftUIView(deck: deck)) {
+                            DeckCell(deck: deck)
                         }
-                        .onDelete(perform: deleteDeck)
-                        .listRowBackground(theme.currentBackgroundColor)
                     }
+                    .onDelete(perform: deleteDeck)
+                    .listRowBackground(theme.currentBackgroundColor)
                 }
-                .background(theme.currentBackgroundColor)
-                .scrollContentBackground(.hidden)
-                            .sheet(isPresented: $isPresented) {
-                                AddDeckView {newDeckName, newDeckComment in
-                                    self.createDeck(newDeckName: newDeckName, newDeckComment: newDeckComment)
-                                    self.isPresented = false
-                                }
-                            }
-                            .navigationBarTitle("Decks", displayMode: .inline)
-                            .onAppear(perform: {
-                                self.isPresented = false
-                            })
-                            .navigationBarItems(trailing: Button(action: {
-                                do {
-                                    try managedObjectContext.save()
-                                } catch {
-                                    print(error)
-                                }
-                                self.isPresented.toggle()
-                            }, label: {
-                                Image(systemName: "plus")
-                                    .imageScale(.large)
-                            }))
+            }
+            .background(theme.currentBackgroundColor)
+            .scrollContentBackground(.hidden)
+            .sheet(isPresented: $isPresented) {
+                AddDeckView {newDeckName, newDeckComment in
+                    self.createDeck(newDeckName: newDeckName, newDeckComment: newDeckComment)
+                    self.isPresented = false
+                }
+            }
+            .navigationTitle("Decks")
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear(perform: {
+                self.isPresented = false
+            })
+            .navigationBarItems(trailing: Button(action: {
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print(error)
+                }
+                self.isPresented.toggle()
+            }, label: {
+                Image(systemName: "plus")
+                    .imageScale(.large)
+            }))
         }
     }
 
@@ -90,14 +91,14 @@ struct DecksSwiftUIView: View {
             let deck = self.decks[index]
             self.managedObjectContext.delete(deck)
         }
-
+        
         do {
             try self.managedObjectContext.save()
         } catch {
             print("error when deleting deck: \(error)")
         }
     }
-
+    
     private func createDeck(newDeckName: String, newDeckComment: String) {
         let newDeck = Deck(context: self.managedObjectContext)
         newDeck.deckName = newDeckName
@@ -105,7 +106,7 @@ struct DecksSwiftUIView: View {
         newDeck.id = UUID()
         newDeck.decksTablePosition = 99
         newDeck.numberOfCardsToPick = 0
-
+        
         do {
             try self.managedObjectContext.save()
         } catch {

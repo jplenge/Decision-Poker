@@ -22,17 +22,3 @@ struct StartViewButtonStyle: ButtonStyle {
             .clipShape(Capsule())
     }
 }
-
-//struct StartViewButtonStyleCircle: ButtonStyle {
-//    var backcolor: Color = .green
-//    var forecolor: Color = .white
-//    
-//    public func makeBody(configuration: StartViewButtonStyle.Configuration) -> some View {
-//        configuration.label
-//            .foregroundColor(forecolor)
-//            .padding(10)
-//            .background(backcolor)
-//            .compositingGroup()
-//            .clipShape(Circle())
-//    }
-//}
