@@ -28,7 +28,7 @@ struct CheatPickerView: View {
                             Button(action: {
                                 self.selectedIndex = index
                                 self.pickedCard = possibleCards[index]
-                            }) {
+                            }, label: {
                                 HStack {
                                     Text(possibleCards[index].wrappedCardName)
                                         .scaledFont(name: theme.currentFont, size: 26)
@@ -46,7 +46,7 @@ struct CheatPickerView: View {
                                         }
                                     }
                                 }.foregroundColor(.black)
-                            }.padding(.top)
+                            }).padding(.top)
                         }
                         .listRowBackground(theme.currentBackgroundColor)
                     }
@@ -61,10 +61,10 @@ struct CheatPickerView: View {
                         
                         Button(action: {
                             self.pickCard()
-                        }) {
+                        }, label: {
                             Text("Pick Card")
                                 .scaledFont(name: theme.currentFont, size: 26)
-                        }
+                        })
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                         Spacer()
                     }

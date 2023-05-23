@@ -22,9 +22,7 @@ struct FinalResultSwiftUIView: View {
     
     // required for going home to first screen
     @EnvironmentObject var appState: AppState
-    
 
-    
     var body: some View {
         let view = ZStack {
             
@@ -84,9 +82,9 @@ struct FinalResultSwiftUIView: View {
                                 // Fallback on earlier versions
                             }
                                 self.isShowingSavedResults = true
-                        }) {
+                        }, label: {
                             Text("Save").scaledFont(name: theme.currentFont, size: 26)
-                        }
+                        })
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor,
                                                           forecolor: theme.currentBackgroundColor))
                     
@@ -98,9 +96,9 @@ struct FinalResultSwiftUIView: View {
                         
                         Button(action: {
                             self.appState.moveToRoot = true
-                        }) {
+                        }, label: {
                             Text("Done").scaledFont(name: theme.currentFont, size: 26)
-                        }
+                        })
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     
                     }.padding(.top, 5)
@@ -116,10 +114,10 @@ struct FinalResultSwiftUIView: View {
                         
                         Button(action: {
                             self.showActionSheet = true
-                        }) {
+                        }, label: {
                             Image(systemName: "square.and.arrow.up").imageScale(.large)
-                        }
-                        .buttonStyle(StartViewButtonStyleCircle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        })
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                         
                     }.padding()
                 }
@@ -147,8 +145,7 @@ struct FinalResultSwiftUIView: View {
         
         return resultString
     }
-    
-    
+
     func saveLastDecision(deck: Deck, cards: [Card]) {
         var selectedCards: [String] = []
         
@@ -160,8 +157,7 @@ struct FinalResultSwiftUIView: View {
         
         saveJSON(named: "lastDecision", object: lastDecision)
     }
-    
-    
+
     func saveResults(deck: Deck, cards: [Card]) {
         let savedDeck = SavedDeck(context: managedObjectContext)
         savedDeck.deckName = deck.deckName

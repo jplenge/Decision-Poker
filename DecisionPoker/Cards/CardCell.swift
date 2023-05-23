@@ -32,12 +32,12 @@ struct CardCell: View {
                 
                 Button(action: {
                     self.isShowingComment.toggle()
-                }) {
+                }, label: {
                     Image(systemName: "info.circle")
                         .frame(width: 22, height: 22)
                         .foregroundColor(theme.currentButtonBackgroundColor)
                         .padding()
-                }
+                })
                 .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                 
                 Toggle(isOn: $card.cardIncluded) {

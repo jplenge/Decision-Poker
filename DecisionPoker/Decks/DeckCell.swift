@@ -19,7 +19,7 @@ struct DeckCell: View {
     @State var low = 1
     
     @State var gameResult: [Card] = []
-
+    
     var body: some View {
         let view = ZStack {
             VStack {
@@ -35,21 +35,21 @@ struct DeckCell: View {
                     
                     Button(action: {
                         self.isShowingComment.toggle()
-                    }) {
+                    }, label: {
                         Image(systemName: "info.circle")
                             .frame(width: 40, height: 40)
                             .foregroundColor(theme.currentButtonBackgroundColor)
                             .padding()
-                    }.buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
+                    }).buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                 }
-                                
+                
                 if isShowingComment {
                     
                     TextView(text: $editableText) {
                         $0.isEditable = true
                         $0.backgroundColor = theme.currentBackgroundColorUI
                         $0.font = UIFont(name: theme.currentFont, size: 13)
-                        $0.textColor = theme.currentTextColorUI       
+                        $0.textColor = theme.currentTextColorUI
                     }
                     .frame(height: 150)
                     .onAppear {
@@ -89,7 +89,7 @@ struct DeckCell: View {
                     Spacer()
                         .frame(width: 10)
                     
-                    Stepper("", value: $stepperValue, in: 0...self.deck.activeCards, step: 1, onEditingChanged: {didChange in
+                    Stepper("", value: $stepperValue, in: 0...self.deck.activeCards, step: 1, onEditingChanged: {_ in
                         self.deck.numberOfCardsToPick = Int16(self.stepperValue)
                     })
                     .onAppear {
@@ -120,11 +120,12 @@ struct DeckCell: View {
                     Button(action: {
                         gameResult = deck.playGame()
                         self.isShowingResultView = true
-                    }) {
+                    }, label: {
                         Text("Deal")
                             .scaledFont(name: theme.currentFont, size: 20)
                             .padding(.horizontal)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                    })
+                    .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                 }
                 
                 Spacer()

@@ -39,10 +39,10 @@ struct DealResultSwiftUIView: View {
                                    isActive: $isShowingFinalResultView) { EmptyView() }
                     Button(action: {
                         self.isShowingFinalResultView = true
-                    }) {
+                    }, label: {
                         Text("Hold 'em!")
                             .scaledFont(name: theme.currentFont, size: 26)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                    }).buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     .padding()
                 }
                 
@@ -73,10 +73,10 @@ struct DealResultSwiftUIView: View {
                     
                     Button(action: {
                         self.cheatPickerIsPresented = true
-                    }) {
+                    }, label: {
                         Text("Cheat")
                             .scaledFont(name: theme.currentFont, size: 14)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                    }).buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     
                     Spacer()
                     
@@ -84,10 +84,10 @@ struct DealResultSwiftUIView: View {
                         self.results[self.index] = self.selectedDeck.repickCard(selectedCards: self.results, current: self.results[self.index])
                         self.card =  self.results[self.index]
                         print(self.results[self.index])
-                    }) {
+                    }, label: {
                         Text("Redraw")
                             .scaledFont(name: theme.currentFont, size: 14)
-                    }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                    }).buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                 }
             }.sheet(isPresented: $cheatPickerIsPresented) {
                 let possibleCards = updateSelection(possibleCards: selectedDeck.childCardsActiveArray,

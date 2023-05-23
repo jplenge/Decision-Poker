@@ -195,8 +195,8 @@ struct DecisionPokerWidget: Widget {
 struct DecisionPokerWidget_Previews: PreviewProvider {
     static var previews: some View {
         DecisionPokerWidgetEntryView(entry: DecisionEntry(date: Date(),
-                                                          decision: Decision(deckname: "House Hold Chores and other Things and some  more ffdfdf fdfdf fdfdf ", date: Date(), selectedCards: ["rot", "green", "violett"])))
+                                                          decision: Decision(deckname: "House Hold Chores and other Things", date: Date(), selectedCards: ["rot", "green", "violett"])))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
-            .environment(\.locale, Locale(identifier: "en"))
+            .environment(\.locale, Locale(identifier: "de"))
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingsUIView: View {
     
     @State private var selectedTheme : Int = UserDefaults.standard.integer(forKey: "SelectedTheme")
-
+    
     @State var selectedSharingMethod : Int = 0
     
     // required for going home to first screen
@@ -27,26 +27,22 @@ struct SettingsUIView: View {
         UINavigationBar
             .appearance()
             .titleTextAttributes = [.foregroundColor : theme.currentTextColorUI ?? UIColor.white, .font : UIFont(name: theme.currentFont, size: 20) as Any]
-        }
+    }
     
     var body: some View {
-        
         VStack(alignment: .center) {
             List {
                 Section(header:  HStack {
                     Text("Theme")
                         .scaledFont(name: theme.currentFont, size: 16)
-                        .foregroundColor(theme.sectionHeaderColor)
                         .padding()
-                    
-                    Spacer()
                 }
-                .background(Color.white)
-                .listRowInsets(EdgeInsets(
-                                top: 0,
-                                leading: 0,
-                                bottom: 0,
-                                trailing: 0))
+                    .background(theme.sectionHeaderColor)
+                    .listRowInsets(EdgeInsets(
+                        top: 0,
+                        leading: 0,
+                        bottom: 0,
+                        trailing: 0))
                 ) {
                     ForEach(theme.themes.indices, id: \.self) { index in
                         HStack {
@@ -66,8 +62,7 @@ struct SettingsUIView: View {
                                 theme.startImage = theme.startImageChoices[index]
                                 UserDefaults.standard.set(index, forKey: "SelectedTheme")
                                 self.appState.moveToRoot = true
-                            }) {
-                                
+                            }, label: {
                                 ZStack {
                                     Circle()
                                         .fill(index == selectedTheme ? theme.currentButtonBackgroundColor : theme.unselectedRadioButtonBackgroundColor)
@@ -78,21 +73,16 @@ struct SettingsUIView: View {
                                         Circle().stroke(theme.currentButtonBackgroundColor, lineWidth: 4).frame(width: 25, height: 25)
                                     }
                                 }
-                            }
+                            })
                         }
                     }
                     .listRowBackground(theme.currentBackgroundColor)
                 }
             }
-            .onAppear {
-                UITableView.appearance().backgroundColor = .clear
-                UITableViewCell.appearance().backgroundColor = .clear
-            }
+            .background(theme.currentBackgroundColor)
+            .scrollContentBackground(.hidden)
             .navigationBarTitle("Settings", displayMode: .inline)
             .listStyle(GroupedListStyle())
-            
-            Spacer()
         }
-        .background(theme.currentBackgroundColor)
     }
 }

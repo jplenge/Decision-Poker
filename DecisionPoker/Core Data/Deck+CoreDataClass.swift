@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 public class Deck: NSManagedObject {
     
     public var wrappedDeckName: String {

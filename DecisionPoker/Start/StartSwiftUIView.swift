@@ -56,10 +56,11 @@ struct StartSwiftUIView: View {
                         
                         Button(action: {
                             self.isShowingDirectionsView = true
-                        }) {
+                        }, label: {
                             Text("Directions")
                                 .scaledFont(name: theme.currentFont, size: 18)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        })
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
                     
                     Spacer()
@@ -69,11 +70,12 @@ struct StartSwiftUIView: View {
                         
                         Button(action: {
                             self.isShowingDealingView = true
-                        }) {
+                        }, label: {
                             Text("Start Dealing Decisions!")
                                 .scaledFont(name: theme.currentFont, size: 18)
                                 .font(.headline)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        })
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
                     
                     Spacer()
@@ -84,10 +86,11 @@ struct StartSwiftUIView: View {
                         
                         Button(action: {
                             self.isShowingSavedResultsView = true
-                        }) {
+                        }, label: {
                             Text("Saved Decisions")
                                 .scaledFont(name: theme.currentFont, size: 18)
-                        }.buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        })
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                     }
                     
                     Spacer()
@@ -97,10 +100,10 @@ struct StartSwiftUIView: View {
                         Button(action: {
                             self.isShowingMailView.toggle()
                             print("tapped")
-                        }) {
+                        }, label: {
                             Text("Contact Us")
                                 .scaledFont(name: theme.currentFont, size: 18)
-                        }
+                        })
                         .disabled(!MFMailComposeViewController.canSendMail())
                         .sheet(isPresented: $isShowingMailView) {
                             MailView(result: self.$result) 
@@ -126,7 +129,6 @@ struct StartSwiftUIView: View {
                         
                     }
                 })
-                .background(theme.currentBackgroundColor)
                 
                 VStack {
                     
@@ -142,10 +144,11 @@ struct StartSwiftUIView: View {
                         
                         Button(action: {
                             self.isShowingSettingsView = true
-                        }) {
+                        }, label: {
                             Image(systemName: "gear")
                                 .imageScale(.large)
-                        }.buttonStyle(StartViewButtonStyleCircle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        })
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
                         .padding()
                         }
                     }
@@ -155,5 +158,11 @@ struct StartSwiftUIView: View {
             .edgesIgnoringSafeArea(.all)
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+struct StartSwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        StartSwiftUIView().environmentObject(AppState())
     }
 }

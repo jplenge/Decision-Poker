@@ -17,7 +17,6 @@ struct CardsSwiftUIView: View {
     @State var isShowingDeckComment: Bool = false
     @State var editableText: String = ""
     @State var editableTextField: String = ""
-    
 
     var body: some View {
         
@@ -38,12 +37,12 @@ struct CardsSwiftUIView: View {
                     
                     Button(action: {
                         self.isShowingDeckComment.toggle()
-                    }) {
+                    }, label: {
                         Image(systemName: "info.circle")
                             .frame(width: 22, height: 22)
                             .foregroundColor(theme.currentButtonBackgroundColor)
                             .padding()
-                    }
+                    })
                     .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                     
                     Spacer()
@@ -78,6 +77,8 @@ struct CardsSwiftUIView: View {
             //                if deck.activeCards == 0 {showingAlert.toggle()}
             //            })
         }
+        .background(theme.currentBackgroundColor)
+        .scrollContentBackground(.hidden)
         .sheet(isPresented: $isPresented) {
             AddCardView {newCardName, newCardComment in
                 self.addCard(newCardName: newCardName, newCardComment: newCardComment)
