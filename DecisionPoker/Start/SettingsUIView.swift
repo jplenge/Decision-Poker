@@ -14,9 +14,6 @@ struct SettingsUIView: View {
     
     @State var selectedSharingMethod : Int = 0
     
-    // required for going home to first screen
-    @EnvironmentObject var appState: AppState
-    
     init() {
         UINavigationBar
             .appearance()
@@ -61,7 +58,6 @@ struct SettingsUIView: View {
                                 theme.sectionHeaderColor = theme.sectionHeaderColorChoices[index]
                                 theme.startImage = theme.startImageChoices[index]
                                 UserDefaults.standard.set(index, forKey: "SelectedTheme")
-                                self.appState.moveToRoot = true
                             }, label: {
                                 ZStack {
                                     Circle()

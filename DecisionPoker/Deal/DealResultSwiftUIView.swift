@@ -16,8 +16,10 @@ struct DealResultSwiftUIView: View {
     
     @State var isShowingFinalResultView: Bool = false
     
+    @Binding var path: NavigationPath
+
     @Environment(\.managedObjectContext) var managedObjectContext
-       
+
     var body: some View {   
         ZStack {
             List {
@@ -35,7 +37,8 @@ struct DealResultSwiftUIView: View {
                 Spacer()
                 VStack {
                     Button(action: {
-                        self.isShowingFinalResultView = true
+                        path.append(Selected.finalresultview)
+                        // self.isShowingFinalResultView = true
                     }, label: {
                         Text("Hold 'em!")
                             .scaledFont(name: theme.currentFont, size: 26)
@@ -45,9 +48,18 @@ struct DealResultSwiftUIView: View {
                 
             }
         }
-        .navigationDestination(isPresented: $isShowingFinalResultView,
-                               destination: {  FinalResultSwiftUIView(selectedDeck: selectedDeck,
-                                                                      results: results) })
+        .navigationDestination(for: Selected.self) { _ in
+            FinalResultSwiftUIView(selectedDeck: selectedDeck,
+                                                   results: results,
+                                                path: $path)
+        }
+//        .navigationDestination(isPresented: $isShowingFinalResultView,
+//                               destination: {  FinalResultSwiftUIView(selectedDeck: selectedDeck,
+//                                                                      results: results) })
+    }
+    
+    enum Selected {
+        case finalresultview
     }
     
     struct ResultViewCell: View {

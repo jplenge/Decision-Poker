@@ -14,14 +14,14 @@ struct  SavedResultsSwiftUIView: View {
     
     @Binding var showBackButton: Bool
     
-    // required for going home to first screen
-    @EnvironmentObject var appState: AppState
-    
+    @Binding var path: NavigationPath
+
     @State private var showActionSheet: Bool = false
     @State private var sharedString: String = ""
     
-    init(showBackButton: Binding<Bool>) {
+    init(showBackButton: Binding<Bool>, path: Binding<NavigationPath>) {
         self._showBackButton = showBackButton
+        self._path = path
         UITableView.appearance().allowsSelection = true
     }
     
@@ -114,7 +114,7 @@ struct  SavedResultsSwiftUIView: View {
                         Spacer()
                         Group {
                             Button(action: {
-                                self.appState.moveToRoot = true
+                                path.removeLast(path.count)
                             }, label: {
                                 Text("Done").scaledFont(name: theme.currentFont, size: 26)
                             })

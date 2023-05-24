@@ -1,42 +1,88 @@
 //
-//  AppDelegate.swift
+//  DecisionPokerApp.swift
 //  DecisionPoker
 //
-//  Created by Jodi Szarko on 6/27/19.
-//  Copyright © 2019 Jodi Szarko. All rights reserved.
+//  Created by Jürgen Plenge on 23.05.23.
+//  Copyright © 2023 Jodi Szarko. All rights reserved.
 //
-
-import UIKit
+import SwiftUI
 import CoreData
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+@main
+struct DecisionPokerApp: App {
+    let persistenceController = PersistenceController.shared
     
-    func deleteAllData(entity: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.returnsObjectsAsFaults = false
-        
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            for managedObject in results {
-                if let managedObjectData:NSManagedObject = managedObject as? NSManagedObject {
-                    managedContext.delete(managedObjectData)
-                }
+    init() {
+        if !isAppAlreadyLaunchedOnce() {
+            deleteAllData(entity: "Deck")
+            deleteAllData(entity: "Card")
+            firstTimeDataBaseInit()
+            UserDefaults.standard.set(0, forKey: "SelectedTheme")
+        } else {
+            if UserDefaults.standard.object(forKey: "SelectedTheme") == nil {
+                UserDefaults.standard.set(0, forKey: "SelectedTheme")
             }
-        } catch let error as NSError {
-            print("Delete all data in \(entity) error : \(error) \(error.userInfo)")
+        }
+        
+        // check if lastDecision json file exists
+        if let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.de.ipomic.DecisionPoker")?.appendingPathComponent("lastDecision") {
+            
+            if !FileManager.default.fileExists(atPath: fileURL.path) {
+                let status = "No decision made"
+                let lastDecision = Decision(deckname: status, date: Date(), selectedCards: [])
+                saveJSON(named: "lastDecision", object: lastDecision)
+            }
+        } else {
+            print("Error: can not create json file on startup")
         }
     }
     
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }
+    }
+}
+
+func isAppAlreadyLaunchedOnce() -> Bool {
+    let defaults = UserDefaults.standard
+    
+    if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
+        print("App already launched : \(isAppAlreadyLaunchedOnce)")
+        return true
+    } else {
+        defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+        print("App launched first time")
+        return false
+    }
+}
+
+func deleteAllData(entity: String) {
+    // guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return }
+    let persistenceController = PersistenceController.shared
+    let managedContext = persistenceController.container.viewContext
+    
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+    fetchRequest.returnsObjectsAsFaults = false
+    
+    do {
+        let results = try managedContext.fetch(fetchRequest)
+        for managedObject in results {
+            if let managedObjectData:NSManagedObject = managedObject as? NSManagedObject {
+                managedContext.delete(managedObjectData)
+            }
+        }
+    } catch let error as NSError {
+        print("Delete all data in \(entity) error : \(error) \(error.userInfo)")
+    }
+}
+
     func firstTimeDataBaseInit() {
-        
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        let context = appDelegate?.persistentContainer.viewContext
-        
-        let cardRed = Card(context: context!)
+        let persistenceController = PersistenceController.shared
+        let context = persistenceController.container.viewContext
+
+        let cardRed = Card(context: context)
         cardRed.cardName = NSLocalizedString("red", comment: "")
         cardRed.cardIncluded = true
         cardRed.cardComment = NSLocalizedString("""
@@ -46,8 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardRed.cardInformation = false
         cardRed.cardsTablePosition = 0
         cardRed.id = UUID()
-        
-        let cardOrange = Card(context: context!)
+
+        let cardOrange = Card(context: context)
         cardOrange.cardName = NSLocalizedString("orange", comment: "")
         cardOrange.cardIncluded = true
         cardOrange.cardComment = NSLocalizedString("""
@@ -57,8 +103,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardOrange.cardInformation = false
         cardOrange.cardsTablePosition = 1
         cardOrange.id = UUID()
-        
-        let cardYellow = Card(context: context!)
+
+        let cardYellow = Card(context: context)
         cardYellow.cardName = NSLocalizedString("yellow", comment: "")
         cardYellow.cardIncluded = true
         cardYellow.cardComment = NSLocalizedString("""
@@ -68,8 +114,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardYellow.cardInformation = false
         cardYellow.cardsTablePosition = 2
         cardYellow.id = UUID()
-        
-        let cardGreen = Card(context: context!)
+
+        let cardGreen = Card(context: context)
         cardGreen.cardName = NSLocalizedString("green", comment: "")
         cardGreen.cardIncluded = true
         cardGreen.cardComment = NSLocalizedString("""
@@ -79,8 +125,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardGreen.cardInformation = false
         cardGreen.cardsTablePosition = 3
         cardGreen.id = UUID()
-        
-        let cardBlue = Card(context: context!)
+
+        let cardBlue = Card(context: context)
         cardBlue.cardName = NSLocalizedString("blue", comment: "")
         cardBlue.cardIncluded = true
         cardBlue.cardComment = NSLocalizedString("""
@@ -90,8 +136,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardBlue.cardInformation = false
         cardBlue.cardsTablePosition = 4
         cardBlue.id = UUID()
-        
-        let cardIndigo = Card(context: context!)
+
+        let cardIndigo = Card(context: context)
         cardIndigo.cardName = NSLocalizedString("indigo", comment: "")
         cardIndigo.cardIncluded = true
         cardIndigo.cardComment = NSLocalizedString("""
@@ -101,8 +147,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardIndigo.cardInformation = false
         cardIndigo.cardsTablePosition = 5
         cardIndigo.id = UUID()
-        
-        let cardViolet = Card(context: context!)
+
+        let cardViolet = Card(context: context)
         cardViolet.cardName = NSLocalizedString("violet", comment: "")
         cardViolet.cardIncluded = true
         cardViolet.cardComment = NSLocalizedString("""
@@ -112,8 +158,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardViolet.cardInformation = false
         cardViolet.cardsTablePosition = 6
         cardViolet.id = UUID()
-        
-        let cardDishes = Card(context: context!)
+
+        let cardDishes = Card(context: context)
         cardDishes.cardName = NSLocalizedString( "Do the dishes.", comment: "")
         cardDishes.cardIncluded = true
         cardDishes.cardComment = NSLocalizedString("""
@@ -123,8 +169,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             """, comment: "")
         cardDishes.cardsTablePosition = 0
         cardDishes.id = UUID()
-        
-        let cardFloor = Card(context: context!)
+
+        let cardFloor = Card(context: context)
         cardFloor.cardName = NSLocalizedString("Clean the floor.", comment: "")
         cardFloor.cardIncluded = true
         cardFloor.cardComment = NSLocalizedString("""
@@ -135,8 +181,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardFloor.cardInformation = false
         cardFloor.cardsTablePosition = 1
         cardFloor.id = UUID()
-        
-        let cardDust = Card(context: context!)
+
+        let cardDust = Card(context: context)
         cardDust.cardName = NSLocalizedString("Dust the livingroom.", comment: "")
         cardDust.cardIncluded = true
         cardDust.cardComment = NSLocalizedString("""
@@ -147,8 +193,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardDust.cardInformation = false
         cardDust.cardsTablePosition = 2
         cardDust.id = UUID()
-        
-        let cardDesk = Card(context: context!)
+
+        let cardDesk = Card(context: context)
         cardDesk.cardName = NSLocalizedString( "Organize my desk.", comment: "")
         cardDesk.cardIncluded = true
         cardDesk.cardComment = NSLocalizedString("""
@@ -159,8 +205,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardDesk.cardInformation = false
         cardDesk.cardsTablePosition = 3
         cardDesk.id = UUID()
-        
-        let cardLaundry = Card(context: context!)
+
+        let cardLaundry = Card(context: context)
         cardLaundry.cardName = NSLocalizedString("Do the laundry.", comment: "")
         cardLaundry.cardIncluded = true
         cardLaundry.cardComment = NSLocalizedString("""
@@ -171,8 +217,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cardLaundry.cardInformation = false
         cardLaundry.cardsTablePosition = 4
         cardLaundry.id = UUID()
-        
-        let choresDeck = Deck(context: context!)
+
+        let choresDeck = Deck(context: context)
         choresDeck.deckName = NSLocalizedString("Household Chores", comment: "")
         choresDeck.deckComment = NSLocalizedString("""
             Here are some typical household chores you might be in charge of. You can change the name of the deck if you want. Say you have five chores you
@@ -186,8 +232,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         choresDeck.dealButtonSelector = true
         choresDeck.decksTablePosition = 1
         choresDeck.id = UUID()
-        
-        let colorsDeck = Deck(context: context!)
+
+        let colorsDeck = Deck(context: context)
         colorsDeck.deckName = NSLocalizedString("Colors", comment: "")
         colorsDeck.deckComment = NSLocalizedString("""
             Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you
@@ -201,13 +247,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         colorsDeck.dealButtonSelector = true
         colorsDeck.decksTablePosition = 0
         colorsDeck.id = UUID()
-        
+
         choresDeck.addToChildCards(cardDishes)
         choresDeck.addToChildCards(cardFloor)
         choresDeck.addToChildCards(cardDust)
         choresDeck.addToChildCards(cardDesk)
         choresDeck.addToChildCards(cardLaundry)
-        
+
         colorsDeck.addToChildCards(cardRed)
         colorsDeck.addToChildCards(cardOrange)
         colorsDeck.addToChildCards(cardYellow)
@@ -215,168 +261,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         colorsDeck.addToChildCards(cardBlue)
         colorsDeck.addToChildCards(cardIndigo)
         colorsDeck.addToChildCards(cardViolet)
-        
+
         do {
-            try context!.save()
+            try context.save()
         } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
         }
-        
-    }
-    
-    func isAppAlreadyLaunchedOnce() -> Bool {
-        let defaults = UserDefaults.standard
-        
-        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
-            print("App already launched : \(isAppAlreadyLaunchedOnce)")
-            return true
-        } else {
-            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("App launched first time")
-            return false
-        }
-    }
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        if !isAppAlreadyLaunchedOnce() {
-            deleteAllData(entity: "Deck")
-            deleteAllData(entity: "Card")
-            firstTimeDataBaseInit()
-            
-            UserDefaults.standard.set(0, forKey: "SelectedTheme")
-        } else {
-            
-            if UserDefaults.standard.object(forKey: "SelectedTheme") == nil {
-                UserDefaults.standard.set(0, forKey: "SelectedTheme")
-            }
-            
-        }
-        
-        // check if lastDecision json file exists
-        if let fileURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.de.ipomic.DecisionPoker")?.appendingPathComponent("lastDecision") {
-        
-            if !FileManager.default.fileExists(atPath: fileURL.path) {
-                let status = "No decision made"
-                let lastDecision = Decision(deckname: status, date: Date(), selectedCards: [])
-                saveJSON(named: "lastDecision", object: lastDecision)
-            }
-        } else {
-            print("Error: can not create json file on startup")
-        }
-        
-        return true
-    }
-    
-    // MARK: UISceneSession Lifecycle
-    
-    func application(_ application: UIApplication,
-                     configurationForConnecting connectingSceneSession: UISceneSession,
-                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-    
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-    
-    // MARK: - Core Data stack
-    
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-         */
-        let container = NSPersistentContainer(name: "DecisionPoker")
-        container.loadPersistentStores(completionHandler: { (_, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application,
-                // although it may be useful during development.
-                
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-       
-    // MARK: - Core Data Saving support
-    
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application,
-                // although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-    
-}
 
-// MARK: - Core Data stack
-
-var persistentContainer: NSPersistentContainer = {
-    /*
-     The persistent container for the application. This implementation
-     creates and returns a container, having loaded the store for the
-     application to it. This property is optional since there are legitimate
-     error conditions that could cause the creation of the store to fail.
-     */
-    let container = NSPersistentContainer(name: "DecisionPoker")
-    container.loadPersistentStores(completionHandler: { (_, error) in
-        if let error = error as NSError? {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application,
-            // although it may be useful during development.
-            
-            /*
-             Typical reasons for an error here include:
-             * The parent directory does not exist, cannot be created, or disallows writing.
-             * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-             * The device is out of space.
-             * The store could not be migrated to the current model version.
-             Check the error message to determine what the actual problem was.
-             */
-            fatalError("Unresolved error \(error), \(error.userInfo)")
-        }
-    })
-    return container
-}()
-
-// MARK: - Core Data Saving support
-
-func saveContext () {
-    let context = persistentContainer.viewContext
-    if context.hasChanges {
-        do {
-            try context.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application,
-            // although it may be useful during development.
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
     }
-}

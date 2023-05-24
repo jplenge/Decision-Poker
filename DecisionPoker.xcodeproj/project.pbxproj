@@ -29,9 +29,12 @@
 		1B31DDC924BCDB270014F318 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31DDC824BCDB270014F318 /* ButtonStyle.swift */; };
 		1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */; };
 		1B51FB3F24A3E5DA00F4E80F /* StartSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */; };
-		1B51FB4124A3EC5600F4E80F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4024A3EC5600F4E80F /* SceneDelegate.swift */; };
 		1B51FB4324A3F9CB00F4E80F /* DecksSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */; };
 		1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4624A4934000F4E80F /* ThemeManager.swift */; };
+		1B5479B42A1D65020093D5C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B32A1D65020093D5C2 /* ContentView.swift */; };
+		1B5479B62A1D653C0093D5C2 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */; };
+		1B6437552A1D488F002BC3D5 /* DecisionPokerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */; };
+		1B6437772A1D4C94002BC3D5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6437762A1D4C94002BC3D5 /* Persistence.swift */; };
 		1B68D03F24A64D86004B02F2 /* CardsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */; };
 		1B6C710C251E36DC00BDFD61 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C710B251E36DC00BDFD61 /* AppState.swift */; };
 		1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */; };
@@ -58,7 +61,6 @@
 		1BDC63BE266AA8A500C5CA01 /* decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63BD266AA8A500C5CA01 /* decision.swift */; };
 		1BF3D14325698309003A9246 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF3D14225698309003A9246 /* MailView.swift */; };
 		A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8C22D72A8A00C14787 /* FontSetup.swift */; };
-		A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
 		A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -108,9 +110,12 @@
 		1B51FB2824A391E200F4E80F /* DecisionPoker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DecisionPoker 2.xcdatamodel"; sourceTree = "<group>"; };
 		1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsSwiftUIView.swift; sourceTree = "<group>"; };
 		1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSwiftUIView.swift; sourceTree = "<group>"; };
-		1B51FB4024A3EC5600F4E80F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksSwiftUIView.swift; sourceTree = "<group>"; };
 		1B51FB4624A4934000F4E80F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		1B5479B32A1D65020093D5C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
+		1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerApp.swift; sourceTree = "<group>"; };
+		1B6437762A1D4C94002BC3D5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSwiftUIView.swift; sourceTree = "<group>"; };
 		1B6C710B251E36DC00BDFD61 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		1B7CCD2522EB4A8F00999AEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -140,7 +145,6 @@
 		1BF3D14225698309003A9246 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A98F9F8C22D72A8A00C14787 /* FontSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSetup.swift; sourceTree = "<group>"; };
 		A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D58A7C22C4E49F00E608B8 /* DecisionPoker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DecisionPoker.xcdatamodel; sourceTree = "<group>"; };
 		A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D58A8322C4E4A000E608B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */,
+				1B5479B32A1D65020093D5C2 /* ContentView.swift */,
+				1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */,
 				1B29CFEB254B5F8100406090 /* SettingsUIView.swift */,
 				1BF3D14225698309003A9246 /* MailView.swift */,
 			);
@@ -242,8 +248,7 @@
 		1B7F907622D3406400812BE4 /* other */ = {
 			isa = PBXGroup;
 			children = (
-				A9D58A7422C4E49F00E608B8 /* AppDelegate.swift */,
-				1B51FB4024A3EC5600F4E80F /* SceneDelegate.swift */,
+				1B6437762A1D4C94002BC3D5 /* Persistence.swift */,
 				1B1902C624AA906900F1E94B /* DirectionsSwiftUIView.swift */,
 				A98F9F8C22D72A8A00C14787 /* FontSetup.swift */,
 				1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */,
@@ -338,6 +343,7 @@
 			children = (
 				1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */,
 				1B7F907222D33F5500812BE4 /* Core Data */,
+				1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */,
 				1B31DDCA24BCDF710014F318 /* Settings */,
 				1B51FB3B24A3D74700F4E80F /* Start */,
 				1B7F907422D33FDC00812BE4 /* Decks */,
@@ -505,7 +511,6 @@
 				1BD5E39526CD40B30051D76A /* saveJSON.swift in Sources */,
 				1BF3D14325698309003A9246 /* MailView.swift in Sources */,
 				1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */,
-				1B51FB4124A3EC5600F4E80F /* SceneDelegate.swift in Sources */,
 				1B1902C724AA906900F1E94B /* DirectionsSwiftUIView.swift in Sources */,
 				1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */,
 				1B51FB4324A3F9CB00F4E80F /* DecksSwiftUIView.swift in Sources */,
@@ -517,7 +522,9 @@
 				1B1902C324AA46B000F1E94B /* AddDeckView.swift in Sources */,
 				1B1902C124AA397D00F1E94B /* DeckCell.swift in Sources */,
 				1B1902C524AA523D00F1E94B /* TextView.swift in Sources */,
+				1B6437552A1D488F002BC3D5 /* DecisionPokerApp.swift in Sources */,
 				1B96E50C251A9081007420F2 /* dismissKeyboardExtension.swift in Sources */,
+				1B6437772A1D4C94002BC3D5 /* Persistence.swift in Sources */,
 				1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */,
 				1B29CFFB254F5B4800406090 /* ColorManager.swift in Sources */,
 				1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */,
@@ -525,6 +532,7 @@
 				1B1902D824ADC8A400F1E94B /* FinalResultSwiftUIView.swift in Sources */,
 				1B6C710C251E36DC00BDFD61 /* AppState.swift in Sources */,
 				1B68D03F24A64D86004B02F2 /* CardsSwiftUIView.swift in Sources */,
+				1B5479B42A1D65020093D5C2 /* ContentView.swift in Sources */,
 				1B29CFEC254B5F8100406090 /* SettingsUIView.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,
 				1B21A06724A73C3D00A56F34 /* Binding.swift in Sources */,
@@ -538,7 +546,7 @@
 				1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */,
 				1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */,
 				1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */,
-				A9D58A7522C4E49F00E608B8 /* AppDelegate.swift in Sources */,
+				1B5479B62A1D653C0093D5C2 /* AppTabNavigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

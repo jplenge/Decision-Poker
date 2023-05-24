@@ -15,13 +15,13 @@ struct FinalResultSwiftUIView: View {
     var selectedDeck: Deck
     var results: [Card]
     
+    @Binding var path: NavigationPath
+
     @State var isShowingSavedResults: Bool = false
     @State private var showActionSheet: Bool = false
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    // required for going home to first screen
-    @EnvironmentObject var appState: AppState
 
     var body: some View {
         let view = ZStack {
@@ -83,13 +83,13 @@ struct FinalResultSwiftUIView: View {
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor,
                                                           forecolor: theme.currentBackgroundColor))
                     }
-                    .navigationDestination(isPresented: $isShowingSavedResults, destination: { SavedResultsSwiftUIView(showBackButton: .constant(true))})
+                    .navigationDestination(isPresented: $isShowingSavedResults, destination: { SavedResultsSwiftUIView(showBackButton: .constant(true), path: $path)})
                     .padding(.bottom, 5)
                     .padding(.horizontal)
                     
                     Group {
                         Button(action: {
-                            self.appState.moveToRoot = true
+                            path.removeLast(path.count)
                         }, label: {
                             Text("Done").scaledFont(name: theme.currentFont, size: 26)
                         })

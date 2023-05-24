@@ -15,16 +15,15 @@ struct DirectionsSwiftUIView: View {
     var body: some View {
         ZStack {
             theme.currentBackgroundColor
-                .ignoresSafeArea()
             VStack {
                 Text(directions)
                     .font(Font.custom(theme.currentFont, size: 16.0, relativeTo: .title))
                     // .scaledFont(name: theme.currentFont, size: 18)
                     .foregroundColor(theme.currentTextColor)
-                    .padding()
+                    .lineSpacing(5.0)
+                    .padding(40)
                 Spacer()
             }
-        }
-        .navigationTitle("Directions")
+        } .navigationTitle("Directions")
     }
 }

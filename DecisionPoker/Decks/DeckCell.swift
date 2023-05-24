@@ -10,7 +10,8 @@ import SwiftUI
 
 struct DeckCell: View {
     @ObservedObject var deck: Deck
-    
+    @Binding var path: NavigationPath
+
     @State var isShowingResultView = false
     @State var isShowingComment = false
     @State var editableText = ""
@@ -19,7 +20,7 @@ struct DeckCell: View {
     @State var low = 1
     
     @State var gameResult: [Card] = []
-    
+
     var body: some View {
         let view = ZStack {
             VStack {
@@ -114,6 +115,7 @@ struct DeckCell: View {
                     Button(action: {
                         gameResult = deck.playGame()
                         self.isShowingResultView = true
+                        path.append("ResultView")
                     }, label: {
                         Text("Deal")
                             .scaledFont(name: theme.currentFont, size: 20)
@@ -123,9 +125,10 @@ struct DeckCell: View {
                 }
                 Spacer()
             }
+            .navigationDestination(for: String.self) { value in
+                DealResultSwiftUIView(selectedDeck: deck, results: gameResult, path: $path)
+            }
         }
-        .navigationDestination(isPresented:  $isShowingResultView,
-                               destination: { DealResultSwiftUIView(selectedDeck: deck, results: gameResult) })
         return view
     }
     
