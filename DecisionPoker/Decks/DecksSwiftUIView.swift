@@ -11,34 +11,18 @@ import CoreData
 
 struct DecksSwiftUIView: View {
     @Binding var path: NavigationPath
+    @State private var isPresented = false
     
     init(path: Binding<NavigationPath>) {
         self._path = path
-        
-        UITableView.appearance().backgroundColor = .clear
-        UITableView.appearance().allowsSelection = true
-        UITableViewCell.appearance().selectionStyle = .none
-        
-        // let navigationbarAppearance = UINavigationBarAppearance()
-        // navigationbarAppearance.configureWithOpaqueBackground()
-       // navigationbarAppearance.shadowColor = .clear
-        // navigationbarAppearance.backgroundColor = theme.currentBackgroundColorUI
-        // navigationbarAppearance.titleTextAttributes =  [.font: UIFont(name: theme.currentFont, size: 24)!, .foregroundColor: theme.currentTextColorUI ?? UIColor.white]
-        
-        let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
-        buttonAppearance.normal.titleTextAttributes = [.font: UIFont(name: theme.currentFont, size: 24)!, .foregroundColor: theme.currentTextColorUI ?? UIColor.white]
-        // navigationbarAppearance.buttonAppearance = buttonAppearance
-        
-        // UINavigationBar.appearance().standardAppearance = navigationbarAppearance
-        // UINavigationBar.appearance().scrollEdgeAppearance = navigationbarAppearance
-        
+
         UIStepper.appearance().setIncrementImage(UIImage(systemName: "plus"), for: .normal)
         UIStepper.appearance().setDecrementImage(UIImage(systemName: "minus"), for: .normal)
         UIStepper.appearance().tintColor = theme.currentBackgroundColorUI
     }
-    
+
     @Environment(\.managedObjectContext) var managedObjectContext
-    
+
     // fetch all decks from core data
     @FetchRequest(entity: Deck.entity(), sortDescriptors: [NSSortDescriptor(
         key: "decksTablePosition",
@@ -46,57 +30,72 @@ struct DecksSwiftUIView: View {
         selector: #selector(NSNumber.compare(_:))
     )]) var decks: FetchedResults<Deck>
     
-    @State var isPresented = false
-    
     var body: some View {
-            VStack(alignment: .leading) {
-                List {
-                    if !decks.isEmpty {
-                        ForEach(decks, id:\.deckName) { deck in
-                            NavigationLink(value: deck) {
-                                DeckCell(deck: deck, path: $path)
+        VStack(alignment: .leading) {
+            List {
+                if !decks.isEmpty {
+                    ForEach(decks, id:\.deckName) { deck in
+                        NavigationLink(value: deck) {
+                            DeckCell(deck: deck, path: $path)
+                        }
+                    }
+                    .onDelete(perform: deleteDeck)
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 8)
+                            .background(.clear)
+                            .foregroundColor(theme.currentBackgroundColor)
+                            .padding(
+                                EdgeInsets(
+                                    top: 5,
+                                    leading: 10,
+                                    bottom: 5,
+                                    trailing: 10
+                                )
+                            )
+                    )
+                    .listRowSeparator(.hidden)
+                }
+            }
+            .toolbarBackground(
+                theme.currentBackgroundColor,
+                for: .tabBar, .navigationBar)
+            .toolbarBackground(.visible, for: .tabBar, .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
+            .scrollContentBackground(.hidden)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                            VStack {
+                                Text("Decision Poker")
+                                    .font(Font(UIFont(name: theme.currentFont, size: 24)!))
+                                  .foregroundColor(Color.white)
                             }
                         }
-                        .onDelete(perform: deleteDeck)
-                        .listRowBackground(theme.currentBackgroundColor)
                     }
-                }
-                .overlay(Group {
-                    if decks.isEmpty {
-                        ZStack {
-                            theme.currentBackgroundColor.ignoresSafeArea()
-                        }
-                    }
-                })
-                .background(theme.currentBackgroundColor)
-                .scrollContentBackground(.hidden)
-                .sheet(isPresented: $isPresented) {
-                    AddDeckView {newDeckName, newDeckComment in
-                        self.createDeck(newDeckName: newDeckName, newDeckComment: newDeckComment)
-                        self.isPresented = false
-                    }
-                }
-                .navigationTitle("Decision Poker")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationDestination(for: Deck.self) { deck in
-                    CardsSwiftUIView(deck: deck)
-                }
-                
-                .onAppear(perform: {
-                    self.isPresented = false
-                })
-                .navigationBarItems(trailing: Button(action: {
-                    do {
-                        try managedObjectContext.save()
-                    } catch {
-                        print(error)
-                    }
-                    self.isPresented.toggle()
-                }, label: {
-                    Image(systemName: "plus")
-                        .imageScale(.large)
-                }))
+            .navigationDestination(for: Deck.self) { deck in
+                CardsSwiftUIView(deck: deck)
             }
+            .sheet(isPresented: self.$isPresented) {
+                AddDeckView {newDeckName, newDeckComment in
+                    self.createDeck(newDeckName: newDeckName, newDeckComment: newDeckComment)
+                    self.isPresented = false
+                }
+            }
+            .onAppear(perform: {
+                self.isPresented = false
+            })
+            .navigationBarItems(trailing: Button(action: {
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print(error)
+                }
+                self.isPresented.toggle()
+            }, label: {
+                Image(systemName: "plus")
+                    .imageScale(.medium)
+            }))
+        }
+        .background(CardView1().scaledToFit())
     }
     
     private func deleteDeck(at offsets: IndexSet) {

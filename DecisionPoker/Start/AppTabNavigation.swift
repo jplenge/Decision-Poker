@@ -34,10 +34,34 @@ struct AppTabNavigation: View {
                     }.accessibility(label: menuText)
                 }
                 .tag(Tab.decks)
-            
-            DirectionsSwiftUIView()
+            NavigationStack {
+                SavedResultsSwiftUIView(showBackButton: .constant(false), path: $path)
+            }
                 .tabItem {
-                    let menuText = Text("Directions", comment: "Directions menu tab title")
+                    let menuText = Text("Saved Decisions", comment: "Saved decisions menu tab title")
+                    Label {
+                        menuText
+                    } icon: {
+                        Image(systemName: "bookmark.circle.fill")
+                    }
+                }
+            NavigationStack {
+                SettingsUIView()
+            }
+                .tabItem {
+                    let menuText = Text("Settings", comment: "Settings menu tab title")
+                    Label {
+                        menuText
+                    } icon: {
+                        Image(systemName: "gearshape")
+                    }.accessibility(label: menuText)
+                }
+           
+            NavigationStack {
+                DirectionsSwiftUIView()
+            }
+                .tabItem {
+                    let menuText = Text("About", comment: "Directions menu tab title")
                     Label {
                         menuText
                     } icon: {
@@ -46,25 +70,9 @@ struct AppTabNavigation: View {
                 }
                 .tag(Tab.directions)
             
-            SavedResultsSwiftUIView(showBackButton: .constant(false), path: $path)
-                .tabItem {
-                    let menuText = Text("History", comment: "Saved decisions menu tab title")
-                    Label {
-                        menuText
-                    } icon: {
-                        Image(systemName: "list.bullet")
-                    }
-                }
+         
             
-            SettingsUIView()
-                .tabItem {
-                    let menuText = Text("Settings", comment: "Settings menu tab title")
-                    Label {
-                        menuText
-                    } icon: {
-                        Image(systemName: "list.bullet")
-                    }.accessibility(label: menuText)
-                }
+        
         }
         .tint(theme.currentTextColor)
     }

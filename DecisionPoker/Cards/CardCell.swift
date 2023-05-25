@@ -27,9 +27,10 @@ struct CardCell: View {
                     .onAppear(perform: {
                         editableTextField = card.wrappedCardName
                     })
-                
+                    
+
                 Spacer()
-                
+
                 Button(action: {
                     self.isShowingComment.toggle()
                 }, label: {
@@ -39,24 +40,36 @@ struct CardCell: View {
                         .padding()
                 })
                 .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
-                
+
                 Toggle(isOn: $card.cardIncluded) {
                    EmptyView()
                 }
                 .toggleStyle(CheckboxToggleStyle())
                 .foregroundColor(theme.currentButtonBackgroundColor)
                 .labelsHidden()
-                
+                .padding(EdgeInsets(
+                    top: 0,
+                    leading: 0,
+                    bottom: 0,
+                    trailing: 30
+                ))
             }
-            
+
             if isShowingComment {
-                
                 TextView(text: $editableText) {
                     $0.isEditable = true
                     $0.backgroundColor = theme.currentBackgroundColorUI
                     $0.font = UIFont(name: theme.currentFont, size: 13)
                     $0.textColor = theme.currentTextColorUI
                 }
+                .padding(
+                    EdgeInsets(
+                        top: -10,
+                        leading: 10,
+                        bottom: 0,
+                        trailing: 10
+                    )
+                )
                 .frame(height: 80)
                 .onAppear {
                     self.editableText = card.wrappedCardcomment

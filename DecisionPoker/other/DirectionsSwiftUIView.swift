@@ -14,16 +14,40 @@ struct DirectionsSwiftUIView: View {
     
     var body: some View {
         ZStack {
-            theme.currentBackgroundColor
             VStack {
                 Text(directions)
                     .font(Font.custom(theme.currentFont, size: 16.0, relativeTo: .title))
-                    // .scaledFont(name: theme.currentFont, size: 18)
                     .foregroundColor(theme.currentTextColor)
                     .lineSpacing(5.0)
-                    .padding(40)
+                    .padding(20)
+                    .background( theme.currentBackgroundColor)
+                    .cornerRadius(8)
                 Spacer()
             }
-        } .navigationTitle("Directions")
+            .padding(
+                EdgeInsets(
+                    top: 20,
+                    leading: 10,
+                    bottom: 10,
+                    trailing: 20
+                )
+            )
+        }
+        .background(CardView1().scaledToFit())
+        .toolbarBackground(
+            theme.currentBackgroundColor,
+            for: .tabBar, .navigationBar)
+        .toolbarBackground(.visible, for: .tabBar, .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
+        .scrollContentBackground(.hidden)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("Decision Poker")
+                        .font(Font(UIFont(name: theme.currentFont, size: 24)!))
+                        .foregroundColor(Color.white)
+                }
+            }
+        }
     }
 }

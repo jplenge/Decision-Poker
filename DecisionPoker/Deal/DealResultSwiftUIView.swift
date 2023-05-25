@@ -9,36 +9,57 @@
 import SwiftUI
 
 struct DealResultSwiftUIView: View {
-    
+   
     var selectedDeck: Deck
-    
     @State var results: [Card]
-    
-    @State var isShowingFinalResultView: Bool = false
-    
     @Binding var path: NavigationPath
 
     @Environment(\.managedObjectContext) var managedObjectContext
+    
+ 
 
-    var body: some View {   
+    var body: some View { 
         ZStack {
             List {
                 ForEach(results.indices, id: \.self) {index  in
                     ResultViewCell(card: self.results[index], index: index, selectedDeck: self.selectedDeck, results: self.$results)
                 }
-                .listRowBackground(theme.currentBackgroundColor)
+                .listRowBackground(
+                    RoundedRectangle(cornerRadius: 8)
+                        .background(.clear)
+                        .foregroundColor(theme.currentBackgroundColor)
+                        .padding(
+                            EdgeInsets(
+                                top: 5,
+                                leading: 10,
+                                bottom: 5,
+                                trailing: 10
+                            )
+                        )
+                )
+                .listRowSeparator(.hidden)
             }
-            .navigationTitle("First Hand")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                            VStack {
+                                Text("First Hand")
+                                    .font(Font(UIFont(name: theme.currentFont, size: 24)!))
+                                  .foregroundColor(Color.white)
+                            }
+                        }
+                    }
+            .toolbarBackground(
+                theme.currentBackgroundColor,
+                for: .tabBar, .navigationBar)
+            .toolbarBackground(.visible, for: .tabBar, .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
-            .background(theme.currentBackgroundColor)
             .scrollContentBackground(.hidden)
             
             VStack {
                 Spacer()
                 VStack {
                     Button(action: {
-                        path.append(Selected.finalresultview)
-                        // self.isShowingFinalResultView = true
+                        path.append(23)
                     }, label: {
                         Text("Hold 'em!")
                             .scaledFont(name: theme.currentFont, size: 26)
@@ -48,20 +69,19 @@ struct DealResultSwiftUIView: View {
                 
             }
         }
-        .navigationDestination(for: Selected.self) { _ in
+        //.navigationBarBackButtonHidden(true)
+        .background(CardView1().scaledToFit())
+        .navigationDestination(for: Int.self) { _ in
             FinalResultSwiftUIView(selectedDeck: selectedDeck,
-                                                   results: results,
+                                   results: results,
                                                 path: $path)
         }
-//        .navigationDestination(isPresented: $isShowingFinalResultView,
-//                               destination: {  FinalResultSwiftUIView(selectedDeck: selectedDeck,
-//                                                                      results: results) })
     }
     
-    enum Selected {
-        case finalresultview
-    }
-    
+//    enum Selected {
+//        case finalresultview
+//    }
+//
     struct ResultViewCell: View {
         @State var card: Card
         @State var index: Int

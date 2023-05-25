@@ -43,9 +43,9 @@ class ThemeManager {
     var sectionHeaderColorChoices = [ColorManager.ClassicGreen, ColorManager.ModernBlue, Color.black]
 
     // font options
-    var fontChoices = ["Marker Felt", "Helvetica Neue", "Helvetica Neue"]
+    let fontChoices = ["Marker Felt", "Helvetica Neue", "Helvetica Neue"]
     
-    var startImageChoices = ["StartImage-black", "StartImage-black", "StartImage-white"]
+    let startImageChoices = ["StartImage-black", "StartImage-black", "StartImage-white"]
 }
 
 var theme = ThemeManager()

@@ -11,14 +11,11 @@ import SwiftUI
 struct DeckCell: View {
     @ObservedObject var deck: Deck
     @Binding var path: NavigationPath
-
-    @State var isShowingResultView = false
     @State var isShowingComment = false
     @State var editableText = ""
     @State var editableTextField = ""
     @State var stepperValue = 0
     @State var low = 1
-    
     @State var gameResult: [Card] = []
 
     var body: some View {
@@ -113,8 +110,7 @@ struct DeckCell: View {
                 
                 VStack {
                     Button(action: {
-                        gameResult = deck.playGame()
-                        self.isShowingResultView = true
+                        gameResult = self.deck.playGame()
                         path.append("ResultView")
                     }, label: {
                         Text("Deal")
@@ -125,8 +121,8 @@ struct DeckCell: View {
                 }
                 Spacer()
             }
-            .navigationDestination(for: String.self) { value in
-                DealResultSwiftUIView(selectedDeck: deck, results: gameResult, path: $path)
+            .navigationDestination(for: String.self) { _ in
+                DealResultSwiftUIView(selectedDeck: self.deck, results: gameResult, path: self.$path)
             }
         }
         return view

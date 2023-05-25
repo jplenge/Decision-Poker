@@ -10,9 +10,9 @@ import SwiftUI
 
 struct CardsSwiftUIView: View {
     @ObservedObject var deck: Deck
-    
+
     @Environment(\.managedObjectContext) var managedObjectContext
-    
+
     @State var isPresented: Bool = false
     @State var isShowingDeckComment: Bool = false
     @State var editableText: String = ""
@@ -23,9 +23,7 @@ struct CardsSwiftUIView: View {
         List {
             VStack {
                 HStack {
-                    
                     Spacer()
-                    
                     TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveDeckTitle)
                         .multilineTextAlignment(.center)
                         .scaledFont(name: theme.currentFont, size: 28)
@@ -65,18 +63,42 @@ struct CardsSwiftUIView: View {
                 
                 Spacer()
             }
-            .listRowBackground(theme.currentBackgroundColor)
+            .listRowBackground(
+                RoundedRectangle(cornerRadius: 8)
+                    .background(.clear)
+                    .foregroundColor(theme.currentBackgroundColor)
+                    .padding(
+                        EdgeInsets(
+                            top: 5,
+                            leading: 0,
+                            bottom: 5,
+                            trailing: 0
+                        )
+                    )
+            )
+
+            //.listRowBackground(theme.currentBackgroundColor)
                         
             ForEach(deck.childCardsArray, id: \.id) { card in
                 CardCell(card: card)
                 
             }.onDelete(perform: deleteCard)
-            .listRowBackground(theme.currentBackgroundColor)
-            //            .onChange(of: deck.activeCards, perform: { value in
-            //                if deck.activeCards == 0 {showingAlert.toggle()}
-            //            })
+            .listRowBackground(
+                RoundedRectangle(cornerRadius: 8)
+                    .background(.clear)
+                    .foregroundColor(theme.currentBackgroundColor)
+                    .padding(
+                        EdgeInsets(
+                            top: 5,
+                            leading: 20,
+                            bottom: 5,
+                            trailing: 20
+                        )
+                    )
+            )
+            .listRowSeparator(.hidden)
         }
-        .background(theme.currentBackgroundColor)
+        .background(CardView1().scaledToFit())
         .scrollContentBackground(.hidden)
         .sheet(isPresented: $isPresented) {
             AddCardView {newCardName, newCardComment in
@@ -84,18 +106,30 @@ struct CardsSwiftUIView: View {
                 self.isPresented = false
             }
         }
-        //        .alert(isPresented: $showingAlert) {
-        //                   Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
-        //        }
-        .navigationTitle("Deck Details")
+        .toolbarBackground(
+            theme.currentBackgroundColor,
+            for: .tabBar, .navigationBar)
+        .toolbarBackground(.visible, for: .tabBar, .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                        VStack {
+                            Text("Deck Details")
+                                .font(Font(UIFont(name: theme.currentFont, size: 24)!))
+                              .foregroundColor(Color.white)
+                        }
+                    }
+                }
         .navigationBarItems(trailing: Button(action: {
             self.isPresented.toggle()
         }, label: {
             Image(systemName: "plus")
-                .imageScale(.large)
+                .imageScale(.small)
         }))
-        .background(theme.currentBackgroundColor)
     }
+
+    
+    
+    
     
     func deleteCard(at offsets: IndexSet) {
         offsets.forEach { index in

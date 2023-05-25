@@ -88,25 +88,42 @@ struct  SavedResultsSwiftUIView: View {
                     }
                 }
                 .onDelete(perform: deleteDeck)
-                .listRowBackground(theme.currentBackgroundColor)
+                .listRowBackground(
+            RoundedRectangle(cornerRadius: 8)
+                                        .background(.clear)
+                                        .foregroundColor(theme.currentBackgroundColor)
+                                        .padding(
+                                            EdgeInsets(
+                                                top: 5,
+                                                leading: 10,
+                                                bottom: 5,
+                                                trailing: 10
+                                            )
+                                        )
+                                )
+                .listRowSeparator(.hidden)
             }
-            .background(theme.currentBackgroundColor)
+            .toolbarBackground(
+                theme.currentBackgroundColor,
+                for: .tabBar, .navigationBar)
+            .toolbarBackground(.visible, for: .tabBar, .navigationBar)
+            //.navigationTitle("Saved Decisions")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                            VStack {
+                                Text("Saved Decisions")
+                                    .font(Font(UIFont(name: theme.currentFont, size: 24)!))
+                                  .foregroundColor(Color.white)
+                            }
+                        }
+                    }
             .scrollContentBackground(.hidden)
             .navigationBarBackButtonHidden(showBackButton)
-            .listRowBackground(theme.currentBackgroundColor)
-            .navigationTitle("Saved Decisions")
-            .navigationBarTitleDisplayMode(.inline)
             .onAppear(perform: {
                 self.showActionSheet = false
             })
-            .overlay(Group {
-                if savedDecks.isEmpty {
-                    ZStack {
-                        theme.currentBackgroundColor.ignoresSafeArea()
-                    }
-                }
-            })
-            
+
             if showBackButton {
                 HStack {
                     Spacer()
@@ -123,7 +140,12 @@ struct  SavedResultsSwiftUIView: View {
                     }
                 }
             }
+        }.overlay {
+            if savedDecks.isEmpty {
+                CardView1().scaledToFit()
+            }
         }
+            .background(CardView1().scaledToFit())
             .scrollContentBackground(.hidden)
             .sheet(isPresented: $showActionSheet, onDismiss: {
                 print("Dismiss")

@@ -15,15 +15,15 @@ struct SettingsUIView: View {
     @State var selectedSharingMethod : Int = 0
     
     init() {
-        UINavigationBar
-            .appearance()
-            .barTintColor = theme.currentBackgroundColorUI
-        UINavigationBar
-            .appearance()
-            .tintColor = theme.currentTextColorUI
-        UINavigationBar
-            .appearance()
-            .titleTextAttributes = [.foregroundColor : theme.currentTextColorUI ?? UIColor.white, .font : UIFont(name: theme.currentFont, size: 20) as Any]
+//        UINavigationBar
+//            .appearance()
+//            .barTintColor = theme.currentBackgroundColorUI
+//        UINavigationBar
+//            .appearance()
+//            .tintColor = theme.currentTextColorUI
+//        UINavigationBar
+//            .appearance()
+//            .titleTextAttributes = [.foregroundColor : theme.currentTextColorUI ?? UIColor.white, .font : UIFont(name: theme.currentFont, size: 20) as Any]
     }
     
     var body: some View {
@@ -33,20 +33,19 @@ struct SettingsUIView: View {
                     Text("Theme")
                         .scaledFont(name: theme.currentFont, size: 16)
                         .padding()
-                }
-                    .background(theme.sectionHeaderColor)
+                    Spacer()
+                } .background(theme.sectionHeaderColor)
                     .listRowInsets(EdgeInsets(
-                        top: 0,
-                        leading: 0,
+                        top: 20,
+                        leading: 20,
                         bottom: 0,
-                        trailing: 0))
+                        trailing: 20))
                 ) {
                     ForEach(theme.themes.indices, id: \.self) { index in
                         HStack {
                             Text(theme.themes[index])
                                 .scaledFont(name: theme.currentFont, size: 18)
                                 .foregroundColor(theme.currentTextColor)
-                            
                             Spacer()
                             
                             Button(action: {
@@ -71,14 +70,48 @@ struct SettingsUIView: View {
                                 }
                             })
                         }
+                        .padding(
+                            EdgeInsets(
+                                top: 0,
+                                leading: 20,
+                                bottom: 0,
+                                trailing: 20
+                            )
+                        )
                     }
-                    .listRowBackground(theme.currentBackgroundColor)
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 0)
+                            .background(.clear)
+                            .foregroundColor(theme.currentBackgroundColor)
+                            .padding(
+                                EdgeInsets(
+                                    top: 0,
+                                    leading: 20,
+                                    bottom: 0,
+                                    trailing: 20
+                                )
+                            )
+                    )
+                    //.listRowBackground(theme.currentBackgroundColor)
                 }
             }
-            .background(theme.currentBackgroundColor)
+            .toolbarBackground(
+                theme.currentBackgroundColor,
+                for: .tabBar, .navigationBar)
+            .toolbarBackground(.visible, for: .tabBar, .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                            VStack {
+                                Text("Settings")
+                                    .font(Font(UIFont(name: theme.currentFont, size: 24)!))
+                                  .foregroundColor(Color.white)
+                            }
+                        }
+                    }
             .scrollContentBackground(.hidden)
-            .navigationBarTitle("Settings", displayMode: .inline)
             .listStyle(GroupedListStyle())
         }
+        .background(CardView1().scaledToFit())
     }
 }
