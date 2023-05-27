@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct DeckCell: View {
-    @ObservedObject var deck: Deck
+    var deck: Deck
     @Binding var path: NavigationPath
     @State var isShowingComment = false
     @State var editableText = ""
     @State var editableTextField = ""
     @State var stepperValue = 0
     @State var low = 1
-    @State var gameResult: [Card] = []
+    @Binding var gameResult: [Card]
+    @Binding var selectedDeck: Deck
 
     var body: some View {
         let view = ZStack {
@@ -111,6 +112,7 @@ struct DeckCell: View {
                 VStack {
                     Button(action: {
                         gameResult = self.deck.playGame()
+                        selectedDeck = deck
                         path.append("ResultView")
                     }, label: {
                         Text("Deal")
@@ -121,9 +123,9 @@ struct DeckCell: View {
                 }
                 Spacer()
             }
-            .navigationDestination(for: String.self) { _ in
-                DealResultSwiftUIView(selectedDeck: self.deck, results: gameResult, path: self.$path)
-            }
+//            .navigationDestination(for: String.self) { _ in
+//                DealResultSwiftUIView(selectedDeck: self.deck, results: gameResult, path: self.$path)
+//            }
         }
         return view
     }

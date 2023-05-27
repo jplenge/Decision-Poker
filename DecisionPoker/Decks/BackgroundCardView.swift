@@ -7,7 +7,7 @@
 //
 import SwiftUI
 
-struct CardView1: View {
+struct BackgroundCardView: View {
     let rows = 10
     let cols = 10
 

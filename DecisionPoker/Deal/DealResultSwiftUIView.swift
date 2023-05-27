@@ -10,9 +10,11 @@ import SwiftUI
 
 struct DealResultSwiftUIView: View {
    
-    var selectedDeck: Deck
-    @State var results: [Card]
+    @Binding var selectedDeck: Deck
+    @Binding var results: [Card]
     @Binding var path: NavigationPath
+    
+    @State var nextScreen: Bool = false
 
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -59,7 +61,7 @@ struct DealResultSwiftUIView: View {
                 Spacer()
                 VStack {
                     Button(action: {
-                        path.append(23)
+                        nextScreen = true
                     }, label: {
                         Text("Hold 'em!")
                             .scaledFont(name: theme.currentFont, size: 26)
@@ -69,19 +71,12 @@ struct DealResultSwiftUIView: View {
                 
             }
         }
-        //.navigationBarBackButtonHidden(true)
-        .background(CardView1().scaledToFit())
-        .navigationDestination(for: Int.self) { _ in
-            FinalResultSwiftUIView(selectedDeck: selectedDeck,
-                                   results: results,
-                                                path: $path)
-        }
+        .navigationBarBackButtonHidden(true)
+        .background(BackgroundCardView().scaledToFit())
+        .navigationDestination(isPresented: $nextScreen, destination: { FinalResultSwiftUIView(selectedDeck:selectedDeck, results: results, path: $path) } )
     }
     
-//    enum Selected {
-//        case finalresultview
-//    }
-//
+
     struct ResultViewCell: View {
         @State var card: Card
         @State var index: Int
@@ -90,6 +85,7 @@ struct DealResultSwiftUIView: View {
         @Binding var results: [Card]
         
         @State var cheatPickerIsPresented = false
+        
         
         var body: some View {
             
@@ -137,14 +133,13 @@ struct DealResultSwiftUIView: View {
 }
 
 private func updateSelection(possibleCards: [Card], selectedCards: [Card], currentCard: Card) -> [Card] {
-    
+
     var filtered: [Card] = []
-    
+
     for index in 0..<possibleCards.count {
         if !selectedCards.contains(possibleCards[index]) || possibleCards[index] == currentCard {
             filtered.append(possibleCards[index])
         }
     }
-    
     return filtered
 }

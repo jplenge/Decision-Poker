@@ -112,6 +112,6 @@ struct SettingsUIView: View {
             .scrollContentBackground(.hidden)
             .listStyle(GroupedListStyle())
         }
-        .background(CardView1().scaledToFit())
+        .background(BackgroundCardView().scaledToFit())
     }
 }

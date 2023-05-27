@@ -21,74 +21,80 @@ struct FinalResultSwiftUIView: View {
     @State private var showActionSheet: Bool = false
     
     @Environment(\.managedObjectContext) var managedObjectContext
-
+    
     var body: some View {
-        let view = ZStack {
-
-                List {
-                    HStack(alignment: .center) {
+        ZStack {
+            List {
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text(selectedDeck.wrappedDeckName)
+                        .multilineTextAlignment(.center)
+                        .scaledFont(name: theme.currentFont, size: 22)
+                        .foregroundColor(theme.currentTextColor)
+                        .padding()
+                    Spacer()
+                }.listRowBackground(
+                    RoundedRectangle(cornerRadius: 8)
+                        .background(.clear)
+                        .foregroundColor(theme.currentBackgroundColor)
+                        .padding(
+                            EdgeInsets(
+                                top: 5,
+                                leading: 0,
+                                bottom: 5,
+                                trailing: 0
+                            )
+                        )
+                )
+                
+                ForEach(self.results.indices) { index in
+                    HStack {
                         Spacer()
-                        Text(selectedDeck.wrappedDeckName)
+                        Text(self.results[index].wrappedCardName)
                             .multilineTextAlignment(.center)
-                            .scaledFont(name: theme.currentFont, size: 22)
+                            .scaledFont(name: theme.currentFont, size: 18)
                             .foregroundColor(theme.currentTextColor)
                             .padding()
-                        Spacer()
-                    }.listRowBackground(
-                        RoundedRectangle(cornerRadius: 8)
-                            .background(.clear)
-                            .foregroundColor(theme.currentBackgroundColor)
-                            .padding(
-                                EdgeInsets(
-                                    top: 5,
-                                    leading: 0,
-                                    bottom: 5,
-                                    trailing: 0
-                                )
-                            )
                         
-                    )
-                    
-                    ForEach(self.results.indices) { index in
-                        HStack {
-                            Spacer()
-                            Text(self.results[index].wrappedCardName)
-                                .multilineTextAlignment(.center)
-                                .scaledFont(name: theme.currentFont, size: 18)
-                                .foregroundColor(theme.currentTextColor)
-                                .padding()
-                            
-                            Spacer()
-                        }
-                    }
-                    .listRowBackground(
-                        RoundedRectangle(cornerRadius: 8)
-                            .background(.clear)
-                            .foregroundColor(theme.currentBackgroundColor)
-                            .padding(
-                                EdgeInsets(
-                                    top: 5,
-                                    leading: 10,
-                                    bottom: 5,
-                                    trailing: 10
-                                )
-                            )
-                    )
-                    .listRowSeparator(.hidden)
-                    .scrollContentBackground(.hidden)
-                    .onAppear {
-                        self.isShowingSavedResults = false
+                        Spacer()
                     }
                 }
-                .background(CardView1().scaledToFit())
+                .listRowBackground(
+                    RoundedRectangle(cornerRadius: 8)
+                        .background(.clear)
+                        .foregroundColor(theme.currentBackgroundColor)
+                        .padding(
+                            EdgeInsets(
+                                top: 5,
+                                leading: 10,
+                                bottom: 5,
+                                trailing: 10
+                            )
+                        )
+                )
+                .listRowSeparator(.hidden)
                 .scrollContentBackground(.hidden)
-            
+                .onAppear {
+                    self.isShowingSavedResults = false
+                }
+            }
+            .scrollContentBackground(.hidden)
             
             HStack {
-                Spacer()
+                
                 VStack {
                     Spacer()
-                    Group {
+                        Button(action: {
+                            self.showActionSheet = true
+                        }, label: {
+                            Image(systemName: "square.and.arrow.up").imageScale(.large)
+                        })
+                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                    .padding([.horizontal, .bottom])
+                }
+                
+                VStack {
+                    Spacer()
                         Button(action: {
                             self.saveResults(deck: self.selectedDeck, cards: self.results)
                             self.saveLastDecision(deck: self.selectedDeck, cards: self.results)
@@ -99,63 +105,44 @@ struct FinalResultSwiftUIView: View {
                         })
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor,
                                                           forecolor: theme.currentBackgroundColor))
-                    }
-                    navigationDestination(isPresented: $isShowingSavedResults, destination: { SavedResultsSwiftUIView(showBackButton: .constant(true), path: $path)})
-                    .padding(.bottom, 5)
-                    .padding(.horizontal)
+                    .navigationDestination(isPresented: $isShowingSavedResults, destination: { SavedResultsSwiftUIView(showBackButton: .constant(true), path: $path)})
+                    .padding([.horizontal, .bottom])
                     
-                    Group {
+                }
+                
+                VStack {
+                    Spacer()
                         Button(action: {
                             path.removeLast(path.count)
                         }, label: {
                             Text("Done").scaledFont(name: theme.currentFont, size: 26)
                         })
                         .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
-                        
-                    }.padding(.top, 5)
                         .padding([.horizontal, .bottom])
-                    
                 }
-            }
-            
-            HStack {
-                VStack {
-                    Spacer()
-                    Group {
-                        Button(action: {
-                            self.showActionSheet = true
-                        }, label: {
-                            Image(systemName: "square.and.arrow.up").imageScale(.large)
-                        })
-                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
-                    }.padding()
-                }
-                Spacer()
             }
         }
-            //.navigationBarBackButtonHidden(true)
-            .background(CardView1().scaledToFit())
-            .toolbarBackground(
-                theme.currentBackgroundColor,
-                for: .tabBar, .navigationBar)
-            .toolbarBackground(.visible, for: .tabBar, .navigationBar)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    VStack {
-                        Text("Final Decision")
-                            .font(Font(UIFont(name: theme.currentFont, size: 24)!))
-                            .foregroundColor(Color.white)
-                    }
+        .navigationBarBackButtonHidden(true)
+        .background(BackgroundCardView().scaledToFit())
+        .toolbarBackground(
+            theme.currentBackgroundColor,
+            for: .tabBar, .navigationBar)
+        .toolbarBackground(.visible, for: .tabBar, .navigationBar)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("Final Decision")
+                        .font(Font(UIFont(name: theme.currentFont, size: 24)!))
+                        .foregroundColor(Color.white)
                 }
             }
-            .sheet(isPresented: $showActionSheet, onDismiss: {
-                print("Dismiss")
-            }, content: {
-                ActivityViewController(activityItems: [generateShareString(deck: self.selectedDeck, cards: self.results)])
-            })
-        
-        return view
+        }
+        .sheet(isPresented: $showActionSheet, onDismiss: {
+            print("Dismiss")
+        }, content: {
+            ActivityViewController(activityItems: [generateShareString(deck: self.selectedDeck, cards: self.results)])
+        })
     }
     
     func generateShareString(deck: Deck, cards: [Card]) -> String {

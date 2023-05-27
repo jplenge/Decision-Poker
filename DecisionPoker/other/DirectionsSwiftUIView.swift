@@ -33,7 +33,7 @@ struct DirectionsSwiftUIView: View {
                 )
             )
         }
-        .background(CardView1().scaledToFit())
+        .background(BackgroundCardView().scaledToFit())
         .toolbarBackground(
             theme.currentBackgroundColor,
             for: .tabBar, .navigationBar)

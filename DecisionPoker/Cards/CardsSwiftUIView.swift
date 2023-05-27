@@ -98,7 +98,7 @@ struct CardsSwiftUIView: View {
             )
             .listRowSeparator(.hidden)
         }
-        .background(CardView1().scaledToFit())
+        .background(BackgroundCardView().scaledToFit())
         .scrollContentBackground(.hidden)
         .sheet(isPresented: $isPresented) {
             AddCardView {newCardName, newCardComment in

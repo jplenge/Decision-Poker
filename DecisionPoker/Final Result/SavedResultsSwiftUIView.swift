@@ -64,8 +64,10 @@ struct  SavedResultsSwiftUIView: View {
                                     .multilineTextAlignment(.leading)
                                     .scaledFont(name: theme.currentFont, size: 8)
                                     .foregroundColor(theme.currentTextColor)
+                                    .padding(.bottom, 8)
                                 Spacer()
                             }
+                           
                         }
                         
                         HStack {
@@ -82,6 +84,7 @@ struct  SavedResultsSwiftUIView: View {
                                     })
                                     .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor,
                                                                       forecolor: theme.currentBackgroundColor))
+                                    .padding(.bottom, 8)
                                 }
                             }
                         }
@@ -142,10 +145,10 @@ struct  SavedResultsSwiftUIView: View {
             }
         }.overlay {
             if savedDecks.isEmpty {
-                CardView1().scaledToFit()
+                BackgroundCardView().scaledToFit()
             }
         }
-            .background(CardView1().scaledToFit())
+            .background(BackgroundCardView().scaledToFit())
             .scrollContentBackground(.hidden)
             .sheet(isPresented: $showActionSheet, onDismiss: {
                 print("Dismiss")

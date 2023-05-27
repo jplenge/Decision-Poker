@@ -33,7 +33,7 @@
 		1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4624A4934000F4E80F /* ThemeManager.swift */; };
 		1B5479B42A1D65020093D5C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B32A1D65020093D5C2 /* ContentView.swift */; };
 		1B5479B62A1D653C0093D5C2 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */; };
-		1B5479B82A1F9A740093D5C2 /* SuitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B72A1F9A740093D5C2 /* SuitsView.swift */; };
+		1B5479B82A1F9A740093D5C2 /* BackgroundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */; };
 		1B6437552A1D488F002BC3D5 /* DecisionPokerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */; };
 		1B6437772A1D4C94002BC3D5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6437762A1D4C94002BC3D5 /* Persistence.swift */; };
 		1B68D03F24A64D86004B02F2 /* CardsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */; };
@@ -114,7 +114,7 @@
 		1B51FB4624A4934000F4E80F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		1B5479B32A1D65020093D5C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
-		1B5479B72A1F9A740093D5C2 /* SuitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitsView.swift; sourceTree = "<group>"; };
+		1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCardView.swift; sourceTree = "<group>"; };
 		1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerApp.swift; sourceTree = "<group>"; };
 		1B6437762A1D4C94002BC3D5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSwiftUIView.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				1B1902C224AA46B000F1E94B /* AddDeckView.swift */,
 				1B1902C024AA397D00F1E94B /* DeckCell.swift */,
 				1B1902C424AA523D00F1E94B /* TextView.swift */,
-				1B5479B72A1F9A740093D5C2 /* SuitsView.swift */,
+				1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -509,7 +509,7 @@
 				1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */,
 				1B2BA1FA251CE10A00CCABE9 /* CustomToggle.swift in Sources */,
 				1BD5E39526CD40B30051D76A /* saveJSON.swift in Sources */,
-				1B5479B82A1F9A740093D5C2 /* SuitsView.swift in Sources */,
+				1B5479B82A1F9A740093D5C2 /* BackgroundCardView.swift in Sources */,
 				1BF3D14325698309003A9246 /* MailView.swift in Sources */,
 				1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */,
 				1B1902C724AA906900F1E94B /* DirectionsSwiftUIView.swift in Sources */,

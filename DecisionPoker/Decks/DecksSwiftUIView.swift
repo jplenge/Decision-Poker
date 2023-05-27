@@ -12,7 +12,9 @@ import CoreData
 struct DecksSwiftUIView: View {
     @Binding var path: NavigationPath
     @State private var isPresented = false
-    
+    @State var gameResult: [Card] = []
+    @State var selectedDeck = Deck()
+
     init(path: Binding<NavigationPath>) {
         self._path = path
 
@@ -36,7 +38,7 @@ struct DecksSwiftUIView: View {
                 if !decks.isEmpty {
                     ForEach(decks, id:\.deckName) { deck in
                         NavigationLink(value: deck) {
-                            DeckCell(deck: deck, path: $path)
+                            DeckCell(deck: deck, path: $path, gameResult: $gameResult, selectedDeck: $selectedDeck)
                         }
                     }
                     .onDelete(perform: deleteDeck)
@@ -95,7 +97,10 @@ struct DecksSwiftUIView: View {
                     .imageScale(.medium)
             }))
         }
-        .background(CardView1().scaledToFit())
+        .navigationDestination(for: String.self) { _ in
+            DealResultSwiftUIView(selectedDeck: $selectedDeck, results: $gameResult, path: self.$path)
+        }
+        .background(BackgroundCardView().scaledToFit())
     }
     
     private func deleteDeck(at offsets: IndexSet) {
