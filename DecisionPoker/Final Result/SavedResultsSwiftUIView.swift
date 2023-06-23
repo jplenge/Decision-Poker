@@ -11,6 +11,9 @@ import CoreData
 import WidgetKit
 
 struct  SavedResultsSwiftUIView: View {
+#if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+#endif
     
     @Binding var showBackButton: Bool
     
@@ -148,7 +151,9 @@ struct  SavedResultsSwiftUIView: View {
                 BackgroundCardView().scaledToFit()
             }
         }
-            .background(BackgroundCardView().scaledToFit())
+           .background {
+                BackgroundCardView().scaledToFit()
+           }
             .scrollContentBackground(.hidden)
             .sheet(isPresented: $showActionSheet, onDismiss: {
                 print("Dismiss")

@@ -6,10 +6,10 @@
 ////  Copyright © 2020 Jodi Szarko. All rights reserved.
 ////
 //
-//import SwiftUI
-//import MessageUI
+// import SwiftUI
+// import MessageUI
 //
-//struct StartSwiftUIView: View {
+// struct StartSwiftUIView: View {
 //    
 //    @EnvironmentObject var appState: AppState
 //    @Environment(\.managedObjectContext) var managedObjectContext

@@ -69,10 +69,6 @@ struct AppTabNavigation: View {
                     }.accessibility(label: menuText)
                 }
                 .tag(Tab.directions)
-            
-         
-            
-        
         }
         .tint(theme.currentTextColor)
     }

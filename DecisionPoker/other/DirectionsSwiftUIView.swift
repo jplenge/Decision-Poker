@@ -16,7 +16,7 @@ struct DirectionsSwiftUIView: View {
         ZStack {
             VStack {
                 Text(directions)
-                    .font(Font.custom(theme.currentFont, size: 16.0, relativeTo: .title))
+                    .font(Font.custom(theme.currentFont, size: 18.0, relativeTo: .title))
                     .foregroundColor(theme.currentTextColor)
                     .lineSpacing(5.0)
                     .padding(20)
@@ -43,7 +43,7 @@ struct DirectionsSwiftUIView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 VStack {
-                    Text("Decision Poker")
+                    Text("About Decision Poker")
                         .font(Font(UIFont(name: theme.currentFont, size: 24)!))
                         .foregroundColor(Color.white)
                 }

@@ -6,7 +6,6 @@
 "Saved Decisions" = "Saved Decisions";
 "Contact Us" = "Contact us";
 
-
 /* Settings */
 "Settings" = "Settings";
 "Theme" = "Theme";
@@ -133,7 +132,7 @@
 "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!" = "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!";
 
 
-/* Settings */*/
+/* Settings */
 "Classic" = "Classic";
 "Modern" = "Modern";
 "Dark" = "Dark";
@@ -147,4 +146,10 @@
 "Appearance" = "Appearance";
 
 "Replace Card" = "Replace Card";
+
+"About" = "About";
+
+"About Decision Poker" = "About Decision Poker";
+
+
 

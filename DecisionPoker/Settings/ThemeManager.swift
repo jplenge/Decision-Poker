@@ -42,7 +42,7 @@ class ThemeManager {
     var radioButtonBackgroundColorChoices = [Color.black.opacity(0.3), Color.black.opacity(0.3), Color.white.opacity(0.3)]
     var sectionHeaderColorChoices = [ColorManager.ClassicGreen, ColorManager.ModernBlue, Color.black]
 
-    // font options
+    // font options - Marker Felt
     let fontChoices = ["Marker Felt", "Helvetica Neue", "Helvetica Neue"]
     
     let startImageChoices = ["StartImage-black", "StartImage-black", "StartImage-white"]

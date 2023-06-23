@@ -14,18 +14,6 @@ struct SettingsUIView: View {
     
     @State var selectedSharingMethod : Int = 0
     
-    init() {
-//        UINavigationBar
-//            .appearance()
-//            .barTintColor = theme.currentBackgroundColorUI
-//        UINavigationBar
-//            .appearance()
-//            .tintColor = theme.currentTextColorUI
-//        UINavigationBar
-//            .appearance()
-//            .titleTextAttributes = [.foregroundColor : theme.currentTextColorUI ?? UIColor.white, .font : UIFont(name: theme.currentFont, size: 20) as Any]
-    }
-    
     var body: some View {
         VStack(alignment: .center) {
             List {

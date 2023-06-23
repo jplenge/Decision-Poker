@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0505372A2299610044E3E2 /* AppSidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0505362A2299610044E3E2 /* AppSidebarNavigation.swift */; };
 		1B1902C124AA397D00F1E94B /* DeckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C024AA397D00F1E94B /* DeckCell.swift */; };
 		1B1902C324AA46B000F1E94B /* AddDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C224AA46B000F1E94B /* AddDeckView.swift */; };
 		1B1902C524AA523D00F1E94B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C424AA523D00F1E94B /* TextView.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B0505362A2299610044E3E2 /* AppSidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarNavigation.swift; sourceTree = "<group>"; };
 		1B1902C024AA397D00F1E94B /* DeckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCell.swift; sourceTree = "<group>"; };
 		1B1902C224AA46B000F1E94B /* AddDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckView.swift; sourceTree = "<group>"; };
 		1B1902C424AA523D00F1E94B /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */,
 				1B5479B32A1D65020093D5C2 /* ContentView.swift */,
+				1B0505362A2299610044E3E2 /* AppSidebarNavigation.swift */,
 				1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */,
 				1B29CFEB254B5F8100406090 /* SettingsUIView.swift */,
 				1BF3D14225698309003A9246 /* MailView.swift */,
@@ -532,6 +535,7 @@
 				1B31DDC724BCC30E0014F318 /* DynamicTypeCustomFont.swift in Sources */,
 				1B1902D824ADC8A400F1E94B /* FinalResultSwiftUIView.swift in Sources */,
 				1B68D03F24A64D86004B02F2 /* CardsSwiftUIView.swift in Sources */,
+				1B0505372A2299610044E3E2 /* AppSidebarNavigation.swift in Sources */,
 				1B5479B42A1D65020093D5C2 /* ContentView.swift in Sources */,
 				1B29CFEC254B5F8100406090 /* SettingsUIView.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,

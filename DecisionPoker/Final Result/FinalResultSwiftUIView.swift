@@ -123,7 +123,10 @@ struct FinalResultSwiftUIView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .background(BackgroundCardView().scaledToFit())
+        .background {
+            BackgroundCardView(cols: 20, rows: 20).scaledToFit()
+        }
+        //.background(BackgroundCardView().scaledToFit())
         .toolbarBackground(
             theme.currentBackgroundColor,
             for: .tabBar, .navigationBar)

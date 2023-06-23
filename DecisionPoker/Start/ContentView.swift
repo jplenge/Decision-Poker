@@ -25,10 +25,10 @@ struct ContentView: View {
         if horizontalSizeClass == .compact {
             AppTabNavigation()
         } else {
-            // AppSidebarNavigation()
+             AppSidebarNavigation()
         }
         #else
-        // AppSidebarNavigation()
+        AppSidebarNavigation()
         #endif
     }
 }

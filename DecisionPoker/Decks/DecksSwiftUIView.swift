@@ -67,7 +67,7 @@ struct DecksSwiftUIView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                             VStack {
-                                Text("Decision Poker")
+                                Text("Decks")
                                     .font(Font(UIFont(name: theme.currentFont, size: 24)!))
                                   .foregroundColor(Color.white)
                             }
