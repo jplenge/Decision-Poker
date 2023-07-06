@@ -11,11 +11,6 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
 
-    init() {
-        theme.currentBackgroundColor = theme.colorChoices[UserDefaults.standard.integer(forKey: "SelectedTheme")]
-        theme.currentBackgroundColorUI = theme.colorChoicesUI[UserDefaults.standard.integer(forKey: "SelectedTheme")]
-    }
-
     #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     #endif

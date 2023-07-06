@@ -1,0 +1,27 @@
+{
+    "deckname": "Household Chores",
+    "deckcomment": "Here are some typical household chores you might be in charge of. Feel free to add additional comments about your deck here!",
+    "cards":
+    [
+        {
+            "cardname": "Do the dishes.",
+            "cardcomment": "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing."
+        },
+        {
+            "cardname": "Clean the floor.",
+            "cardcomment": "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing."
+        },
+        {
+            "cardname": "Dust the livingroom.",
+            "cardcomment": "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing."
+        },
+        {
+            "cardname": "Organize my desk",
+            "cardcomment": "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing."
+        },
+        {
+            "cardname": "Do the laundry.",
+            "cardcomment": "This is one of the chores in your to do list. Hopefully it's one that you don't mind doing."
+        }
+    ]
+}

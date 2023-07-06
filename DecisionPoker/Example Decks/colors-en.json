@@ -1,0 +1,35 @@
+{
+    "deckname": "Colors",
+    "deckcomment": "Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you!",
+    "cards":
+    [
+        {
+            "cardname": "Red",
+            "cardcomment": "This is one of the color choices. Feel free to edit, delete and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the switch to the right."
+        },
+        {
+            "cardname": "Orange",
+            "cardcomment": "This is one of the color choices. Feel free to edit, delete and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the switch to the right."
+        },
+        {
+            "cardname": "Yellow",
+            "cardcomment": "This is one of the color choices. Feel free to edit, delete and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the switch to the right."
+        },
+        {
+            "cardname": "Green",
+            "cardcomment": "This is one of the color choices. Feel free to edit, delete and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the switch to the right."
+        },
+        {
+            "cardname": "Blue",
+            "cardcomment": "This is one of the color choices. Feel free to edit, delete and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the switch to the right."
+        },
+        {
+            "cardname": "Indigo",
+            "cardcomment": "This is one of the color choices. Feel free to edit, delete and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the switch to the right."
+        },
+        {
+            "cardname": "Violet",
+            "cardcomment": "This is one of the color choices. Feel free to edit, delete and add additional comments here! If there is a color that you do not want to delete from your list, but you do not want to use it for your current decision, you can deselect this color using the switch to the right."
+        }
+    ]
+}

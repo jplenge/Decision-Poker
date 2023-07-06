@@ -12,13 +12,11 @@ import UIKit
 import WidgetKit
 
 struct FinalResultSwiftUIView: View {
-    var selectedDeck: Deck
-    var results: [Card]
-    
     @Binding var path: NavigationPath
-    
     @State private var isShowingSavedResults: Bool = false
     @State private var showActionSheet: Bool = false
+    @ObservedObject var viewModel: ViewModel
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -27,16 +25,17 @@ struct FinalResultSwiftUIView: View {
             List {
                 HStack(alignment: .center) {
                     Spacer()
-                    Text(selectedDeck.wrappedDeckName)
+                    Text(viewModel.selectedDeck.wrappedDeckName)
                         .multilineTextAlignment(.center)
-                        .scaledFont(name: theme.currentFont, size: 22)
-                        .foregroundColor(theme.currentTextColor)
+                        .foregroundColor(Color(("AccentColor")))
+                        .font(.title3)
+                        .fontWeight(.bold)
                         .padding()
                     Spacer()
                 }.listRowBackground(
-                    RoundedRectangle(cornerRadius: 8)
+                    RoundedRectangle(cornerRadius: 20)
                         .background(.clear)
-                        .foregroundColor(theme.currentBackgroundColor)
+                        .foregroundColor(themeColor.colors[selectedColor])
                         .padding(
                             EdgeInsets(
                                 top: 5,
@@ -47,22 +46,22 @@ struct FinalResultSwiftUIView: View {
                         )
                 )
                 
-                ForEach(self.results.indices) { index in
+                ForEach(viewModel.gameResult.indices, id: \.self) { index in
                     HStack {
                         Spacer()
-                        Text(self.results[index].wrappedCardName)
+                        Text(viewModel.gameResult[index].wrappedCardName)
                             .multilineTextAlignment(.center)
-                            .scaledFont(name: theme.currentFont, size: 18)
-                            .foregroundColor(theme.currentTextColor)
+                            .foregroundColor(Color("AccentColor"))
+                            .font(.subheadline)
                             .padding()
                         
                         Spacer()
                     }
                 }
                 .listRowBackground(
-                    RoundedRectangle(cornerRadius: 8)
+                    RoundedRectangle(cornerRadius: 20)
                         .background(.clear)
-                        .foregroundColor(theme.currentBackgroundColor)
+                        .foregroundColor(themeColor.colors[selectedColor])
                         .padding(
                             EdgeInsets(
                                 top: 5,
@@ -89,23 +88,26 @@ struct FinalResultSwiftUIView: View {
                         }, label: {
                             Image(systemName: "square.and.arrow.up").imageScale(.large)
                         })
-                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
+                                                          forecolor: themeColor.colors[selectedColor]))
                     .padding([.horizontal, .bottom])
                 }
                 
                 VStack {
                     Spacer()
                         Button(action: {
-                            self.saveResults(deck: self.selectedDeck, cards: self.results)
-                            self.saveLastDecision(deck: self.selectedDeck, cards: self.results)
+                            self.saveResults(deck: viewModel.selectedDeck, cards: viewModel.gameResult)
+                            self.saveLastDecision(deck: viewModel.selectedDeck, cards: viewModel.gameResult)
                             WidgetCenter.shared.reloadAllTimelines()
                             self.isShowingSavedResults = true
                         }, label: {
-                            Text("Save").scaledFont(name: theme.currentFont, size: 26)
+                            Text("Save")
                         })
-                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor,
-                                                          forecolor: theme.currentBackgroundColor))
-                    .navigationDestination(isPresented: $isShowingSavedResults, destination: { SavedResultsSwiftUIView(showBackButton: .constant(true), path: $path)})
+                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
+                                                          forecolor: themeColor.colors[selectedColor]))
+                    .navigationDestination(isPresented: $isShowingSavedResults,
+                                           destination: { SavedResultsSwiftUIView(showBackButton: .constant(true),
+                                                                                  path: $path)})
                     .padding([.horizontal, .bottom])
                     
                 }
@@ -115,9 +117,10 @@ struct FinalResultSwiftUIView: View {
                         Button(action: {
                             path.removeLast(path.count)
                         }, label: {
-                            Text("Done").scaledFont(name: theme.currentFont, size: 26)
+                            Text("Done")
                         })
-                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
+                                                          forecolor: themeColor.colors[selectedColor]))
                         .padding([.horizontal, .bottom])
                 }
             }
@@ -126,9 +129,8 @@ struct FinalResultSwiftUIView: View {
         .background {
             BackgroundCardView(cols: 20, rows: 20).scaledToFit()
         }
-        //.background(BackgroundCardView().scaledToFit())
         .toolbarBackground(
-            theme.currentBackgroundColor,
+            themeColor.colors[selectedColor],
             for: .tabBar, .navigationBar)
         .toolbarBackground(.visible, for: .tabBar, .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
@@ -136,15 +138,14 @@ struct FinalResultSwiftUIView: View {
             ToolbarItem(placement: .principal) {
                 VStack {
                     Text("Final Decision")
-                        .font(Font(UIFont(name: theme.currentFont, size: 24)!))
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color("AccentColor"))
                 }
             }
         }
         .sheet(isPresented: $showActionSheet, onDismiss: {
             print("Dismiss")
         }, content: {
-            ActivityViewController(activityItems: [generateShareString(deck: self.selectedDeck, cards: self.results)])
+            ActivityViewController(activityItems: [generateShareString(deck: viewModel.selectedDeck, cards: viewModel.gameResult)])
         })
     }
     
@@ -156,7 +157,6 @@ struct FinalResultSwiftUIView: View {
         for item in cards {
             resultString += "- \(String(item.cardName ?? ""))\r"
         }
-        
         return resultString
     }
     
@@ -190,7 +190,6 @@ struct FinalResultSwiftUIView: View {
         do {
             try managedObjectContext.save()
         } catch {
-            // TODO - add error checking
             print(error)
         }
     }

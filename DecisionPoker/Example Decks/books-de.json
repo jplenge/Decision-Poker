@@ -1,0 +1,87 @@
+{
+    "deckname": "Bücher für den Urlaub",
+    "deckcomment": "Dies ist eine Liste von Büchern für den nächsten Urlaub.",
+    "cards":
+    [
+        {
+            "cardname": "Atlas – Die Geschichte von Pa Salt",
+            "cardcomment": "Ein Buch von Lucinda Riley und Harry Whittaker"
+        },
+        {
+            "cardname": "Blue Skies",
+            "cardcomment": "Ein Buch von T.C. Boyle"
+        },
+        {
+            "cardname": "Das Café ohne Namen",
+            "cardcomment": "Ein Buch von Robert Seethaler"
+        },
+        {
+            "cardname": "Fourth Wing – Flammengeküsst",
+            "cardcomment": "Ein Buch von Rebecca Yarros"
+        },
+        {
+            "cardname": "Melody",
+            "cardcomment": "Ein Buch von Martin Suter"
+        },
+        {
+            "cardname": "Der gelbe Elefant",
+            "cardcomment": "Ein Buch von Heinz Strunk"
+        },
+        {
+            "cardname": "Eine Frage der Chemie",
+            "cardcomment": "Ein Buch von Bonnie Garmus"
+        },
+        {
+            "cardname": "Wie die Saat, so die Ernte",
+            "cardcomment": "Ein Buch von Donna Leon"
+        },
+        {
+            "cardname": "22 Bahnen",
+            "cardcomment": "Caroline Wahl"
+        },
+        {
+            "cardname": "Die Liebe an miesen Tagen",
+            "cardcomment": "Ein Buch von Ewald Arenz"
+        },
+        {
+            "cardname": "Liebe oder Eierlikör - Fast eine Romanze",
+            "cardcomment": "Ein Buch von Dora Heldt"
+        },
+        {
+            "cardname": "Als Großmutter im Regen tanzte",
+            "cardcomment": "Ein Buch von Trude Teige"
+        },
+        {
+            "cardname": "Mein Leben in deinem",
+            "cardcomment": "Ein Buch von Jojo Moyes"
+        },
+        {
+            "cardname": "Zwischen Welten",
+            "cardcomment": "Ein Buch von Simon Urban und Juli Zeh"
+        },
+        {
+            "cardname": "Der letzte Sessellift",
+            "cardcomment": "Ein Buch von John Irving"
+        },
+        {
+            "cardname": "Die Affäre Alaska Sanders",
+            "cardcomment": "Ein Buch von Joël Dicker"
+        },
+        {
+            "cardname": "Die Postkarte",
+            "cardcomment": "Ein Buch von Anne Berest"
+        },
+        {
+            "cardname": "Pompeji oder Die fünf Reden des Jowna",
+            "cardcomment": "Ein Buch von Eugen Ruge"
+        },
+        {
+            "cardname": "Solange wir leben",
+            "cardcomment": "Ein Buch von David Safier"
+        },
+        {
+            "cardname": "Kummer aller Art",
+            "cardcomment": "Ein Buch von Mariana Leky"
+        }
+    ]
+}

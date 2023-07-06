@@ -6,6 +6,8 @@
 	<string>Decision Poker</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string></string>

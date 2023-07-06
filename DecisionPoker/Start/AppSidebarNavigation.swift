@@ -20,21 +20,29 @@ struct AppSidebarNavigation: View {
     
     @State private var selection: NavigationItem? = .decks
     @State private var path = NavigationPath()
- 
+    @AppStorage("SelectedColor") private var selectedColor = 0
+    
+    init() {
+           //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+           //Use this if NavigationBarTitle is with displayMode = .inline
+           UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+       }
     
     var body: some View {
         NavigationSplitView(columnVisibility: .constant(.all)) {
                 List(selection: $selection) {
                     NavigationLink(value: NavigationItem.decks) {
-                        Label("Decks", systemImage: "list.bullet")
+                        Label("Decks", systemImage: "rectangle.on.rectangle")
                     }
                     
                     NavigationLink(value: NavigationItem.savedDecisions) {
-                        Label("Saved Decisions", systemImage: "list.bullet")
+                        Label("Saved Decisions", systemImage: "bookmark.circle.fill")
                     }
                     
                     NavigationLink(value: NavigationItem.settings) {
-                        Label("Settings", systemImage: "list.bullet")
+                        Label("Settings", systemImage: "gearshape")
                     }
                     
                     NavigationLink(value: NavigationItem.about) {
@@ -42,14 +50,11 @@ struct AppSidebarNavigation: View {
                     }
                 }
                 .navigationTitle(String(localized: "Decision Poker", comment: "/"))
-                .background(theme.currentBackgroundColor)
-                .foregroundColor(theme.currentTextColor)
-                .accentColor(theme.currentBackgroundColor)
+                .background(themeColor.colors[selectedColor])
+                .foregroundColor(Color.white)
+                .accentColor(themeColor.colors[selectedColor])
                 .scrollContentBackground(.hidden)
-                .font(.custom(theme.currentFont, size: 20, relativeTo: .title))
-                .tint(.blue.opacity(0.5))
-               
-            
+                //.tint(.blue.opacity(0.5))
         }
     detail: {
         if let selection {
@@ -73,6 +78,6 @@ struct AppSidebarNavigation: View {
         }
     }
     .navigationSplitViewStyle(.balanced)
-    .accentColor(theme.currentTextColor)
+    .accentColor(Color.white)
     }
 }

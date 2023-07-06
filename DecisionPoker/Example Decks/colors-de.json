@@ -1,0 +1,35 @@
+{
+    "deckname": "Farben",
+    "deckcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!",
+    "cards":
+    [
+        {
+            "cardname": "Rot",
+            "cardcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!"
+        },
+        {
+            "cardname": "Orange",
+            "cardcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!"
+        },
+        {
+            "cardname": "Yellow",
+            "cardcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!"
+        },
+        {
+            "cardname": "Green",
+            "cardcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!"
+        },
+        {
+            "cardname": "Blue",
+            "cardcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!"
+        },
+        {
+            "cardname": "Indigo",
+            "cardcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!"
+        },
+        {
+            "cardname": "Violet",
+            "cardcomment": "Hier sind alle Farben des Regenbogens. Wir haben dieses Deck als Beispiel gewählt, um zu zeigen, wie man diese App benutzt. Du kannst den Namen des Decks ändern, wenn du willst. Wenn du ein Projekt hast, das mehrere Farben erfordert, und du dir nicht sicher bist, welche du verwenden willst, lass die App die Auswahl für dich übernehmen!"
+        }
+    ]
+}

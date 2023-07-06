@@ -1,0 +1,55 @@
+{
+    "deckname": "Summer book list",
+    "deckcomment": "Choose books to read this summer from this list.",
+    "cards":
+    [
+        {
+            "cardname": "Aouth to America: A Journey Below the Mason-Dixon to Understand the Soul of a Nation",
+            "cardcomment": "A book by Imani Perry"
+        },
+        {
+            "cardname": "Afterlives",
+            "cardcomment": "A book by Abdulrazak Gurnah"
+        },
+        {
+            "cardname": "Black Cake",
+            "cardcomment": "A book by Charmaine Wilkerson"
+        },
+        {
+            "cardname": "Ducks: Two Years in the Oil Sands",
+            "cardcomment": "A book by Kate Beaton"
+        },
+        {
+            "cardname": "The Furrows: A Novel",
+            "cardcomment": "A book by Namwali Serpell"
+        },
+        {
+            "cardname": "An Immense World: How Animal Senses Reveal the Hidden Realms Around Us",
+            "cardcomment": "A book by Ed Yong"
+        },
+        {
+            "cardname": "Liberation Day",
+            "cardcomment": "A book by George Saunders"
+        },
+        {
+            "cardname": "The Light We Carry",
+            "cardcomment": "A book by Michelle Obama"
+        },
+        {
+            "cardname": "The Revolutionary: Samuel Adams",
+            "cardcomment": "A book by Stacy Schiff"
+        },
+        {
+            "cardname": "The School for Good Mothers",
+            "cardcomment": "A book by Jessamine Chane"
+        },
+        {
+            "cardname": "Sea of Tranquility",
+            "cardcomment": "A book by Emily St. John Mandel"
+        },
+        {
+            "cardname": "Trust",
+            "cardcomment": "Hernan Diaz"
+        },
+    ]
+}

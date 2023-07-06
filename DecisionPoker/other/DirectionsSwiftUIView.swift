@@ -9,33 +9,36 @@
 import SwiftUI
 
 struct DirectionsSwiftUIView: View {
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
     let directions: LocalizedStringKey = "directions view text"
     
     var body: some View {
         ZStack {
-            VStack {
-                Text(directions)
-                    .font(Font.custom(theme.currentFont, size: 18.0, relativeTo: .title))
-                    .foregroundColor(theme.currentTextColor)
-                    .lineSpacing(5.0)
-                    .padding(20)
-                    .background( theme.currentBackgroundColor)
-                    .cornerRadius(8)
-                Spacer()
-            }
-            .padding(
-                EdgeInsets(
-                    top: 20,
-                    leading: 10,
-                    bottom: 10,
-                    trailing: 20
+                VStack {
+                    ScrollView(.vertical, showsIndicators: true) {
+                    Text(directions)
+                        .fontWidth(.condensed)
+                        .foregroundColor(Color("AccentColor"))
+                        .lineSpacing(5.0)
+                        .padding(20)
+                        .background(themeColor.colors[selectedColor])
+                        .cornerRadius(8)
+                    Spacer()
+                }
+                .padding(
+                    EdgeInsets(
+                        top: 20,
+                        leading: 10,
+                        bottom: 10,
+                        trailing: 20
+                    )
                 )
-            )
+            }
         }
         .background(BackgroundCardView().scaledToFit())
         .toolbarBackground(
-            theme.currentBackgroundColor,
+            themeColor.colors[selectedColor],
             for: .tabBar, .navigationBar)
         .toolbarBackground(.visible, for: .tabBar, .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
@@ -44,8 +47,7 @@ struct DirectionsSwiftUIView: View {
             ToolbarItem(placement: .principal) {
                 VStack {
                     Text("About Decision Poker")
-                        .font(Font(UIFont(name: theme.currentFont, size: 24)!))
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color("AccentColor"))
                 }
             }
         }

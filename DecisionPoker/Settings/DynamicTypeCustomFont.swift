@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-@available(iOS 13, macCatalyst 13, tvOS 13, watchOS 6, *)
+//@available(iOS 13, macCatalyst 13, tvOS 13, watchOS 6, *)
 struct ScaledFont: ViewModifier {
     @Environment(\.sizeCategory) var sizeCategory
     var name: String
@@ -20,7 +20,7 @@ struct ScaledFont: ViewModifier {
     }
 }
 
-@available(iOS 13, macCatalyst 13, tvOS 13, watchOS 6, *)
+//@available(iOS 13, macCatalyst 13, tvOS 13, watchOS 6, *)
 extension View {
     func scaledFont(name: String, size: CGFloat) -> some View {
         return self.modifier(ScaledFont(name: name, size: size))

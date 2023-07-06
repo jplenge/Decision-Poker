@@ -50,7 +50,6 @@ public class Deck: NSManagedObject {
         
         let possibleCards =  childCards?.filtered(using: NSPredicate(format: "cardIncluded == true"))
         
-        // TODO: remove optionals
         while selected.count < numberOfCardsToPick {
             if let pick = possibleCards?.randomElement() as? Card {
                 if !selected.contains(pick) {
@@ -59,10 +58,7 @@ public class Deck: NSManagedObject {
             }
         }
         
-        print("Played game")
-        
         return selected
-        
     }
     
     public func repickCard(selectedCards: [Card], current: Card) -> Card {
@@ -88,7 +84,6 @@ public class Deck: NSManagedObject {
     
         return repick!
     }
-    
 }
 
 extension Deck: Identifiable { }

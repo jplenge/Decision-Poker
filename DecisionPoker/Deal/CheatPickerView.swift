@@ -13,6 +13,7 @@ struct CheatPickerView: View {
     @State var selectedIndex: Int
     let possibleCards: [Card] 
     let onComplete: (Card) -> Void
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
     var body: some View {
         
@@ -31,26 +32,25 @@ struct CheatPickerView: View {
                             }, label: {
                                 HStack {
                                     Text(possibleCards[index].wrappedCardName)
-                                        .scaledFont(name: theme.currentFont, size: 26)
-                                        .foregroundColor(theme.currentTextColor)
+                                        .foregroundColor(Color("AccentColor"))
                                     
                                     Spacer()
                                     
                                     ZStack {
                                         Circle()
-                                            .fill(self.selectedIndex == index ? theme.currentButtonBackgroundColor : theme.unselectedRadioButtonBackgroundColor)
+                                            .fill(self.selectedIndex == index ? Color("AccentColor") : Color.gray)
                                             .frame(width: 18, height: 18)
                                         
                                         if self.selectedIndex == index {
-                                            Circle().stroke(theme.currentButtonBackgroundColor, lineWidth: 4).frame(width: 25, height: 25)
+                                            Circle().stroke(Color("AccentColor"), lineWidth: 4).frame(width: 25, height: 25)
                                         }
                                     }
                                 }.foregroundColor(.black)
                             }).padding(.top)
                         }
-                        .listRowBackground(theme.currentBackgroundColor)
+                        .listRowBackground(themeColor.colors[selectedColor])
                     }
-                    .listRowBackground(theme.currentBackgroundColor)
+                    .listRowBackground(themeColor.colors[selectedColor])
                 }
                 
                 VStack {
@@ -63,15 +63,13 @@ struct CheatPickerView: View {
                             self.pickCard()
                         }, label: {
                             Text("Pick Card")
-                                .scaledFont(name: theme.currentFont, size: 26)
                         })
-                        .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: themeColor.colors[selectedColor]))
                         Spacer()
                     }
-                    
                 }.padding()
             }
-            .background(theme.currentBackgroundColor)
+            .background(themeColor.colors[selectedColor])
             .navigationBarTitle("Replace Card", displayMode: .inline)
         }
     }

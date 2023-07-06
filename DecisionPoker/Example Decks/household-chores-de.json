@@ -1,0 +1,28 @@
+{
+    "deckname": "Haushaltsarbeit",
+    "deckcomment": "Hier sind einige typische Haushaltsaufgaben, die du vielleicht übernehmen musst.",
+    "cards":
+    [
+        {
+            "cardname": "Geschirr spülen",
+            "cardcomment": "Dies ist eine der Aufgaben, die auf deiner To-Do-Liste stehen. Hoffentlich ist es eine, die dir nichts ausmacht."
+        },
+        {
+            "cardname": "Den Fußboden wischen",
+            "cardcomment": "Dies ist eine der Aufgaben, die auf deiner To-Do-Liste stehen. Hoffentlich ist es eine, die dir nichts ausmacht."
+        },
+        {
+            "cardname": "Staubwischen im Wohnzimmer",
+            "cardcomment": "Dies ist eine der Aufgaben, die auf deiner To-Do-Liste stehen. Hoffentlich ist es eine, die dir nichts ausmacht."
+        },
+        {
+            "cardname": "Den Schreibtisch aufräumen",
+            "cardcomment": "Dies ist eine der Aufgaben, die auf deiner To-Do-Liste stehen. Hoffentlich ist es eine, die dir nichts ausmacht."
+        },
+        {
+            "cardname": "Die Wäsche waschen",
+            "cardcomment": "Dies ist eine der Aufgaben, die auf deiner To-Do-Liste stehen. Hoffentlich ist es eine, die dir nichts ausmacht."
+        }
+    ]
+}
+

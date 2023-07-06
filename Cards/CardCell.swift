@@ -11,41 +11,54 @@ import SwiftUI
 struct CardCell: View {
     @ObservedObject var card: Card
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     @State var editableText: String = ""
     @State var isShowingComment = false
     @State var editableTextField: String = ""
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
     var body: some View {
         
         VStack {
             HStack {
-                TextField(card.wrappedCardName.capitalized, text: $editableTextField, onCommit: saveCardTitle)
-                    .multilineTextAlignment(.leading)
-                    .scaledFont(name: theme.currentFont, size: 20)
-                    .padding()
-                    .foregroundColor(theme.currentTextColor)
-                    .onAppear(perform: {
-                        editableTextField = card.wrappedCardName
-                    })
-                    
-
+                TextField(card.wrappedCardName, text: $editableTextField, axis: .vertical)
+                .lineLimit(...3)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(Color("AccentColor"))
+                .font(.subheadline)
+                .onAppear {
+                    editableTextField = card.wrappedCardName
+                }
+                .onSubmit {
+                    saveCardTitle()
+                }
+                .padding(.leading, 15)
+                
                 Spacer()
-
+                
                 Button(action: {
                     self.isShowingComment.toggle()
                 }, label: {
                     Image(systemName: "info.circle")
-                        .frame(width: 22, height: 22)
-                        .foregroundColor(theme.currentButtonBackgroundColor)
-                        .padding()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(Color("AccentColor"))
+                        .padding(
+                            EdgeInsets(
+                                top: 10,
+                                leading: 0,
+                                bottom: 10,
+                                trailing: 0
+                            )
+                        )
                 })
                 .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
-
+                
                 Toggle(isOn: $card.cardIncluded) {
-                   EmptyView()
+                    EmptyView()
                 }
                 .toggleStyle(CheckboxToggleStyle())
-                .foregroundColor(theme.currentButtonBackgroundColor)
+                .foregroundColor(Color("AccentColor"))
                 .labelsHidden()
                 .padding(EdgeInsets(
                     top: 0,
@@ -54,13 +67,12 @@ struct CardCell: View {
                     trailing: 30
                 ))
             }
-
+            
             if isShowingComment {
                 TextView(text: $editableText) {
                     $0.isEditable = true
-                    $0.backgroundColor = theme.currentBackgroundColorUI
-                    $0.font = UIFont(name: theme.currentFont, size: 13)
-                    $0.textColor = theme.currentTextColorUI
+                    $0.backgroundColor = UIColor(themeColor.colors[selectedColor])
+                    $0.textColor = UIColor(Color("AccentColor"))
                 }
                 .padding(
                     EdgeInsets(
@@ -82,6 +94,12 @@ struct CardCell: View {
     }
     
     func saveCardTitle() {
-        card.cardName = editableTextField
+        card.cardName = self.card.wrappedCardName
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            print(error)
+        }
     }
 }

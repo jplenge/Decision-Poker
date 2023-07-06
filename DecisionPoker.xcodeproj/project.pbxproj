@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B03663B2A508BCD009B738E /* household-chores-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B03663A2A508BCD009B738E /* household-chores-en.json */; };
+		1B03663D2A50906E009B738E /* DeckEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B03663C2A50906E009B738E /* DeckEntry.swift */; };
+		1B0366432A50CDEB009B738E /* JSON Helper Functions .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0366422A50CDEB009B738E /* JSON Helper Functions .swift */; };
+		1B0366492A51A29A009B738E /* colors-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B0366482A51A29A009B738E /* colors-en.json */; };
+		1B03664B2A51A70F009B738E /* books-de.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B03664A2A51A70F009B738E /* books-de.json */; };
 		1B0505372A2299610044E3E2 /* AppSidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0505362A2299610044E3E2 /* AppSidebarNavigation.swift */; };
+		1B144CF22A54BC8B00568DC9 /* books-en.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B144CF12A54BC8B00568DC9 /* books-en.json */; };
 		1B1902C124AA397D00F1E94B /* DeckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C024AA397D00F1E94B /* DeckCell.swift */; };
 		1B1902C324AA46B000F1E94B /* AddDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C224AA46B000F1E94B /* AddDeckView.swift */; };
 		1B1902C524AA523D00F1E94B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C424AA523D00F1E94B /* TextView.swift */; };
@@ -28,8 +34,9 @@
 		1B2BA1FA251CE10A00CCABE9 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2BA1F9251CE10A00CCABE9 /* CustomToggle.swift */; };
 		1B31DDC724BCC30E0014F318 /* DynamicTypeCustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */; };
 		1B31DDC924BCDB270014F318 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31DDC824BCDB270014F318 /* ButtonStyle.swift */; };
+		1B4583ED2A571A6100E1E87E /* household-chores-de.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B4583EC2A571A6100E1E87E /* household-chores-de.json */; };
+		1B49C34E2A49EC6A0050AE99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B49C34D2A49EC6A0050AE99 /* ViewModel.swift */; };
 		1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */; };
-		1B51FB3F24A3E5DA00F4E80F /* StartSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */; };
 		1B51FB4324A3F9CB00F4E80F /* DecksSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */; };
 		1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4624A4934000F4E80F /* ThemeManager.swift */; };
 		1B5479B42A1D65020093D5C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B32A1D65020093D5C2 /* ContentView.swift */; };
@@ -49,6 +56,7 @@
 		1B96E50C251A9081007420F2 /* dismissKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */; };
 		1B9F59C422E8F054009B5129 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C222E8F054009B5129 /* InfoPlist.strings */; };
 		1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
+		1BB6D10D2A571D960073188B /* colors-de.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D10C2A571D960073188B /* colors-de.json */; };
 		1BD5E39526CD40B30051D76A /* saveJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5E39426CD40B30051D76A /* saveJSON.swift */; };
 		1BD5E39726CD4A1C0051D76A /* decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63BD266AA8A500C5CA01 /* decision.swift */; };
 		1BDC638F2666C97300C5CA01 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDC638E2666C97300C5CA01 /* WidgetKit.framework */; };
@@ -91,7 +99,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B03663A2A508BCD009B738E /* household-chores-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "household-chores-en.json"; sourceTree = "<group>"; };
+		1B03663C2A50906E009B738E /* DeckEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckEntry.swift; sourceTree = "<group>"; };
+		1B0366422A50CDEB009B738E /* JSON Helper Functions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON Helper Functions .swift"; sourceTree = "<group>"; };
+		1B0366482A51A29A009B738E /* colors-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "colors-en.json"; sourceTree = "<group>"; };
+		1B03664A2A51A70F009B738E /* books-de.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "books-de.json"; sourceTree = "<group>"; };
 		1B0505362A2299610044E3E2 /* AppSidebarNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSidebarNavigation.swift; sourceTree = "<group>"; };
+		1B144CF12A54BC8B00568DC9 /* books-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "books-en.json"; sourceTree = "<group>"; };
 		1B1902C024AA397D00F1E94B /* DeckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCell.swift; sourceTree = "<group>"; };
 		1B1902C224AA46B000F1E94B /* AddDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckView.swift; sourceTree = "<group>"; };
 		1B1902C424AA523D00F1E94B /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
@@ -109,9 +123,10 @@
 		1B2BA1F9251CE10A00CCABE9 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTypeCustomFont.swift; sourceTree = "<group>"; };
 		1B31DDC824BCDB270014F318 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		1B4583EC2A571A6100E1E87E /* household-chores-de.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "household-chores-de.json"; sourceTree = "<group>"; };
+		1B49C34D2A49EC6A0050AE99 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1B51FB2824A391E200F4E80F /* DecisionPoker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DecisionPoker 2.xcdatamodel"; sourceTree = "<group>"; };
 		1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsSwiftUIView.swift; sourceTree = "<group>"; };
-		1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSwiftUIView.swift; sourceTree = "<group>"; };
 		1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksSwiftUIView.swift; sourceTree = "<group>"; };
 		1B51FB4624A4934000F4E80F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		1B5479B32A1D65020093D5C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +147,7 @@
 		1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboardExtension.swift; sourceTree = "<group>"; };
 		1B9F59C322E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B9F59C622E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1BB6D10C2A571D960073188B /* colors-de.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "colors-de.json"; sourceTree = "<group>"; };
 		1BD5E39426CD40B30051D76A /* saveJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveJSON.swift; sourceTree = "<group>"; };
 		1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DecisionPoker.entitlements; sourceTree = "<group>"; };
 		1BD5E39A26CDAE2A0051D76A /* DecisionPokerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DecisionPokerWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -172,6 +188,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B03663F2A50C8F4009B738E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B03663C2A50906E009B738E /* DeckEntry.swift */,
+				1B0366422A50CDEB009B738E /* JSON Helper Functions .swift */,
+				1B49C34D2A49EC6A0050AE99 /* ViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B0366442A519FEA009B738E /* Example Decks */ = {
+			isa = PBXGroup;
+			children = (
+				1BB6D10C2A571D960073188B /* colors-de.json */,
+				1B0366482A51A29A009B738E /* colors-en.json */,
+				1B03663A2A508BCD009B738E /* household-chores-en.json */,
+				1B4583EC2A571A6100E1E87E /* household-chores-de.json */,
+				1B03664A2A51A70F009B738E /* books-de.json */,
+				1B144CF12A54BC8B00568DC9 /* books-en.json */,
+			);
+			path = "Example Decks";
+			sourceTree = "<group>";
+		};
 		1B31DDCA24BCDF710014F318 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +226,6 @@
 		1B51FB3B24A3D74700F4E80F /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				1B51FB3E24A3E5DA00F4E80F /* StartSwiftUIView.swift */,
 				1B5479B32A1D65020093D5C2 /* ContentView.swift */,
 				1B0505362A2299610044E3E2 /* AppSidebarNavigation.swift */,
 				1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */,
@@ -232,7 +270,6 @@
 				1B1902C224AA46B000F1E94B /* AddDeckView.swift */,
 				1B1902C024AA397D00F1E94B /* DeckCell.swift */,
 				1B1902C424AA523D00F1E94B /* TextView.swift */,
-				1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -251,6 +288,7 @@
 		1B7F907622D3406400812BE4 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */,
 				1B6437762A1D4C94002BC3D5 /* Persistence.swift */,
 				1B1902C624AA906900F1E94B /* DirectionsSwiftUIView.swift */,
 				A98F9F8C22D72A8A00C14787 /* FontSetup.swift */,
@@ -321,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD5E39A26CDAE2A0051D76A /* DecisionPokerWidgetExtension.entitlements */,
+				1B7F907522D3400200812BE4 /* Cards */,
 				A9D58A7322C4E49F00E608B8 /* DecisionPoker */,
 				1BDC63922666C97300C5CA01 /* DecisionPokerWidget */,
 				1BE92A21284F966E00464219 /* Shared */,
@@ -344,13 +383,13 @@
 		A9D58A7322C4E49F00E608B8 /* DecisionPoker */ = {
 			isa = PBXGroup;
 			children = (
-				1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */,
-				1B7F907222D33F5500812BE4 /* Core Data */,
 				1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */,
+				1B0366442A519FEA009B738E /* Example Decks */,
+				1B03663F2A50C8F4009B738E /* Models */,
+				1B7F907222D33F5500812BE4 /* Core Data */,
 				1B31DDCA24BCDF710014F318 /* Settings */,
 				1B51FB3B24A3D74700F4E80F /* Start */,
 				1B7F907422D33FDC00812BE4 /* Decks */,
-				1B7F907522D3400200812BE4 /* Cards */,
 				1B7F907722D3408400812BE4 /* Deal */,
 				1B7F907322D33FC700812BE4 /* Final Result */,
 				1B7F907622D3406400812BE4 /* other */,
@@ -359,6 +398,7 @@
 				A9D58A8322C4E4A000E608B8 /* Info.plist */,
 				1B9F59C522E8F054009B5129 /* Localizable.strings */,
 				1B9F59C222E8F054009B5129 /* InfoPlist.strings */,
+				1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */,
 			);
 			path = DecisionPoker;
 			sourceTree = "<group>";
@@ -431,7 +471,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				de,
 			);
 			mainGroup = A9D58A6822C4E49F00E608B8;
@@ -462,10 +501,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B03663B2A508BCD009B738E /* household-chores-en.json in Resources */,
 				1B29CFF8254F586E00406090 /* Colors.xcassets in Resources */,
+				1B4583ED2A571A6100E1E87E /* household-chores-de.json in Resources */,
+				1B0366492A51A29A009B738E /* colors-en.json in Resources */,
+				1B144CF22A54BC8B00568DC9 /* books-en.json in Resources */,
 				1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */,
+				1BB6D10D2A571D960073188B /* colors-de.json in Resources */,
 				A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */,
 				1B9F59C422E8F054009B5129 /* InfoPlist.strings in Resources */,
+				1B03664B2A51A70F009B738E /* books-de.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +567,6 @@
 				1B1902D524ACDC4600F1E94B /* CheatPickerView.swift in Sources */,
 				1BDC63BE266AA8A500C5CA01 /* decision.swift in Sources */,
 				1B1902CD24AC7D9300F1E94B /* CardCell.swift in Sources */,
-				1B51FB3F24A3E5DA00F4E80F /* StartSwiftUIView.swift in Sources */,
 				1B1902C324AA46B000F1E94B /* AddDeckView.swift in Sources */,
 				1B1902C124AA397D00F1E94B /* DeckCell.swift in Sources */,
 				1B1902C524AA523D00F1E94B /* TextView.swift in Sources */,
@@ -540,10 +584,13 @@
 				1B29CFEC254B5F8100406090 /* SettingsUIView.swift in Sources */,
 				A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */,
 				1B21A06724A73C3D00A56F34 /* Binding.swift in Sources */,
+				1B0366432A50CDEB009B738E /* JSON Helper Functions .swift in Sources */,
 				1B7F909022D34F2100812BE4 /* SavedCard+CoreDataClass.swift in Sources */,
 				1B31DDC924BCDB270014F318 /* ButtonStyle.swift in Sources */,
+				1B03663D2A50906E009B738E /* DeckEntry.swift in Sources */,
 				A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */,
 				1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */,
+				1B49C34E2A49EC6A0050AE99 /* ViewModel.swift in Sources */,
 				1B1902D324AC988200F1E94B /* DealResultSwiftUIView.swift in Sources */,
 				1B1902D124AC866100F1E94B /* AddCardView.swift in Sources */,
 				1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */,
@@ -593,16 +640,16 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker.DecisionPokerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -619,16 +666,16 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker.DecisionPokerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -765,10 +812,10 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPoker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -793,10 +840,10 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPokerRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

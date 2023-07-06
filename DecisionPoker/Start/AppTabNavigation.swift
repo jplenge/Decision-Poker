@@ -19,7 +19,9 @@ struct AppTabNavigation: View {
     
     @State private var selection: Tab = .decks
     @State private var path = NavigationPath()
-
+    //@AppStorage("SelectedColor") private var selectedColor = 0
+    
+ 
     var body: some View {
         TabView(selection: $selection) {
             NavigationStack(path: $path) {
@@ -30,10 +32,11 @@ struct AppTabNavigation: View {
                     Label {
                         menuText
                     } icon: {
-                        Image(systemName: "list.bullet")
+                        Image(systemName: "rectangle.on.rectangle")
                     }.accessibility(label: menuText)
                 }
                 .tag(Tab.decks)
+            
             NavigationStack {
                 SavedResultsSwiftUIView(showBackButton: .constant(false), path: $path)
             }
@@ -67,9 +70,10 @@ struct AppTabNavigation: View {
                     } icon: {
                         Image(systemName: "list.bullet")
                     }.accessibility(label: menuText)
+                        .foregroundColor(.red)
                 }
                 .tag(Tab.directions)
         }
-        .tint(theme.currentTextColor)
+        .tint(Color("AccentColor"))
     }
 }

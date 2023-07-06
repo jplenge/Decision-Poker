@@ -12,20 +12,22 @@ struct BackgroundCardView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 #endif
     
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
+
     var cols = 20
     var rows = 20
     
     var body: some View {
         VStack {
-            GeometryReader { gr in
-                let width = gr.size.width / CGFloat(cols)
-                let height = gr.size.height / CGFloat(rows)
+            GeometryReader { geometry in
+                let width = geometry.size.width / CGFloat(cols)
+                let height = geometry.size.height / CGFloat(rows)
                 
                 VStack(spacing:0) {
-                    ForEach(0..<rows) { _ in
+                    ForEach(0..<rows, id: \.self) { _ in
                         HStack(spacing:0) {
                             Group {
-                                ForEach(0..<cols) { _ in
+                                ForEach(0..<cols, id: \.self) { _ in
                                     SuitsView()
                                         .scaleEffect(0.25)
                                         .frame(width: width, height: height)
@@ -37,8 +39,8 @@ struct BackgroundCardView: View {
             }
             .frame(width: 1600, height: 1600)
         }
-        .background(theme.currentBackgroundColor)
-        .opacity(0.4)
+        .background(themeColor.colors[selectedColor])
+        .opacity(0.5)
     }
 }
 

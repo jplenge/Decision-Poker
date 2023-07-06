@@ -17,56 +17,84 @@ struct CardsSwiftUIView: View {
     @State var isShowingDeckComment: Bool = false
     @State var editableText: String = ""
     @State var editableTextField: String = ""
-
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
+    
     var body: some View {
         
         List {
             VStack {
+                Spacer()
                 HStack {
                     Spacer()
-                    TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveDeckTitle)
+                        TextField(deck.wrappedDeckName, text: $editableTextField, axis: .vertical)
+                        .lineLimit(...3)
                         .multilineTextAlignment(.center)
-                        .scaledFont(name: theme.currentFont, size: 28)
-                        .padding()
-                        .foregroundColor(theme.currentTextColor)
-                        .onAppear(perform: {
+                        .padding(.top, 10)
+                        .foregroundColor(Color("AccentColor"))
+                        .fontWeight(.bold)
+                        .font(.title3)
+                        .onAppear {
                             editableTextField = deck.wrappedDeckName
-                        })
-                    
+                        }
+                        .onSubmit {
+                            deck.deckName = editableTextField
+                            do {
+                                try self.managedObjectContext.save()
+                            } catch {
+                                print(error)
+                            }
+                        }
+
                     Button(action: {
                         self.isShowingDeckComment.toggle()
                     }, label: {
                         Image(systemName: "info.circle")
                             .frame(width: 22, height: 22)
-                            .foregroundColor(theme.currentButtonBackgroundColor)
+                            .foregroundColor(Color("AccentColor"))
                             .padding()
                     })
-                    .buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
+                    .buttonStyle(BorderlessButtonStyle())
+                    .padding(.top, 10)// workaround so that button can be tapped
                     Spacer()
                 }
                 
                 if isShowingDeckComment {
-                    TextView(text: $editableText) {
-                        $0.isEditable = true
-                        $0.backgroundColor = theme.currentBackgroundColorUI
-                        $0.font = UIFont(name: theme.currentFont, size: 13)
-                        $0.textColor = theme.currentTextColorUI
-                    }
-                    .frame(height: 150)
-                    .onAppear {
-                        self.editableText = deck.wrappedDeckComment
-                    }
-                    .onDisappear(perform: {
-                        deck.deckComment = self.editableText
-                    })
+                    TextField(deck.wrappedDeckComment, text: $editableText, axis: .vertical)
+                        .onAppear {
+                            self.editableText = deck.wrappedDeckComment
+                        }
+                        .onSubmit {
+                            deck.deckComment = self.editableText
+                            do {
+                                try self.managedObjectContext.save()
+                            } catch {
+                                print(error)
+                            }
+                        }
+                        .lineLimit(...6)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(Color("AccentColor"))
+                        .font(.footnote)
+//                    TextView(text: $editableText) {
+//                        $0.isEditable = true
+//                        $0.backgroundColor = UIColor(themeColor.colors[selectedColor])
+//                        $0.textColor = UIColor(Color("AccentColor"))
+//                    }
+//                    .frame(height: 150)
+//                    .onAppear {
+//                        self.editableText = deck.wrappedDeckComment
+//                    }
+//                    .onDisappear(perform: {
+//                        deck.deckComment = self.editableText
+//                    })
                 }
                 
                 Spacer()
             }
             .listRowBackground(
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 20)
                     .background(.clear)
-                    .foregroundColor(theme.currentBackgroundColor)
+                    .foregroundColor(themeColor.colors[selectedColor])
                     .padding(
                         EdgeInsets(
                             top: 5,
@@ -76,17 +104,14 @@ struct CardsSwiftUIView: View {
                         )
                     )
             )
-
-            //.listRowBackground(theme.currentBackgroundColor)
                         
             ForEach(deck.childCardsArray, id: \.id) { card in
                 CardCell(card: card)
-                
             }.onDelete(perform: deleteCard)
             .listRowBackground(
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 20)
                     .background(.clear)
-                    .foregroundColor(theme.currentBackgroundColor)
+                    .foregroundColor(themeColor.colors[selectedColor])
                     .padding(
                         EdgeInsets(
                             top: 5,
@@ -107,15 +132,14 @@ struct CardsSwiftUIView: View {
             }
         }
         .toolbarBackground(
-            theme.currentBackgroundColor,
+            themeColor.colors[selectedColor],
             for: .tabBar, .navigationBar)
         .toolbarBackground(.visible, for: .tabBar, .navigationBar)
         .toolbar {
             ToolbarItem(placement: .principal) {
                         VStack {
                             Text("Deck Details")
-                                .font(Font(UIFont(name: theme.currentFont, size: 24)!))
-                              .foregroundColor(Color.white)
+                              .foregroundColor(Color("AccentColor"))
                         }
                     }
                 }
@@ -127,10 +151,6 @@ struct CardsSwiftUIView: View {
         }))
     }
 
-    
-    
-    
-    
     func deleteCard(at offsets: IndexSet) {
         offsets.forEach { index in
             let card = self.deck.childCardsArray[index]
@@ -162,5 +182,10 @@ struct CardsSwiftUIView: View {
     
     func saveDeckTitle() {
         deck.deckName = editableTextField
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            print(error)
+        }
     }
 }

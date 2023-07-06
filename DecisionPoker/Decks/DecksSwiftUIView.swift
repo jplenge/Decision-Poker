@@ -10,20 +10,18 @@ import SwiftUI
 import CoreData
 
 struct DecksSwiftUIView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Binding var path: NavigationPath
     @State private var isPresented = false
-    @State var gameResult: [Card] = []
-    @State var selectedDeck = Deck()
-
+    @StateObject private var viewModel = ViewModel()
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
+    
     init(path: Binding<NavigationPath>) {
         self._path = path
-
+        
         UIStepper.appearance().setIncrementImage(UIImage(systemName: "plus"), for: .normal)
         UIStepper.appearance().setDecrementImage(UIImage(systemName: "minus"), for: .normal)
-        UIStepper.appearance().tintColor = theme.currentBackgroundColorUI
     }
-
-    @Environment(\.managedObjectContext) var managedObjectContext
 
     // fetch all decks from core data
     @FetchRequest(entity: Deck.entity(), sortDescriptors: [NSSortDescriptor(
@@ -38,20 +36,20 @@ struct DecksSwiftUIView: View {
                 if !decks.isEmpty {
                     ForEach(decks, id:\.deckName) { deck in
                         NavigationLink(value: deck) {
-                            DeckCell(deck: deck, path: $path, gameResult: $gameResult, selectedDeck: $selectedDeck)
+                            DeckCell(deck: deck, path: $path, viewModel: viewModel)
                         }
                     }
                     .onDelete(perform: deleteDeck)
                     .listRowBackground(
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: 20)
                             .background(.clear)
-                            .foregroundColor(theme.currentBackgroundColor)
+                            .foregroundColor(themeColor.colors[selectedColor])
                             .padding(
                                 EdgeInsets(
                                     top: 5,
-                                    leading: 10,
+                                    leading: 5,
                                     bottom: 5,
-                                    trailing: 10
+                                    trailing: 5
                                 )
                             )
                     )
@@ -59,7 +57,7 @@ struct DecksSwiftUIView: View {
                 }
             }
             .toolbarBackground(
-                theme.currentBackgroundColor,
+                themeColor.colors[selectedColor],
                 for: .tabBar, .navigationBar)
             .toolbarBackground(.visible, for: .tabBar, .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
@@ -68,8 +66,7 @@ struct DecksSwiftUIView: View {
                 ToolbarItem(placement: .principal) {
                             VStack {
                                 Text("Decks")
-                                    .font(Font(UIFont(name: theme.currentFont, size: 24)!))
-                                  .foregroundColor(Color.white)
+                                  .foregroundColor(Color("AccentColor"))
                             }
                         }
                     }
@@ -98,9 +95,14 @@ struct DecksSwiftUIView: View {
             }))
         }
         .navigationDestination(for: String.self) { _ in
-            DealResultSwiftUIView(selectedDeck: $selectedDeck, results: $gameResult, path: self.$path)
+            DealResultSwiftUIView(viewModel: viewModel, path: self.$path)
         }
         .background(BackgroundCardView().scaledToFit())
+        .overlay {
+            if decks.isEmpty {
+                BackgroundCardView().scaledToFit()
+            }
+        }
     }
     
     private func deleteDeck(at offsets: IndexSet) {
@@ -131,9 +133,3 @@ struct DecksSwiftUIView: View {
         }
     }
 }
-
-// struct DecksSwiftUIView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        //DecksSwiftUIView().environmentObject(AppState())
-//    }
-// }

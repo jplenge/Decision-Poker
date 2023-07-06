@@ -16,61 +16,71 @@ struct DeckCell: View {
     @State var editableTextField = ""
     @State var stepperValue = 0
     @State var low = 1
-    @Binding var gameResult: [Card]
-    @Binding var selectedDeck: Deck
+    @ObservedObject var viewModel: ViewModel
+   
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
 
     var body: some View {
         let view = ZStack {
             VStack {
                 HStack {
-                    TextField(deck.wrappedDeckName, text: $editableTextField, onCommit: saveTitle)
+                    TextField(deck.wrappedDeckName, text: $editableTextField, axis: .vertical)
+                        .lineLimit(...3)
                         .multilineTextAlignment(.center)
-                        .scaledFont(name: theme.currentFont, size: 22)
-                        .padding()
-                        .foregroundColor(theme.currentTextColor)
-                        .onAppear(perform: {
+                        .padding(.top, 10)
+                        .foregroundColor(Color("AccentColor"))
+                        .fontWeight(.bold)
+                        .font(.title3)
+                        .onAppear {
                             editableTextField = deck.wrappedDeckName
-                        })
+                        }
+                        .onSubmit {
+                            saveTitle()
+                        }
                     
                     Button(action: {
                         self.isShowingComment.toggle()
                     }, label: {
                         Image(systemName: "info.circle")
                             .frame(width: 40, height: 40)
-                            .foregroundColor(theme.currentButtonBackgroundColor)
-                            .padding()
+                            .foregroundColor(Color("AccentColor"))
+                            .padding(.top, 10)
                     }).buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
                 }
                 
                 if isShowingComment {
-                    
-                    TextView(text: $editableText) {
-                        $0.isEditable = true
-                        $0.backgroundColor = theme.currentBackgroundColorUI
-                        $0.font = UIFont(name: theme.currentFont, size: 13)
-                        $0.textColor = theme.currentTextColorUI
-                    }
-                    .frame(height: 150)
-                    .onAppear {
-                        self.editableText = deck.wrappedDeckComment
-                    }
-                    .onDisappear(perform: {
-                        deck.deckComment = self.editableText
-                    })
+                    TextField(deck.wrappedDeckComment, text: $editableText, axis: .vertical)
+                        .onAppear {
+                            self.editableText = deck.wrappedDeckComment
+                        }
+                        .onSubmit {
+                            deck.deckComment = self.editableText
+                            do {
+                                try self.managedObjectContext.save()
+                            } catch {
+                                print(error)
+                            }
+                        }
+                        .lineLimit(...6)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(Color("AccentColor"))
+                        .font(.footnote)
                 }
                 
                 HStack {
                     Spacer()
                     
-                    Text("Total: \(deck.childCardsCount) cards")
-                        .scaledFont(name: theme.currentFont, size: 16)
-                        .foregroundColor(theme.currentTextColor)
+                        Text("Total: \(deck.childCardsCount) cards")
+                            .font(.system(size: 14))
+                            .foregroundColor(Color("AccentColor"))
                     
                     Spacer()
                     
                     Text("Active: \(deck.activeCards) cards")
-                        .scaledFont(name: theme.currentFont, size: 16)
-                        .foregroundColor(theme.currentTextColor)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color("AccentColor"))
                     
                     Spacer()
                 }
@@ -82,11 +92,11 @@ struct DeckCell: View {
                     Spacer()
                     
                     Text(LocalizedStringKey("Select: \(deck.numberOfCardsToPick) cards"))
-                        .scaledFont(name: theme.currentFont, size: 16)
-                        .foregroundColor(theme.currentTextColor)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color("AccentColor"))
                     
                     Spacer()
-                        .frame(width: 10)
+                        .frame(width: 15)
                     
                     Stepper("", value: $stepperValue, in: 0...self.deck.activeCards, step: 1, onEditingChanged: {_ in
                         self.deck.numberOfCardsToPick = Int16(self.stepperValue)
@@ -100,8 +110,9 @@ struct DeckCell: View {
                         }
                         self.stepperValue = Int(self.deck.numberOfCardsToPick)
                     }
+                    .tint(themeColor.colors[selectedColor])
                     .frame(width: 80)
-                    .background(theme.currentTextColor)
+                    .background(Color("AccentColor"))
                     .cornerRadius(10)
                     
                     Spacer()
@@ -111,30 +122,38 @@ struct DeckCell: View {
                 
                 VStack {
                     Button(action: {
-                        gameResult = self.deck.playGame()
-                        selectedDeck = deck
+                        viewModel.gameResult = self.deck.playGame()
+                        self.viewModel.selectedDeck = deck
                         path.append("ResultView")
                     }, label: {
                         Text("Deal")
-                            .scaledFont(name: theme.currentFont, size: 20)
                             .padding(.horizontal)
                     })
-                    .buttonStyle(StartViewButtonStyle(backcolor: theme.currentButtonBackgroundColor, forecolor: theme.currentBackgroundColor))
+                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: themeColor.colors[selectedColor]))
                 }
                 Spacer()
             }
-//            .navigationDestination(for: String.self) { _ in
-//                DealResultSwiftUIView(selectedDeck: self.deck, results: gameResult, path: self.$path)
-//            }
         }
         return view
     }
     
     private func updateDeckComment() {
         deck.deckComment = editableText
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            print(error)
+        }
     }
     
     private func saveTitle() {
         deck.deckName = editableTextField
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch {
+            print(error)
+        }
     }
 }

@@ -144,7 +144,7 @@
 
 "Cards" = "Karten";
 
-/* Settings */*/
+/* Settings */
 "Classic" = "Klassisch";
 "Modern" = "Modern";
 "Dark" = "Dark";
@@ -158,3 +158,5 @@
 "Done" = "Fertig";
 
 "About" = "Über";
+
+"" = "";
