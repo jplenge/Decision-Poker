@@ -47,9 +47,12 @@ struct  SavedResultsSwiftUIView: View {
                                 Spacer()
                                 Text(deck.wrappedDeckName)
                                     .fontWeight(.bold)
+                                    .font(.title3)
+                                    .fontDesign(.rounded)
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(Color("AccentColor"))
-                                    .padding()
+                                    .padding(.top, 10)
+                                    .padding(.bottom, 5)
                                 Spacer()
                             }
                             VStack(alignment: .leading) {
@@ -57,12 +60,13 @@ struct  SavedResultsSwiftUIView: View {
                                     
                                     VStack(alignment: .center) {
                                         HStack {
-                                            Image(systemName: "note")
+                                            Image(systemName: "chart.bar.doc.horizontal")
                                                 .foregroundColor(Color("AccentColor"))
-                                                .font(.system(size: 14))
+                                                .font(.body)
                                             
                                             Text("\(card.wrappedCardName)")
-                                                .font(.system(size: 14))
+                                                .fontDesign(.rounded)
+                                                .font(.body)
                                                 .multilineTextAlignment(.leading)
                                                 .foregroundColor(Color("AccentColor"))
                                             
@@ -71,12 +75,12 @@ struct  SavedResultsSwiftUIView: View {
                                         .padding(.leading)
                                     }
                                     
-                                }.listRowBackground(themeColor.colors[selectedColor])
+                                }.listRowBackground(theme.colors[selectedColor])
                             }
                             Spacer()
                             HStack {
                                 Text("created: \(deck.creationDateFormatted)")
-                                    .font(.system(size: 10))
+                                    .font(.footnote)
                                     .multilineTextAlignment(.leading)
                                     .foregroundColor(Color("AccentColor"))
                                     .padding(.bottom, 8)
@@ -97,8 +101,9 @@ struct  SavedResultsSwiftUIView: View {
                                         Image(systemName: "square.and.arrow.up")
                                             .imageScale(.small)
                                     })
-                                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
-                                                                      forecolor: themeColor.colors[selectedColor]))
+                                    .buttonStyle(BorderlessButtonStyle())
+//                                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
+//                                                                      forecolor: theme.colors[selectedColor]))
                                     .padding(.bottom, 10)
                                     .padding(.trailing, 10)
                                 }
@@ -110,28 +115,28 @@ struct  SavedResultsSwiftUIView: View {
                 .listRowBackground(
                     RoundedRectangle(cornerRadius: 20)
                         .background(.clear)
-                        .foregroundColor(themeColor.colors[selectedColor])
+                        .foregroundColor(theme.colors[selectedColor])
                         .padding(
                             EdgeInsets(
                                 top: 5,
-                                leading: 10,
+                                leading: 0,
                                 bottom: 5,
-                                trailing: 10
+                                trailing: 0
                             )
                         )
                 )
                 .listRowSeparator(.hidden)
             }
-            .toolbarBackground(
-                themeColor.colors[selectedColor],
-                for: .tabBar, .navigationBar)
+            .scrollIndicators(.hidden)
             .toolbarBackground(.visible, for: .tabBar, .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     VStack {
                         Text("Saved Decisions")
-                            .foregroundColor(Color("AccentColor"))
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(theme.colors[selectedColor])
                     }
                 }
             }
@@ -153,7 +158,7 @@ struct  SavedResultsSwiftUIView: View {
                                 Text("Done")
                             })
                             .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
-                                                              forecolor: themeColor.colors[selectedColor]))
+                                                              forecolor: theme.colors[selectedColor]))
                         }.padding()
                     }
                 }
@@ -168,7 +173,6 @@ struct  SavedResultsSwiftUIView: View {
             }
             .scrollContentBackground(.hidden)
             .sheet(isPresented: $showActionSheet, onDismiss: {
-                print("Dismiss")
             }, content: {
                 ActivityViewController(activityItems: [sharedString])
             })

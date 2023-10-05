@@ -1,3 +1,13 @@
+"deck.tab.title" = "Kartenstapel";
+"deck.add.title" = "Kartenstapel hinzufügen";
+"deck.add.name.section.header" = "Stapelname";
+"deck.add.textfield.name" = "Neuer Stapelname";
+"deck.add.comment.section.header" = "Kommentar";
+"deck.add.textfield.comment" = "Füge Kommentar hinzu (optional)";
+"deck.create.button.label" = "Kartenstapel anlegen";
+"deck.add.keyboard.done.label" = "Fertig";
+
+///////////////////////////////
 /* Startscreen */
 
 "Decision Poker" = "Entscheidungspoker";
@@ -14,30 +24,30 @@
 
 /* Directions */
 
-"directions view text" = "Diese Entscheidungsfindungs App hilft Dir ein oder mehrere Dinge aus einer Liste von Möglichkeiten auszuwählen.  Die App vergleicht den Entscheidungsfindungsprozess mit einem Pokerspiel. Ein Thema wird durch einen Kartenstapel repräsentiert und jede Karte entspricht einer Wahlmöglichkeit. Drücke den \"Entscheidungen treffen\" Button um zu starten. Die App beinhaltet zwei Beispiele: Farben und Hausarbeit. Du kannst neue Kartenstapel hinzufügen oder die bestehenden verändern. Weitere Informationen findest Du unter dem \"Info\" Button. Wenn Du mit den Einstellungen fertig bist, drücke einfach den \"Entscheidungen treffen\" Button, damit die App Entscheidungen für Dich trifft. Du kann die Entscheidungen der App weiter anpassen und speichern. Manchmal ist es anstrengend Entscheidungen zu treffen. Wir hoffen, dass diese App diesen Prozess für Dich angenehmer macht.";
+"directions view text" = "Diese App zur Entscheidungsfindung ermöglicht es dir, ein oder mehrere Ergebnisse aus einer Liste von Möglichkeiten auszuwählen. Sie vergleicht den Entscheidungs\-findungsprozess mit einem Pokerspiel. Jedes Thema wird als Kartenstapel eingegeben, und jede Auswahl in einem Kartenstapel wird als Karte eingegeben. Die App zeigt drei Startstapel an, eine Sommerleseliste, Farben und Hausarbeiten, aber du kannst deine eigenen Kartenstapel und Karten hinzufügen und bearbeiten. Sobald deine Auswahl optimiert ist, drückst du einfach auf \"Austeilen\", um dein zufälliges \"Blatt\" oder deine Entscheidung zu erstellen! Sobald die Entscheidung getroffen ist, kannst du jede beliebige Auswahl deines Ergebnisses korrigieren und neu auslegen. Wenn du mit der Entscheidung, die die App getroffen hat, zufrieden bist, kannst du deine endgültigen Lösungen sehen, senden und speichern. Manchmal ist es anstrengend, Entscheidungen zu treffen. Wir hoffen, dass diese App den Prozess angenehmer und effizienter macht!";
 
 
 /* Decks View*/
 
 "Decks" = "Kartenstapel";
 "Total: %lld cards" = "Gesamt: %lld Karten";
-"Active: %lld cards" = "Aktiv: %lld Karten";
-"Select: %d cards" = "Auswählen: %d Karten";
+"Active: %lld" = "Aktiv: %lld";
+"Select: %lld cards" = "Auswählen: %lld Karten";
 
 
 /* Deck Details View */
-"Deck Details" = "Stapel Details";
+"Deck Details" = "Stapeldetails";
 
 
 /* Add card*/
 
 "Cardname" = "Kartenname";
-"New cardname" = "Neuer Kartenname";
+"New Card Name" = "Neuer Kartenname";
 "Add Card" = "Karte hinzufügen";
 "New Card" = "Neue Karte";
 
 /* First Hand */
-"Cheat" = "Mogeln";
+"Cheat" = "Schummeln";
 "Redraw" = "Neue Karte";
 "Hold 'em!" = "Hold 'em!";
 "First Hand" = "Erstes Blatt";
@@ -57,9 +67,9 @@
 
 
 "Add Deck" = "Kartenstapel hinzufügen";
-"New Deck Name" = "Neuer Stapel Name";
+"New Deck Name" = "Neuer Stapelname";
 "Deckname" = "Stapelname";
-"Enter comment here" = "Füge Kommentar hinzu";
+"Enter comment here (optional)" = "Füge Kommentar hinzu";
 "Comment" = "Kommentar";
 
 /* No comment provided by engineer. */
@@ -140,7 +150,7 @@
 /* No comment provided by engineer. */
 "You need to either a) increase the number of cards in the deck or b) decrease the number of card choices that will be in your hand!" = "Du musst entweder die Anzahl der Karten in Deinem Kartenstapel erhöhen oder die Anzahl der zu ziehenden Karten veringern!";
 
-"Deal" = "Austeilen";
+"Deal-Button" = "Austeilen";
 
 "Cards" = "Karten";
 
@@ -160,3 +170,29 @@
 "About" = "Über";
 
 "" = "";
+
+"About Decision Poker" = "Über Decision Poker";
+
+"Already Saved" = "Bereits gespeichert";
+
+"Total: " = "Gesamt: ";
+
+"cards" = "Karten";
+
+"Active: " = "Aktiv: ";
+
+"cards" = "Karten";
+
+"card" = "Karte ";
+
+"Select: %ld" = "Ausgewählt: %ld";
+
+"Theme Color" = "Farbschema";
+
+"Reset database" = "Datenbank zurücksetzen";
+
+"Replace Card" = "Karte ersetzen";
+
+"Delete-Database-Alert" = "Es werden alle Kartenstapel gelöscht! Möchtest Du wirklich fortfahren?";
+
+"Yes, continue" = "Ja, weiter";

@@ -29,9 +29,9 @@ struct CardsSwiftUIView: View {
                         TextField(deck.wrappedDeckName, text: $editableTextField, axis: .vertical)
                         .lineLimit(...3)
                         .multilineTextAlignment(.center)
-                        .padding(.top, 10)
                         .foregroundColor(Color("AccentColor"))
                         .fontWeight(.bold)
+                        .fontDesign(.rounded)
                         .font(.title3)
                         .onAppear {
                             editableTextField = deck.wrappedDeckName
@@ -51,10 +51,11 @@ struct CardsSwiftUIView: View {
                         Image(systemName: "info.circle")
                             .frame(width: 22, height: 22)
                             .foregroundColor(Color("AccentColor"))
-                            .padding()
+                            .padding(.top, 15)
+                            .padding(.bottom, 15)
+
                     })
                     .buttonStyle(BorderlessButtonStyle())
-                    .padding(.top, 10)// workaround so that button can be tapped
                     Spacer()
                 }
                 
@@ -75,18 +76,6 @@ struct CardsSwiftUIView: View {
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Color("AccentColor"))
                         .font(.footnote)
-//                    TextView(text: $editableText) {
-//                        $0.isEditable = true
-//                        $0.backgroundColor = UIColor(themeColor.colors[selectedColor])
-//                        $0.textColor = UIColor(Color("AccentColor"))
-//                    }
-//                    .frame(height: 150)
-//                    .onAppear {
-//                        self.editableText = deck.wrappedDeckComment
-//                    }
-//                    .onDisappear(perform: {
-//                        deck.deckComment = self.editableText
-//                    })
                 }
                 
                 Spacer()
@@ -94,7 +83,7 @@ struct CardsSwiftUIView: View {
             .listRowBackground(
                 RoundedRectangle(cornerRadius: 20)
                     .background(.clear)
-                    .foregroundColor(themeColor.colors[selectedColor])
+                    .foregroundColor(theme.colors[selectedColor])
                     .padding(
                         EdgeInsets(
                             top: 5,
@@ -111,7 +100,7 @@ struct CardsSwiftUIView: View {
             .listRowBackground(
                 RoundedRectangle(cornerRadius: 20)
                     .background(.clear)
-                    .foregroundColor(themeColor.colors[selectedColor])
+                    .foregroundColor(theme.colors[selectedColor])
                     .padding(
                         EdgeInsets(
                             top: 5,
@@ -131,15 +120,14 @@ struct CardsSwiftUIView: View {
                 self.isPresented = false
             }
         }
-        .toolbarBackground(
-            themeColor.colors[selectedColor],
-            for: .tabBar, .navigationBar)
         .toolbarBackground(.visible, for: .tabBar, .navigationBar)
         .toolbar {
             ToolbarItem(placement: .principal) {
                         VStack {
                             Text("Deck Details")
-                              .foregroundColor(Color("AccentColor"))
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
+                                .foregroundColor(theme.colors[selectedColor])
                         }
                     }
                 }
@@ -148,6 +136,8 @@ struct CardsSwiftUIView: View {
         }, label: {
             Image(systemName: "plus")
                 .imageScale(.small)
+                .fontWeight(.bold)
+                .fontDesign(.rounded)
         }))
     }
 

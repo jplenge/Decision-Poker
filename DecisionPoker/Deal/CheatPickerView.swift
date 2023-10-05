@@ -33,6 +33,7 @@ struct CheatPickerView: View {
                                 HStack {
                                     Text(possibleCards[index].wrappedCardName)
                                         .foregroundColor(Color("AccentColor"))
+                                        .fontDesign(.rounded)
                                     
                                     Spacer()
                                     
@@ -48,9 +49,10 @@ struct CheatPickerView: View {
                                 }.foregroundColor(.black)
                             }).padding(.top)
                         }
-                        .listRowBackground(themeColor.colors[selectedColor])
+                        .listRowBackground(theme.colors[selectedColor])
+                        .listRowSeparator(.hidden)
                     }
-                    .listRowBackground(themeColor.colors[selectedColor])
+                    .listRowBackground(theme.colors[selectedColor])
                 }
                 
                 VStack {
@@ -63,14 +65,25 @@ struct CheatPickerView: View {
                             self.pickCard()
                         }, label: {
                             Text("Pick Card")
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
                         })
-                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: themeColor.colors[selectedColor]))
+                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: theme.colors[selectedColor]))
                         Spacer()
                     }
                 }.padding()
             }
-            .background(themeColor.colors[selectedColor])
-            .navigationBarTitle("Replace Card", displayMode: .inline)
+            .background(theme.colors[selectedColor])
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                            VStack {
+                                Text("Replace Card")
+                                    .fontWeight(.bold)
+                                    .fontDesign(.rounded)
+                                  .foregroundColor(Color("AccentColor"))
+                            }
+                        }
+                    }
         }
     }
     

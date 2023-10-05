@@ -19,35 +19,37 @@ struct AppTabNavigation: View {
     
     @State private var selection: Tab = .decks
     @State private var path = NavigationPath()
-    //@AppStorage("SelectedColor") private var selectedColor = 0
+    @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
- 
     var body: some View {
         TabView(selection: $selection) {
+            
             NavigationStack(path: $path) {
                 DecksSwiftUIView(path: $path)
             }
-                .tabItem {
-                    let menuText = Text("Decks", comment: "Decks menu tab title")
-                    Label {
-                        menuText
-                    } icon: {
-                        Image(systemName: "rectangle.on.rectangle")
-                    }.accessibility(label: menuText)
-                }
-                .tag(Tab.decks)
+            .tabItem {
+                let menuText = Text("Decks", comment: "Decks menu tab title")
+                Label {
+                    menuText
+                } icon: {
+                    Image(systemName: "square.stack.3d.up.fill")
+                }.accessibility(label: menuText)
+            }
+            .tag(Tab.decks)
             
             NavigationStack {
                 SavedResultsSwiftUIView(showBackButton: .constant(false), path: $path)
             }
-                .tabItem {
-                    let menuText = Text("Saved Decisions", comment: "Saved decisions menu tab title")
-                    Label {
-                        menuText
-                    } icon: {
-                        Image(systemName: "bookmark.circle.fill")
-                    }
-                }
+            .tabItem {
+                let menuText = Text("Saved Decisions", comment: "Saved decisions menu tab title")
+                Label {
+                    menuText
+                } icon: {
+                    Image(systemName: "bookmark.circle.fill")
+                }.accessibility(label: menuText)
+            }
+            .tag(Tab.history)
+            
             NavigationStack {
                 SettingsUIView()
             }
@@ -61,7 +63,7 @@ struct AppTabNavigation: View {
                 }
            
             NavigationStack {
-                DirectionsSwiftUIView()
+                AboutSwiftUIView()
             }
                 .tabItem {
                     let menuText = Text("About", comment: "Directions menu tab title")
@@ -73,7 +75,7 @@ struct AppTabNavigation: View {
                         .foregroundColor(.red)
                 }
                 .tag(Tab.directions)
+               
         }
-        .tint(Color("AccentColor"))
     }
 }

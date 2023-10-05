@@ -19,6 +19,6 @@ struct StartViewButtonStyle: ButtonStyle {
             .padding(10)
             .background(backcolor)
             .compositingGroup()
-            .clipShape(Capsule())
+            .clipShape(Capsule(style: .continuous))
     }
 }

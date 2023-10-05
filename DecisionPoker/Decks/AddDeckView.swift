@@ -19,6 +19,8 @@ struct AddDeckView: View {
     let onComplete: (String, String) -> Void
     
     @State var finished = false
+    @FocusState var isFocused : Bool
+    
     @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
     // fetch all decks from core data
@@ -30,13 +32,15 @@ struct AddDeckView: View {
         NavigationView {
             ZStack {
                     Form {
-                        Section(header: Text("Deckname")
+                        Section(header: Text("deck.add.name.section.header")
                             .foregroundColor(Color("AccentColor"))
-                            .background(themeColor.colors[selectedColor])) {
-                                TextField("New Deck Name", text: $newDeckName, axis: .vertical)
+                            .background(theme.colors[selectedColor])) {
+                                TextField("deck.add.textfield.name", text: $newDeckName, axis: .vertical)
                                     .lineLimit(...3)
                                     .multilineTextAlignment(.center)
-                                    .foregroundColor(themeColor.colors[selectedColor])
+                                    .foregroundColor(theme.colors[selectedColor])
+                                    .fontDesign(.rounded)
+                                    .focused($isFocused)
                                     .onChange(of: newDeckName) { text in
                                         if text.count > 0 {
                                             errorString = "A deckname can not be empty!"
@@ -52,34 +56,49 @@ struct AddDeckView: View {
                                     }
                             }
                         
-                        Section(header: Text("Comment")
+                        Section(header: Text("deck.add.comment.section.header")
                             .foregroundColor(Color("AccentColor"))
-                            .background(themeColor.colors[selectedColor])) {
+                            .background(theme.colors[selectedColor])) {
                                 
-                                TextField("Add comment here (optional)", text: $newDeckComment, axis: .vertical)
+                                TextField("deck.add.textfield.comment", text: $newDeckComment, axis: .vertical)
                                     .lineLimit(...6)
                                     .multilineTextAlignment(.leading)
-                                    .foregroundColor(themeColor.colors[selectedColor])
+                                    .foregroundColor(theme.colors[selectedColor])
+                                    .fontDesign(.rounded)
+                                    .focused($isFocused)
                             }
                     }
                     .toolbar {
                         ToolbarItem(placement: .principal) {
                             VStack {
-                                Text("Add Deck")
+                                Text("deck.add.title")
+                                    .fontWeight(.bold)
+                                    .fontDesign(.rounded)
                                     .foregroundColor(Color("AccentColor"))
                             }
                         }
                     }
+                    .toolbar {
+                        ToolbarItem(placement: .keyboard) {
+                                    Button("deck.add.keyboard.done.label") {
+                                        isFocused = false
+                                    }
+                                    .foregroundColor(.blue)
+                                    .fontWeight(.bold)
+                                }
+                            }
                     .navigationBarTitleDisplayMode(.inline)
                     .scrollContentBackground(.hidden)
                 
                 VStack {
                     Spacer()
                     Button(action: createDeck) {
-                        Text("Create Deck")
+                        Text("deck.create.button.label")
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
                     }.buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor")
                         .opacity(buttonActive ? 1.0 : 0.5),
-                                                       forecolor: themeColor.colors[selectedColor]))
+                                                       forecolor: theme.colors[selectedColor]))
                     .padding()
                     .disabled(!buttonActive)
                     
@@ -91,7 +110,7 @@ struct AddDeckView: View {
                         .padding(.top)
                 }
             }
-            .background(themeColor.colors[selectedColor])
+            .background(theme.colors[selectedColor])
         }
         .onAppear {
             deckNames = createDeckNameArray()

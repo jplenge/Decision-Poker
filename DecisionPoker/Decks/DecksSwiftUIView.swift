@@ -43,30 +43,30 @@ struct DecksSwiftUIView: View {
                     .listRowBackground(
                         RoundedRectangle(cornerRadius: 20)
                             .background(.clear)
-                            .foregroundColor(themeColor.colors[selectedColor])
+                            .foregroundColor(theme.colors[selectedColor])
                             .padding(
                                 EdgeInsets(
                                     top: 5,
-                                    leading: 5,
+                                    leading: 0,
                                     bottom: 5,
-                                    trailing: 5
+                                    trailing: 0
                                 )
                             )
                     )
                     .listRowSeparator(.hidden)
                 }
             }
-            .toolbarBackground(
-                themeColor.colors[selectedColor],
-                for: .tabBar, .navigationBar)
+            .scrollIndicators(.hidden)
             .toolbarBackground(.visible, for: .tabBar, .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .scrollContentBackground(.hidden)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                             VStack {
-                                Text("Decks")
-                                  .foregroundColor(Color("AccentColor"))
+                                Text("deck.tab.title", comment: "tab item title")
+                                    .fontWeight(.bold)
+                                    .fontDesign(.rounded)
+                                    .foregroundColor(theme.colors[selectedColor])
                             }
                         }
                     }
@@ -91,6 +91,8 @@ struct DecksSwiftUIView: View {
                 self.isPresented.toggle()
             }, label: {
                 Image(systemName: "plus")
+                    .fontWeight(.bold)
+                    .fontDesign(.rounded)
                     .imageScale(.medium)
             }))
         }
@@ -114,7 +116,7 @@ struct DecksSwiftUIView: View {
         do {
             try self.managedObjectContext.save()
         } catch {
-            print("error when deleting deck: \(error)")
+            print("Error when deleting deck: \(error)")
         }
     }
     

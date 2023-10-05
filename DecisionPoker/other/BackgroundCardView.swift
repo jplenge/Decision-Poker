@@ -39,7 +39,7 @@ struct BackgroundCardView: View {
             }
             .frame(width: 1600, height: 1600)
         }
-        .background(themeColor.colors[selectedColor])
+        .background(theme.colors[selectedColor])
         .opacity(0.5)
     }
 }

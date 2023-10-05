@@ -39,12 +39,12 @@ func writeToCoreData(entry: DeckEntry) {
     let deck = Deck(context: context)
     deck.deckName = entry.deckname
     deck.deckComment = entry.deckcomment
-    deck.numberOfCardsToPick = entry.cards.count >= 8 ? 3 : 1
+    deck.numberOfCardsToPick = entry.cards.count >= 5 ? 3 : 1
     deck.dealButtonSelector = true
     deck.decksTablePosition = 0
     deck.id = UUID()
     
-    for (pos ,item) in entry.cards.enumerated() {
+    for (pos, item) in entry.cards.enumerated() {
         let card = Card(context: context)
         card.cardName = item.cardname
         card.cardComment = item.cardcomment
@@ -90,9 +90,9 @@ func deleteAllData(entity: String) {
     }
 }
 
-
 func resetDatabase() {
-    if let language = UserDefaults.standard.stringArray(forKey: "AppleLanguages") {
+    //  UserDefaults.standard.stringArray(forKey: "AppleLanguages")
+    if let language = Locale.current.language.languageCode?.identifier {
         if language.contains("de") {
             deleteAllData(entity: "Deck")
             deleteAllData(entity: "Card")

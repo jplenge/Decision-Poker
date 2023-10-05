@@ -33,6 +33,9 @@ struct DeckCell: View {
                         .foregroundColor(Color("AccentColor"))
                         .fontWeight(.bold)
                         .font(.title3)
+                        .fontDesign(.rounded)
+                        .keyboardType(.default)
+                        .submitLabel(.done)
                         .onAppear {
                             editableTextField = deck.wrappedDeckName
                         }
@@ -66,20 +69,26 @@ struct DeckCell: View {
                         .lineLimit(...6)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Color("AccentColor"))
-                        .font(.footnote)
+                        .font(.subheadline)
                 }
                 
                 HStack {
                     Spacer()
                     
-                        Text("Total: \(deck.childCardsCount) cards")
-                            .font(.system(size: 14))
-                            .foregroundColor(Color("AccentColor"))
+                        (Text("Total: ")
+                        + Text("\(deck.childCardsCount) ")
+                        + Text("cards"))
+                        .font(.body)
+                        .fontDesign(.rounded)
+                        .foregroundColor(Color("AccentColor"))
                     
                     Spacer()
                     
-                    Text("Active: \(deck.activeCards) cards")
-                        .font(.system(size: 14))
+                    (Text("Active: ")
+                    + Text("\(deck.activeCards) ")
+                    + Text("\(deck.activeCards > 1 ? LocalizedStringResource(stringLiteral: "cards") : LocalizedStringResource(stringLiteral: "card"))"))
+                        .font(.body)
+                        .fontDesign(.rounded)
                         .foregroundColor(Color("AccentColor"))
                     
                     Spacer()
@@ -91,8 +100,10 @@ struct DeckCell: View {
                     
                     Spacer()
                     
-                    Text(LocalizedStringKey("Select: \(deck.numberOfCardsToPick) cards"))
-                        .font(.system(size: 14))
+                    (Text("Select: \(deck.numberOfCardsToPick, specifier: "%ld")") + Text(" \(deck.numberOfCardsToPick > 1 ? LocalizedStringResource(stringLiteral: "cards")  : LocalizedStringResource(stringLiteral: "card") )"))
+                    
+                        .font(.body)
+                        .fontDesign(.rounded)
                         .foregroundColor(Color("AccentColor"))
                     
                     Spacer()
@@ -100,6 +111,11 @@ struct DeckCell: View {
                     
                     Stepper("", value: $stepperValue, in: 0...self.deck.activeCards, step: 1, onEditingChanged: {_ in
                         self.deck.numberOfCardsToPick = Int16(self.stepperValue)
+                        do {
+                            try self.managedObjectContext.save()
+                        } catch {
+                            print(error)
+                        }
                     })
                     .onAppear {
                         if self.deck.activeCards == 0 {
@@ -110,11 +126,11 @@ struct DeckCell: View {
                         }
                         self.stepperValue = Int(self.deck.numberOfCardsToPick)
                     }
-                    .tint(themeColor.colors[selectedColor])
+                    .tint(theme.colors[selectedColor])
                     .frame(width: 80)
                     .background(Color("AccentColor"))
                     .cornerRadius(10)
-                    
+                
                     Spacer()
                 }
                 
@@ -126,10 +142,12 @@ struct DeckCell: View {
                         self.viewModel.selectedDeck = deck
                         path.append("ResultView")
                     }, label: {
-                        Text("Deal")
+                        Text("Deal-Button")
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
                             .padding(.horizontal)
                     })
-                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: themeColor.colors[selectedColor]))
+                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: theme.colors[selectedColor]))
                 }
                 Spacer()
             }

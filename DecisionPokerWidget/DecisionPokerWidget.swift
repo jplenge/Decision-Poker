@@ -99,13 +99,17 @@ struct DecisionPokerLastDecision: View {
             
             Text("Latest Decision")
                 .font(.subheadline)
+                .fontDesign(.rounded)
                 .foregroundColor(.green)
                 .padding(2)
             
             Text(entry.decision.deckname)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.gray)
+                .font(.subheadline)
+                .fontWeight(.bold)
+                .fontDesign(.rounded)
+                .foregroundColor(.primary)
                 .multilineTextAlignment(.center)
+                .padding()
         }
     }
 }
@@ -119,18 +123,23 @@ struct DecisionPokerMedium: View {
             Text("Latest Decision")
                 .font(.subheadline)
                 .foregroundColor(.green)
-                .padding(2)
+                .fontDesign(.rounded)
+                .padding(.top, 5)
                         
             Text(entry.decision.deckname)
-                .font(.headline)
-                .foregroundColor(.gray)
+                .font(.body)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
+                .foregroundColor(Color.primary)
+                .padding(.top, 5)
 
             HStack {
                 Spacer()
                 Text(entry.decision.date, style: .date)
                     .padding()
                     .font(.footnote)
+                    .fontDesign(.rounded)
 
             }
         }
@@ -145,22 +154,37 @@ struct DecisionPokerDetails: View {
             
             Text("Latest Decision")
                 .font(.subheadline)
+                .fontDesign(.rounded)
                 .foregroundColor(.green)
                 .padding()
             
             Text(entry.decision.deckname)
                 .font(.title3)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
-                .padding()
+                .foregroundColor(Color.primary)
             
             VStack(alignment: .leading) {
                 ForEach(entry.decision.selectedCards, id: \.self) {cardName in
-                    Text("• " + cardName)
-                        .font(.body)
-                        .foregroundColor(.gray)
+                    VStack(alignment: .center) {
+                        HStack {
+                            Image(systemName: "chart.bar.doc.horizontal")
+                                .foregroundColor(Color.secondary)
+                                .font(.body)
+                            
+                            Text("\(cardName)")
+                                .fontDesign(.rounded)
+                                .font(.body)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.secondary)
+                            Spacer()
+                        }
+                        .padding(.leading)
+                    }
                 }
             }
+            .padding(5)
             
             Spacer()
             
@@ -169,6 +193,7 @@ struct DecisionPokerDetails: View {
                 Text(entry.decision.date, style: .date)
                     .padding()
                     .font(.footnote)
+                    .fontDesign(.rounded)
                 
             }
         }
@@ -195,10 +220,10 @@ struct DecisionPokerWidget: Widget {
 struct DecisionPokerWidget_Previews: PreviewProvider {
     static var previews: some View {
         DecisionPokerWidgetEntryView(entry: DecisionEntry(date: Date(),
-                                                          decision: Decision(deckname: "House Hold Chores and other Things",
+                                                          decision: Decision(deckname: "House Hold Chores and other Thing",
                                                                              date: Date(),
                                                                              selectedCards: ["rot", "green", "violett"])))
-            .previewContext(WidgetPreviewContext(family: .systemLarge))
+        .previewContext(WidgetPreviewContext(family: .systemSmall))
             .environment(\.locale, Locale(identifier: "de"))
     }
 }

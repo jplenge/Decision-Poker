@@ -17,16 +17,15 @@
 		1B1902C124AA397D00F1E94B /* DeckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C024AA397D00F1E94B /* DeckCell.swift */; };
 		1B1902C324AA46B000F1E94B /* AddDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C224AA46B000F1E94B /* AddDeckView.swift */; };
 		1B1902C524AA523D00F1E94B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C424AA523D00F1E94B /* TextView.swift */; };
-		1B1902C724AA906900F1E94B /* DirectionsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C624AA906900F1E94B /* DirectionsSwiftUIView.swift */; };
+		1B1902C724AA906900F1E94B /* AboutSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902C624AA906900F1E94B /* AboutSwiftUIView.swift */; };
 		1B1902CD24AC7D9300F1E94B /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902CC24AC7D9300F1E94B /* CardCell.swift */; };
 		1B1902D124AC866100F1E94B /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D024AC866100F1E94B /* AddCardView.swift */; };
 		1B1902D324AC988200F1E94B /* DealResultSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D224AC988200F1E94B /* DealResultSwiftUIView.swift */; };
 		1B1902D524ACDC4600F1E94B /* CheatPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D424ACDC4600F1E94B /* CheatPickerView.swift */; };
 		1B1902D824ADC8A400F1E94B /* FinalResultSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */; };
 		1B206EC826B86D7F00B19F46 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFFA254F5B4800406090 /* ColorManager.swift */; };
-		1B206EC926B86DF300B19F46 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B29CFF7254F586E00406090 /* Colors.xcassets */; };
-		1B206ECA26B86E2C00B19F46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */; };
 		1B21A06724A73C3D00A56F34 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B21A06624A73C3D00A56F34 /* Binding.swift */; };
+		1B223A7A2A7466230015638E /* takeScreenShots.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1B223A782A74661E0015638E /* takeScreenShots.sh */; };
 		1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFD8254A14A100406090 /* ActivityViewController.swift */; };
 		1B29CFEC254B5F8100406090 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29CFEB254B5F8100406090 /* SettingsUIView.swift */; };
 		1B29CFF8254F586E00406090 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B29CFF7254F586E00406090 /* Colors.xcassets */; };
@@ -38,7 +37,6 @@
 		1B49C34E2A49EC6A0050AE99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B49C34D2A49EC6A0050AE99 /* ViewModel.swift */; };
 		1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */; };
 		1B51FB4324A3F9CB00F4E80F /* DecksSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */; };
-		1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B51FB4624A4934000F4E80F /* ThemeManager.swift */; };
 		1B5479B42A1D65020093D5C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B32A1D65020093D5C2 /* ContentView.swift */; };
 		1B5479B62A1D653C0093D5C2 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */; };
 		1B5479B82A1F9A740093D5C2 /* BackgroundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */; };
@@ -53,8 +51,12 @@
 		1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */; };
 		1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */; };
 		1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */; };
+		1B814A0D2A5770C000500880 /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = 1B814A0B2A575FB000500880 /* fastlane */; };
+		1B814A1B2A577A1100500880 /* ScreenShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B814A1A2A577A1100500880 /* ScreenShotTests.swift */; };
+		1B814A1D2A577A1100500880 /* ScreenShotTestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B814A1C2A577A1100500880 /* ScreenShotTestsLaunchTests.swift */; };
+		1B814A242A577AC400500880 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B814A232A577AC400500880 /* SnapshotHelper.swift */; };
+		1B814A252A584C4A00500880 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
 		1B96E50C251A9081007420F2 /* dismissKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */; };
-		1B9F59C422E8F054009B5129 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C222E8F054009B5129 /* InfoPlist.strings */; };
 		1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
 		1BB6D10D2A571D960073188B /* colors-de.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D10C2A571D960073188B /* colors-de.json */; };
 		1BD5E39526CD40B30051D76A /* saveJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5E39426CD40B30051D76A /* saveJSON.swift */; };
@@ -62,12 +64,11 @@
 		1BDC638F2666C97300C5CA01 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDC638E2666C97300C5CA01 /* WidgetKit.framework */; };
 		1BDC63912666C97300C5CA01 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDC63902666C97300C5CA01 /* SwiftUI.framework */; };
 		1BDC63942666C97300C5CA01 /* DecisionPokerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63932666C97300C5CA01 /* DecisionPokerWidget.swift */; };
-		1BDC63972666C97600C5CA01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDC63962666C97600C5CA01 /* Assets.xcassets */; };
-		1BDC63992666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */; };
-		1BDC639A2666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */; };
 		1BDC639D2666C97600C5CA01 /* DecisionPokerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1BDC638C2666C97300C5CA01 /* DecisionPokerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1BDC63AE266977D000C5CA01 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
 		1BDC63BE266AA8A500C5CA01 /* decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63BD266AA8A500C5CA01 /* decision.swift */; };
+		1BDD3FD72A5C2FCD004E75B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C222E8F054009B5129 /* InfoPlist.strings */; };
+		1BDD3FD92A5CACF9004E75B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
 		1BF3D14325698309003A9246 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF3D14225698309003A9246 /* MailView.swift */; };
 		A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8C22D72A8A00C14787 /* FontSetup.swift */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
@@ -75,6 +76,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1B814A1E2A577A1100500880 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9D58A6922C4E49F00E608B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9D58A7022C4E49F00E608B8;
+			remoteInfo = DecisionPoker;
+		};
 		1BDC639B2666C97600C5CA01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9D58A6922C4E49F00E608B8 /* Project object */;
@@ -109,13 +117,14 @@
 		1B1902C024AA397D00F1E94B /* DeckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCell.swift; sourceTree = "<group>"; };
 		1B1902C224AA46B000F1E94B /* AddDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeckView.swift; sourceTree = "<group>"; };
 		1B1902C424AA523D00F1E94B /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		1B1902C624AA906900F1E94B /* DirectionsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsSwiftUIView.swift; sourceTree = "<group>"; };
+		1B1902C624AA906900F1E94B /* AboutSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSwiftUIView.swift; sourceTree = "<group>"; };
 		1B1902CC24AC7D9300F1E94B /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		1B1902D024AC866100F1E94B /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		1B1902D224AC988200F1E94B /* DealResultSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealResultSwiftUIView.swift; sourceTree = "<group>"; };
 		1B1902D424ACDC4600F1E94B /* CheatPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatPickerView.swift; sourceTree = "<group>"; };
 		1B1902D724ADC8A300F1E94B /* FinalResultSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultSwiftUIView.swift; sourceTree = "<group>"; };
 		1B21A06624A73C3D00A56F34 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		1B223A782A74661E0015638E /* takeScreenShots.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = takeScreenShots.sh; sourceTree = SOURCE_ROOT; };
 		1B29CFD8254A14A100406090 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		1B29CFEB254B5F8100406090 /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		1B29CFF7254F586E00406090 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -128,7 +137,6 @@
 		1B51FB2824A391E200F4E80F /* DecisionPoker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DecisionPoker 2.xcdatamodel"; sourceTree = "<group>"; };
 		1B51FB3124A3974700F4E80F /* SavedResultsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedResultsSwiftUIView.swift; sourceTree = "<group>"; };
 		1B51FB4224A3F9CB00F4E80F /* DecksSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecksSwiftUIView.swift; sourceTree = "<group>"; };
-		1B51FB4624A4934000F4E80F /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		1B5479B32A1D65020093D5C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B5479B52A1D653C0093D5C2 /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
 		1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCardView.swift; sourceTree = "<group>"; };
@@ -144,6 +152,11 @@
 		1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B814A0B2A575FB000500880 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		1B814A182A577A1100500880 /* ScreenShotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenShotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B814A1A2A577A1100500880 /* ScreenShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotTests.swift; sourceTree = "<group>"; };
+		1B814A1C2A577A1100500880 /* ScreenShotTestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotTestsLaunchTests.swift; sourceTree = "<group>"; };
+		1B814A232A577AC400500880 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboardExtension.swift; sourceTree = "<group>"; };
 		1B9F59C322E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B9F59C622E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -155,10 +168,10 @@
 		1BDC638E2666C97300C5CA01 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1BDC63902666C97300C5CA01 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1BDC63932666C97300C5CA01 /* DecisionPokerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerWidget.swift; sourceTree = "<group>"; };
-		1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DecisionPokerWidget.intentdefinition; sourceTree = "<group>"; };
 		1BDC63962666C97600C5CA01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BDC63982666C97600C5CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BDC63BD266AA8A500C5CA01 /* decision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decision.swift; sourceTree = "<group>"; };
+		1BDD3FD82A5C2FE6004E75B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BE92A30284F967000464219 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		1BF3D14225698309003A9246 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A98F9F8C22D72A8A00C14787 /* FontSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSetup.swift; sourceTree = "<group>"; };
@@ -169,6 +182,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B814A152A577A1100500880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BDC63892666C97300C5CA01 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,7 +236,6 @@
 			children = (
 				1B21A06624A73C3D00A56F34 /* Binding.swift */,
 				1B31DDC824BCDB270014F318 /* ButtonStyle.swift */,
-				1B51FB4624A4934000F4E80F /* ThemeManager.swift */,
 				1B29CFFA254F5B4800406090 /* ColorManager.swift */,
 				1B31DDC624BCC30E0014F318 /* DynamicTypeCustomFont.swift */,
 			);
@@ -290,7 +309,7 @@
 			children = (
 				1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */,
 				1B6437762A1D4C94002BC3D5 /* Persistence.swift */,
-				1B1902C624AA906900F1E94B /* DirectionsSwiftUIView.swift */,
+				1B1902C624AA906900F1E94B /* AboutSwiftUIView.swift */,
 				A98F9F8C22D72A8A00C14787 /* FontSetup.swift */,
 				1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */,
 			);
@@ -306,6 +325,16 @@
 			path = Deal;
 			sourceTree = "<group>";
 		};
+		1B814A192A577A1100500880 /* ScreenShotTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B814A232A577AC400500880 /* SnapshotHelper.swift */,
+				1B814A1A2A577A1100500880 /* ScreenShotTests.swift */,
+				1B814A1C2A577A1100500880 /* ScreenShotTestsLaunchTests.swift */,
+			);
+			path = ScreenShotTests;
+			sourceTree = "<group>";
+		};
 		1BDC638D2666C97300C5CA01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				1BDC63932666C97300C5CA01 /* DecisionPokerWidget.swift */,
-				1BDC63952666C97300C5CA01 /* DecisionPokerWidget.intentdefinition */,
 				1BDC63962666C97600C5CA01 /* Assets.xcassets */,
 				1BDC63982666C97600C5CA01 /* Info.plist */,
 			);
@@ -358,14 +386,16 @@
 		A9D58A6822C4E49F00E608B8 = {
 			isa = PBXGroup;
 			children = (
+				1B223A782A74661E0015638E /* takeScreenShots.sh */,
 				1BD5E39A26CDAE2A0051D76A /* DecisionPokerWidgetExtension.entitlements */,
-				1B7F907522D3400200812BE4 /* Cards */,
+				1B814A0B2A575FB000500880 /* fastlane */,
 				A9D58A7322C4E49F00E608B8 /* DecisionPoker */,
 				1BDC63922666C97300C5CA01 /* DecisionPokerWidget */,
 				1BE92A21284F966E00464219 /* Shared */,
 				1BE92A2F284F967000464219 /* macOS */,
 				1BE92A38284F967000464219 /* Tests iOS */,
 				1BE92A44284F967000464219 /* Tests macOS */,
+				1B814A192A577A1100500880 /* ScreenShotTests */,
 				1BDC638D2666C97300C5CA01 /* Frameworks */,
 				A9D58A7222C4E49F00E608B8 /* Products */,
 			);
@@ -376,6 +406,7 @@
 			children = (
 				A9D58A7122C4E49F00E608B8 /* DecisionPoker.app */,
 				1BDC638C2666C97300C5CA01 /* DecisionPokerWidgetExtension.appex */,
+				1B814A182A577A1100500880 /* ScreenShotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,6 +421,7 @@
 				1B31DDCA24BCDF710014F318 /* Settings */,
 				1B51FB3B24A3D74700F4E80F /* Start */,
 				1B7F907422D33FDC00812BE4 /* Decks */,
+				1B7F907522D3400200812BE4 /* Cards */,
 				1B7F907722D3408400812BE4 /* Deal */,
 				1B7F907322D33FC700812BE4 /* Final Result */,
 				1B7F907622D3406400812BE4 /* other */,
@@ -406,6 +438,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1B814A172A577A1100500880 /* ScreenShotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B814A202A577A1100500880 /* Build configuration list for PBXNativeTarget "ScreenShotTests" */;
+			buildPhases = (
+				1B814A142A577A1100500880 /* Sources */,
+				1B814A152A577A1100500880 /* Frameworks */,
+				1B814A162A577A1100500880 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B814A1F2A577A1100500880 /* PBXTargetDependency */,
+			);
+			name = ScreenShotTests;
+			productName = ScreenShotTests;
+			productReference = 1B814A182A577A1100500880 /* ScreenShotTests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		1BDC638B2666C97300C5CA01 /* DecisionPokerWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BDC63A12666C97600C5CA01 /* Build configuration list for PBXNativeTarget "DecisionPokerWidgetExtension" */;
@@ -452,10 +502,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Jodi Szarko";
 				TargetAttributes = {
+					1B814A172A577A1100500880 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = A9D58A7022C4E49F00E608B8;
+					};
 					1BDC638B2666C97300C5CA01 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -482,18 +536,25 @@
 			targets = (
 				A9D58A7022C4E49F00E608B8 /* DecisionPoker */,
 				1BDC638B2666C97300C5CA01 /* DecisionPokerWidgetExtension */,
+				1B814A172A577A1100500880 /* ScreenShotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B814A162A577A1100500880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B814A252A584C4A00500880 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BDC638A2666C97300C5CA01 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BDC63972666C97600C5CA01 /* Assets.xcassets in Resources */,
-				1B206ECA26B86E2C00B19F46 /* Assets.xcassets in Resources */,
-				1B206EC926B86DF300B19F46 /* Colors.xcassets in Resources */,
+				1BDD3FD92A5CACF9004E75B3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,11 +567,13 @@
 				1B4583ED2A571A6100E1E87E /* household-chores-de.json in Resources */,
 				1B0366492A51A29A009B738E /* colors-en.json in Resources */,
 				1B144CF22A54BC8B00568DC9 /* books-en.json in Resources */,
+				1B223A7A2A7466230015638E /* takeScreenShots.sh in Resources */,
 				1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */,
 				1BB6D10D2A571D960073188B /* colors-de.json in Resources */,
 				A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */,
-				1B9F59C422E8F054009B5129 /* InfoPlist.strings in Resources */,
 				1B03664B2A51A70F009B738E /* books-de.json in Resources */,
+				1BDD3FD72A5C2FCD004E75B3 /* InfoPlist.strings in Resources */,
+				1B814A0D2A5770C000500880 /* fastlane in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,11 +601,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B814A142A577A1100500880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B814A1D2A577A1100500880 /* ScreenShotTestsLaunchTests.swift in Sources */,
+				1B814A1B2A577A1100500880 /* ScreenShotTests.swift in Sources */,
+				1B814A242A577AC400500880 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BDC63882666C97300C5CA01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BDC63992666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */,
 				1B206EC826B86D7F00B19F46 /* ColorManager.swift in Sources */,
 				1BD5E39726CD4A1C0051D76A /* decision.swift in Sources */,
 				1BDC63AE266977D000C5CA01 /* DecisionPoker.xcdatamodeld in Sources */,
@@ -560,10 +632,9 @@
 				1B5479B82A1F9A740093D5C2 /* BackgroundCardView.swift in Sources */,
 				1BF3D14325698309003A9246 /* MailView.swift in Sources */,
 				1B51FB3224A3974700F4E80F /* SavedResultsSwiftUIView.swift in Sources */,
-				1B1902C724AA906900F1E94B /* DirectionsSwiftUIView.swift in Sources */,
+				1B1902C724AA906900F1E94B /* AboutSwiftUIView.swift in Sources */,
 				1B7F908F22D34F2100812BE4 /* SavedDeck+CoreDataProperties.swift in Sources */,
 				1B51FB4324A3F9CB00F4E80F /* DecksSwiftUIView.swift in Sources */,
-				1BDC639A2666C97600C5CA01 /* DecisionPokerWidget.intentdefinition in Sources */,
 				1B1902D524ACDC4600F1E94B /* CheatPickerView.swift in Sources */,
 				1BDC63BE266AA8A500C5CA01 /* decision.swift in Sources */,
 				1B1902CD24AC7D9300F1E94B /* CardCell.swift in Sources */,
@@ -593,7 +664,6 @@
 				1B49C34E2A49EC6A0050AE99 /* ViewModel.swift in Sources */,
 				1B1902D324AC988200F1E94B /* DealResultSwiftUIView.swift in Sources */,
 				1B1902D124AC866100F1E94B /* AddCardView.swift in Sources */,
-				1B51FB4724A4934000F4E80F /* ThemeManager.swift in Sources */,
 				1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */,
 				1B7F908E22D34F2100812BE4 /* SavedDeck+CoreDataClass.swift in Sources */,
 				1B29CFD9254A14A100406090 /* ActivityViewController.swift in Sources */,
@@ -604,6 +674,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1B814A1F2A577A1100500880 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9D58A7022C4E49F00E608B8 /* DecisionPoker */;
+			targetProxy = 1B814A1E2A577A1100500880 /* PBXContainerItemProxy */;
+		};
 		1BDC639C2666C97600C5CA01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1BDC638B2666C97300C5CA01 /* DecisionPokerWidgetExtension */;
@@ -616,6 +691,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B9F59C322E8F054009B5129 /* de */,
+				1BDD3FD82A5C2FE6004E75B3 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -632,6 +708,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1B814A212A577A1100500880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7H3T6272BD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.ScreenShotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DecisionPoker;
+			};
+			name = Debug;
+		};
+		1B814A222A577A1100500880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7H3T6272BD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.ScreenShotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DecisionPoker;
+			};
+			name = Release;
+		};
 		1BDC639F2666C97600C5CA01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -640,10 +756,10 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -666,10 +782,10 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPokerWidgetExtensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPokerWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -737,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -794,7 +910,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -812,10 +928,10 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPoker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -840,10 +956,10 @@
 				CODE_SIGN_ENTITLEMENTS = DecisionPoker/DecisionPokerRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,6 +979,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B814A202A577A1100500880 /* Build configuration list for PBXNativeTarget "ScreenShotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B814A212A577A1100500880 /* Debug */,
+				1B814A222A577A1100500880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1BDC63A12666C97600C5CA01 /* Build configuration list for PBXNativeTarget "DecisionPokerWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

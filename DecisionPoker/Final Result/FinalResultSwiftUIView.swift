@@ -13,7 +13,7 @@ import WidgetKit
 
 struct FinalResultSwiftUIView: View {
     @Binding var path: NavigationPath
-    @State private var isShowingSavedResults: Bool = false
+    @State private var isAlreadySaved: Bool = false
     @State private var showActionSheet: Bool = false
     @ObservedObject var viewModel: ViewModel
     @AppStorage("SelectedColor") private var selectedColor: Int = 0
@@ -35,7 +35,7 @@ struct FinalResultSwiftUIView: View {
                 }.listRowBackground(
                     RoundedRectangle(cornerRadius: 20)
                         .background(.clear)
-                        .foregroundColor(themeColor.colors[selectedColor])
+                        .foregroundColor(theme.colors[selectedColor])
                         .padding(
                             EdgeInsets(
                                 top: 5,
@@ -52,7 +52,7 @@ struct FinalResultSwiftUIView: View {
                         Text(viewModel.gameResult[index].wrappedCardName)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color("AccentColor"))
-                            .font(.subheadline)
+                            .font(.body)
                             .padding()
                         
                         Spacer()
@@ -61,7 +61,7 @@ struct FinalResultSwiftUIView: View {
                 .listRowBackground(
                     RoundedRectangle(cornerRadius: 20)
                         .background(.clear)
-                        .foregroundColor(themeColor.colors[selectedColor])
+                        .foregroundColor(theme.colors[selectedColor])
                         .padding(
                             EdgeInsets(
                                 top: 5,
@@ -74,40 +74,37 @@ struct FinalResultSwiftUIView: View {
                 .listRowSeparator(.hidden)
                 .scrollContentBackground(.hidden)
                 .onAppear {
-                    self.isShowingSavedResults = false
+                    self.isAlreadySaved = false
                 }
             }
             .scrollContentBackground(.hidden)
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                                        self.showActionSheet = true
+                                    }, label: {
+                                        Image(systemName: "square.and.arrow.up").imageScale(.large)
+                                            .imageScale(.medium)
+                                            .fontWeight(.bold)
+                                            .fontDesign(.rounded)
+                                    })
+            )
             
             HStack {
-                
-                VStack {
-                    Spacer()
-                        Button(action: {
-                            self.showActionSheet = true
-                        }, label: {
-                            Image(systemName: "square.and.arrow.up").imageScale(.large)
-                        })
-                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
-                                                          forecolor: themeColor.colors[selectedColor]))
-                    .padding([.horizontal, .bottom])
-                }
-                
                 VStack {
                     Spacer()
                         Button(action: {
                             self.saveResults(deck: viewModel.selectedDeck, cards: viewModel.gameResult)
                             self.saveLastDecision(deck: viewModel.selectedDeck, cards: viewModel.gameResult)
                             WidgetCenter.shared.reloadAllTimelines()
-                            self.isShowingSavedResults = true
+                            self.isAlreadySaved = true
                         }, label: {
-                            Text("Save")
+                            Text("\(isAlreadySaved ? LocalizedStringResource(stringLiteral:"Already Saved") : LocalizedStringResource(stringLiteral: "Save"))")
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
                         })
-                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
-                                                          forecolor: themeColor.colors[selectedColor]))
-                    .navigationDestination(isPresented: $isShowingSavedResults,
-                                           destination: { SavedResultsSwiftUIView(showBackButton: .constant(true),
-                                                                                  path: $path)})
+                        .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor").opacity(isAlreadySaved ? 0.5 : 1.0),
+                                                          forecolor: theme.colors[selectedColor]))
+                        .disabled(isAlreadySaved)
                     .padding([.horizontal, .bottom])
                     
                 }
@@ -118,9 +115,11 @@ struct FinalResultSwiftUIView: View {
                             path.removeLast(path.count)
                         }, label: {
                             Text("Done")
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
                         })
                         .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
-                                                          forecolor: themeColor.colors[selectedColor]))
+                                                          forecolor: theme.colors[selectedColor]))
                         .padding([.horizontal, .bottom])
                 }
             }
@@ -129,16 +128,15 @@ struct FinalResultSwiftUIView: View {
         .background {
             BackgroundCardView(cols: 20, rows: 20).scaledToFit()
         }
-        .toolbarBackground(
-            themeColor.colors[selectedColor],
-            for: .tabBar, .navigationBar)
         .toolbarBackground(.visible, for: .tabBar, .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 VStack {
                     Text("Final Decision")
-                        .foregroundColor(Color("AccentColor"))
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
+                        .foregroundColor(theme.colors[selectedColor])
                 }
             }
         }

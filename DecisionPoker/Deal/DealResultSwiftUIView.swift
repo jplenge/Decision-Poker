@@ -20,35 +20,35 @@ struct DealResultSwiftUIView: View {
     var body: some View {
         ZStack {
             List {
-                ForEach(viewModel.gameResult.indices, id: \.self) {index  in
-                    ResultViewCell(index: index, viewModel: viewModel)
-                }
-                .listRowBackground(
-                    RoundedRectangle(cornerRadius: 20)
-                        .background(.clear)
-                        .foregroundColor(themeColor.colors[selectedColor])
-                        .padding(
-                            EdgeInsets(
-                                top: 5,
-                                leading: 10,
-                                bottom: 5,
-                                trailing: 10
+                    ForEach(viewModel.gameResult.indices, id: \.self) {index  in
+                        ResultViewCell(index: index, viewModel: viewModel)
+                    }
+                    .listRowBackground(
+                        RoundedRectangle(cornerRadius: 20)
+                            .background(.clear)
+                            .foregroundColor(theme.colors[selectedColor])
+                            .padding(
+                                EdgeInsets(
+                                    top: 10,
+                                    leading: 0,
+                                    bottom: 10,
+                                    trailing: 0
+                                )
                             )
-                        )
-                )
-                .listRowSeparator(.hidden)
+                    )
+                    .listRowSeparator(.hidden)
             }
+            
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     VStack {
                         Text("First Hand")
-                            .foregroundColor(Color("AccentColor"))
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(theme.colors[selectedColor])
                     }
                 }
             }
-            .toolbarBackground(
-                themeColor.colors[selectedColor],
-                for: .tabBar, .navigationBar)
             .toolbarBackground(.visible, for: .tabBar, .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .scrollContentBackground(.hidden)
@@ -63,9 +63,11 @@ struct DealResultSwiftUIView: View {
                         showNextView = true
                     }, label: {
                         Text("Hold 'em!")
-                            .foregroundColor(themeColor.colors[selectedColor])
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(theme.colors[selectedColor])
                     }).buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
-                                                        forecolor: themeColor.colors[selectedColor]))
+                                                        forecolor: theme.colors[selectedColor]))
                     .padding()
                     .navigationDestination(isPresented: $showNextView,
                                            destination: { FinalResultSwiftUIView(path: $path,
@@ -77,8 +79,6 @@ struct DealResultSwiftUIView: View {
         .background(BackgroundCardView().scaledToFit())
     }
 }
-
-
 
 struct ResultViewCell: View {
     @State var index: Int
@@ -92,7 +92,9 @@ struct ResultViewCell: View {
             Text(viewModel.gameResult[index].wrappedCardName)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(Color("AccentColor"))
-                .font(.subheadline)
+                .fontDesign(.rounded)
+                .fontWeight(.semibold)
+                .font(.body)
                 .padding()
             HStack {
                 
@@ -100,7 +102,10 @@ struct ResultViewCell: View {
                     self.cheatPickerIsPresented = true
                 }, label: {
                     Text("Cheat")
-                }).buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: themeColor.colors[selectedColor]))
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
+                }).buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: theme.colors[selectedColor]))
                     .padding(.leading, 20)
                     .padding(.bottom, 10)
                 
@@ -110,7 +115,10 @@ struct ResultViewCell: View {
                     viewModel.redrawCard(index: self.index)
                 }, label: {
                     Text("Redraw")
-                }).buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: themeColor.colors[selectedColor]))
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
+                }).buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: theme.colors[selectedColor]))
                     .padding(.trailing, 20)
                     .padding(.bottom, 10)
             }

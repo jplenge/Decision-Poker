@@ -22,27 +22,22 @@ struct AppSidebarNavigation: View {
     @State private var path = NavigationPath()
     @AppStorage("SelectedColor") private var selectedColor = 0
     
-    init() {
-           //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
-           //Use this if NavigationBarTitle is with displayMode = .inline
-           UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-       }
-    
     var body: some View {
         NavigationSplitView(columnVisibility: .constant(.all)) {
                 List(selection: $selection) {
                     NavigationLink(value: NavigationItem.decks) {
-                        Label("Decks", systemImage: "rectangle.on.rectangle")
+                        Label("Decks", systemImage: "square.stack.3d.up.fill")
                     }
                     
                     NavigationLink(value: NavigationItem.savedDecisions) {
                         Label("Saved Decisions", systemImage: "bookmark.circle.fill")
+                    }.onAppear {
+                        
                     }
                     
                     NavigationLink(value: NavigationItem.settings) {
                         Label("Settings", systemImage: "gearshape")
+                            .tint(.red)
                     }
                     
                     NavigationLink(value: NavigationItem.about) {
@@ -50,11 +45,9 @@ struct AppSidebarNavigation: View {
                     }
                 }
                 .navigationTitle(String(localized: "Decision Poker", comment: "/"))
-                .background(themeColor.colors[selectedColor])
-                .foregroundColor(Color.white)
-                .accentColor(themeColor.colors[selectedColor])
+                .tint(theme.colors[selectedColor])
+                .fontDesign(.rounded)
                 .scrollContentBackground(.hidden)
-                //.tint(.blue.opacity(0.5))
         }
     detail: {
         if let selection {
@@ -70,7 +63,7 @@ struct AppSidebarNavigation: View {
             case .settings:
                 SettingsUIView()
             case .about:
-                DirectionsSwiftUIView()
+                AboutSwiftUIView()
             }
             
         } else {
@@ -78,6 +71,6 @@ struct AppSidebarNavigation: View {
         }
     }
     .navigationSplitViewStyle(.balanced)
-    .accentColor(Color.white)
+    .tint(theme.colors[selectedColor])
     }
 }

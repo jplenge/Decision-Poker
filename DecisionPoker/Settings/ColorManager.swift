@@ -10,61 +10,22 @@ import SwiftUI
 import UIKit
 import Foundation
 
-struct ThemeColor {
+struct Theme {
     let colors: [Color] = [
-        Color("ClassicGreen"),
-        Color("ModernBlue"),
-            .red,
-            .brown,
-            .yellow,
-            .green,
-            .mint,
-            .cyan,
-            .blue,
-            .purple,
-            .indigo
+        Color("ThemeColor1"),
+        Color("ThemeColor2"),
+        Color("ThemeColor3"),
+        Color("ThemeColor4"),
+        Color("ThemeColor5"),
+        Color("ThemeColor6"),
+        Color("ThemeColor7"),
+        Color("ThemeColor8"),
+        Color("ThemeColor9"),
+        Color("ThemeColor10"),
+        Color("ThemeColor11"),
+        Color("ThemeColor12"),
+        Color("ThemeColor13")
         ]
 }
 
-let themeColor = ThemeColor()
-
-//struct ColorManager {
-//    static let ClassicGreen = Color("ClassicGreen")
-//    static let ClassicGreenUI = UIColor(named: "ClassicGreen")
-//    static let ModernBlue = Color("ModernBlue")
-//    static let ModernBlueUI = UIColor(named: "ModernBlue")
-//    static let TextColorLight = Color("TextColorLight")
-//    static let TextColorLightUI = UIColor(named: "TextColorLight")
-//}
-
-// This does not seem to work
-// extension Color: RawRepresentable {
-//
-//    public init?(rawValue: String) {
-//
-//        guard let data = Data(base64Encoded: rawValue) else {
-//            self = .black
-//            return
-//        }
-//
-//        do {
-//            let color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data)
-//            self = Color(color ?? .black)
-//        } catch {
-//            fatalError("Can't unarchive data: \(error)")
-//            self = .black
-//        }
-//    }
-//
-//    public var rawValue: String {
-//
-//        do {
-//            let data = try NSKeyedArchiver.archivedData(withRootObject: UIColor(self), requiringSecureCoding: false) as Data
-//            return data.base64EncodedString()
-//
-//        } catch {
-//            fatalError("Can't archive data: \(error)")
-//            return ""
-//        }
-//    }
-// }
+let theme = Theme()

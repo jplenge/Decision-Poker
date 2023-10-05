@@ -14,14 +14,14 @@ struct SettingsUIView: View {
     @State private var selectedTheme : Int = UserDefaults.standard.integer(forKey: "SelectedTheme")
     @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
-    
     var body: some View {
         VStack(alignment: .center) {
             
             VStack(alignment: .leading) {
                 Text("Theme Color")
                     .fontWeight(.bold)
-                    .font(.system(size: 12))
+                    .fontDesign(.rounded)
+                    .font(.subheadline)
                     .foregroundColor(Color("AccentColor"))
                     .padding(.leading)
                     .padding(.top)
@@ -34,23 +34,22 @@ struct SettingsUIView: View {
                         )
                     )
             }
-            .background(themeColor.colors[selectedColor].opacity(0.6))
+            .background(theme.colors[selectedColor])
             .clipShape(
                 RoundedRectangle(
                     cornerRadius: 10
                 )
             )
             .padding()
-            .toolbarBackground(
-                themeColor.colors[selectedColor],
-                for: .tabBar, .navigationBar)
             .toolbarBackground(.visible, for: .tabBar, .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     VStack {
                         Text("Settings")
-                            .foregroundColor(Color("AccentColor"))
+                            .fontWeight(.bold)
+                            .fontDesign(.rounded)
+                            .foregroundColor(theme.colors[selectedColor])
                     }
                 }
             }
@@ -65,11 +64,13 @@ struct SettingsUIView: View {
                 }, label: {
                     Text("Reset database")
                         .font(.footnote)
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
                         .padding(.horizontal)
                 })
-                .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: themeColor.colors[selectedColor]))
-                .alert("Be carefull, this will delete all decks in your database!", isPresented: $showingAlert, actions: {
-                    Button("Yes, do it", role: .cancel) { resetDatabase() }
+                .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: theme.colors[selectedColor]))
+                .alert("Delete-Database-Alert", isPresented: $showingAlert, actions: {
+                    Button("Yes, continue", role: .cancel) { resetDatabase() }
                     Button("Cancel", role: .destructive) {}
                 })
                 .padding()
@@ -91,15 +92,15 @@ struct CustomColorPicker: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
-                ForEach(themeColor.colors.indices, id: \.self) { index in
+                ForEach(theme.colors.indices, id: \.self) { index in
                     Button(action: {
                         self.selectedColor = index
                     }) {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(themeColor.colors[index])
+                        Circle()
+                            .fill(theme.colors[index])
                             .frame(width: 30, height: 30)
                             .overlay(
-                                RoundedRectangle(cornerRadius: 8)
+                                Circle()
                                     .stroke(Color("AccentColor"), lineWidth: self.selectedColor == index ? 3 : 0)
                             )
                     }

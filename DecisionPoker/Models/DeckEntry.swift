@@ -17,7 +17,4 @@ struct DeckEntry: Codable {
     let deckname: String
     let deckcomment: String
     let cards: [CardEntry]
-    
-    
-  
 }

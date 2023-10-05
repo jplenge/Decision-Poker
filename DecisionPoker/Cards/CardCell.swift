@@ -26,7 +26,8 @@ struct CardCell: View {
                 .lineLimit(...3)
                 .multilineTextAlignment(.leading)
                 .foregroundColor(Color("AccentColor"))
-                .font(.subheadline)
+                .font(.body)
+                .fontDesign(.rounded)
                 .onAppear {
                     editableTextField = card.wrappedCardName
                 }
@@ -66,12 +67,19 @@ struct CardCell: View {
                     bottom: 0,
                     trailing: 30
                 ))
+                .onChange(of: card.cardIncluded) { _ in
+                    do {
+                        try self.managedObjectContext.save()
+                    } catch {
+                        print(error)
+                    }
+                }
             }
             
             if isShowingComment {
                 TextView(text: $editableText) {
                     $0.isEditable = true
-                    $0.backgroundColor = UIColor(themeColor.colors[selectedColor])
+                    $0.backgroundColor = UIColor(theme.colors[selectedColor])
                     $0.textColor = UIColor(Color("AccentColor"))
                 }
                 .padding(

@@ -1,3 +1,19 @@
+"deck.tab.title" = "Decks";
+"deck.add.title" = "Add New Deck";
+"deck.add.name.section.header" = "Deckname";
+"deck.add.textfield.name" = "New deckname";
+"deck.add.comment.section.header" = "Comment";
+"deck.add.textfield.comment" = "Add comment here (optional)";
+"deck.create.button.label" = "Create Deck";
+"deck.add.keyboard.done.label" = "Done";
+
+
+
+
+
+
+
+///////////////////
 /* Startscreen */
 
 "Decision Poker" = "Decision Poker";
@@ -12,7 +28,7 @@
 
 /* Directions View */
 
-"directions view text" = "This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a \"deck\", and each choice in a deck is entered as a \"card\". To get started, press the \"Start dealing decisions!\" button in the start screen. The app will display two starter \"decks\", colors and household chores, but you can add and edit your own decks and cards. Once your selections are optimized, simply hit \"Deal!\" to create your randomized \"hand\" or decision! Once the decision is made, you can fix and redraw any of the choices of your result. If you are happy with the decision the app has made, you can see, send and save your finalized solutions. Sometimes making decisions is stressful. We hope this app makes the process more fun and efficient!";
+"directions view text" = "This decision making app enables you to choose one or multiple results from a list of choices. It likens the decision making process to a game of poker. Each topic is entered as a \"deck\", and each choice in a deck is entered as a \"card\". The app will display three starter \"decks\", summer reading list, colors and household chores, but you can add and edit your own decks and cards. Once your selections are optimized, simply hit \"Deal!\" to create your randomized \"hand\" or decision! Once the decision is made, you can fix and redraw any of the choices of your result. If you are happy with the decision the app has made, you can see, send and save your finalized solutions. Sometimes making decisions is stressful. We hope this app makes the process more fun and efficient!";
 /* removed from directions view: Some instructions and clarifications are indicated if the \"info\" or \"?\" button in each screen is pressed.*/
 
 
@@ -22,7 +38,7 @@
 "Total: %lld cards" = "Total: %lld cards";
 "Active: %lld cards" = "Active: %lld cards";
 "Select: %d cards" = "Select: %d cards";
-"Deal" = "Deal";
+"Deal-Button" = "Deal";
 
 /* Add Deck View */
 "Enter comment here" = "Enter comment here";
@@ -75,15 +91,15 @@
 
 /* Color Deck */
 
-"Colors" = "Colors";
-
-"blue" = "blue";
-"green" = "green";
-"indigo" = "indigo";
-"orange" = "orange";
-"red" = "red";
-"violet" = "violet";
-"yellow" = "yellow";
+//"Colors" = "Colors";
+//
+//"blue" = "blue";
+//"green" = "green";
+//"indigo" = "indigo";
+//"orange" = "orange";
+//"red" = "red";
+//"violet" = "violet";
+//"yellow" = "yellow";
 
 
 "Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time." = "Here are all the colors of the rainbow. We chose this as an example deck to show how to use this app. You can change the name of the deck if you want. If you (or your team) have a project that requires several colors, and you are not sure about which ones you want to use, let the app do the picking for you! In the default setup, your device will randomly choose 3 out of 7 colors. Add, delete, or deselect colors as you wish by pressing the \"Card List\" button. Change the number of choices using the stepper on the screen. Feel free to add additional comments about your deck here! If this is the topic you want to use to make a decision, hit the \"Deal!\" button above. If you would like to make a new deck, press the \"+\" button below and edit the deck as you would this one. Each deck has its own deal button, but only one deck is used at a time";
@@ -154,4 +170,12 @@
 "" = "";
 
 "%@" = "%@";
+
+"Already Saved" = "Already Saved";
+
+"Delete-Database-Alert" = "This will delete all decks! Are you sure?";
+
+"Yes, continue" = "Yes, continue";
+
+"Total: 5 cards, Active: 5 cards, Select: 1 card" = "Total: 5 cards, Active: 5 cards, Select: 1 card";
 

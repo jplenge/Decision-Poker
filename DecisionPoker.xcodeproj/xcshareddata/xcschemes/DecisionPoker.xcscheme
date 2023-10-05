@@ -51,9 +51,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9D58A9222C4E4A000E608B8"
+               BlueprintIdentifier = "1B8149FF2A575EC000500880"
                BuildableName = "DecisionPokerUITests.xctest"
                BlueprintName = "DecisionPokerUITests"
+               ReferencedContainer = "container:DecisionPoker.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1B814A172A577A1100500880"
+               BuildableName = "ScreenShotTests.xctest"
+               BlueprintName = "ScreenShotTests"
                ReferencedContainer = "container:DecisionPoker.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -63,6 +74,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "en"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DirectionsSwiftUIView: View {
+struct AboutSwiftUIView: View {
     @AppStorage("SelectedColor") private var selectedColor: Int = 0
     
     let directions: LocalizedStringKey = "directions view text"
@@ -18,28 +18,26 @@ struct DirectionsSwiftUIView: View {
                 VStack {
                     ScrollView(.vertical, showsIndicators: true) {
                     Text(directions)
-                        .fontWidth(.condensed)
                         .foregroundColor(Color("AccentColor"))
-                        .lineSpacing(5.0)
+                        .font(.body)
                         .padding(20)
-                        .background(themeColor.colors[selectedColor])
-                        .cornerRadius(8)
+                        .background(theme.colors[selectedColor])
+                        .cornerRadius(20)
+                       
                     Spacer()
                 }
+                    
                 .padding(
                     EdgeInsets(
-                        top: 20,
+                        top: 10,
                         leading: 10,
                         bottom: 10,
-                        trailing: 20
+                        trailing: 10
                     )
                 )
             }
         }
         .background(BackgroundCardView().scaledToFit())
-        .toolbarBackground(
-            themeColor.colors[selectedColor],
-            for: .tabBar, .navigationBar)
         .toolbarBackground(.visible, for: .tabBar, .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
         .scrollContentBackground(.hidden)
@@ -47,7 +45,9 @@ struct DirectionsSwiftUIView: View {
             ToolbarItem(placement: .principal) {
                 VStack {
                     Text("About Decision Poker")
-                        .foregroundColor(Color("AccentColor"))
+                        .foregroundColor(theme.colors[selectedColor])
+                        .fontDesign(.rounded)
+                        .fontWeight(.bold)
                 }
             }
         }
