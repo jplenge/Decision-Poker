@@ -100,6 +100,7 @@ struct  SavedResultsSwiftUIView: View {
                                     }, label: {
                                         Image(systemName: "square.and.arrow.up")
                                             .imageScale(.small)
+                                            .foregroundColor(Color("AccentColor"))
                                     })
                                     .buttonStyle(BorderlessButtonStyle())
 //                                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),

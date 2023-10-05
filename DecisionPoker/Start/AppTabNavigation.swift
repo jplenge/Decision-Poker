@@ -77,5 +77,6 @@ struct AppTabNavigation: View {
                 .tag(Tab.directions)
                
         }
+        .tint(theme.colors[selectedColor])
     }
 }

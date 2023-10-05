@@ -20,6 +20,31 @@ struct DealResultSwiftUIView: View {
     var body: some View {
         ZStack {
             List {
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text(viewModel.selectedDeck.wrappedDeckName)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(("AccentColor")))
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding()
+                    Spacer()
+                }.listRowBackground(
+                    RoundedRectangle(cornerRadius: 20)
+                        .background(.clear)
+                        .foregroundColor(theme.colors[selectedColor])
+                        .padding(
+                            EdgeInsets(
+                                top: 5,
+                                leading: 0,
+                                bottom: 5,
+                                trailing: 0
+                            )
+                        )
+                )
+                
+                
+                
                     ForEach(viewModel.gameResult.indices, id: \.self) {index  in
                         ResultViewCell(index: index, viewModel: viewModel)
                     }
@@ -29,10 +54,10 @@ struct DealResultSwiftUIView: View {
                             .foregroundColor(theme.colors[selectedColor])
                             .padding(
                                 EdgeInsets(
-                                    top: 10,
-                                    leading: 0,
-                                    bottom: 10,
-                                    trailing: 0
+                                    top: 5,
+                                    leading: 10,
+                                    bottom: 5,
+                                    trailing: 10
                                 )
                             )
                     )
@@ -93,7 +118,7 @@ struct ResultViewCell: View {
                 .multilineTextAlignment(.leading)
                 .foregroundColor(Color("AccentColor"))
                 .fontDesign(.rounded)
-                .fontWeight(.semibold)
+                //.fontWeight(.semibold)
                 .font(.body)
                 .padding()
             HStack {
