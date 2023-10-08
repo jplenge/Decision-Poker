@@ -1,3 +1,0 @@
-lane :screenshots do
-  capture_screenshots
-end

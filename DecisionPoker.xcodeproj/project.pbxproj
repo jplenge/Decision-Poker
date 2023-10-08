@@ -42,6 +42,9 @@
 		1B5479B82A1F9A740093D5C2 /* BackgroundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */; };
 		1B6437552A1D488F002BC3D5 /* DecisionPokerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */; };
 		1B6437772A1D4C94002BC3D5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6437762A1D4C94002BC3D5 /* Persistence.swift */; };
+		1B64EBAD2ACF4F5200C36A0C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B64EBAC2ACF4F5200C36A0C /* Localizable.xcstrings */; };
+		1B64EBAE2ACF4F5200C36A0C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B64EBAC2ACF4F5200C36A0C /* Localizable.xcstrings */; };
+		1B64EBAF2ACF4F5200C36A0C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B64EBAC2ACF4F5200C36A0C /* Localizable.xcstrings */; };
 		1B68D03F24A64D86004B02F2 /* CardsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */; };
 		1B7F908C22D34F2100812BE4 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */; };
 		1B7F908D22D34F2100812BE4 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */; };
@@ -51,13 +54,9 @@
 		1B7F909122D34F2100812BE4 /* SavedCard+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */; };
 		1B7F909222D34F2100812BE4 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */; };
 		1B7F909322D34F2100812BE4 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */; };
-		1B814A0D2A5770C000500880 /* fastlane in Resources */ = {isa = PBXBuildFile; fileRef = 1B814A0B2A575FB000500880 /* fastlane */; };
 		1B814A1B2A577A1100500880 /* ScreenShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B814A1A2A577A1100500880 /* ScreenShotTests.swift */; };
 		1B814A1D2A577A1100500880 /* ScreenShotTestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B814A1C2A577A1100500880 /* ScreenShotTestsLaunchTests.swift */; };
-		1B814A242A577AC400500880 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B814A232A577AC400500880 /* SnapshotHelper.swift */; };
-		1B814A252A584C4A00500880 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
 		1B96E50C251A9081007420F2 /* dismissKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */; };
-		1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
 		1BB6D10D2A571D960073188B /* colors-de.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D10C2A571D960073188B /* colors-de.json */; };
 		1BD5E39526CD40B30051D76A /* saveJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5E39426CD40B30051D76A /* saveJSON.swift */; };
 		1BD5E39726CD4A1C0051D76A /* decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63BD266AA8A500C5CA01 /* decision.swift */; };
@@ -68,7 +67,6 @@
 		1BDC63AE266977D000C5CA01 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
 		1BDC63BE266AA8A500C5CA01 /* decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC63BD266AA8A500C5CA01 /* decision.swift */; };
 		1BDD3FD72A5C2FCD004E75B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C222E8F054009B5129 /* InfoPlist.strings */; };
-		1BDD3FD92A5CACF9004E75B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F59C522E8F054009B5129 /* Localizable.strings */; };
 		1BF3D14325698309003A9246 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF3D14225698309003A9246 /* MailView.swift */; };
 		A98F9F8D22D72A8A00C14787 /* FontSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F9F8C22D72A8A00C14787 /* FontSetup.swift */; };
 		A9D58A7D22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9D58A7B22C4E49F00E608B8 /* DecisionPoker.xcdatamodeld */; };
@@ -142,8 +140,8 @@
 		1B5479B72A1F9A740093D5C2 /* BackgroundCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCardView.swift; sourceTree = "<group>"; };
 		1B6437542A1D488E002BC3D5 /* DecisionPokerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionPokerApp.swift; sourceTree = "<group>"; };
 		1B6437762A1D4C94002BC3D5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		1B64EBAC2ACF4F5200C36A0C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1B68D03E24A64D86004B02F2 /* CardsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSwiftUIView.swift; sourceTree = "<group>"; };
-		1B7CCD2522EB4A8F00999AEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B7F908422D34F2100812BE4 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B7F908522D34F2100812BE4 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B7F908622D34F2100812BE4 /* SavedDeck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDeck+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -152,14 +150,11 @@
 		1B7F908922D34F2100812BE4 /* SavedCard+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedCard+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B7F908A22D34F2100812BE4 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B7F908B22D34F2100812BE4 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1B814A0B2A575FB000500880 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		1B814A182A577A1100500880 /* ScreenShotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenShotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B814A1A2A577A1100500880 /* ScreenShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotTests.swift; sourceTree = "<group>"; };
 		1B814A1C2A577A1100500880 /* ScreenShotTestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotTestsLaunchTests.swift; sourceTree = "<group>"; };
-		1B814A232A577AC400500880 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		1B96E50B251A9081007420F2 /* dismissKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboardExtension.swift; sourceTree = "<group>"; };
 		1B9F59C322E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B9F59C622E8F054009B5129 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1BB6D10C2A571D960073188B /* colors-de.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "colors-de.json"; sourceTree = "<group>"; };
 		1BD5E39426CD40B30051D76A /* saveJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveJSON.swift; sourceTree = "<group>"; };
 		1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DecisionPoker.entitlements; sourceTree = "<group>"; };
@@ -328,7 +323,6 @@
 		1B814A192A577A1100500880 /* ScreenShotTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B814A232A577AC400500880 /* SnapshotHelper.swift */,
 				1B814A1A2A577A1100500880 /* ScreenShotTests.swift */,
 				1B814A1C2A577A1100500880 /* ScreenShotTestsLaunchTests.swift */,
 			);
@@ -388,7 +382,6 @@
 			children = (
 				1B223A782A74661E0015638E /* takeScreenShots.sh */,
 				1BD5E39A26CDAE2A0051D76A /* DecisionPokerWidgetExtension.entitlements */,
-				1B814A0B2A575FB000500880 /* fastlane */,
 				A9D58A7322C4E49F00E608B8 /* DecisionPoker */,
 				1BDC63922666C97300C5CA01 /* DecisionPokerWidget */,
 				1BE92A21284F966E00464219 /* Shared */,
@@ -428,7 +421,7 @@
 				A9D58A7E22C4E4A000E608B8 /* Assets.xcassets */,
 				1B29CFF7254F586E00406090 /* Colors.xcassets */,
 				A9D58A8322C4E4A000E608B8 /* Info.plist */,
-				1B9F59C522E8F054009B5129 /* Localizable.strings */,
+				1B64EBAC2ACF4F5200C36A0C /* Localizable.xcstrings */,
 				1B9F59C222E8F054009B5129 /* InfoPlist.strings */,
 				1BD5E39926CDACDF0051D76A /* DecisionPoker.entitlements */,
 			);
@@ -546,7 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B814A252A584C4A00500880 /* Localizable.strings in Resources */,
+				1B64EBAF2ACF4F5200C36A0C /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BDD3FD92A5CACF9004E75B3 /* Localizable.strings in Resources */,
+				1B64EBAE2ACF4F5200C36A0C /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,16 +557,15 @@
 			files = (
 				1B03663B2A508BCD009B738E /* household-chores-en.json in Resources */,
 				1B29CFF8254F586E00406090 /* Colors.xcassets in Resources */,
+				1B64EBAD2ACF4F5200C36A0C /* Localizable.xcstrings in Resources */,
 				1B4583ED2A571A6100E1E87E /* household-chores-de.json in Resources */,
 				1B0366492A51A29A009B738E /* colors-en.json in Resources */,
 				1B144CF22A54BC8B00568DC9 /* books-en.json in Resources */,
 				1B223A7A2A7466230015638E /* takeScreenShots.sh in Resources */,
-				1B9F59C722E8F054009B5129 /* Localizable.strings in Resources */,
 				1BB6D10D2A571D960073188B /* colors-de.json in Resources */,
 				A9D58A7F22C4E4A000E608B8 /* Assets.xcassets in Resources */,
 				1B03664B2A51A70F009B738E /* books-de.json in Resources */,
 				1BDD3FD72A5C2FCD004E75B3 /* InfoPlist.strings in Resources */,
-				1B814A0D2A5770C000500880 /* fastlane in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +599,6 @@
 			files = (
 				1B814A1D2A577A1100500880 /* ScreenShotTestsLaunchTests.swift in Sources */,
 				1B814A1B2A577A1100500880 /* ScreenShotTests.swift in Sources */,
-				1B814A242A577AC400500880 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,15 +687,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1B9F59C522E8F054009B5129 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B9F59C622E8F054009B5129 /* de */,
-				1B7CCD2522EB4A8F00999AEA /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -769,6 +751,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker.DecisionPokerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -795,6 +778,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.ipomic.DecisionPoker.DecisionPokerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -854,7 +838,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -912,7 +896,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -933,7 +917,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -945,6 +929,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -961,7 +946,7 @@
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7H3T6272BD;
 				INFOPLIST_FILE = DecisionPoker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -973,6 +958,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

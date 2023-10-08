@@ -60,6 +60,7 @@ struct AppTabNavigation: View {
                     } icon: {
                         Image(systemName: "gearshape")
                     }.accessibility(label: menuText)
+                        .accessibilityIdentifier("settings.btn")
                 }
            
             NavigationStack {

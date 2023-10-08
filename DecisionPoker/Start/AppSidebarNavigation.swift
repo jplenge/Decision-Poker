@@ -37,7 +37,6 @@ struct AppSidebarNavigation: View {
                     
                     NavigationLink(value: NavigationItem.settings) {
                         Label("Settings", systemImage: "gearshape")
-                            .tint(.red)
                     }
                     
                     NavigationLink(value: NavigationItem.about) {

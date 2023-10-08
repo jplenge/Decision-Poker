@@ -50,7 +50,7 @@ struct DeckCell: View {
                             .frame(width: 40, height: 40)
                             .foregroundColor(Color("AccentColor"))
                             .padding(.top, 10)
-                    }).buttonStyle(BorderlessButtonStyle())  // workaround so that button can be tapped
+                    }).buttonStyle(BorderlessButtonStyle())  // workaround so the button can be tapped
                 }
                 
                 if isShowingComment {
@@ -142,11 +142,12 @@ struct DeckCell: View {
                         self.viewModel.selectedDeck = deck
                         path.append("ResultView")
                     }, label: {
-                        Text("Deal-Button")
+                        Text("deck.deal.button.label")
                             .fontWeight(.bold)
                             .fontDesign(.rounded)
                             .padding(.horizontal)
                     })
+                    .accessibilityIdentifier("deal.btn")
                     .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"), forecolor: theme.colors[selectedColor]))
                 }
                 Spacer()

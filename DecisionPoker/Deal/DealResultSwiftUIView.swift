@@ -43,8 +43,6 @@ struct DealResultSwiftUIView: View {
                         )
                 )
                 
-                
-                
                     ForEach(viewModel.gameResult.indices, id: \.self) {index  in
                         ResultViewCell(index: index, viewModel: viewModel)
                     }
@@ -91,7 +89,9 @@ struct DealResultSwiftUIView: View {
                             .fontWeight(.bold)
                             .fontDesign(.rounded)
                             .foregroundColor(theme.colors[selectedColor])
-                    }).buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
+                    })
+                    .accessibilityIdentifier("hold.btn")
+                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
                                                         forecolor: theme.colors[selectedColor]))
                     .padding()
                     .navigationDestination(isPresented: $showNextView,

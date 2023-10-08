@@ -103,8 +103,6 @@ struct  SavedResultsSwiftUIView: View {
                                             .foregroundColor(Color("AccentColor"))
                                     })
                                     .buttonStyle(BorderlessButtonStyle())
-//                                    .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
-//                                                                      forecolor: theme.colors[selectedColor]))
                                     .padding(.bottom, 10)
                                     .padding(.trailing, 10)
                                 }

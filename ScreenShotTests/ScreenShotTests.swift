@@ -15,7 +15,6 @@ final class ScreenShotTests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         app = XCUIApplication()
-        setupSnapshot(app)
         app.launch()
     }
     
@@ -23,66 +22,49 @@ final class ScreenShotTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample() throws {
+    func testiPhoneScreenshots() throws {
         
         takeScreenshot(named: "Decks-01")
         
-//        let collectionViewsQuery = app.collectionViews
-//        collectionViewsQuery.children(matching: .cell).element(boundBy: 1).buttons[String(localized: "Deal")].tap()
-//        print(String(localized: "Deal"))
-//        sleep(2)
-//        
-//        takeScreenshot(named: "Decks-02")
-
-        //        let app = XCUIApplication()
-        //        app.collectionViews/*@START_MENU_TOKEN@*/.buttons["Total: 5 cards, Active: 5 cards, Select: 3 cards"]/*[[".cells.buttons[\"Total: 5 cards, Active: 5 cards, Select: 3 cards\"]",".buttons[\"Total: 5 cards, Active: 5 cards, Select: 3 cards\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        //        app.buttons["Hold 'em!"].tap()
-        //        app.buttons["Save"].tap()
-
-        //        // reset database
-        //        app.tabBars["Tab-Leiste"].buttons["Einstellungen"].tap()
-        //        app.buttons["Datenbank zurücksetzen"].tap()
-        //        app.alerts["Vorsicht, damit werden alle Kartenstapel in der Datenbank gelöscht!"].scrollViews.otherElements.buttons["Ja, weiter"].tap()
-        //
-        //        snapshot("01Decks")
-        //
-        //        let collectionViewsQuery = app.collectionViews
-        //        collectionViewsQuery.children(matching: .cell).element(boundBy: 2).buttons[localizedString(key: "Deal")].tap()
-        //        takeScreenshot(named: "Decks-01")
-        //
-        //        app.buttons[localizedString(key: "Hold 'em!")].tap()
-        //        snapshot("03Decks")
-        //        app.buttons[localizedString(key: "Done")].tap()
-        //
-        //        collectionViewsQuery.children(matching: .cell).element(boundBy: 0).buttons[localizedString(key: "Deal")].tap()
-        //        snapshot("04Decks")
-        //
-        //        app.buttons[localizedString(key: "Hold 'em!")].tap()
-        //        snapshot("05Decks")
+        let dealButton = app.collectionViews.children(matching: .cell).element(boundBy: 0).buttons["deal.btn"].buttons.element(boundBy: 1)
+        dealButton.tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-02")
+        
+        app.buttons["hold.btn"].tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-03")
+        
+        app.buttons["done.btn"].tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-04")
+        
+        app.tabBars.firstMatch.buttons["settings.btn"].tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-05")
     }
     
-    func localizedString(key:String) -> String {
-        let localizationBundle = Bundle(for: ScreenShotTests.self)
-        // handle "en-US" localisation
-//        if let path = localizationBundle.path(forResource: deviceLanguage, ofType: "lproj") {
-//            let deviceBundle = Bundle(path: path)
-//            let result = NSLocalizedString(key, bundle: deviceBundle!, comment: "")
-//            return result
-//        }
-        // handle "Base.lproj" localization
-//        if let path = localizationBundle.path(forResource: "Base", ofType: "lproj") {
-//            let deviceBundle = Bundle(path: path)
-//            let result = NSLocalizedString(key, bundle: deviceBundle!, comment: "")
-//            return result
-//        }
-        // handle "en" localization
-        if let path = localizationBundle.path(forResource: NSLocale.current.language.languageCode?.identifier, ofType: "lproj") {
-            let deviceBundle = Bundle(path: path)
-            let result = NSLocalizedString(key, bundle: deviceBundle!, comment: "")
-            return result
-        }
-        return "?"
+    func iPadScreenshots() throws {
+        
+        takeScreenshot(named: "Decks-01")
+        
+        app.collectionViews.descendants(matching: .button).element(boundBy: 8).tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-02")
+        
+        app/*@START_MENU_TOKEN@*/.buttons["hold.btn"]/*[[".buttons[\"Hold 'em!\"]",".buttons[\"hold.btn\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-03")
+        
+        app/*@START_MENU_TOKEN@*/.buttons["done.btn"]/*[[".buttons[\"Done\"]",".buttons[\"done.btn\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-04")
+        
+        app.collectionViews.descendants(matching: .button).element(boundBy: 2).tap()
+        sleep(3)
+        takeScreenshot(named: "Decks-05")
     }
+    
     
     func takeScreenshot(named name: String) {
         // Take the screenshot

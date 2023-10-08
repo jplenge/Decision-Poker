@@ -13,7 +13,6 @@ struct DecisionPokerApp: App {
     let persistenceController = PersistenceController.shared
     
     init() {
-        
         if !isAppAlreadyLaunchedOnce() {
             resetDatabase()
         }

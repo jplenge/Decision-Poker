@@ -118,6 +118,7 @@ struct FinalResultSwiftUIView: View {
                                 .fontWeight(.bold)
                                 .fontDesign(.rounded)
                         })
+                        .accessibilityIdentifier("done.btn")
                         .buttonStyle(StartViewButtonStyle(backcolor: Color("AccentColor"),
                                                           forecolor: theme.colors[selectedColor]))
                         .padding([.horizontal, .bottom])

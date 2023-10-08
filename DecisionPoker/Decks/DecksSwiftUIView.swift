@@ -18,7 +18,6 @@ struct DecksSwiftUIView: View {
     
     init(path: Binding<NavigationPath>) {
         self._path = path
-        
         UIStepper.appearance().setIncrementImage(UIImage(systemName: "plus"), for: .normal)
         UIStepper.appearance().setDecrementImage(UIImage(systemName: "minus"), for: .normal)
     }
