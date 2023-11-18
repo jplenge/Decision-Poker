@@ -90,7 +90,6 @@ struct DeckCell: View {
                         .font(.body)
                         .fontDesign(.rounded)
                         .foregroundColor(Color("AccentColor"))
-                    
                     Spacer()
                 }
                 

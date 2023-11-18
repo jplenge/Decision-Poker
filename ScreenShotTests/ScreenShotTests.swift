@@ -64,8 +64,7 @@ final class ScreenShotTests: XCTestCase {
         sleep(3)
         takeScreenshot(named: "Decks-05")
     }
-    
-    
+
     func takeScreenshot(named name: String) {
         // Take the screenshot
         let fullScreenshot = XCUIScreen.main.screenshot()

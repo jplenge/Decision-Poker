@@ -95,7 +95,7 @@ struct CustomColorPicker: View {
                 ForEach(theme.colors.indices, id: \.self) { index in
                     Button(action: {
                         self.selectedColor = index
-                    }) {
+                    }, label: {
                         Circle()
                             .fill(theme.colors[index])
                             .frame(width: 30, height: 30)
@@ -103,7 +103,7 @@ struct CustomColorPicker: View {
                                 Circle()
                                     .stroke(Color("AccentColor"), lineWidth: self.selectedColor == index ? 3 : 0)
                             )
-                    }
+                    })
                 }
             }
             .padding()

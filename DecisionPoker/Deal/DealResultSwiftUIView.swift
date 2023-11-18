@@ -118,7 +118,6 @@ struct ResultViewCell: View {
                 .multilineTextAlignment(.leading)
                 .foregroundColor(Color("AccentColor"))
                 .fontDesign(.rounded)
-                //.fontWeight(.semibold)
                 .font(.body)
                 .padding()
             HStack {
